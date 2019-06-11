@@ -1,0 +1,6 @@
+framework module Pods_kTranslate {
+  umbrella header "Pods-kTranslate-umbrella.h"
+
+  export *
+  module * { export * }
+}
