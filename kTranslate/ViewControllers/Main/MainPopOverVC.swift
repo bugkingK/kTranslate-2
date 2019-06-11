@@ -94,7 +94,6 @@ class MainPopOverVC: NSViewController {
             return
         }
         let windowVC = NSWindowController(window: NSWindow(contentViewController: vc))
-        NSApp.activate(ignoringOtherApps: true)
         windowVC.showPopupView(self)
     }
     
@@ -102,10 +101,8 @@ class MainPopOverVC: NSViewController {
         guard let vc = NSStoryboard.init(name: "Settings", bundle: nil).instantiateController(withIdentifier: "Settings_Preferences") as? Settings_Preferences else {
             return
         }
-//        let windowVC = NSWindowController(window: NSWindow(contentViewController: vc))
-//        windowVC.showPopupView(self)
-        NSApp.activate(ignoringOtherApps: true)
-        self.presentAsModalWindow(vc)
+        let windowVC = CTWindowController(window: NSWindow(contentViewController: vc))
+        windowVC.showPopupView(self)
     }
     
     @objc func onExit() {

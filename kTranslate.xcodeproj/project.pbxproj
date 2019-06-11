@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85B255A622AFDC470084272A /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B255A522AFDC470084272A /* ServiceManagement.framework */; };
+		85DE7D5422AFD3FD00568C80 /* CTWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */; };
 		B819391F6A17D3594B55EF00 /* Pods_kTranslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E349CDD74F97BC916CC54B /* Pods_kTranslate.framework */; };
 		D2D3B83722AF5DB70086909D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2D3B83622AF5DB70086909D /* Assets.xcassets */; };
 		D2D3B85322AF5E260086909D /* Settings_Left.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3B84422AF5E260086909D /* Settings_Left.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		85B255A522AFDC470084272A /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWindowController.swift; sourceTree = "<group>"; };
 		9B40A2464413ED268A050DE7 /* Pods-kTranslate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.debug.xcconfig"; path = "Target Support Files/Pods-kTranslate/Pods-kTranslate.debug.xcconfig"; sourceTree = "<group>"; };
 		D2D3B82F22AF5DB60086909D /* kTranslate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kTranslate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D3B83622AF5DB70086909D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85B255A622AFDC470084272A /* ServiceManagement.framework in Frameworks */,
 				B819391F6A17D3594B55EF00 /* Pods_kTranslate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +107,7 @@
 		D26994B4603421D65477EE75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				85B255A522AFDC470084272A /* ServiceManagement.framework */,
 				F6E349CDD74F97BC916CC54B /* Pods_kTranslate.framework */,
 			);
 			name = Frameworks;
@@ -176,6 +182,7 @@
 				D2D3B85122AF5E260086909D /* PopoverController.swift */,
 				D2D3B86022AF6F3E0086909D /* AutoLogin.swift */,
 				D2D3B87922AF854E0086909D /* Extension.swift */,
+				85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -255,6 +262,15 @@
 					D2D3B82E22AF5DB60086909D = {
 						CreatedOnToolsVersion = 10.2.1;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 0;
+							};
+							com.apple.HardenedRuntime = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
@@ -368,6 +384,7 @@
 				D2D3B85522AF5E260086909D /* Settings_Preferences.swift in Sources */,
 				D2D3B85C22AF5E260086909D /* CommonUtil.swift in Sources */,
 				D2D3B85922AF5E260086909D /* MainPopOverVC.swift in Sources */,
+				85DE7D5422AFD3FD00568C80 /* CTWindowController.swift in Sources */,
 				D2D3B87A22AF854E0086909D /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -575,6 +592,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = tk.bugking.LauncherApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -595,6 +613,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = tk.bugking.LauncherApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

@@ -20,6 +20,7 @@ class Settings_Preferences: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var m_cbAutoLogin: NSButton!
     @IBOutlet weak var m_scShow: MASShortcutView!
     private func setupLayout() {
+        m_cbAutoLogin.action = #selector(toggleAutostart(_:))
         m_cbAutoLogin.state = AutoLogin.enabled ? .on : .off
     }
     
