@@ -3,28 +3,84 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D2D3B83322AF5DB60086909D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3B83222AF5DB60086909D /* AppDelegate.swift */; };
-		D2D3B83522AF5DB60086909D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3B83422AF5DB60086909D /* ViewController.swift */; };
+		B819391F6A17D3594B55EF00 /* Pods_kTranslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E349CDD74F97BC916CC54B /* Pods_kTranslate.framework */; };
 		D2D3B83722AF5DB70086909D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2D3B83622AF5DB70086909D /* Assets.xcassets */; };
-		D2D3B83A22AF5DB70086909D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D3B83822AF5DB70086909D /* Main.storyboard */; };
+		D2D3B85322AF5E260086909D /* Settings_Left.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3B84422AF5E260086909D /* Settings_Left.swift */; };
+		D2D3B85422AF5E260086909D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D3B84522AF5E260086909D /* Settings.storyboard */; };
+		D2D3B85522AF5E260086909D /* Settings_Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3B84622AF5E260086909D /* Settings_Preferences.swift */; };
+		D2D3B85622AF5E260086909D /* Settings_About.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3B84722AF5E260086909D /* Settings_About.swift */; };
+		D2D3B85722AF5E260086909D /* Settings_Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3B84822AF5E260086909D /* Settings_Welcome.swift */; };
+		D2D3B85822AF5E260086909D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3B84922AF5E260086909D /* AppDelegate.swift */; };
+		D2D3B85922AF5E260086909D /* MainPopOverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3B84B22AF5E260086909D /* MainPopOverVC.swift */; };
+		D2D3B85A22AF5E260086909D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D3B84C22AF5E260086909D /* Main.storyboard */; };
+		D2D3B85B22AF5E260086909D /* HotKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3B84F22AF5E260086909D /* HotKeyManager.swift */; };
+		D2D3B85C22AF5E260086909D /* CommonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3B85022AF5E260086909D /* CommonUtil.swift */; };
+		D2D3B85D22AF5E260086909D /* PopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3B85122AF5E260086909D /* PopoverController.swift */; };
+		D2D3B86122AF6F3E0086909D /* AutoLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3B86022AF6F3E0086909D /* AutoLogin.swift */; };
+		D2D3B86922AF6F8F0086909D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3B86822AF6F8F0086909D /* AppDelegate.swift */; };
+		D2D3B86D22AF6F900086909D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2D3B86C22AF6F900086909D /* Assets.xcassets */; };
+		D2D3B87022AF6F900086909D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D3B86E22AF6F900086909D /* Main.storyboard */; };
+		D2D3B87822AF70750086909D /* LauncherApplication.app in Copy Launcher Application */ = {isa = PBXBuildFile; fileRef = D2D3B86622AF6F8F0086909D /* LauncherApplication.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D2D3B87A22AF854E0086909D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3B87922AF854E0086909D /* Extension.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D2D3B87722AF70640086909D /* Copy Launcher Application */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				D2D3B87822AF70750086909D /* LauncherApplication.app in Copy Launcher Application */,
+			);
+			name = "Copy Launcher Application";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		9B40A2464413ED268A050DE7 /* Pods-kTranslate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.debug.xcconfig"; path = "Target Support Files/Pods-kTranslate/Pods-kTranslate.debug.xcconfig"; sourceTree = "<group>"; };
 		D2D3B82F22AF5DB60086909D /* kTranslate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kTranslate.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2D3B83222AF5DB60086909D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D2D3B83422AF5DB60086909D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D2D3B83622AF5DB70086909D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D2D3B83922AF5DB70086909D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2D3B83B22AF5DB70086909D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2D3B83C22AF5DB70086909D /* kTranslate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kTranslate.entitlements; sourceTree = "<group>"; };
+		D2D3B84422AF5E260086909D /* Settings_Left.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings_Left.swift; sourceTree = "<group>"; };
+		D2D3B84522AF5E260086909D /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		D2D3B84622AF5E260086909D /* Settings_Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings_Preferences.swift; sourceTree = "<group>"; };
+		D2D3B84722AF5E260086909D /* Settings_About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings_About.swift; sourceTree = "<group>"; };
+		D2D3B84822AF5E260086909D /* Settings_Welcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings_Welcome.swift; sourceTree = "<group>"; };
+		D2D3B84922AF5E260086909D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D2D3B84B22AF5E260086909D /* MainPopOverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPopOverVC.swift; sourceTree = "<group>"; };
+		D2D3B84D22AF5E260086909D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D2D3B84F22AF5E260086909D /* HotKeyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotKeyManager.swift; sourceTree = "<group>"; };
+		D2D3B85022AF5E260086909D /* CommonUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonUtil.swift; sourceTree = "<group>"; };
+		D2D3B85122AF5E260086909D /* PopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverController.swift; sourceTree = "<group>"; };
+		D2D3B86022AF6F3E0086909D /* AutoLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLogin.swift; sourceTree = "<group>"; };
+		D2D3B86622AF6F8F0086909D /* LauncherApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LauncherApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2D3B86822AF6F8F0086909D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D2D3B86C22AF6F900086909D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D2D3B86F22AF6F900086909D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D2D3B87122AF6F900086909D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2D3B87222AF6F900086909D /* LauncherApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LauncherApplication.entitlements; sourceTree = "<group>"; };
+		D2D3B87922AF854E0086909D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		E2B16400A1516FF01F6ADB74 /* Pods-kTranslate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.release.xcconfig"; path = "Target Support Files/Pods-kTranslate/Pods-kTranslate.release.xcconfig"; sourceTree = "<group>"; };
+		F6E349CDD74F97BC916CC54B /* Pods_kTranslate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kTranslate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D2D3B82C22AF5DB60086909D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B819391F6A17D3594B55EF00 /* Pods_kTranslate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2D3B86322AF6F8F0086909D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -34,11 +90,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA1D9EC4634B843153FA0676 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B40A2464413ED268A050DE7 /* Pods-kTranslate.debug.xcconfig */,
+				E2B16400A1516FF01F6ADB74 /* Pods-kTranslate.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D26994B4603421D65477EE75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F6E349CDD74F97BC916CC54B /* Pods_kTranslate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D2D3B82622AF5DB60086909D = {
 			isa = PBXGroup;
 			children = (
 				D2D3B83122AF5DB60086909D /* kTranslate */,
+				D2D3B86722AF6F8F0086909D /* LauncherApplication */,
 				D2D3B83022AF5DB60086909D /* Products */,
+				CA1D9EC4634B843153FA0676 /* Pods */,
+				D26994B4603421D65477EE75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -46,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				D2D3B82F22AF5DB60086909D /* kTranslate.app */,
+				D2D3B86622AF6F8F0086909D /* LauncherApplication.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,14 +130,76 @@
 		D2D3B83122AF5DB60086909D /* kTranslate */ = {
 			isa = PBXGroup;
 			children = (
-				D2D3B83222AF5DB60086909D /* AppDelegate.swift */,
-				D2D3B83422AF5DB60086909D /* ViewController.swift */,
+				D2D3B84E22AF5E260086909D /* Common */,
+				D2D3B84222AF5E260086909D /* ViewControllers */,
+				D2D3B85F22AF5E380086909D /* SupportFiles */,
+			);
+			path = kTranslate;
+			sourceTree = "<group>";
+		};
+		D2D3B84222AF5E260086909D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2D3B84922AF5E260086909D /* AppDelegate.swift */,
+				D2D3B84322AF5E260086909D /* Settings */,
+				D2D3B84A22AF5E260086909D /* Main */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D2D3B84322AF5E260086909D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D2D3B84422AF5E260086909D /* Settings_Left.swift */,
+				D2D3B84522AF5E260086909D /* Settings.storyboard */,
+				D2D3B84622AF5E260086909D /* Settings_Preferences.swift */,
+				D2D3B84722AF5E260086909D /* Settings_About.swift */,
+				D2D3B84822AF5E260086909D /* Settings_Welcome.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D2D3B84A22AF5E260086909D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D2D3B84B22AF5E260086909D /* MainPopOverVC.swift */,
+				D2D3B84C22AF5E260086909D /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D2D3B84E22AF5E260086909D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D2D3B84F22AF5E260086909D /* HotKeyManager.swift */,
+				D2D3B85022AF5E260086909D /* CommonUtil.swift */,
+				D2D3B85122AF5E260086909D /* PopoverController.swift */,
+				D2D3B86022AF6F3E0086909D /* AutoLogin.swift */,
+				D2D3B87922AF854E0086909D /* Extension.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D2D3B85F22AF5E380086909D /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
 				D2D3B83622AF5DB70086909D /* Assets.xcassets */,
-				D2D3B83822AF5DB70086909D /* Main.storyboard */,
 				D2D3B83B22AF5DB70086909D /* Info.plist */,
 				D2D3B83C22AF5DB70086909D /* kTranslate.entitlements */,
 			);
-			path = kTranslate;
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		D2D3B86722AF6F8F0086909D /* LauncherApplication */ = {
+			isa = PBXGroup;
+			children = (
+				D2D3B86822AF6F8F0086909D /* AppDelegate.swift */,
+				D2D3B86C22AF6F900086909D /* Assets.xcassets */,
+				D2D3B86E22AF6F900086909D /* Main.storyboard */,
+				D2D3B87122AF6F900086909D /* Info.plist */,
+				D2D3B87222AF6F900086909D /* LauncherApplication.entitlements */,
+			);
+			path = LauncherApplication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,9 +209,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2D3B83F22AF5DB70086909D /* Build configuration list for PBXNativeTarget "kTranslate" */;
 			buildPhases = (
+				CC0FF3F8BA1DABB984DEB428 /* [CP] Check Pods Manifest.lock */,
 				D2D3B82B22AF5DB60086909D /* Sources */,
 				D2D3B82C22AF5DB60086909D /* Frameworks */,
 				D2D3B82D22AF5DB60086909D /* Resources */,
+				78B44BFE080901E7D4BBC4E0 /* [CP] Embed Pods Frameworks */,
+				D2D3B87722AF70640086909D /* Copy Launcher Application */,
 			);
 			buildRules = (
 			);
@@ -81,6 +223,23 @@
 			name = kTranslate;
 			productName = kTranslate;
 			productReference = D2D3B82F22AF5DB60086909D /* kTranslate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D2D3B86522AF6F8F0086909D /* LauncherApplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2D3B87322AF6F900086909D /* Build configuration list for PBXNativeTarget "LauncherApplication" */;
+			buildPhases = (
+				D2D3B86222AF6F8F0086909D /* Sources */,
+				D2D3B86322AF6F8F0086909D /* Frameworks */,
+				D2D3B86422AF6F8F0086909D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LauncherApplication;
+			productName = LauncherApplication;
+			productReference = D2D3B86622AF6F8F0086909D /* LauncherApplication.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -95,6 +254,19 @@
 				TargetAttributes = {
 					D2D3B82E22AF5DB60086909D = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					D2D3B86522AF6F8F0086909D = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -112,6 +284,7 @@
 			projectRoot = "";
 			targets = (
 				D2D3B82E22AF5DB60086909D /* kTranslate */,
+				D2D3B86522AF6F8F0086909D /* LauncherApplication */,
 			);
 		};
 /* End PBXProject section */
@@ -121,30 +294,107 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2D3B85422AF5E260086909D /* Settings.storyboard in Resources */,
 				D2D3B83722AF5DB70086909D /* Assets.xcassets in Resources */,
-				D2D3B83A22AF5DB70086909D /* Main.storyboard in Resources */,
+				D2D3B85A22AF5E260086909D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2D3B86422AF6F8F0086909D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2D3B86D22AF6F900086909D /* Assets.xcassets in Resources */,
+				D2D3B87022AF6F900086909D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		78B44BFE080901E7D4BBC4E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kTranslate/Pods-kTranslate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kTranslate/Pods-kTranslate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kTranslate/Pods-kTranslate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC0FF3F8BA1DABB984DEB428 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kTranslate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2D3B82B22AF5DB60086909D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2D3B83522AF5DB60086909D /* ViewController.swift in Sources */,
-				D2D3B83322AF5DB60086909D /* AppDelegate.swift in Sources */,
+				D2D3B85622AF5E260086909D /* Settings_About.swift in Sources */,
+				D2D3B85D22AF5E260086909D /* PopoverController.swift in Sources */,
+				D2D3B85722AF5E260086909D /* Settings_Welcome.swift in Sources */,
+				D2D3B86122AF6F3E0086909D /* AutoLogin.swift in Sources */,
+				D2D3B85822AF5E260086909D /* AppDelegate.swift in Sources */,
+				D2D3B85B22AF5E260086909D /* HotKeyManager.swift in Sources */,
+				D2D3B85322AF5E260086909D /* Settings_Left.swift in Sources */,
+				D2D3B85522AF5E260086909D /* Settings_Preferences.swift in Sources */,
+				D2D3B85C22AF5E260086909D /* CommonUtil.swift in Sources */,
+				D2D3B85922AF5E260086909D /* MainPopOverVC.swift in Sources */,
+				D2D3B87A22AF854E0086909D /* Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2D3B86222AF6F8F0086909D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2D3B86922AF6F8F0086909D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D2D3B83822AF5DB70086909D /* Main.storyboard */ = {
+		D2D3B84C22AF5E260086909D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2D3B83922AF5DB70086909D /* Base */,
+				D2D3B84D22AF5E260086909D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D2D3B86E22AF6F900086909D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2D3B86F22AF6F900086909D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -203,7 +453,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -258,7 +508,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -269,17 +519,19 @@
 		};
 		D2D3B84022AF5DB70086909D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B40A2464413ED268A050DE7 /* Pods-kTranslate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = kTranslate/kTranslate.entitlements;
+				CODE_SIGN_ENTITLEMENTS = kTranslate/SupportFiles/kTranslate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 6QG49X22JS;
-				INFOPLIST_FILE = kTranslate/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/kTranslate/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = tk.bugking.kTranslate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -288,18 +540,60 @@
 		};
 		D2D3B84122AF5DB70086909D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2B16400A1516FF01F6ADB74 /* Pods-kTranslate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = kTranslate/kTranslate.entitlements;
+				CODE_SIGN_ENTITLEMENTS = kTranslate/SupportFiles/kTranslate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 6QG49X22JS;
-				INFOPLIST_FILE = kTranslate/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/kTranslate/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = tk.bugking.kTranslate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D2D3B87422AF6F900086909D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LauncherApplication/LauncherApplication.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6QG49X22JS;
+				INFOPLIST_FILE = LauncherApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = tk.bugking.LauncherApplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D2D3B87522AF6F900086909D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LauncherApplication/LauncherApplication.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6QG49X22JS;
+				INFOPLIST_FILE = LauncherApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = tk.bugking.LauncherApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -322,6 +616,15 @@
 			buildConfigurations = (
 				D2D3B84022AF5DB70086909D /* Debug */,
 				D2D3B84122AF5DB70086909D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2D3B87322AF6F900086909D /* Build configuration list for PBXNativeTarget "LauncherApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2D3B87422AF6F900086909D /* Debug */,
+				D2D3B87522AF6F900086909D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
