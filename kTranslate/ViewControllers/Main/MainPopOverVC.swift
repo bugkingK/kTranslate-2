@@ -14,6 +14,7 @@ class MainPopOverVC: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        NSApp.activate(ignoringOtherApps: true)
         self.m_wvMain.navigationDelegate = self
         let idx = UserDefaults.standard.integer(forKey: UserDefaultsKey().domainKey)
         self.loadWebTranslate(idx: idx)
@@ -93,7 +94,7 @@ class MainPopOverVC: NSViewController {
         guard let vc = NSStoryboard.init(name: "Settings", bundle: nil).instantiateController(withIdentifier: "Settings_About") as? Settings_About else {
             return
         }
-        let windowVC = NSWindowController(window: NSWindow(contentViewController: vc))
+        let windowVC = CTWindowController(window: NSWindow(contentViewController: vc))
         windowVC.showPopupView(self)
     }
     

@@ -17,6 +17,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         PopoverController.sharedInstance()
         HotKeyManager.shared.registerHotKey()
     }
+    
+    func applicationWillTerminate(_ notification: Notification) {
+        UserDefaults.standard.synchronize()
+    }
 
 }
 

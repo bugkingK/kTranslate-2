@@ -8,14 +8,49 @@
 
 import Cocoa
 
-class CTWindowController: NSWindowController {
+class CTWindowController: NSWindowController, NSWindowDelegate {
 
-    override func windowDidLoad() {
-        super.windowDidLoad()
+    var contentView: NSView {
+        get {
+            return self.window!.contentView!
+        }
+        set {
+            self.window!.contentView = newValue
+        }
+    }
     
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-        self.window?.center()
-        self.window?.makeKeyAndOrderFront(nil)
-        NSApp.activate(ignoringOtherApps: true)
+    init(windowSize: CGSize = CGSize.zero) {
+        let screenSize = NSScreen.main!.frame.size
+        let rect = CGRect(
+            x: (screenSize.width - windowSize.width) / 2,
+            y: (screenSize.height - windowSize.height) / 2,
+            width: windowSize.width,
+            height: windowSize.height
+        )
+        let mask: NSWindow.StyleMask = [.titled, .closable]
+        let window = NSWindow(contentRect: rect, styleMask: mask, backing: .buffered, defer: false)
+        super.init(window: window)
+        
+        window.delegate = self
+        window.hasShadow = true
+        window.contentView = NSView()
+    }
+    
+    override init(window: NSWindow?) {
+        window?.styleMask = [.titled, .closable]
+        window?.backingType = .buffered
+        super.init(window: window)
+        window?.delegate = self
+        window?.hasShadow = true
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func showWindow(_ sender: Any?) {
+        PopoverController.sharedInstance().closePopover(sender: sender)
+        self.window?.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.screenSaverWindow)))
+        super.showWindow(sender)
     }
 }
