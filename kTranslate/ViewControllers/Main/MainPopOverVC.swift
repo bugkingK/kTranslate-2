@@ -28,10 +28,39 @@ class MainPopOverVC: NSViewController {
         self.m_btnShortCut.action = #selector(onPreperences)
     }
     
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        
+        let idx_select = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.frameKey.rawValue)
+        
+        switch idx_select {
+        case 0:
+            m_lyContentWidth.constant = 350
+            m_lyContentHeight.constant = 500
+        case 1:
+            m_lyContentWidth.constant = 450
+            m_lyContentHeight.constant = 650
+        case 2:
+            m_lyContentWidth.constant = 500
+            m_lyContentHeight.constant = 700
+        case 3:
+            m_lyContentWidth.constant = 700
+            m_lyContentHeight.constant = 500
+        case 4:
+            m_lyContentWidth.constant = 1000
+            m_lyContentHeight.constant = 700
+        default:
+            m_lyContentWidth.constant = 350
+            m_lyContentHeight.constant = 500
+        }
+    }
+    
     @IBOutlet weak var m_vwWebView: NSView!
     @IBOutlet weak var m_btnHome: NSButton!
     @IBOutlet weak var m_btnShortCut: NSButton!
     @IBOutlet weak var m_indicator: NSProgressIndicator!
+    @IBOutlet weak var m_lyContentWidth: NSLayoutConstraint!
+    @IBOutlet weak var m_lyContentHeight: NSLayoutConstraint!
     private let m_wvMain:WebView = {
         let wv = WebView()
         wv.shouldUpdateWhileOffscreen = true

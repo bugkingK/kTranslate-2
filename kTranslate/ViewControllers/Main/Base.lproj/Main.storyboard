@@ -686,17 +686,17 @@
             <objects>
                 <viewController storyboardIdentifier="MainPopOverVC" id="XfG-lQ-9wD" customClass="MainPopOverVC" customModule="kTranslate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="680" height="588"/>
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="T4x-D2-o8h">
-                                <rect key="frame" x="0.0" y="0.0" width="680" height="588"/>
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="500"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="eY6-HP-nRc">
-                                        <rect key="frame" x="0.0" y="538" width="680" height="50"/>
+                                        <rect key="frame" x="0.0" y="450" width="350" height="50"/>
                                         <subviews>
                                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="MNx-w8-IVq">
-                                                <rect key="frame" x="0.0" y="-2" width="680" height="5"/>
+                                                <rect key="frame" x="0.0" y="-2" width="350" height="5"/>
                                             </box>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BGv-dx-cL2">
                                                 <rect key="frame" x="20" y="15" width="20" height="20"/>
@@ -713,14 +713,14 @@
                                                 </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qPS-Fc-7n0">
-                                                <rect key="frame" x="312" y="26" width="57" height="17"/>
+                                                <rect key="frame" x="147" y="26" width="57" height="17"/>
                                                 <buttonCell key="cell" type="smallSquare" title="HOME" bezelStyle="smallSquare" image="NSHomeTemplate" imagePosition="left" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="azf-Ly-ZMJ">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                             </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VqE-og-UHz">
-                                                <rect key="frame" x="289" y="7" width="102" height="14"/>
+                                                <rect key="frame" x="124" y="7" width="102" height="14"/>
                                                 <buttonCell key="cell" type="bevel" title="Command+Shift+E" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="9Ct-LS-cOC">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="systemThin" size="11"/>
@@ -741,10 +741,10 @@
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="jyz-5m-OY4">
-                                        <rect key="frame" x="0.0" y="0.0" width="680" height="538"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="450"/>
                                     </customView>
                                     <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="ZXe-Xg-Gnc">
-                                        <rect key="frame" x="328" y="282" width="25" height="25"/>
+                                        <rect key="frame" x="163" y="238" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="2IP-83-TGb"/>
                                             <constraint firstAttribute="width" constant="25" id="tBB-JR-3Zy"/>
@@ -753,15 +753,16 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="eY6-HP-nRc" firstAttribute="leading" secondItem="T4x-D2-o8h" secondAttribute="leading" id="9LI-3H-ryH"/>
+                                    <constraint firstAttribute="height" constant="500" id="KHE-Ok-4dy"/>
                                     <constraint firstItem="jyz-5m-OY4" firstAttribute="top" secondItem="eY6-HP-nRc" secondAttribute="bottom" id="NKS-p5-oi7"/>
                                     <constraint firstItem="ZXe-Xg-Gnc" firstAttribute="centerY" secondItem="T4x-D2-o8h" secondAttribute="centerY" id="OIu-Mp-Ivp"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="500" id="Se0-Jp-o0T"/>
                                     <constraint firstItem="ZXe-Xg-Gnc" firstAttribute="centerX" secondItem="T4x-D2-o8h" secondAttribute="centerX" id="Uqn-EB-kG8"/>
                                     <constraint firstAttribute="trailing" secondItem="eY6-HP-nRc" secondAttribute="trailing" id="Zxb-wL-2NV"/>
                                     <constraint firstAttribute="bottom" secondItem="jyz-5m-OY4" secondAttribute="bottom" id="a1D-Oc-MIK"/>
                                     <constraint firstAttribute="trailing" secondItem="jyz-5m-OY4" secondAttribute="trailing" id="ceB-NF-7Jl"/>
                                     <constraint firstItem="jyz-5m-OY4" firstAttribute="leading" secondItem="T4x-D2-o8h" secondAttribute="leading" id="jIT-tL-lwN"/>
                                     <constraint firstItem="eY6-HP-nRc" firstAttribute="top" secondItem="T4x-D2-o8h" secondAttribute="top" id="rA0-Zd-rCe"/>
+                                    <constraint firstAttribute="width" constant="350" id="wPe-Mi-whT"/>
                                 </constraints>
                             </customView>
                         </subviews>
@@ -776,12 +777,14 @@
                         <outlet property="m_btnHome" destination="qPS-Fc-7n0" id="1N3-5i-uwj"/>
                         <outlet property="m_btnShortCut" destination="VqE-og-UHz" id="6WJ-ZB-reo"/>
                         <outlet property="m_indicator" destination="ZXe-Xg-Gnc" id="ZoC-IX-bVs"/>
+                        <outlet property="m_lyContentHeight" destination="KHE-Ok-4dy" id="5FJ-9u-asI"/>
+                        <outlet property="m_lyContentWidth" destination="wPe-Mi-whT" id="I5s-9l-AI2"/>
                         <outlet property="m_vwWebView" destination="jyz-5m-OY4" id="ufA-L7-sY9"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="224" y="378"/>
+            <point key="canvasLocation" x="104" y="429"/>
         </scene>
     </scenes>
     <resources>
