@@ -75,8 +75,8 @@ extension AppDelegate: NSApplicationDelegate {
             
             NSWorkspace.shared.launchApplication(newPath)
         }
-        else {
-            self.terminate()
-        }
+//        else {
+        self.terminate()
+//        }
     }
 }

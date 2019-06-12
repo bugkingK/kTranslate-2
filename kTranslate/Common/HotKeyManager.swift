@@ -31,15 +31,15 @@ class HotKeyManager: NSObject {
             return
         }
         fir_menu[2].target = self
-        fir_menu[2].action = #selector(onClickpreferences(_:))
+        fir_menu[2].action = #selector(onPreperences)
         
     }
     
-    @objc private func onClickpreferences(_ sender:NSMenuItem?) {
-        let sb = NSStoryboard.init(name: "Settings", bundle: nil)
-        guard let popup = sb.instantiateController(withIdentifier: "Settings_Window") as? NSWindowController else {
+    @objc func onPreperences() {
+        guard let vc = NSStoryboard.init(name: "Settings", bundle: nil).instantiateController(withIdentifier: "Settings_Preferences") as? Settings_Preferences else {
             return
         }
-        popup.showPopupView(self)
+        let windowVC = CTWindowController(window: NSWindow(contentViewController: vc))
+        windowVC.showPopupView(self)
     }
 }
