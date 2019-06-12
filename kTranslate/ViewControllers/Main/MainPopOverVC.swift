@@ -73,15 +73,15 @@ class MainPopOverVC: NSViewController {
     private let m_side_menu: NSMenu = {
         let root_menu = NSMenu()
 
-        root_menu.addItem(NSMenuItem(title: "관하여", action: #selector(onAbout), keyEquivalent: ""))
+        root_menu.addItem(NSMenuItem(title: "About kTranslate", action: #selector(onAbout), keyEquivalent: ""))
         root_menu.addItem(NSMenuItem(title: "Preperences..", action: #selector(onPreperences), keyEquivalent: ","))
         root_menu.addItem(NSMenuItem.separator())
-        let chg_trans = NSMenuItem(title: "번역기 바꾸기", action: nil, keyEquivalent: "")
+        let chg_trans = NSMenuItem(title: "translator change", action: nil, keyEquivalent: "")
         let chg_menu = NSMenu()
         let arr_trans:[NSMenuItem] = [
-            NSMenuItem(title: "구글", action: #selector(onChangeTranslate(_:)), keyEquivalent: "1"),
-            NSMenuItem(title: "파파고", action: #selector(onChangeTranslate(_:)), keyEquivalent: "2"),
-            NSMenuItem(title: "카카오", action: #selector(onChangeTranslate(_:)), keyEquivalent: "3")
+            NSMenuItem(title: "Google Translator", action: #selector(onChangeTranslate(_:)), keyEquivalent: "1"),
+            NSMenuItem(title: "Papago Translator", action: #selector(onChangeTranslate(_:)), keyEquivalent: "2"),
+            NSMenuItem(title: "Kako Translator", action: #selector(onChangeTranslate(_:)), keyEquivalent: "3")
         ]
 
         for (idx, trans) in arr_trans.enumerated() {
