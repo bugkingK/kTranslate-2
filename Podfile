@@ -7,6 +7,6 @@ target 'kTranslate' do
 
   # Pods for kTranslate
   pod 'HotKey'
-  pod 'MASShortcut'
+#  pod 'MASShortcut'
 
 end

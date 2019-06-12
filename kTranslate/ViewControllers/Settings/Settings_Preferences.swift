@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import MASShortcut
+//import MASShortcut
 
 class Settings_Preferences: NSViewController, NSTextFieldDelegate {
 

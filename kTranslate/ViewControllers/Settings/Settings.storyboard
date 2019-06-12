@@ -423,10 +423,10 @@ All rights reserved.</string>
             </objects>
             <point key="canvasLocation" x="1153" y="677"/>
         </scene>
-        <!--Preferences-->
+        <!--View Controller-->
         <scene sceneID="hoW-X1-EGp">
             <objects>
-                <viewController title="Preferences" id="aQc-Lj-FWE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="test" id="aQc-Lj-FWE" sceneMemberID="viewController">
                     <view key="view" id="sAw-qH-lsY">
                         <rect key="frame" x="0.0" y="0.0" width="500" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -468,7 +468,7 @@ All rights reserved.</string>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="BbQ-Hy-oUO" customClass="MASShortcutView">
+                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="BbQ-Hy-oUO">
                                             <rect key="frame" x="238" y="27" width="240" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="89c-jN-MJG"/>
@@ -563,7 +563,7 @@ All rights reserved.</string>
                 </viewController>
                 <customObject id="uBD-BP-EeV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1693" y="299"/>
+            <point key="canvasLocation" x="1690" y="299"/>
         </scene>
     </scenes>
     <resources>
