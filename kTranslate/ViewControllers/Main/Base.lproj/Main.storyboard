@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
-        <plugIn identifier="com.apple.WebKit2IBPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -741,13 +740,9 @@
                                             <constraint firstItem="MNx-w8-IVq" firstAttribute="leading" secondItem="eY6-HP-nRc" secondAttribute="leading" id="mkq-tS-DEE"/>
                                         </constraints>
                                     </customView>
-                                    <wkWebView wantsLayer="YES" focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="hcG-90-nkg">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="jyz-5m-OY4">
                                         <rect key="frame" x="0.0" y="0.0" width="680" height="538"/>
-                                        <wkWebViewConfiguration key="configuration">
-                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                            <wkPreferences key="preferences"/>
-                                        </wkWebViewConfiguration>
-                                    </wkWebView>
+                                    </customView>
                                     <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="ZXe-Xg-Gnc">
                                         <rect key="frame" x="328" y="282" width="25" height="25"/>
                                         <constraints>
@@ -758,15 +753,15 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="eY6-HP-nRc" firstAttribute="leading" secondItem="T4x-D2-o8h" secondAttribute="leading" id="9LI-3H-ryH"/>
-                                    <constraint firstAttribute="trailing" secondItem="hcG-90-nkg" secondAttribute="trailing" id="LgK-Zk-zGk"/>
+                                    <constraint firstItem="jyz-5m-OY4" firstAttribute="top" secondItem="eY6-HP-nRc" secondAttribute="bottom" id="NKS-p5-oi7"/>
                                     <constraint firstItem="ZXe-Xg-Gnc" firstAttribute="centerY" secondItem="T4x-D2-o8h" secondAttribute="centerY" id="OIu-Mp-Ivp"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="500" id="Se0-Jp-o0T"/>
-                                    <constraint firstItem="hcG-90-nkg" firstAttribute="top" secondItem="eY6-HP-nRc" secondAttribute="bottom" id="U2N-kO-UVe"/>
                                     <constraint firstItem="ZXe-Xg-Gnc" firstAttribute="centerX" secondItem="T4x-D2-o8h" secondAttribute="centerX" id="Uqn-EB-kG8"/>
-                                    <constraint firstItem="hcG-90-nkg" firstAttribute="leading" secondItem="T4x-D2-o8h" secondAttribute="leading" id="ZGX-eY-qNN"/>
                                     <constraint firstAttribute="trailing" secondItem="eY6-HP-nRc" secondAttribute="trailing" id="Zxb-wL-2NV"/>
+                                    <constraint firstAttribute="bottom" secondItem="jyz-5m-OY4" secondAttribute="bottom" id="a1D-Oc-MIK"/>
+                                    <constraint firstAttribute="trailing" secondItem="jyz-5m-OY4" secondAttribute="trailing" id="ceB-NF-7Jl"/>
+                                    <constraint firstItem="jyz-5m-OY4" firstAttribute="leading" secondItem="T4x-D2-o8h" secondAttribute="leading" id="jIT-tL-lwN"/>
                                     <constraint firstItem="eY6-HP-nRc" firstAttribute="top" secondItem="T4x-D2-o8h" secondAttribute="top" id="rA0-Zd-rCe"/>
-                                    <constraint firstAttribute="bottom" secondItem="hcG-90-nkg" secondAttribute="bottom" id="tll-yu-gKf"/>
                                 </constraints>
                             </customView>
                         </subviews>
@@ -781,7 +776,7 @@
                         <outlet property="m_btnHome" destination="qPS-Fc-7n0" id="1N3-5i-uwj"/>
                         <outlet property="m_btnShortCut" destination="VqE-og-UHz" id="6WJ-ZB-reo"/>
                         <outlet property="m_indicator" destination="ZXe-Xg-Gnc" id="ZoC-IX-bVs"/>
-                        <outlet property="m_wvMain" destination="hcG-90-nkg" id="BMc-Bh-mbN"/>
+                        <outlet property="m_vwWebView" destination="jyz-5m-OY4" id="ufA-L7-sY9"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

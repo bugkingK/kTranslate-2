@@ -15,17 +15,29 @@ class MainPopOverVC: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         NSApp.activate(ignoringOtherApps: true)
-        self.m_wvMain.navigationDelegate = self
+        m_vwWebView.addSubview(m_wvMain)
+        m_wvMain.topAnchor.constraint(equalTo: m_vwWebView.topAnchor).isActive = true
+        m_wvMain.leadingAnchor.constraint(equalTo: m_vwWebView.leadingAnchor).isActive = true
+        m_wvMain.trailingAnchor.constraint(equalTo: m_vwWebView.trailingAnchor).isActive = true
+        m_wvMain.bottomAnchor.constraint(equalTo: m_vwWebView.bottomAnchor).isActive = true
+        m_wvMain.frameLoadDelegate = self
+        
         let idx = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
         self.loadWebTranslate(idx: idx)
         self.m_btnHome.action = #selector(onClickHome(_:))
         self.m_btnShortCut.action = #selector(onPreperences)
     }
     
-    @IBOutlet weak var m_wvMain: WKWebView!
+    @IBOutlet weak var m_vwWebView: NSView!
     @IBOutlet weak var m_btnHome: NSButton!
     @IBOutlet weak var m_btnShortCut: NSButton!
     @IBOutlet weak var m_indicator: NSProgressIndicator!
+    private let m_wvMain:WebView = {
+        let wv = WebView()
+        wv.shouldUpdateWhileOffscreen = true
+        wv.translatesAutoresizingMaskIntoConstraints = false
+        return wv
+    }()
     private let kakaoURL:URL = URL(string: "https://m.translate.kakao.com/")!
     private let papagoURL:URL = URL(string: "https://papago.naver.com/")!
     private let googleURL:URL = URL(string: "https://translate.google.co.kr/")!
@@ -87,7 +99,7 @@ class MainPopOverVC: NSViewController {
         
         guard let v_url = url else { return }
         let request = URLRequest(url: v_url)
-        m_wvMain.load(request)
+        m_wvMain.mainFrame.load(request)
     }
     
     @objc func onAbout() {
@@ -126,15 +138,12 @@ class MainPopOverVC: NSViewController {
     }
 }
 
-extension MainPopOverVC: WKNavigationDelegate {
-    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+extension MainPopOverVC: WebFrameLoadDelegate {
+    public func webView(_ sender: WebView!, didFinishLoadFor frame: WebFrame!) {
+        self.loadingBar(show: false)
+    }
+    
+    func webView(_ sender: WebView!, didStartProvisionalLoadFor frame: WebFrame!) {
         self.loadingBar(show: true)
     }
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        self.loadingBar(show: false)
-    }
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        self.loadingBar(show: false)
-    }
 }
-
