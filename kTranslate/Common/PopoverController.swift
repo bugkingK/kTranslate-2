@@ -25,7 +25,8 @@ open class PopoverController: NSObject {
         
         if let button = self.statusItem.button {
             let icon = NSImage(named: .init("StatusBarButtonImage"))
-            icon?.isTemplate = true
+//            icon?.isTemplate = true
+//            icon?.backgroundColor = .clear
             button.image = icon
             button.target = self
             button.action = #selector(togglePopover(_:))
