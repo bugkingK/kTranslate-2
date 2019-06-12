@@ -16,7 +16,7 @@ class MainPopOverVC: NSViewController {
         // Do view setup here.
         NSApp.activate(ignoringOtherApps: true)
         self.m_wvMain.navigationDelegate = self
-        let idx = UserDefaults.standard.integer(forKey: UserDefaultsKey().domainKey)
+        let idx = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
         self.loadWebTranslate(idx: idx)
         self.m_btnHome.action = #selector(onClickHome(_:))
         self.m_btnShortCut.action = #selector(onPreperences)
@@ -57,12 +57,12 @@ class MainPopOverVC: NSViewController {
     }()
     
     @objc func onChangeTranslate(_ sender: NSMenuItem) {
-        UserDefaults.standard.setValue(sender.tag, forKey: UserDefaultsKey().domainKey, defalutValue: 0)
+        UserDefaults.standard.setValue(sender.tag, forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
         self.loadWebTranslate(idx: sender.tag)
     }
     
     @objc func onClickHome(_ sender: NSButton) {
-        let idx = UserDefaults.standard.integer(forKey: UserDefaultsKey().domainKey)
+        let idx = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
         self.loadWebTranslate(idx: idx)
     }
     

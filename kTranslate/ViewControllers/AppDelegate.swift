@@ -12,8 +12,6 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        AutoLogin.setEnabled(enabled: true)
-        UserDefaults.standard.setValue(0, forKey: UserDefaultsKey().domainKey, defalutValue: 0)
         PopoverController.sharedInstance()
         HotKeyManager.shared.registerHotKey()
     }

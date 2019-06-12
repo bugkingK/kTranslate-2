@@ -8,19 +8,8 @@
 
 import Cocoa
 
-extension UserDefaults {
-    open func setValue(_ value: Any?, forKey key: String, defalutValue: Any?) {
-        if self.value(forKey: key) == nil {
-            self.setValue(defalutValue, forKey: key)
-        } else {
-            self.setValue(value, forKey: key)
-        }
-        self.synchronize()
-    }
-}
-
-class UserDefaultsKey {
-    let domainKey = "number_translate_domain"
+enum UserDefaults_DEFINE_KEY:String {
+    case domainKey = "number_translate_domain"
 }
 
 extension NSWindowController {
