@@ -65,6 +65,10 @@ open class PopoverController: NSObject {
         popover.performClose(sender)
         eventMonitor?.stop()
     }
+    
+    public func getRootViewController() -> NSViewController? {
+        return popover.contentViewController
+    }
 }
 
 class EventMonitor: NSObject {

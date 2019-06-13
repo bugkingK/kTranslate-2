@@ -33,6 +33,19 @@ class HotKeyManager: NSObject {
         fir_menu[2].target = self
         fir_menu[2].action = #selector(onPreperences)
         
+        
+        guard let second_menu = NSApplication.shared.mainMenu?.items[1].submenu?.items else {
+            return
+        }
+        guard let vc_main = PopoverController.sharedInstance().getRootViewController() as? MainPopOverVC else {
+            return
+        }
+        
+        for (idx, menu) in second_menu.enumerated() {
+            menu.tag = idx
+            menu.target = vc_main
+            menu.action = #selector(vc_main.onChangeTranslate(_:))
+        }
     }
     
     @objc func onPreperences() {
