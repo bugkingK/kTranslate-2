@@ -22,10 +22,16 @@ class MainPopOverVC: NSViewController {
         m_wvMain.bottomAnchor.constraint(equalTo: m_vwWebView.bottomAnchor).isActive = true
         m_wvMain.frameLoadDelegate = self
         
+//        self.m_btnHome.action = #selector(onClickHome(_:))
+        self.m_btnShortCut.action = #selector(onPreperences)
+        self.m_arrBtnCircle = [m_btnG, m_btnP, m_btnK]
+        for btn in self.m_arrBtnCircle {
+            btn.action = #selector(onChangeTranslate(_:))
+        }
+        
+        
         let idx = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
         self.loadWebTranslate(idx: idx)
-        self.m_btnHome.action = #selector(onClickHome(_:))
-        self.m_btnShortCut.action = #selector(onPreperences)
     }
     
     override func viewWillAppear() {
@@ -55,8 +61,12 @@ class MainPopOverVC: NSViewController {
         }
     }
     
+    @IBOutlet weak var m_btnG: CTCircleButton!
+    @IBOutlet weak var m_btnP: CTCircleButton!
+    @IBOutlet weak var m_btnK: CTCircleButton!
+    private var m_arrBtnCircle:[CTCircleButton] = []
     @IBOutlet weak var m_vwWebView: NSView!
-    @IBOutlet weak var m_btnHome: NSButton!
+//    @IBOutlet weak var m_btnHome: NSButton!
     @IBOutlet weak var m_btnShortCut: NSButton!
     @IBOutlet weak var m_indicator: NSProgressIndicator!
     @IBOutlet weak var m_lyContentWidth: NSLayoutConstraint!
@@ -97,7 +107,7 @@ class MainPopOverVC: NSViewController {
         return root_menu
     }()
     
-    @objc func onChangeTranslate(_ sender: NSMenuItem) {
+    @objc func onChangeTranslate(_ sender: AnyObject) {
         UserDefaults.standard.setValue(sender.tag, forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
         self.loadWebTranslate(idx: sender.tag)
     }
@@ -116,6 +126,11 @@ class MainPopOverVC: NSViewController {
         for trans in menu_trans.items {
             trans.state = trans.tag == idx ? .on : .off
         }
+        
+        for btn in m_arrBtnCircle {
+            btn.isEnabled = !(btn.tag == idx)
+        }
+        
         switch idx {
         case 0:
             url = googleURL
