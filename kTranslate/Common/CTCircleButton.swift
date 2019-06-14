@@ -16,31 +16,13 @@ class CTCircleButton: NSButton {
     @IBInspectable var textColor: NSColor?
     @IBInspectable var isDisableBgColor: NSColor?
     
-//    override var isEnabled: Bool {
-//        didSet(value) {
-//            if !isEnabled {
-//                self.layer?.backgroundColor = isDisableBgColor?.cgColor
-////                self.setNeedsDisplay()
-//            } else {
-//                self.layer?.backgroundColor = bgColor?.cgColor
-////                self.setNeedsDisplay()
-//            }
-//        }
-//    }
-    
-    override func performClick(_ sender: Any?) {
-        super.performClick(sender)
-        isSelected = !isSelected
-    }
-    @IBInspectable var isSelected:Bool = false
-    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         
         self.layer?.cornerRadius = self.frame.height / 2
         self.layer?.borderWidth = borderWidth
         self.layer?.borderColor = borderColor?.cgColor
-        self.layer?.backgroundColor = !isSelected ? bgColor?.cgColor : isDisableBgColor?.cgColor
+        self.layer?.backgroundColor = self.state == .on ? bgColor?.cgColor : isDisableBgColor?.cgColor
         
     }
     

@@ -10,6 +10,7 @@
 		85B255A622AFDC470084272A /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B255A522AFDC470084272A /* ServiceManagement.framework */; };
 		85DE7D5422AFD3FD00568C80 /* CTWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */; };
 		B819391F6A17D3594B55EF00 /* Pods_kTranslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E349CDD74F97BC916CC54B /* Pods_kTranslate.framework */; };
+		D20F3CE422B36DCF00394759 /* Settings_RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20F3CE322B36DCE00394759 /* Settings_RootVC.swift */; };
 		D22A423722B32D1800ADE25C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22A423622B32D1800ADE25C /* Constants.swift */; };
 		D2CFDD2422B1E72E0056314B /* CTCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CFDD2322B1E72E0056314B /* CTCircleButton.swift */; };
 		D2D3B83722AF5DB70086909D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2D3B83622AF5DB70086909D /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		85B255A522AFDC470084272A /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWindowController.swift; sourceTree = "<group>"; };
 		9B40A2464413ED268A050DE7 /* Pods-kTranslate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.debug.xcconfig"; path = "Target Support Files/Pods-kTranslate/Pods-kTranslate.debug.xcconfig"; sourceTree = "<group>"; };
+		D20F3CE322B36DCE00394759 /* Settings_RootVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings_RootVC.swift; sourceTree = "<group>"; };
 		D22A423622B32D1800ADE25C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D2CFDD2322B1E72E0056314B /* CTCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTCircleButton.swift; sourceTree = "<group>"; };
 		D2D3B82F22AF5DB60086909D /* kTranslate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kTranslate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,8 +162,9 @@
 		D2D3B84322AF5E260086909D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				D2D3B84422AF5E260086909D /* Settings_Left.swift */,
 				D2D3B84522AF5E260086909D /* Settings.storyboard */,
+				D20F3CE322B36DCE00394759 /* Settings_RootVC.swift */,
+				D2D3B84422AF5E260086909D /* Settings_Left.swift */,
 				D2D3B84622AF5E260086909D /* Settings_Preferences.swift */,
 				D2D3B84722AF5E260086909D /* Settings_About.swift */,
 				D2D3B84822AF5E260086909D /* Settings_Welcome.swift */,
@@ -383,6 +386,7 @@
 				D2D3B85622AF5E260086909D /* Settings_About.swift in Sources */,
 				D2D3B85D22AF5E260086909D /* PopoverController.swift in Sources */,
 				D2D3B85722AF5E260086909D /* Settings_Welcome.swift in Sources */,
+				D20F3CE422B36DCF00394759 /* Settings_RootVC.swift in Sources */,
 				D2D3B86122AF6F3E0086909D /* AutoLogin.swift in Sources */,
 				D2D3B85822AF5E260086909D /* AppDelegate.swift in Sources */,
 				D2D3B85B22AF5E260086909D /* HotKeyManager.swift in Sources */,

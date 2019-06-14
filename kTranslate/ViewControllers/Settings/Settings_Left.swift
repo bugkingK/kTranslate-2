@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class Settings_Left: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
+class Settings_Left: Settings_RootVC, NSTableViewDelegate, NSTableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()

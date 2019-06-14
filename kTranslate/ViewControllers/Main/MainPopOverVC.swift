@@ -22,13 +22,11 @@ class MainPopOverVC: NSViewController {
         m_wvMain.bottomAnchor.constraint(equalTo: m_vwWebView.bottomAnchor).isActive = true
         m_wvMain.frameLoadDelegate = self
         
-//        self.m_btnHome.action = #selector(onClickHome(_:))
         self.m_btnShortCut.action = #selector(onPreperences)
         self.m_arrBtnCircle = [m_btnG, m_btnP, m_btnK]
         for btn in self.m_arrBtnCircle {
             btn.action = #selector(onChangeTranslate(_:))
         }
-        
         
         let idx = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
         self.loadWebTranslate(idx: idx)
@@ -37,49 +35,29 @@ class MainPopOverVC: NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        let idx_select = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.frameKey.rawValue)
+        let width = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)
+        let height = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)
         
-        switch idx_select {
-        case 0:
-            m_lyContentWidth.constant = 350
-            m_lyContentHeight.constant = 500
-        case 1:
-            m_lyContentWidth.constant = 450
-            m_lyContentHeight.constant = 650
-        case 2:
-            m_lyContentWidth.constant = 500
-            m_lyContentHeight.constant = 700
-        case 3:
-            m_lyContentWidth.constant = 700
-            m_lyContentHeight.constant = 500
-        case 4:
-            m_lyContentWidth.constant = 1000
-            m_lyContentHeight.constant = 700
-        default:
-            m_lyContentWidth.constant = 350
-            m_lyContentHeight.constant = 500
-        }
+        m_lyContentWidth.constant = CGFloat(width)
+        m_lyContentHeight.constant = CGFloat(height)
     }
     
-    @IBOutlet weak var m_btnG: CTCircleButton!
-    @IBOutlet weak var m_btnP: CTCircleButton!
-    @IBOutlet weak var m_btnK: CTCircleButton!
-    private var m_arrBtnCircle:[CTCircleButton] = []
     @IBOutlet weak var m_vwWebView: NSView!
-//    @IBOutlet weak var m_btnHome: NSButton!
     @IBOutlet weak var m_btnShortCut: NSButton!
     @IBOutlet weak var m_indicator: NSProgressIndicator!
     @IBOutlet weak var m_lyContentWidth: NSLayoutConstraint!
     @IBOutlet weak var m_lyContentHeight: NSLayoutConstraint!
+    @IBOutlet weak var m_btnG: CTCircleButton!
+    @IBOutlet weak var m_btnP: CTCircleButton!
+    @IBOutlet weak var m_btnK: CTCircleButton!
+    
+    private var m_arrBtnCircle:[CTCircleButton] = []
     private let m_wvMain:WebView = {
         let wv = WebView()
         wv.shouldUpdateWhileOffscreen = true
         wv.translatesAutoresizingMaskIntoConstraints = false
         return wv
     }()
-    private let kakaoURL:URL = URL(string: "https://m.translate.kakao.com/")!
-    private let papagoURL:URL = URL(string: "https://papago.naver.com/")!
-    private let googleURL:URL = URL(string: "https://translate.google.co.kr/")!
     private let m_side_menu: NSMenu = {
         let root_menu = NSMenu()
 
@@ -107,14 +85,34 @@ class MainPopOverVC: NSViewController {
         return root_menu
     }()
     
-    @objc func onChangeTranslate(_ sender: AnyObject) {
+    @objc public func onChangeTranslate(_ sender: AnyObject) {
         UserDefaults.standard.setValue(sender.tag, forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
         self.loadWebTranslate(idx: sender.tag)
     }
     
-    @objc func onClickHome(_ sender: NSButton) {
-        let idx = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
-        self.loadWebTranslate(idx: idx)
+    @objc private func onAbout() {
+        guard let vc = NSStoryboard.init(name: "Settings", bundle: nil).instantiateController(withIdentifier: "Settings_About") as? Settings_About else {
+            return
+        }
+        let windowVC = CTWindowController(window: NSWindow(contentViewController: vc))
+        windowVC.showPopupView(self)
+    }
+    
+    @objc public func onPreperences() {
+        guard let vc = NSStoryboard.init(name: "Settings", bundle: nil).instantiateController(withIdentifier: "Settings_Preferences") as? Settings_Preferences else {
+            return
+        }
+        let windowVC = CTWindowController(window: NSWindow(contentViewController: vc))
+        windowVC.showPopupView(self)
+    }
+    
+    @objc private func onExit() {
+        NSApp.terminate(nil)
+    }
+    
+    @IBAction private func onClickSideMenu(_ sender: NSButton) {
+        let p = NSPoint(x: 0, y: (sender.frame.height*2)-10)
+        self.m_side_menu.popUp(positioning: self.m_side_menu.item(at: 0), at: p, in: sender)
     }
     
     private func loadWebTranslate(idx:Int) {
@@ -128,47 +126,22 @@ class MainPopOverVC: NSViewController {
         }
         
         for btn in m_arrBtnCircle {
-            btn.isEnabled = !(btn.tag == idx)
+            btn.state = !(btn.tag == idx) ? .on : .off
         }
         
         switch idx {
         case 0:
-            url = googleURL
+            url = TranslatorURL.googleURL
         case 1:
-            url = papagoURL
+            url = TranslatorURL.papagoURL
         case 2:
-            url = kakaoURL
+            url = TranslatorURL.kakaoURL
         default: break
         }
         
         guard let v_url = url else { return }
         let request = URLRequest(url: v_url)
         m_wvMain.mainFrame.load(request)
-    }
-    
-    @objc func onAbout() {
-        guard let vc = NSStoryboard.init(name: "Settings", bundle: nil).instantiateController(withIdentifier: "Settings_About") as? Settings_About else {
-            return
-        }
-        let windowVC = CTWindowController(window: NSWindow(contentViewController: vc))
-        windowVC.showPopupView(self)
-    }
-    
-    @objc func onPreperences() {
-        guard let vc = NSStoryboard.init(name: "Settings", bundle: nil).instantiateController(withIdentifier: "Settings_Preferences") as? Settings_Preferences else {
-            return
-        }
-        let windowVC = CTWindowController(window: NSWindow(contentViewController: vc))
-        windowVC.showPopupView(self)
-    }
-    
-    @objc func onExit() {
-        NSApp.terminate(nil)
-    }
-    
-    @IBAction func onClickSideMenu(_ sender: NSButton) {
-        let p = NSPoint(x: 0, y: (sender.frame.height*2)-10)
-        self.m_side_menu.popUp(positioning: self.m_side_menu.item(at: 0), at: p, in: sender)
     }
     
     private func loadingBar(show:Bool) {
@@ -183,7 +156,7 @@ class MainPopOverVC: NSViewController {
 }
 
 extension MainPopOverVC: WebFrameLoadDelegate {
-    public func webView(_ sender: WebView!, didFinishLoadFor frame: WebFrame!) {
+    func webView(_ sender: WebView!, didFinishLoadFor frame: WebFrame!) {
         self.loadingBar(show: false)
     }
     

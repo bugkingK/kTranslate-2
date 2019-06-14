@@ -14,16 +14,33 @@ struct BundleInfo {
     static let bundleName = Bundle.main.infoDictionary?["CFBundleName"] as! String
 }
 
-enum UserDefaults_DEFINE_KEY:String {
+enum UserDefaults_DEFINE_KEY:String, CaseIterable {
+    case initKey = "init"
     case domainKey = "number_translate_domain"
-    case frameKey = "frameKey"
+    case widthKey = "WidthKey"
+    case heightKey = "HeightKey"
+    case welcomeKey = "WelcomeKey"
+    case dontShowKey = "DontShowKey"
 }
 
-//@objc class UserDefaultsKey: NSObject {
-//    class var ignoreApplicationFolderWarning: String { return "AKIgnoreApplicationFolder" }
-//    class var hotKey: String { return "AllkdicSettingKeyHotKey" }
-//    class var selectedDictionaryName: String { return "SelectedDictionaryName" }
-//}
+
+extension UserDefaults {
+    func DEFINE_Clear() {
+        _ = UserDefaults_DEFINE_KEY.allCases.map {
+            UserDefaults.standard.removeObject(forKey: $0.rawValue)
+            UserDefaults.standard.synchronize()
+        }
+    }
+}
+
+
+struct TranslatorURL {
+    static let kakaoURL:URL = URL(string: "https://m.translate.kakao.com/")!
+    static let papagoURL:URL = URL(string: "https://papago.naver.com/")!
+    static let googleURL:URL = URL(string: "https://translate.google.co.kr/")!
+    static let betterURL:URL = URL(string: "http://better-translator.com/")!
+}
+
 struct AnalyticsCategory {
     static let kTranslate = "kTranslate"
     static let preference = "Preference"
@@ -33,7 +50,7 @@ struct AnalyticsCategory {
 struct AnalyticsAction {
     static let open = "Open"
     static let close = "Close"
-    static let dictionary = "Dictionary" // Use `DictionaryName` as Label
+    static let translator = "Translator" // Use `DictionaryName` as Label
     static let search = "Search"
     static let updateHotKey = "UpdateHotKey"
     static let checkForUpdate = "CheckForUpdate"

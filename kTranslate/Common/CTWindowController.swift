@@ -50,7 +50,7 @@ class CTWindowController: NSWindowController, NSWindowDelegate {
     
     override func showWindow(_ sender: Any?) {
         PopoverController.sharedInstance().closePopover(sender: sender)
-        self.window?.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.screenSaverWindow)))
+        self.window?.level = .screenSaver
         super.showWindow(sender)
     }
 }
