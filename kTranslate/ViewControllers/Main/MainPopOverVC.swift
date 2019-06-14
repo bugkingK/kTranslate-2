@@ -86,7 +86,7 @@ class MainPopOverVC: NSViewController {
     }()
     
     @objc public func onChangeTranslate(_ sender: AnyObject) {
-        UserDefaults.standard.setValue(sender.tag, forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
+//        UserDefaults.standard.setValue(sender.tag, forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
         self.loadWebTranslate(idx: sender.tag)
     }
     

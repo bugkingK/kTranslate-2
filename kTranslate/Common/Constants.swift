@@ -21,6 +21,7 @@ enum UserDefaults_DEFINE_KEY:String, CaseIterable {
     case heightKey = "HeightKey"
     case welcomeKey = "WelcomeKey"
     case dontShowKey = "DontShowKey"
+    
 }
 
 
@@ -42,12 +43,15 @@ struct TranslatorURL {
 }
 
 struct AnalyticsCategory {
-    static let kTranslate = "kTranslate"
+    static let launch = "Launch"
+    static let popover = "Popover"
     static let preference = "Preference"
     static let about = "About"
 }
 
 struct AnalyticsAction {
+    static let new = "New User"
+    static let existing = "Existing User"
     static let open = "Open"
     static let close = "Close"
     static let translator = "Translator" // Use `DictionaryName` as Label
@@ -55,6 +59,8 @@ struct AnalyticsAction {
     static let updateHotKey = "UpdateHotKey"
     static let checkForUpdate = "CheckForUpdate"
     static let viewOnGitHub = "ViewOnGitHub"
+    static let openEmail = "OpenEmail"
+    static let viewOnPage = "ViewOnPage"
 }
 
 struct AnalyticsLabel {

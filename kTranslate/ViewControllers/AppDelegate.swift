@@ -15,7 +15,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         UserDefaults.standard.DEFINE_Clear()
         MPGoogleAnalyticsTracker.activate(.init(analyticsIdentifier: "UA-141906441-2"))
-        MPGoogleAnalyticsTracker.trackScreen("Main View")
         
         self.initUserDefaultKey()
         self.showWelcome()
@@ -34,8 +33,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             defaults.set(true, forKey: UserDefaults_DEFINE_KEY.initKey.rawValue)
             defaults.set("400", forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)
             defaults.set("500", forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)
+            defaults.set(0, forKey:  UserDefaults_DEFINE_KEY.domainKey.rawValue)
             AutoLogin.setEnabled(enabled: true)
+            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.launch, action: AnalyticsAction.new, label: "", value: 0)
+        } else {
+            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.launch, action: AnalyticsAction.existing, label: "", value: 0)
         }
+        
     }
     
     private func showWelcome() {

@@ -7,8 +7,9 @@
 //
 
 import Cocoa
+import GoogleAnalyticsTracker
 
-class Settings_Left: Settings_RootVC, NSTableViewDelegate, NSTableViewDataSource {
+class Settings_Left: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,11 @@ class Settings_Left: Settings_RootVC, NSTableViewDelegate, NSTableViewDataSource
         }
     }
     
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        self.view.window?.delegate = self
+    }
+    
     @IBOutlet weak var m_tvMain: NSTableView!
     private weak var m_tbMain: NSTabViewController!
     private var m_arrMenu:[String] = ["Welcome", "Preferences", "About"]
@@ -67,4 +73,24 @@ class Settings_Left: Settings_RootVC, NSTableViewDelegate, NSTableViewDataSource
         return nil
     }
     
+}
+
+extension Settings_Left: NSWindowDelegate {
+    func windowWillClose(_ notification: Notification) {
+        let b_dontShow = UserDefaults.standard.bool(forKey: UserDefaults_DEFINE_KEY.dontShowKey.rawValue)
+        
+        if !b_dontShow {
+            CommonUtil.alertMessageWithKeep("kTranslate will continue to run in the background", "Do not show this message agin") {
+                UserDefaults.standard.set(true, forKey: UserDefaults_DEFINE_KEY.dontShowKey.rawValue)
+                
+                
+                //                MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.launch, action: AnalyticsAction.new, label: "", value: 0)
+                //                 Main Translator, start login, width-height
+                
+                
+            }
+        }
+        
+        PopoverController.sharedInstance().showPopover(sender: nil)
+    }
 }
