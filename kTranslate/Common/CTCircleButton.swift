@@ -28,13 +28,19 @@ class CTCircleButton: NSButton {
 //        }
 //    }
     
+    override func performClick(_ sender: Any?) {
+        super.performClick(sender)
+        isSelected = !isSelected
+    }
+    @IBInspectable var isSelected:Bool = false
+    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         
         self.layer?.cornerRadius = self.frame.height / 2
         self.layer?.borderWidth = borderWidth
         self.layer?.borderColor = borderColor?.cgColor
-        self.layer?.backgroundColor = isEnabled ? bgColor?.cgColor : isDisableBgColor?.cgColor
+        self.layer?.backgroundColor = !isSelected ? bgColor?.cgColor : isDisableBgColor?.cgColor
         
     }
     

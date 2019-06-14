@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import GoogleAnalyticsTracker
 
 private let _sharedInstance = PopoverController()
 
@@ -58,12 +59,14 @@ open class PopoverController: NSObject {
         if let button = statusItem.button {
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
             eventMonitor?.start()
+            MPGoogleAnalyticsTracker.trackEvent(ofCategory: "Interaction", action: "ShowPopover", label: "", value: 0)
         }
     }
     
     func closePopover(sender: Any?) {
         popover.performClose(sender)
         eventMonitor?.stop()
+        MPGoogleAnalyticsTracker.trackEvent(ofCategory: "Interaction", action: "closePopover", label: "", value: 0)
     }
     
     public func getRootViewController() -> NSViewController? {

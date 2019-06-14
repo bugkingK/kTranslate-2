@@ -7,58 +7,95 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0065483C78E87A72F605C50851D808EE /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DA3A4917E43D02462914F577E42B58 /* Key.swift */; };
-		146D324FD2C1887F2FB6C273B4CDBBB7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8D291E7B8FD9310F5C090F575C22BA /* Cocoa.framework */; };
-		24E6408EA6BBE113F8D859846F27D52F /* Pods-kTranslate-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B94CE95F3795A90EB011D5D7A30070 /* Pods-kTranslate-dummy.m */; };
-		2DF1C241F13AB103078C7ADC7D5FA1F3 /* HotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375DD84F77DAD7D40EFD7D1F40E0F912 /* HotKey.swift */; };
+		0065483C78E87A72F605C50851D808EE /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAF3AC8E8396A53105B07646E86EEFC /* Key.swift */; };
+		03E341A9A2CC007298299FFF7EF4582F /* MPAnalyticsConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3777D4D3F73B7470E5CB28B39EFF1A /* MPAnalyticsConfiguration.m */; };
+		1AE6589A3E5DC9FCB381DF9CD28C7B3D /* MPAnalyticsConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 52E2EE65C196D6E868657B9E35EFD658 /* MPAnalyticsConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2416378BAC540F029919D9727F9D265C /* MPAnalyticsParamBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B575ED67BD839E4C888AD0E1BD8EED1 /* MPAnalyticsParamBuilder.m */; };
+		2DF1C241F13AB103078C7ADC7D5FA1F3 /* HotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6019FE95CAA1E5EC119B14342A89651 /* HotKey.swift */; };
+		331F6B2F84B8C2A7BB3417769E41B006 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8D291E7B8FD9310F5C090F575C22BA /* Cocoa.framework */; };
+		466930C77A3F36A43992617C4EF920E8 /* Pods-kTranslate-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 86E14777E8BFC6EDB85D126D57977B9B /* Pods-kTranslate-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4F6449672C755E5FCD33AB137F772C7D /* Pods-kTranslate-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B94CE95F3795A90EB011D5D7A30070 /* Pods-kTranslate-dummy.m */; };
+		5140AE7519063075A4EE1B88460EC163 /* MPGoogleAnalyticsTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A300DC9BD1A93B162A1E91CC9CE236B /* MPGoogleAnalyticsTracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56499BFCDD704CEBBC1D1268BC8BB587 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8D291E7B8FD9310F5C090F575C22BA /* Cocoa.framework */; };
+		5FEBF93354357C21066C67EF518B43DB /* MPAnalyticsDebugWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD5218B4D6CFE0399D10E648BD5A3E8 /* MPAnalyticsDebugWindowController.m */; };
 		6A1095DC6A176BEF117E87EE49F00F31 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505A38674B007A641E9AB0A4BF503C07 /* Carbon.framework */; };
-		6A419673EC6A46A5ED0CE19FF615077C /* NSEventModifierFlags+HotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2829B8257EFC040B9E57B94A52BF34B0 /* NSEventModifierFlags+HotKey.swift */; };
-		A31DA41AFF05C0F8775486FE5A1DF595 /* KeyCombo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410E280074895780D2BF089A8C129243 /* KeyCombo.swift */; };
-		A49489E19A76BAE5F66F482DD372C0A7 /* HotKey-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 48DC2CDBFB37389EB7782A74940C6680 /* HotKey-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE9631B1D138681C6C8F2677F8985BE2 /* Pods-kTranslate-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 86E14777E8BFC6EDB85D126D57977B9B /* Pods-kTranslate-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA87085320B8EAEA529BB3226000A5B8 /* HotKeysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D5F89C819E4D5C41F36B9027C1D8CE /* HotKeysController.swift */; };
-		DA06E55890DFA5DBE29D16489BAC7DC6 /* HotKey-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6161A25A04DF3DE074AB1A59B3DDEDDE /* HotKey-dummy.m */; };
+		6A419673EC6A46A5ED0CE19FF615077C /* NSEventModifierFlags+HotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9BB4D03C1DFBBF1BA5F3518F24E842 /* NSEventModifierFlags+HotKey.swift */; };
+		7D3733BF4F6A08D60DDECF403CF919CA /* MPAnalyticsDebugWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8311D1CC4A278831FDFDFB762448C1 /* MPAnalyticsDebugWindowController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A346C6EBA5C5A0C432DBC3720356580 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8D291E7B8FD9310F5C090F575C22BA /* Cocoa.framework */; };
+		A31DA41AFF05C0F8775486FE5A1DF595 /* KeyCombo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413AA9FDBE79EF3C667503318110AE53 /* KeyCombo.swift */; };
+		A49489E19A76BAE5F66F482DD372C0A7 /* HotKey-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 51C08BD9C64C07F719B300E7FEE7F6E8 /* HotKey-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A93EC377434EEE0C40D4D98E026E973C /* MPGoogleAnalyticsTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1E4428FB347EDAE8FE5583F18F439B /* MPGoogleAnalyticsTracker.m */; };
+		B0C376DF41FEA465602862E0FB412539 /* Google-Analytics-for-OS-X-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DBD816ACF43D25EB12FCBCCFB836B43 /* Google-Analytics-for-OS-X-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6D52FE8F5D307F01D1643F6BA58BDBF /* GoogleAnalyticsTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = D67F39C0E4E53257CB6899B6BC5DCF7D /* GoogleAnalyticsTracker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA87085320B8EAEA529BB3226000A5B8 /* HotKeysController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42384B9D02BD8D915B05BE58509D7A20 /* HotKeysController.swift */; };
+		BE469FC4062B7E461D366F5CC36DE343 /* Google-Analytics-for-OS-X-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6DE821A2C2A1CBBBC6055D5F63DC17 /* Google-Analytics-for-OS-X-dummy.m */; };
+		C79E87415FAF50D1EF452E0DF2B7317D /* MPAnalyticsParamBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E742A785F3F8884952B7F408367EA90 /* MPAnalyticsParamBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA06E55890DFA5DBE29D16489BAC7DC6 /* HotKey-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F71C56E5CA16316A0E106F0D55131 /* HotKey-dummy.m */; };
 		E3FF670AB8D533502E105D672650BB29 /* Appkit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5038DF7F78C4B12A94F20AC6C8229C29 /* Appkit.framework */; };
+		EB521D2642AF81ACAC99127CC2C3FEAA /* AnalyticsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3C59FE9711A960BFCF0483A9083D75C /* AnalyticsWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C985800DDD905DDF504768E0A2F1CFE2 /* PBXContainerItemProxy */ = {
+		26C47E735A5FDBC54253BFEA267D2FE7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DB4D977E4336D9F2E9E510A33CD1DB6D;
 			remoteInfo = HotKey;
 		};
+		A985EE275AF1680E702C11A0AA408BBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 99C0D851D40BE5190F7E0E8D04F7F9BD;
+			remoteInfo = "Google-Analytics-for-OS-X";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		006D02BA8D9916A1A257D421836110FA /* Pods-kTranslate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-kTranslate.debug.xcconfig"; sourceTree = "<group>"; };
-		0080F08591E1353C4F844260FC0AFE59 /* HotKey-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HotKey-prefix.pch"; sourceTree = "<group>"; };
+		027A9A38723C2EDABDEAB5014C3544A9 /* Pods_kTranslate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_kTranslate.framework; path = "Pods-kTranslate.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		098697A27CA48374457CB71B2CDFDE59 /* HotKey-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "HotKey-Info.plist"; sourceTree = "<group>"; };
+		0A300DC9BD1A93B162A1E91CC9CE236B /* MPGoogleAnalyticsTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPGoogleAnalyticsTracker.h; path = GoogleAnalyticsTracker/MPGoogleAnalyticsTracker.h; sourceTree = "<group>"; };
 		0A8D291E7B8FD9310F5C090F575C22BA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		11D5F89C819E4D5C41F36B9027C1D8CE /* HotKeysController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HotKeysController.swift; path = Sources/HotKey/HotKeysController.swift; sourceTree = "<group>"; };
-		24DA3A4917E43D02462914F577E42B58 /* Key.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Key.swift; path = Sources/HotKey/Key.swift; sourceTree = "<group>"; };
-		2829B8257EFC040B9E57B94A52BF34B0 /* NSEventModifierFlags+HotKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSEventModifierFlags+HotKey.swift"; path = "Sources/HotKey/NSEventModifierFlags+HotKey.swift"; sourceTree = "<group>"; };
+		0C6DE821A2C2A1CBBBC6055D5F63DC17 /* Google-Analytics-for-OS-X-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Google-Analytics-for-OS-X-dummy.m"; sourceTree = "<group>"; };
+		0E742A785F3F8884952B7F408367EA90 /* MPAnalyticsParamBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPAnalyticsParamBuilder.h; path = GoogleAnalyticsTracker/MPAnalyticsParamBuilder.h; sourceTree = "<group>"; };
+		1B3F71C56E5CA16316A0E106F0D55131 /* HotKey-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HotKey-dummy.m"; sourceTree = "<group>"; };
+		1FD5218B4D6CFE0399D10E648BD5A3E8 /* MPAnalyticsDebugWindowController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPAnalyticsDebugWindowController.m; path = GoogleAnalyticsTracker/MPAnalyticsDebugWindowController.m; sourceTree = "<group>"; };
 		31E1B9E44BD5742FB6C6F9B6F2A4D21F /* Pods-kTranslate-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-kTranslate-Info.plist"; sourceTree = "<group>"; };
-		375DD84F77DAD7D40EFD7D1F40E0F912 /* HotKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HotKey.swift; path = Sources/HotKey/HotKey.swift; sourceTree = "<group>"; };
-		410E280074895780D2BF089A8C129243 /* KeyCombo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyCombo.swift; path = Sources/HotKey/KeyCombo.swift; sourceTree = "<group>"; };
-		47B846D6DCE91A7B2251F039043340EA /* HotKey.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HotKey.xcconfig; sourceTree = "<group>"; };
-		48DC2CDBFB37389EB7782A74940C6680 /* HotKey-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HotKey-umbrella.h"; sourceTree = "<group>"; };
-		4B3B14C1279B85C8AFB1FDD3B26C6F9E /* HotKey.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HotKey.modulemap; sourceTree = "<group>"; };
+		413AA9FDBE79EF3C667503318110AE53 /* KeyCombo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyCombo.swift; path = Sources/HotKey/KeyCombo.swift; sourceTree = "<group>"; };
+		42384B9D02BD8D915B05BE58509D7A20 /* HotKeysController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HotKeysController.swift; path = Sources/HotKey/HotKeysController.swift; sourceTree = "<group>"; };
+		4B575ED67BD839E4C888AD0E1BD8EED1 /* MPAnalyticsParamBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPAnalyticsParamBuilder.m; path = GoogleAnalyticsTracker/MPAnalyticsParamBuilder.m; sourceTree = "<group>"; };
 		5038DF7F78C4B12A94F20AC6C8229C29 /* Appkit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Appkit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Appkit.framework; sourceTree = DEVELOPER_DIR; };
 		505A38674B007A641E9AB0A4BF503C07 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Carbon.framework; sourceTree = DEVELOPER_DIR; };
 		50B94CE95F3795A90EB011D5D7A30070 /* Pods-kTranslate-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-kTranslate-dummy.m"; sourceTree = "<group>"; };
-		5A52DC72B0047A0231E4DCDB892DE2BE /* HotKey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HotKey.framework; path = HotKey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6161A25A04DF3DE074AB1A59B3DDEDDE /* HotKey-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HotKey-dummy.m"; sourceTree = "<group>"; };
+		51C08BD9C64C07F719B300E7FEE7F6E8 /* HotKey-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HotKey-umbrella.h"; sourceTree = "<group>"; };
+		52E2EE65C196D6E868657B9E35EFD658 /* MPAnalyticsConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPAnalyticsConfiguration.h; path = GoogleAnalyticsTracker/MPAnalyticsConfiguration.h; sourceTree = "<group>"; };
+		58645FC878B874C4D172807F386C0372 /* GoogleAnalyticsTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleAnalyticsTracker.framework; path = "Google-Analytics-for-OS-X.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C61D1FD39B9CBF73C84461F0D60F28E /* Pods-kTranslate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-kTranslate.release.xcconfig"; sourceTree = "<group>"; };
 		720D7A502D358DC2292E37D72194932E /* Pods-kTranslate-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-kTranslate-acknowledgements.markdown"; sourceTree = "<group>"; };
 		86E14777E8BFC6EDB85D126D57977B9B /* Pods-kTranslate-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-kTranslate-umbrella.h"; sourceTree = "<group>"; };
-		8B3290A7C44637C27E36C12B9A650CBD /* Pods_kTranslate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_kTranslate.framework; path = "Pods-kTranslate.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E9EFE5100CC49E9EBCBBF0BA462C70 /* Pods-kTranslate.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-kTranslate.modulemap"; sourceTree = "<group>"; };
+		93C8D0BE3F2A096A3FC9F74CC10D5370 /* HotKey.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HotKey.xcconfig; sourceTree = "<group>"; };
 		9627D9959FCF3D275F57E8CA626CF11E /* Pods-kTranslate-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-kTranslate-frameworks.sh"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DBD816ACF43D25EB12FCBCCFB836B43 /* Google-Analytics-for-OS-X-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Google-Analytics-for-OS-X-umbrella.h"; sourceTree = "<group>"; };
+		A5D44D1CDF1F1B6C5BB1930919478B27 /* Google-Analytics-for-OS-X.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Google-Analytics-for-OS-X.xcconfig"; sourceTree = "<group>"; };
+		AAAF3AC8E8396A53105B07646E86EEFC /* Key.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Key.swift; path = Sources/HotKey/Key.swift; sourceTree = "<group>"; };
+		B3C59FE9711A960BFCF0483A9083D75C /* AnalyticsWindow.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = AnalyticsWindow.xib; path = GoogleAnalyticsTracker/AnalyticsWindow.xib; sourceTree = "<group>"; };
 		BED5A1BDCCB3EDB288EB595EA4DA9248 /* Pods-kTranslate-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-kTranslate-acknowledgements.plist"; sourceTree = "<group>"; };
-		DF3F389E38DF38291814FEE0AA532C76 /* HotKey-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "HotKey-Info.plist"; sourceTree = "<group>"; };
+		C3CC4EF406047555E07F59708065CED2 /* Google-Analytics-for-OS-X-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Google-Analytics-for-OS-X-prefix.pch"; sourceTree = "<group>"; };
+		D61C426D430514BB55E2216497F2E608 /* HotKey.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = HotKey.modulemap; sourceTree = "<group>"; };
+		D67F39C0E4E53257CB6899B6BC5DCF7D /* GoogleAnalyticsTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GoogleAnalyticsTracker.h; path = GoogleAnalyticsTracker/GoogleAnalyticsTracker.h; sourceTree = "<group>"; };
+		EB1E4428FB347EDAE8FE5583F18F439B /* MPGoogleAnalyticsTracker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPGoogleAnalyticsTracker.m; path = GoogleAnalyticsTracker/MPGoogleAnalyticsTracker.m; sourceTree = "<group>"; };
+		EBCC97BC02AAEF3A32A6916702400406 /* HotKey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HotKey.framework; path = HotKey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC26136FC1D9ABEE339B8D0F79C9C4E1 /* Google-Analytics-for-OS-X-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Google-Analytics-for-OS-X-Info.plist"; sourceTree = "<group>"; };
+		EC7DACD599EF02F64538C0469110236D /* Google-Analytics-for-OS-X.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Google-Analytics-for-OS-X.modulemap"; sourceTree = "<group>"; };
+		F29511E1CD2CD30EA50F832A299522F3 /* HotKey-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HotKey-prefix.pch"; sourceTree = "<group>"; };
+		F6019FE95CAA1E5EC119B14342A89651 /* HotKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HotKey.swift; path = Sources/HotKey/HotKey.swift; sourceTree = "<group>"; };
+		FA3777D4D3F73B7470E5CB28B39EFF1A /* MPAnalyticsConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPAnalyticsConfiguration.m; path = GoogleAnalyticsTracker/MPAnalyticsConfiguration.m; sourceTree = "<group>"; };
+		FC9BB4D03C1DFBBF1BA5F3518F24E842 /* NSEventModifierFlags+HotKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSEventModifierFlags+HotKey.swift"; path = "Sources/HotKey/NSEventModifierFlags+HotKey.swift"; sourceTree = "<group>"; };
+		FD8311D1CC4A278831FDFDFB762448C1 /* MPAnalyticsDebugWindowController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPAnalyticsDebugWindowController.h; path = GoogleAnalyticsTracker/MPAnalyticsDebugWindowController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,17 +109,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CA03C1B1A587CE2BD35AE1B03E0447FE /* Frameworks */ = {
+		316CB94898536EEE94BD618B20808E5A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				146D324FD2C1887F2FB6C273B4CDBBB7 /* Cocoa.framework in Frameworks */,
+				8A346C6EBA5C5A0C432DBC3720356580 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43898C93F0DC49BDB971AAE91B131E2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				331F6B2F84B8C2A7BB3417769E41B006 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D2AE3D4AA174FEF468CB0DB2CDD8708 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B3C59FE9711A960BFCF0483A9083D75C /* AnalyticsWindow.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		1912835CE5E7438FC00D85FE58418E86 /* OS X */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,19 +163,12 @@
 			path = "Target Support Files/Pods-kTranslate";
 			sourceTree = "<group>";
 		};
-		66673079F50E8EFCA50F7F5C3DA49E41 /* Pods */ = {
+		340ABF4DD6894149BB5998AA5B09F8B5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AD3B263D0F3BC54DC354B270820320F0 /* HotKey */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		8235D292C2A58D5BD7743408488A830B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5A52DC72B0047A0231E4DCDB892DE2BE /* HotKey.framework */,
-				8B3290A7C44637C27E36C12B9A650CBD /* Pods_kTranslate.framework */,
+				58645FC878B874C4D172807F386C0372 /* GoogleAnalyticsTracker.framework */,
+				EBCC97BC02AAEF3A32A6916702400406 /* HotKey.framework */,
+				027A9A38723C2EDABDEAB5014C3544A9 /* Pods_kTranslate.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,18 +181,51 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AD3B263D0F3BC54DC354B270820320F0 /* HotKey */ = {
+		A92E0A6DF9F90D979F654CE559510166 /* Google-Analytics-for-OS-X */ = {
 			isa = PBXGroup;
 			children = (
-				375DD84F77DAD7D40EFD7D1F40E0F912 /* HotKey.swift */,
-				11D5F89C819E4D5C41F36B9027C1D8CE /* HotKeysController.swift */,
-				24DA3A4917E43D02462914F577E42B58 /* Key.swift */,
-				410E280074895780D2BF089A8C129243 /* KeyCombo.swift */,
-				2829B8257EFC040B9E57B94A52BF34B0 /* NSEventModifierFlags+HotKey.swift */,
-				FAF0C563047228692F10C85B6F8E3C2C /* Support Files */,
+				D67F39C0E4E53257CB6899B6BC5DCF7D /* GoogleAnalyticsTracker.h */,
+				52E2EE65C196D6E868657B9E35EFD658 /* MPAnalyticsConfiguration.h */,
+				FA3777D4D3F73B7470E5CB28B39EFF1A /* MPAnalyticsConfiguration.m */,
+				FD8311D1CC4A278831FDFDFB762448C1 /* MPAnalyticsDebugWindowController.h */,
+				1FD5218B4D6CFE0399D10E648BD5A3E8 /* MPAnalyticsDebugWindowController.m */,
+				0E742A785F3F8884952B7F408367EA90 /* MPAnalyticsParamBuilder.h */,
+				4B575ED67BD839E4C888AD0E1BD8EED1 /* MPAnalyticsParamBuilder.m */,
+				0A300DC9BD1A93B162A1E91CC9CE236B /* MPGoogleAnalyticsTracker.h */,
+				EB1E4428FB347EDAE8FE5583F18F439B /* MPGoogleAnalyticsTracker.m */,
+				0D2AE3D4AA174FEF468CB0DB2CDD8708 /* Resources */,
+				B5DEFE8B28D9C9B68E78F123C71A00AE /* Support Files */,
 			);
-			name = HotKey;
-			path = HotKey;
+			name = "Google-Analytics-for-OS-X";
+			path = "Google-Analytics-for-OS-X";
+			sourceTree = "<group>";
+		};
+		B5DEFE8B28D9C9B68E78F123C71A00AE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EC7DACD599EF02F64538C0469110236D /* Google-Analytics-for-OS-X.modulemap */,
+				A5D44D1CDF1F1B6C5BB1930919478B27 /* Google-Analytics-for-OS-X.xcconfig */,
+				0C6DE821A2C2A1CBBBC6055D5F63DC17 /* Google-Analytics-for-OS-X-dummy.m */,
+				EC26136FC1D9ABEE339B8D0F79C9C4E1 /* Google-Analytics-for-OS-X-Info.plist */,
+				C3CC4EF406047555E07F59708065CED2 /* Google-Analytics-for-OS-X-prefix.pch */,
+				9DBD816ACF43D25EB12FCBCCFB836B43 /* Google-Analytics-for-OS-X-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Google-Analytics-for-OS-X";
+			sourceTree = "<group>";
+		};
+		C83D1800FD03F9A97A81EC42529FC292 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D61C426D430514BB55E2216497F2E608 /* HotKey.modulemap */,
+				93C8D0BE3F2A096A3FC9F74CC10D5370 /* HotKey.xcconfig */,
+				1B3F71C56E5CA16316A0E106F0D55131 /* HotKey-dummy.m */,
+				098697A27CA48374457CB71B2CDFDE59 /* HotKey-Info.plist */,
+				F29511E1CD2CD30EA50F832A299522F3 /* HotKey-prefix.pch */,
+				51C08BD9C64C07F719B300E7FEE7F6E8 /* HotKey-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/HotKey";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -154,10 +233,19 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				A3CDB250FFEFB42CA2C68F1FBD92997D /* Frameworks */,
-				66673079F50E8EFCA50F7F5C3DA49E41 /* Pods */,
-				8235D292C2A58D5BD7743408488A830B /* Products */,
+				D1A01EEE2E9F487DE95F1E84ADE5DE46 /* Pods */,
+				340ABF4DD6894149BB5998AA5B09F8B5 /* Products */,
 				DC726E18F76ED955F30D9C2147C1F96F /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D1A01EEE2E9F487DE95F1E84ADE5DE46 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A92E0A6DF9F90D979F654CE559510166 /* Google-Analytics-for-OS-X */,
+				FD306E268689710AE5B726D0D714EBAA /* HotKey */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		DC726E18F76ED955F30D9C2147C1F96F /* Targets Support Files */ = {
@@ -168,23 +256,31 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		FAF0C563047228692F10C85B6F8E3C2C /* Support Files */ = {
+		FD306E268689710AE5B726D0D714EBAA /* HotKey */ = {
 			isa = PBXGroup;
 			children = (
-				4B3B14C1279B85C8AFB1FDD3B26C6F9E /* HotKey.modulemap */,
-				47B846D6DCE91A7B2251F039043340EA /* HotKey.xcconfig */,
-				6161A25A04DF3DE074AB1A59B3DDEDDE /* HotKey-dummy.m */,
-				DF3F389E38DF38291814FEE0AA532C76 /* HotKey-Info.plist */,
-				0080F08591E1353C4F844260FC0AFE59 /* HotKey-prefix.pch */,
-				48DC2CDBFB37389EB7782A74940C6680 /* HotKey-umbrella.h */,
+				F6019FE95CAA1E5EC119B14342A89651 /* HotKey.swift */,
+				42384B9D02BD8D915B05BE58509D7A20 /* HotKeysController.swift */,
+				AAAF3AC8E8396A53105B07646E86EEFC /* Key.swift */,
+				413AA9FDBE79EF3C667503318110AE53 /* KeyCombo.swift */,
+				FC9BB4D03C1DFBBF1BA5F3518F24E842 /* NSEventModifierFlags+HotKey.swift */,
+				C83D1800FD03F9A97A81EC42529FC292 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/HotKey";
+			name = HotKey;
+			path = HotKey;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		22BF8A3C28B04905E2119B901ED2DD80 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				466930C77A3F36A43992617C4EF920E8 /* Pods-kTranslate-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B107E0ECD1310B3F35137F058AE6D5A1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -193,34 +289,58 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F529EB58AD262F286F43FAEEC8782EA7 /* Headers */ = {
+		B27559F40F2B13412772282CE0C9746B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE9631B1D138681C6C8F2677F8985BE2 /* Pods-kTranslate-umbrella.h in Headers */,
+				B0C376DF41FEA465602862E0FB412539 /* Google-Analytics-for-OS-X-umbrella.h in Headers */,
+				B6D52FE8F5D307F01D1643F6BA58BDBF /* GoogleAnalyticsTracker.h in Headers */,
+				1AE6589A3E5DC9FCB381DF9CD28C7B3D /* MPAnalyticsConfiguration.h in Headers */,
+				7D3733BF4F6A08D60DDECF403CF919CA /* MPAnalyticsDebugWindowController.h in Headers */,
+				C79E87415FAF50D1EF452E0DF2B7317D /* MPAnalyticsParamBuilder.h in Headers */,
+				5140AE7519063075A4EE1B88460EC163 /* MPGoogleAnalyticsTracker.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A48E14F405C2853C45DA7873F84CA070 /* Pods-kTranslate */ = {
+		99C0D851D40BE5190F7E0E8D04F7F9BD /* Google-Analytics-for-OS-X */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 87B2DC091C3D90EEB7A63ECD0E292271 /* Build configuration list for PBXNativeTarget "Pods-kTranslate" */;
+			buildConfigurationList = F596B4FCB8203183B772733F43119A14 /* Build configuration list for PBXNativeTarget "Google-Analytics-for-OS-X" */;
 			buildPhases = (
-				F529EB58AD262F286F43FAEEC8782EA7 /* Headers */,
-				67EA312110946AA41F241088FDA06CD1 /* Sources */,
-				CA03C1B1A587CE2BD35AE1B03E0447FE /* Frameworks */,
-				1F2D9D9E534C805708D3B930D6914522 /* Resources */,
+				B27559F40F2B13412772282CE0C9746B /* Headers */,
+				3C4068D7A5090E5DB2690D294046AA1F /* Sources */,
+				316CB94898536EEE94BD618B20808E5A /* Frameworks */,
+				3B6655DB6ADA7460162FDE2DE3D8F51C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				86D6561003CC02FAFAF6BF6A7E44DF64 /* PBXTargetDependency */,
+			);
+			name = "Google-Analytics-for-OS-X";
+			productName = "Google-Analytics-for-OS-X";
+			productReference = 58645FC878B874C4D172807F386C0372 /* GoogleAnalyticsTracker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A48E14F405C2853C45DA7873F84CA070 /* Pods-kTranslate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9CCE02EB7EEC54A56E9AC0FC694ABC6 /* Build configuration list for PBXNativeTarget "Pods-kTranslate" */;
+			buildPhases = (
+				22BF8A3C28B04905E2119B901ED2DD80 /* Headers */,
+				44CAD71D679076BE024AD5E701657CB0 /* Sources */,
+				43898C93F0DC49BDB971AAE91B131E2E /* Frameworks */,
+				C36F69E42A16664FA6EF5936423A9194 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BAB7C4628A27055BAE73D55A1CDCD9F0 /* PBXTargetDependency */,
+				BFEA4041EB29F3639D642241CAEB691B /* PBXTargetDependency */,
 			);
 			name = "Pods-kTranslate";
 			productName = "Pods-kTranslate";
-			productReference = 8B3290A7C44637C27E36C12B9A650CBD /* Pods_kTranslate.framework */;
+			productReference = 027A9A38723C2EDABDEAB5014C3544A9 /* Pods_kTranslate.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DB4D977E4336D9F2E9E510A33CD1DB6D /* HotKey */ = {
@@ -238,7 +358,7 @@
 			);
 			name = HotKey;
 			productName = HotKey;
-			productReference = 5A52DC72B0047A0231E4DCDB892DE2BE /* HotKey.framework */;
+			productReference = EBCC97BC02AAEF3A32A6916702400406 /* HotKey.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -258,10 +378,11 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 8235D292C2A58D5BD7743408488A830B /* Products */;
+			productRefGroup = 340ABF4DD6894149BB5998AA5B09F8B5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				99C0D851D40BE5190F7E0E8D04F7F9BD /* Google-Analytics-for-OS-X */,
 				DB4D977E4336D9F2E9E510A33CD1DB6D /* HotKey */,
 				A48E14F405C2853C45DA7873F84CA070 /* Pods-kTranslate */,
 			);
@@ -269,10 +390,11 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1F2D9D9E534C805708D3B930D6914522 /* Resources */ = {
+		3B6655DB6ADA7460162FDE2DE3D8F51C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB521D2642AF81ACAC99127CC2C3FEAA /* AnalyticsWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,14 +405,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C36F69E42A16664FA6EF5936423A9194 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		67EA312110946AA41F241088FDA06CD1 /* Sources */ = {
+		3C4068D7A5090E5DB2690D294046AA1F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24E6408EA6BBE113F8D859846F27D52F /* Pods-kTranslate-dummy.m in Sources */,
+				BE469FC4062B7E461D366F5CC36DE343 /* Google-Analytics-for-OS-X-dummy.m in Sources */,
+				03E341A9A2CC007298299FFF7EF4582F /* MPAnalyticsConfiguration.m in Sources */,
+				5FEBF93354357C21066C67EF518B43DB /* MPAnalyticsDebugWindowController.m in Sources */,
+				2416378BAC540F029919D9727F9D265C /* MPAnalyticsParamBuilder.m in Sources */,
+				A93EC377434EEE0C40D4D98E026E973C /* MPGoogleAnalyticsTracker.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44CAD71D679076BE024AD5E701657CB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F6449672C755E5FCD33AB137F772C7D /* Pods-kTranslate-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,11 +451,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		86D6561003CC02FAFAF6BF6A7E44DF64 /* PBXTargetDependency */ = {
+		BAB7C4628A27055BAE73D55A1CDCD9F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Google-Analytics-for-OS-X";
+			target = 99C0D851D40BE5190F7E0E8D04F7F9BD /* Google-Analytics-for-OS-X */;
+			targetProxy = A985EE275AF1680E702C11A0AA408BBF /* PBXContainerItemProxy */;
+		};
+		BFEA4041EB29F3639D642241CAEB691B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = HotKey;
 			target = DB4D977E4336D9F2E9E510A33CD1DB6D /* HotKey */;
-			targetProxy = C985800DDD905DDF504768E0A2F1CFE2 /* PBXContainerItemProxy */;
+			targetProxy = 26C47E735A5FDBC54253BFEA267D2FE7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -443,7 +590,7 @@
 			};
 			name = Debug;
 		};
-		B871B711B93F863765488A7167959A85 /* Release */ = {
+		9F223583ABFA31850B013861C23A8522 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6C61D1FD39B9CBF73C84461F0D60F28E /* Pods-kTranslate.release.xcconfig */;
 			buildSettings = {
@@ -483,7 +630,7 @@
 			};
 			name = Release;
 		};
-		CA5D5E47390C61FD930261371E336F5D /* Debug */ = {
+		C9CAFB7C5C80CB1063BFA54E027781C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 006D02BA8D9916A1A257D421836110FA /* Pods-kTranslate.debug.xcconfig */;
 			buildSettings = {
@@ -525,7 +672,7 @@
 		};
 		CC70C08CDF4518150EE23900889CD126 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47B846D6DCE91A7B2251F039043340EA /* HotKey.xcconfig */;
+			baseConfigurationReference = 93C8D0BE3F2A096A3FC9F74CC10D5370 /* HotKey.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
@@ -562,7 +709,7 @@
 		};
 		D8C14900D7FC0762DECCB584336C55D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47B846D6DCE91A7B2251F039043340EA /* HotKey.xcconfig */;
+			baseConfigurationReference = 93C8D0BE3F2A096A3FC9F74CC10D5370 /* HotKey.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
@@ -597,6 +744,80 @@
 			};
 			name = Debug;
 		};
+		F1B83B68B5F1ECB03279337281614E48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5D44D1CDF1F1B6C5BB1930919478B27 /* Google-Analytics-for-OS-X.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/Google-Analytics-for-OS-X/Google-Analytics-for-OS-X-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Google-Analytics-for-OS-X/Google-Analytics-for-OS-X-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = "Target Support Files/Google-Analytics-for-OS-X/Google-Analytics-for-OS-X.modulemap";
+				PRODUCT_MODULE_NAME = GoogleAnalyticsTracker;
+				PRODUCT_NAME = GoogleAnalyticsTracker;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F9F167524AE7F112E6CE9B807A042F21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5D44D1CDF1F1B6C5BB1930919478B27 /* Google-Analytics-for-OS-X.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/Google-Analytics-for-OS-X/Google-Analytics-for-OS-X-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Google-Analytics-for-OS-X/Google-Analytics-for-OS-X-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MODULEMAP_FILE = "Target Support Files/Google-Analytics-for-OS-X/Google-Analytics-for-OS-X.modulemap";
+				PRODUCT_MODULE_NAME = GoogleAnalyticsTracker;
+				PRODUCT_NAME = GoogleAnalyticsTracker;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -618,11 +839,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		87B2DC091C3D90EEB7A63ECD0E292271 /* Build configuration list for PBXNativeTarget "Pods-kTranslate" */ = {
+		D9CCE02EB7EEC54A56E9AC0FC694ABC6 /* Build configuration list for PBXNativeTarget "Pods-kTranslate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CA5D5E47390C61FD930261371E336F5D /* Debug */,
-				B871B711B93F863765488A7167959A85 /* Release */,
+				C9CAFB7C5C80CB1063BFA54E027781C5 /* Debug */,
+				9F223583ABFA31850B013861C23A8522 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F596B4FCB8203183B772733F43119A14 /* Build configuration list for PBXNativeTarget "Google-Analytics-for-OS-X" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1B83B68B5F1ECB03279337281614E48 /* Debug */,
+				F9F167524AE7F112E6CE9B807A042F21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

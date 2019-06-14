@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A48E14F405C2853C45DA7873F84CA070"
-               BuildableName = "Pods_kTranslate.framework"
-               BlueprintName = "Pods-kTranslate"
+               BlueprintIdentifier = "99C0D851D40BE5190F7E0E8D04F7F9BD"
+               BuildableName = "GoogleAnalyticsTracker.framework"
+               BlueprintName = "Google-Analytics-for-OS-X"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

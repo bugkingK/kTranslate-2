@@ -1,16 +1,20 @@
 PODS:
+  - Google-Analytics-for-OS-X (1.1)
   - HotKey (0.1.1)
 
 DEPENDENCIES:
+  - Google-Analytics-for-OS-X
   - HotKey
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Google-Analytics-for-OS-X
     - HotKey
 
 SPEC CHECKSUMS:
+  Google-Analytics-for-OS-X: 66376760d74d980fd81ad48b125c5496d3d4402a
   HotKey: 0be143fd015544a63c51be6dc2066dbf455ced72
 
-PODFILE CHECKSUM: 06ba602c141e0a614b5531f2436c8764c6a1acfd
+PODFILE CHECKSUM: 61ec068188aabc7c23cb1237de00c29bd50857e6
 
 COCOAPODS: 1.7.0.rc.1

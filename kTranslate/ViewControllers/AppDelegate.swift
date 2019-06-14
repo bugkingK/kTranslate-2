@@ -7,11 +7,15 @@
 //
 
 import Cocoa
+import GoogleAnalyticsTracker
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        MPGoogleAnalyticsTracker.activate(.init(analyticsIdentifier: "UA-141906441-2"))
+        MPGoogleAnalyticsTracker.trackScreen("Main View")
+        
         PopoverController.sharedInstance()
         HotKeyManager.shared.registerHotKey()
     }

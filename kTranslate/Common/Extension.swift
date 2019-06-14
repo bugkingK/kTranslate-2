@@ -8,10 +8,7 @@
 
 import Cocoa
 
-enum UserDefaults_DEFINE_KEY:String {
-    case domainKey = "number_translate_domain"
-    case frameKey = "frameKey"
-}
+
 
 extension NSWindowController {
     open func showPopupView(_ sender:Any?) {
