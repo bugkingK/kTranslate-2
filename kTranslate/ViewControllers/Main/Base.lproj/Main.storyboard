@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14810.11"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -685,25 +685,11 @@
                                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="MNx-w8-IVq">
                                                 <rect key="frame" x="0.0" y="-2" width="350" height="5"/>
                                             </box>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BGv-dx-cL2">
-                                                <rect key="frame" x="20" y="15" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="20" id="Pzv-f6-KSy"/>
-                                                    <constraint firstAttribute="height" constant="20" id="Siz-ir-Hjw"/>
-                                                </constraints>
-                                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSListViewTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyUpOrDown" inset="2" id="QFE-ps-gI6">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="onClickSideMenu:" target="XfG-lQ-9wD" id="Vj6-L4-qy2"/>
-                                                </connections>
-                                            </button>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VqE-og-UHz">
-                                                <rect key="frame" x="120" y="18" width="111" height="15"/>
+                                                <rect key="frame" x="128" y="4" width="95" height="13"/>
                                                 <buttonCell key="cell" type="bevel" title="Command+Shift+E" bezelStyle="regularSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="9Ct-LS-cOC">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="cellTitle"/>
+                                                    <font key="font" metaFont="system" size="10"/>
                                                 </buttonCell>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
@@ -712,7 +698,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <stackView distribution="fillEqually" orientation="horizontal" alignment="centerY" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bai-zU-Gi5">
-                                                <rect key="frame" x="274" y="15" width="66" height="20"/>
+                                                <rect key="frame" x="142" y="20" width="66" height="20"/>
                                                 <subviews>
                                                     <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CRd-Mc-TLg" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -810,18 +796,49 @@
                                                     <real value="3.4028234663852886e+38"/>
                                                 </customSpacing>
                                             </stackView>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BGv-dx-cL2" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
+                                                <rect key="frame" x="320" y="15" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="Pzv-f6-KSy"/>
+                                                    <constraint firstAttribute="height" constant="20" id="Siz-ir-Hjw"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="smallSquare" title="I" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyUpOrDown" inset="2" id="QFE-ps-gI6">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.93425506349999998" green="0.50727903839999999" blue="0.69381058220000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                        <color key="value" red="0.93425506349999998" green="0.50727903839999999" blue="0.69381058220000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="isDisableBgColor">
+                                                        <color key="value" red="0.93425506349999998" green="0.50727903839999999" blue="0.69381058220000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onClickSideMenu:" target="XfG-lQ-9wD" id="Vj6-L4-qy2"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="2Yh-CW-z6F"/>
-                                            <constraint firstItem="Bai-zU-Gi5" firstAttribute="centerY" secondItem="eY6-HP-nRc" secondAttribute="centerY" id="7fp-vX-Tca"/>
-                                            <constraint firstItem="BGv-dx-cL2" firstAttribute="leading" secondItem="eY6-HP-nRc" secondAttribute="leading" constant="20" id="CTh-xp-EIh"/>
-                                            <constraint firstAttribute="trailing" secondItem="Bai-zU-Gi5" secondAttribute="trailing" constant="10" id="KKo-nA-iXw"/>
-                                            <constraint firstItem="VqE-og-UHz" firstAttribute="centerX" secondItem="eY6-HP-nRc" secondAttribute="centerX" id="aoO-0e-0Gb"/>
+                                            <constraint firstItem="Bai-zU-Gi5" firstAttribute="centerX" secondItem="eY6-HP-nRc" secondAttribute="centerX" id="CZw-Sn-HPK"/>
+                                            <constraint firstItem="Bai-zU-Gi5" firstAttribute="top" secondItem="eY6-HP-nRc" secondAttribute="top" constant="10" id="Hnx-Kk-xW3"/>
+                                            <constraint firstItem="VqE-og-UHz" firstAttribute="top" secondItem="Bai-zU-Gi5" secondAttribute="bottom" constant="3" id="OcI-la-U1u"/>
+                                            <constraint firstAttribute="trailing" secondItem="BGv-dx-cL2" secondAttribute="trailing" constant="10" id="Pyk-8s-PMz"/>
                                             <constraint firstAttribute="trailing" secondItem="MNx-w8-IVq" secondAttribute="trailing" id="dPk-Wr-v0I"/>
                                             <constraint firstAttribute="bottom" secondItem="MNx-w8-IVq" secondAttribute="bottom" id="da5-o2-wd6"/>
                                             <constraint firstItem="BGv-dx-cL2" firstAttribute="centerY" secondItem="eY6-HP-nRc" secondAttribute="centerY" id="l5R-cr-FBQ"/>
                                             <constraint firstItem="MNx-w8-IVq" firstAttribute="leading" secondItem="eY6-HP-nRc" secondAttribute="leading" id="mkq-tS-DEE"/>
-                                            <constraint firstItem="VqE-og-UHz" firstAttribute="centerY" secondItem="eY6-HP-nRc" secondAttribute="centerY" id="scA-xQ-8bh"/>
+                                            <constraint firstItem="VqE-og-UHz" firstAttribute="centerX" secondItem="eY6-HP-nRc" secondAttribute="centerX" id="zQA-5Q-8PX"/>
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="jyz-5m-OY4">
@@ -873,7 +890,4 @@
             <point key="canvasLocation" x="104" y="429"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="NSListViewTemplate" width="14" height="10"/>
-    </resources>
 </document>
