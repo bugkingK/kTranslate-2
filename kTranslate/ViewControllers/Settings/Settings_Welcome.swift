@@ -13,12 +13,9 @@ class Settings_Welcome: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        m_appName.stringValue = BundleInfo.bundleName
     }
     
-    override func viewWillAppear() {
-        super.viewWillAppear()
-//        preferredContentSize = NSSize(width: 500, height: 300)
-    }
-    
+    @IBOutlet weak var m_appName: NSTextField!
     
 }

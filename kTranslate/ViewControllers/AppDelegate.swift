@@ -13,7 +13,7 @@ import GoogleAnalyticsTracker
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        UserDefaults.standard.DEFINE_Clear()
+//        UserDefaults.standard.DEFINE_Clear()
         MPGoogleAnalyticsTracker.activate(.init(analyticsIdentifier: "UA-141906441-2"))
         
         self.initUserDefaultKey()
@@ -29,17 +29,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private func initUserDefaultKey() {
         let defaults = UserDefaults.standard
-        if defaults.object(forKey: UserDefaults_DEFINE_KEY.initKey.rawValue) == nil {
-            defaults.set(true, forKey: UserDefaults_DEFINE_KEY.initKey.rawValue)
-            defaults.set("400", forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)
-            defaults.set("500", forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)
-            defaults.set(0, forKey:  UserDefaults_DEFINE_KEY.domainKey.rawValue)
-            AutoLogin.setEnabled(enabled: true)
-            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.launch, action: AnalyticsAction.new, label: "", value: 0)
-        } else {
-            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.launch, action: AnalyticsAction.existing, label: "", value: 0)
+        let initKey = defaults.bool(forKey: UserDefaults_DEFINE_KEY.initKey.rawValue)
+        
+        if initKey {
+            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.kTranslate, action: AnalyticsAction.launch, label: AnalyticsLabel.existing, value: 0)
+            return
         }
         
+        defaults.set("400", forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)
+        defaults.set("500", forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)
+        defaults.set(0, forKey:  UserDefaults_DEFINE_KEY.domainKey.rawValue)
+        UserDefaults.standard.synchronize()
+        AutoLogin.setEnabled(enabled: true)
+        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.kTranslate, action: AnalyticsAction.launch, label: AnalyticsLabel.new, value: 0)
     }
     
     private func showWelcome() {

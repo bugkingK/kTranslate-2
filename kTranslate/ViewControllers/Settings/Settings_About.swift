@@ -16,35 +16,34 @@ class Settings_About: NSViewController {
         // Do view setup here.
         m_appName.stringValue = BundleInfo.bundleName
         m_lbVersion.stringValue = "Version \(BundleInfo.version)"
-        m_btnEmail.target = self
-        m_btnEmail.action = #selector(onClickEmail)
-        m_btnGit.target = self
-        m_btnGit.action = #selector(onClickGit)
-        m_btnPage.target = self
-        m_btnPage.action = #selector(onClickPage)
+        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.about, action: AnalyticsAction.itself, label: "", value: 0)
     }
+    
     @IBOutlet weak var m_lbVersion: NSTextField!
     @IBOutlet weak var m_appName: NSTextField!
-    @IBOutlet weak var m_btnEmail: NSButton!
-    @IBOutlet weak var m_btnGit: NSButton!
-    @IBOutlet weak var m_btnPage: NSButton!
-    
-    @objc private func onClickEmail() {
-        let mailtoURL = URL(string: "mailto:myway0710@naver.com")!
-        NSWorkspace.shared.open(mailtoURL)
-        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.about, action: AnalyticsAction.openEmail, label: mailtoURL.absoluteString, value: 0)
-    }
-    
-    @objc private func onClickGit() {
-        let gitURL = URL(string: "https://github.com/bugkingK")!
-        NSWorkspace.shared.open(gitURL)
-        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.about, action: AnalyticsAction.viewOnGitHub, label: gitURL.absoluteString, value: 0)
-    }
-    
-    @objc private func onClickPage() {
-        let pageURL = URL(string: "http://blog.bugking.tk")!
-        NSWorkspace.shared.open(pageURL)
-        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.about, action: AnalyticsAction.viewOnPage, label: pageURL.absoluteString, value: 0)
+
+    @IBAction private func onClickBtnProfile(_ sender:NSButton) {
+        sender.state = .on
+        var url:URL?
+        var action:String?
+        
+        switch sender.tag {
+            case 0:
+                url = URL(string: "mailto:myway0710@naver.com")
+                action = AnalyticsAction.mail
+            case 1:
+                url = URL(string: "https://github.com/bugkingK")
+                action = AnalyticsAction.github
+            case 2:
+                url = URL(string: "http://blog.bugking.tk")
+                action = AnalyticsAction.page
+            default:
+                break
+        }
+        
+        guard let v_url = url, let v_action = action else { return }
+        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.about, action: v_action, label: "", value: 0)
+        NSWorkspace.shared.open(v_url)
     }
     
     

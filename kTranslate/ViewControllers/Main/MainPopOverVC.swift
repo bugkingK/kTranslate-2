@@ -8,6 +8,7 @@
 
 import Cocoa
 import WebKit
+import GoogleAnalyticsTracker
 
 class MainPopOverVC: NSViewController {
 
@@ -104,6 +105,8 @@ class MainPopOverVC: NSViewController {
         }
         let windowVC = CTWindowController(window: NSWindow(contentViewController: vc))
         windowVC.showPopupView(self)
+        
+        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.itself, label: "", value: 0)
     }
     
     @objc private func onExit() {
@@ -117,7 +120,7 @@ class MainPopOverVC: NSViewController {
     
     private func loadWebTranslate(idx:Int) {
         var url:URL?
-        
+        var label:String?
         guard let menu_trans = m_side_menu.item(at: 3)?.submenu else {
             return
         }
@@ -132,16 +135,20 @@ class MainPopOverVC: NSViewController {
         switch idx {
         case 0:
             url = TranslatorURL.googleURL
+            label = AnalyticsLabel.google
         case 1:
             url = TranslatorURL.papagoURL
+            label = AnalyticsLabel.papago
         case 2:
             url = TranslatorURL.kakaoURL
+            label = AnalyticsLabel.kakao
         default: break
         }
         
         guard let v_url = url else { return }
         let request = URLRequest(url: v_url)
         m_wvMain.mainFrame.load(request)
+        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.mTranslator, label: label, value: 0)
     }
     
     private func loadingBar(show:Bool) {

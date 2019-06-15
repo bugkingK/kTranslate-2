@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import GoogleAnalyticsTracker
 
 class Settings_Left: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
 
@@ -42,11 +41,6 @@ class Settings_Left: NSViewController, NSTableViewDelegate, NSTableViewDataSourc
         }
     }
     
-    override func viewDidAppear() {
-        super.viewDidAppear()
-        self.view.window?.delegate = self
-    }
-    
     @IBOutlet weak var m_tvMain: NSTableView!
     private weak var m_tbMain: NSTabViewController!
     private var m_arrMenu:[String] = ["Welcome", "Preferences", "About"]
@@ -75,22 +69,44 @@ class Settings_Left: NSViewController, NSTableViewDelegate, NSTableViewDataSourc
     
 }
 
-extension Settings_Left: NSWindowDelegate {
-    func windowWillClose(_ notification: Notification) {
-        let b_dontShow = UserDefaults.standard.bool(forKey: UserDefaults_DEFINE_KEY.dontShowKey.rawValue)
+//extension Settings_Left: NSWindowDelegate {
+//    func windowWillClose(_ notification: Notification) {
+//        print("left close")
+//    }
+//    func windowWillClose(_ notification: Notification) {
+//        let b_dontShow = UserDefaults.standard.bool(forKey: UserDefaults_DEFINE_KEY.dontShowKey.rawValue)
+//
+//        if !b_dontShow {
+//            CommonUtil.alertMessageWithKeep("kTranslate will continue to run in the background", "Do not show this message agin") {
+//                UserDefaults.standard.set(true, forKey: UserDefaults_DEFINE_KEY.dontShowKey.rawValue)
+//            }
+//        }
+
+//        let defaults = UserDefaults.standard
+//        let bool_init = defaults.bool(forKey: UserDefaults_DEFINE_KEY.initKey.rawValue)
+//
+//        if !bool_init {
+//            defaults.set(true, forKey: UserDefaults_DEFINE_KEY.initKey.rawValue)
+//
+//            let idx_domain = defaults.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
+//            let value_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)!
+//            let value_height = defaults.string(forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)!
+//
+//            var action_domain:String?
+//            switch idx_domain {
+//            case 0:
+//                action_domain = AnalyticsAction.default_google
+//            case 1:
+//                action_domain = AnalyticsAction.default_papago
+//            case 2:
+//                action_domain = AnalyticsAction.default_kakao
+//            default: break
+//            }
+//
+//            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action: action_domain, label: "", value: 0)
+//            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action: "\(value_width)-\(value_height)", label:"", value: 0)
+//        }
         
-        if !b_dontShow {
-            CommonUtil.alertMessageWithKeep("kTranslate will continue to run in the background", "Do not show this message agin") {
-                UserDefaults.standard.set(true, forKey: UserDefaults_DEFINE_KEY.dontShowKey.rawValue)
-                
-                
-                //                MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.launch, action: AnalyticsAction.new, label: "", value: 0)
-                //                 Main Translator, start login, width-height
-                
-                
-            }
-        }
-        
-        PopoverController.sharedInstance().showPopover(sender: nil)
-    }
-}
+//        PopoverController.sharedInstance().showPopover(sender: nil)
+//    }
+//}

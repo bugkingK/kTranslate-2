@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-//import MASShortcut
+import GoogleAnalyticsTracker
 
 class Settings_Preferences: NSViewController, NSTextFieldDelegate {
 
@@ -39,14 +39,23 @@ class Settings_Preferences: NSViewController, NSTextFieldDelegate {
     private var m_arrGPK:[NSButton] = []
     private var m_preference_data:PreferenceData!
     struct PreferenceData {
-        var bLogin:Bool
-        var bHideStartup:Bool
         var nMainTranslator:Int
         var nWidth:String
         var nHeight:String
     }
     
     private func setupLayout() {
+        let defaults = UserDefaults.standard
+        let bAutoLogin:Bool = AutoLogin.enabled
+        m_btnAutoLogin.target = self
+        m_btnAutoLogin.action = #selector(toggleAutostart(_:))
+        m_btnAutoLogin.state = bAutoLogin ? .on : .off
+        
+        let bool_welcome = defaults.bool(forKey: UserDefaults_DEFINE_KEY.welcomeKey.rawValue)
+        m_btnWelcome.target = self
+        m_btnWelcome.action = #selector(toggleWelcome(_:))
+        m_btnWelcome.state = bool_welcome ? .on : .off
+        
         m_arrGPK = [m_btnG, m_btnP, m_btnK]
         let idx_domain = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
         for btn in m_arrGPK {
@@ -55,29 +64,16 @@ class Settings_Preferences: NSViewController, NSTextFieldDelegate {
             btn.state = btn.tag == idx_domain ? .on : .off
         }
         
-        let bAutoLogin:Bool = AutoLogin.enabled
-        m_btnAutoLogin.state = bAutoLogin ? .on : .off
-        m_btnAutoLogin.target = self
-        m_btnAutoLogin.action = #selector(toggleAutostart(_:))
+        let value_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)!
+        let value_height = defaults.string(forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)!
         m_cbWidth.target = self
         m_cbWidth.action = #selector(onClickWindowSize(_:))
         m_cbHeight.target = self
         m_cbHeight.action = #selector(onClickWindowSize(_:))
-        m_btnWelcome.target = self
-        m_btnWelcome.action = #selector(toggleWelcome(_:))
-        
-        let defaults = UserDefaults.standard
-        
-        let value_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)
-        let value_height = defaults.string(forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)
-        
         m_cbWidth.selectItem(withObjectValue: value_width)
         m_cbHeight.selectItem(withObjectValue: value_height)
         
-        let bool_welcome = defaults.bool(forKey: UserDefaults_DEFINE_KEY.welcomeKey.rawValue)
-        m_btnWelcome.state = bool_welcome ? .on : .off
-        
-//        m_preference_data = PreferenceData(bLogin: bAutoLogin, bHideStartup: bool_welcome, nMainTranslator: idx_domain, nWidth: value_width, nHeight: value_height)
+        m_preference_data = PreferenceData(nMainTranslator: idx_domain, nWidth: value_width, nHeight: value_height)
     }
     
     @objc func toggleAutostart(_ sender: NSButton) {
@@ -108,6 +104,54 @@ class Settings_Preferences: NSViewController, NSTextFieldDelegate {
 
 extension Settings_Preferences: NSWindowDelegate {
     func windowWillClose(_ notification: Notification) {
+        let defaults = UserDefaults.standard
+        let b_dontShow = defaults.bool(forKey: UserDefaults_DEFINE_KEY.dontShowKey.rawValue)
         
+        if !b_dontShow {
+            CommonUtil.alertMessageWithKeep("kTranslate will continue to run in the background", "Do not show this message agin") {
+                defaults.set(true, forKey: UserDefaults_DEFINE_KEY.dontShowKey.rawValue)
+            }
+        }
+        
+        let initKey = defaults.bool(forKey: UserDefaults_DEFINE_KEY.initKey.rawValue)
+        let idx_domain = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
+        let value_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)!
+        let value_height = defaults.string(forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)!
+        
+        if !initKey {
+            var label:String?
+            switch idx_domain {
+                case 0:
+                    label = AnalyticsLabel.google
+                case 1:
+                    label = AnalyticsLabel.papago
+                case 2:
+                    label = AnalyticsLabel.kakao
+                default: break
+            }
+            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.dTranslator, label: label, value: 0)
+            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.size, label:"\(value_width)-\(value_height)", value: 0)
+            
+        } else {
+            if m_preference_data.nMainTranslator != idx_domain {
+                var label:String?
+                switch idx_domain {
+                case 0:
+                    label = AnalyticsLabel.google
+                case 1:
+                    label = AnalyticsLabel.papago
+                case 2:
+                    label = AnalyticsLabel.kakao
+                default: break
+                }
+                MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.dTranslator, label: label, value: 0)
+            }
+            
+            if m_preference_data.nWidth != value_width || m_preference_data.nHeight != value_height {
+                MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.size, label:"\(value_width)-\(value_height)", value: 0)
+            }
+        }
+        
+        PopoverController.sharedInstance().showPopover(sender: self)
     }
 }

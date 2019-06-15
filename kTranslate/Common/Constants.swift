@@ -43,33 +43,37 @@ struct TranslatorURL {
 }
 
 struct AnalyticsCategory {
-    static let launch = "Launch"
-    static let popover = "Popover"
+    static let kTranslate = "kTranslate"
     static let preference = "Preference"
     static let about = "About"
 }
 
 struct AnalyticsAction {
-    static let new = "New User"
-    static let existing = "Existing User"
-    static let open = "Open"
-    static let close = "Close"
-    static let translator = "Translator" // Use `DictionaryName` as Label
-    static let search = "Search"
-    static let updateHotKey = "UpdateHotKey"
-    static let checkForUpdate = "CheckForUpdate"
-    static let viewOnGitHub = "ViewOnGitHub"
-    static let openEmail = "OpenEmail"
-    static let viewOnPage = "ViewOnPage"
+    static let itself = "Itself"
+    
+    // kTranslate
+    static let launch = "Launch"
+    static let popover = "Popover"
+    static let mTranslator = "Mtranslator"
+    
+    // preference
+    static let dTranslator = "Dtranslator"
+    static let size = "Size"
+    
+    // about
+    static let mail = "Mail"
+    static let github = "Github"
+    static let page = "Page"
 }
 
 struct AnalyticsLabel {
-    static let english = "English"
-    static let korean = "Korean"
-    static let hanja = "Hanja"
-    static let japanese = "Japanese"
-    static let chinese = "Chinese"
-    static let french = "French"
-    static let russian = "Russian"
-    static let spanish = "Spanish"
+    static let google = "Google"
+    static let papago = "Papago"
+    static let kakao = "Kakao"
+    
+    // kTranslate
+    static let new = "New"
+    static let existing = "Existing"
+    static let open = "Open"
+    static let close = "Close"
 }
