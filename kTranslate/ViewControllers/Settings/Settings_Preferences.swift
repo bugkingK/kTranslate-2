@@ -119,6 +119,7 @@ extension Settings_Preferences: NSWindowDelegate {
         let value_height = defaults.string(forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)!
         
         if !initKey {
+            defaults.set(true, forKey: UserDefaults_DEFINE_KEY.initKey.rawValue)
             var label:String?
             switch idx_domain {
                 case 0:

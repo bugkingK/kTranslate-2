@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		85942B8522B3FE0E00F85E71 /* Procedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85942B8422B3FE0E00F85E71 /* Procedure.swift */; };
 		85B255A622AFDC470084272A /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B255A522AFDC470084272A /* ServiceManagement.framework */; };
 		85DE7D5422AFD3FD00568C80 /* CTWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */; };
 		B819391F6A17D3594B55EF00 /* Pods_kTranslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E349CDD74F97BC916CC54B /* Pods_kTranslate.framework */; };
@@ -48,7 +47,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		85942B8422B3FE0E00F85E71 /* Procedure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Procedure.swift; sourceTree = "<group>"; };
 		85B255A522AFDC470084272A /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWindowController.swift; sourceTree = "<group>"; };
 		9B40A2464413ED268A050DE7 /* Pods-kTranslate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.debug.xcconfig"; path = "Target Support Files/Pods-kTranslate/Pods-kTranslate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 				D2D3B87922AF854E0086909D /* Extension.swift */,
 				85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */,
 				D2CFDD2322B1E72E0056314B /* CTCircleButton.swift */,
-				85942B8422B3FE0E00F85E71 /* Procedure.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -396,7 +393,6 @@
 				85DE7D5422AFD3FD00568C80 /* CTWindowController.swift in Sources */,
 				D22A423722B32D1800ADE25C /* Constants.swift in Sources */,
 				D2D3B87A22AF854E0086909D /* Extension.swift in Sources */,
-				85942B8522B3FE0E00F85E71 /* Procedure.swift in Sources */,
 				D2CFDD2422B1E72E0056314B /* CTCircleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
