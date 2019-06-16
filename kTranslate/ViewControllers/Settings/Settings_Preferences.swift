@@ -8,6 +8,7 @@
 
 import Cocoa
 import GoogleAnalyticsTracker
+import MASShortcut
 
 class Settings_Preferences: NSViewController {
 
@@ -29,7 +30,7 @@ class Settings_Preferences: NSViewController {
     
     @IBOutlet weak var m_btnAutoLogin: NSButton!
     @IBOutlet weak var m_btnWelcome: NSButton!
-    @IBOutlet weak var m_tfShortCut: NSTextField!
+    @IBOutlet weak var m_masShortcut: MASShortcutView!
     
     @IBOutlet weak var m_cbWidth: NSComboBox!
     @IBOutlet weak var m_cbHeight: NSComboBox!
@@ -75,6 +76,11 @@ class Settings_Preferences: NSViewController {
         m_cbHeight.selectItem(withObjectValue: value_height)
         
         m_preference_data = PreferenceData(nMainTranslator: idx_domain, nWidth: value_width, nHeight: value_height)
+        
+//        self.m_masShortcut.associatedUserDefaultsKey = globalShortcut
+//        self.m_masShortcut.shortcutValue = MASShortcut(keyCode: 14, modifierFlags: 0)
+        
+//        m_masShortcut.bind(.visible, to: self, withKeyPath: <#T##String#>, options: <#T##[NSBindingOption : Any]?#>)
     }
     
     @objc func toggleAutostart(_ sender: NSButton) {

@@ -7,25 +7,25 @@
 //
 
 import Cocoa
-import HotKey
+import MASShortcut
 
 class HotKeyManager: NSObject {
     static let shared = HotKeyManager()
-    
-    private var toggleKey: HotKey? {
-        didSet {
-            guard let toggleKey = toggleKey else {
-                return
-            }
-            
-            toggleKey.keyDownHandler = { [weak self] in
-                PopoverController.sharedInstance().togglePopover(self)
-            }
-        }
-    }
+    private let globalShortcut = "GlobalShortcut"
+//    private var toggleKey: HotKey? {
+//        didSet {
+//            guard let toggleKey = toggleKey else {
+//                return
+//            }
+//
+//            toggleKey.keyDownHandler = { [weak self] in
+//                PopoverController.sharedInstance().togglePopover(self)
+//            }
+//        }
+//    }
     
     public func registerHotKey() {
-        toggleKey = HotKey(keyCombo: KeyCombo(key: .e, modifiers: [.command, .shift]))
+//        toggleKey = HotKey(keyCombo: KeyCombo(key: .e, modifiers: [.command, .shift]))
         
         guard let fir_menu = NSApplication.shared.mainMenu?.items.first?.submenu?.items else {
             return
@@ -46,6 +46,11 @@ class HotKeyManager: NSObject {
             menu.target = vc_main
             menu.action = #selector(vc_main.onChangeTranslate(_:))
         }
+    }
+    
+    public func registerHotKey(shortcutView:MASShortcutView) {
+        shortcutView.associatedUserDefaultsKey = globalShortcut
+//        shortcutView.shortcutValue = MASShortcut(keyCode: 14, modifierFlags: [.])
     }
     
     @objc func onPreperences() {

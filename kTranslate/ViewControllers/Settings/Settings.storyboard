@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14810.11"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -97,7 +97,7 @@
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
                                                                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="L9m-EH-gwh">
-                                                                                <rect key="frame" x="13" y="0.0" width="106" height="17"/>
+                                                                                <rect key="frame" x="13" y="0.0" width="106" height="18"/>
                                                                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Welcome" id="D0v-aJ-C8B">
                                                                                     <font key="font" metaFont="system" size="14"/>
                                                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -210,7 +210,7 @@
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_logo" id="4ay-3t-Pbv"/>
                                         </imageView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nhh-3s-f3X">
-                                            <rect key="frame" x="218" y="197" width="116" height="27"/>
+                                            <rect key="frame" x="218" y="196" width="116" height="28"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="App Name" id="XoM-A4-FCQ">
                                                 <font key="font" metaFont="systemBold" size="23"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -218,7 +218,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="fYt-EC-mJ7">
-                                            <rect key="frame" x="218" y="109" width="252" height="78"/>
+                                            <rect key="frame" x="218" y="84" width="252" height="102"/>
                                             <textFieldCell key="cell" selectable="YES" id="EAO-4A-aJY">
                                                 <font key="font" size="13" name=".AppleSDGothicNeoI-Regular"/>
                                                 <string key="title">This app provides Google, Papago, Kakao translator who has translated a great feature.
@@ -296,7 +296,7 @@ It also provides a convenient and smart translation environment for users by pro
                                             </textFieldCell>
                                         </textField>
                                         <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5SK-m5-W51">
-                                            <rect key="frame" x="91" y="66" width="156" height="25"/>
+                                            <rect key="frame" x="91" y="65" width="156" height="26"/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="ZjP-8d-oq7">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -312,7 +312,7 @@ It also provides a convenient and smart translation environment for users by pro
                                             </comboBoxCell>
                                         </comboBox>
                                         <comboBox verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="Z9a-Pd-fzz">
-                                            <rect key="frame" x="335" y="66" width="156" height="25"/>
+                                            <rect key="frame" x="335" y="65" width="156" height="26"/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="LFa-qQ-Cc2">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -327,7 +327,7 @@ It also provides a convenient and smart translation environment for users by pro
                                             </comboBoxCell>
                                         </comboBox>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ttE-fy-QfH">
-                                            <rect key="frame" x="23" y="71" width="40" height="16"/>
+                                            <rect key="frame" x="23" y="70" width="40" height="17"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Width" id="ize-EK-z9F">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -335,7 +335,7 @@ It also provides a convenient and smart translation environment for users by pro
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LID-Wh-Dy9">
-                                            <rect key="frame" x="262" y="71" width="45" height="16"/>
+                                            <rect key="frame" x="262" y="70" width="45" height="17"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Height" id="U28-uA-Vfl">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -465,7 +465,7 @@ It also provides a convenient and smart translation environment for users by pro
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hLb-33-im3">
-                                            <rect key="frame" x="23" y="42" width="71" height="19"/>
+                                            <rect key="frame" x="23" y="41" width="71" height="19"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="ShortCut" id="2hr-WN-BtS">
                                                 <font key="font" metaFont="systemBold" size="15"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -473,7 +473,7 @@ It also provides a convenient and smart translation environment for users by pro
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h9z-eJ-Vy5">
-                                            <rect key="frame" x="23" y="16" width="96" height="16"/>
+                                            <rect key="frame" x="23" y="14" width="96" height="17"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Show ShortCut" id="LjX-33-Pfh">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -481,7 +481,7 @@ It also provides a convenient and smart translation environment for users by pro
                                             </textFieldCell>
                                         </textField>
                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="TDq-tn-CkK" customClass="MASShortcutView">
-                                            <rect key="frame" x="238" y="13" width="250" height="22"/>
+                                            <rect key="frame" x="238" y="12" width="250" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="dqh-VM-gBk"/>
                                                 <constraint firstAttribute="width" constant="250" id="gzT-7U-Mcu"/>
@@ -541,6 +541,7 @@ It also provides a convenient and smart translation environment for users by pro
                         <outlet property="m_btnWelcome" destination="XHi-FB-oIc" id="gBM-Fz-czt"/>
                         <outlet property="m_cbHeight" destination="Z9a-Pd-fzz" id="5N1-Cb-bh0"/>
                         <outlet property="m_cbWidth" destination="5SK-m5-W51" id="8Bm-hl-JSY"/>
+                        <outlet property="m_masShortcut" destination="TDq-tn-CkK" id="hxP-iB-d20"/>
                     </connections>
                 </viewController>
                 <customObject id="Xpq-mx-Tkw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -570,7 +571,7 @@ It also provides a convenient and smart translation environment for users by pro
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_logo" id="Z00-JF-lpn"/>
                                         </imageView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FTJ-KO-U1B">
-                                            <rect key="frame" x="218" y="197" width="116" height="27"/>
+                                            <rect key="frame" x="218" y="196" width="116" height="28"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="App Name" id="r1i-uh-DE6">
                                                 <font key="font" metaFont="systemBold" size="23"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -578,7 +579,7 @@ It also provides a convenient and smart translation environment for users by pro
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ved-W3-Dex">
-                                            <rect key="frame" x="218" y="171" width="81" height="16"/>
+                                            <rect key="frame" x="218" y="169" width="81" height="17"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Version 1.0.0" id="7Qf-30-fwo">
                                                 <font key="font" usesAppearanceFont="YES"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -767,7 +768,7 @@ All rights reserved.</string>
                                             </buttonCell>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e9O-WL-nDG">
-                                            <rect key="frame" x="23" y="35" width="96" height="16"/>
+                                            <rect key="frame" x="23" y="33" width="96" height="17"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Show ShortCut" id="cV0-IT-t5A">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -775,7 +776,7 @@ All rights reserved.</string>
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IlU-m9-yep">
-                                            <rect key="frame" x="23" y="71" width="71" height="19"/>
+                                            <rect key="frame" x="23" y="70" width="71" height="19"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="ShortCut" id="sFY-JG-3Hi">
                                                 <font key="font" metaFont="systemBold" size="15"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -783,7 +784,7 @@ All rights reserved.</string>
                                             </textFieldCell>
                                         </textField>
                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="BbQ-Hy-oUO">
-                                            <rect key="frame" x="238" y="28" width="240" height="30"/>
+                                            <rect key="frame" x="238" y="27" width="240" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="89c-jN-MJG"/>
                                                 <constraint firstAttribute="width" constant="240" id="DDI-j0-QSM"/>
@@ -798,7 +799,7 @@ All rights reserved.</string>
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1TW-ww-SrF">
-                                            <rect key="frame" x="23" y="150" width="40" height="16"/>
+                                            <rect key="frame" x="23" y="149" width="40" height="17"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Width" id="twC-qR-dLb">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -806,7 +807,7 @@ All rights reserved.</string>
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tHN-nb-Iod">
-                                            <rect key="frame" x="238" y="148" width="240" height="21"/>
+                                            <rect key="frame" x="238" y="147" width="240" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="240" id="y7Z-Vp-NV0"/>
                                             </constraints>
@@ -817,7 +818,7 @@ All rights reserved.</string>
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zqb-Gx-HDe">
-                                            <rect key="frame" x="23" y="114" width="45" height="16"/>
+                                            <rect key="frame" x="23" y="112" width="45" height="17"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Height" id="8H9-Ee-evp">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -825,7 +826,7 @@ All rights reserved.</string>
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pzo-HN-DHV">
-                                            <rect key="frame" x="238" y="112" width="240" height="21"/>
+                                            <rect key="frame" x="238" y="110" width="240" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="240" id="5Ai-b2-ig0"/>
                                             </constraints>
