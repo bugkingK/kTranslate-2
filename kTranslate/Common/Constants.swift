@@ -61,6 +61,7 @@ struct AnalyticsAction {
     // preference
     static let dTranslator = "Dtranslator"
     static let size = "Size"
+    static let shortCut = "ShortCut"
     
     // about
     static let mail = "Mail"

@@ -44,6 +44,7 @@ class Settings_Preferences: NSViewController {
         var nMainTranslator:Int
         var nWidth:String
         var nHeight:String
+        var shortcutValue:MASShortcut?
     }
     
     private func setupLayout() {
@@ -75,9 +76,8 @@ class Settings_Preferences: NSViewController {
         m_cbWidth.selectItem(withObjectValue: value_width)
         m_cbHeight.selectItem(withObjectValue: value_height)
         
-        m_preference_data = PreferenceData(nMainTranslator: idx_domain, nWidth: value_width, nHeight: value_height)
-        
         HotKeyManager.shared.registerHotKey(shortcutView: m_masShortcut)
+        m_preference_data = PreferenceData(nMainTranslator: idx_domain, nWidth: value_width, nHeight: value_height, shortcutValue: m_masShortcut.shortcutValue)
     }
     
     @objc func toggleAutostart(_ sender: NSButton) {
@@ -121,6 +121,7 @@ extension Settings_Preferences: NSWindowDelegate {
         let idx_domain = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
         let value_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)!
         let value_height = defaults.string(forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)!
+        var shortcutString = "set any shortcut"
         
         if !initKey {
             defaults.set(true, forKey: UserDefaults_DEFINE_KEY.initKey.rawValue)
@@ -136,6 +137,12 @@ extension Settings_Preferences: NSWindowDelegate {
             }
             MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.dTranslator, label: label, value: 0)
             MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.size, label:"\(value_width)-\(value_height)", value: 0)
+            
+            if let flags = m_masShortcut.shortcutValue?.modifierFlagsString, let keycode = m_masShortcut.shortcutValue?.keyCodeString {
+                shortcutString = self.getShortCutString(shortCut: flags)+keycode
+            }
+            
+            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.shortCut, label: shortcutString, value: 0)
             
         } else {
             if m_preference_data.nMainTranslator != idx_domain {
@@ -155,6 +162,14 @@ extension Settings_Preferences: NSWindowDelegate {
             if m_preference_data.nWidth != value_width || m_preference_data.nHeight != value_height {
                 MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.size, label:"\(value_width)-\(value_height)", value: 0)
             }
+            
+            if m_preference_data.shortcutValue != m_masShortcut.shortcutValue {
+                if let flags = m_masShortcut.shortcutValue?.modifierFlagsString, let keycode = m_masShortcut.shortcutValue?.keyCodeString {
+                    shortcutString = self.getShortCutString(shortCut: flags)+keycode
+                }
+                
+                MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.shortCut, label: shortcutString, value: 0)
+            }
         }
         
         PopoverController.sharedInstance().showPopover(sender: self)
@@ -162,11 +177,6 @@ extension Settings_Preferences: NSWindowDelegate {
             return
         }
         
-        var shortcutString = "set any shortcut"
-        if let flags = m_masShortcut.shortcutValue?.modifierFlagsString, let keycode = m_masShortcut.shortcutValue?.keyCodeString {
-            shortcutString = self.getShortCutString(shortCut: flags)+keycode
-        }
-
         vc_main.onChangeShortcutButton(shortCut: shortcutString)
     }
     
