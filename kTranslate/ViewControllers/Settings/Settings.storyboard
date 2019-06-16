@@ -273,7 +273,7 @@ It also provides a convenient and smart translation environment for users by pro
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4mb-fu-Kvi">
-                                            <rect key="frame" x="23" y="259" width="61" height="19"/>
+                                            <rect key="frame" x="23" y="264" width="61" height="19"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="General" id="Bes-jH-EmQ">
                                                 <font key="font" metaFont="systemBold" size="15"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -281,14 +281,14 @@ It also provides a convenient and smart translation environment for users by pro
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LkE-aV-acq">
-                                            <rect key="frame" x="23" y="233" width="101" height="18"/>
+                                            <rect key="frame" x="23" y="238" width="101" height="18"/>
                                             <buttonCell key="cell" type="check" title="Start at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Woz-57-CgS">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="A5z-nx-8XJ">
-                                            <rect key="frame" x="23" y="67" width="63" height="19"/>
+                                            <rect key="frame" x="23" y="97" width="63" height="19"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Window" id="ELn-8Z-fVQ">
                                                 <font key="font" metaFont="systemBold" size="15"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -296,7 +296,7 @@ It also provides a convenient and smart translation environment for users by pro
                                             </textFieldCell>
                                         </textField>
                                         <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5SK-m5-W51">
-                                            <rect key="frame" x="91" y="35" width="156" height="26"/>
+                                            <rect key="frame" x="91" y="65" width="156" height="26"/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="ZjP-8d-oq7">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -312,7 +312,7 @@ It also provides a convenient and smart translation environment for users by pro
                                             </comboBoxCell>
                                         </comboBox>
                                         <comboBox verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="Z9a-Pd-fzz">
-                                            <rect key="frame" x="335" y="35" width="156" height="26"/>
+                                            <rect key="frame" x="335" y="65" width="156" height="26"/>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="LFa-qQ-Cc2">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -327,7 +327,7 @@ It also provides a convenient and smart translation environment for users by pro
                                             </comboBoxCell>
                                         </comboBox>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ttE-fy-QfH">
-                                            <rect key="frame" x="23" y="40" width="40" height="17"/>
+                                            <rect key="frame" x="23" y="70" width="40" height="17"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Width" id="ize-EK-z9F">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -335,7 +335,7 @@ It also provides a convenient and smart translation environment for users by pro
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LID-Wh-Dy9">
-                                            <rect key="frame" x="262" y="40" width="45" height="17"/>
+                                            <rect key="frame" x="262" y="70" width="45" height="17"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Height" id="U28-uA-Vfl">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -343,14 +343,14 @@ It also provides a convenient and smart translation environment for users by pro
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XHi-FB-oIc">
-                                            <rect key="frame" x="23" y="199" width="220" height="18"/>
+                                            <rect key="frame" x="23" y="214" width="220" height="18"/>
                                             <buttonCell key="cell" type="check" title="Hide welcome window at startup" bezelStyle="regularSquare" imagePosition="left" inset="2" id="hQX-jo-lRN">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="L1K-Sz-FGk">
-                                            <rect key="frame" x="23" y="162" width="119" height="19"/>
+                                            <rect key="frame" x="23" y="187" width="119" height="19"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Main Translator" id="nFz-2c-fJq">
                                                 <font key="font" metaFont="systemBold" size="15"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -358,7 +358,7 @@ It also provides a convenient and smart translation environment for users by pro
                                             </textFieldCell>
                                         </textField>
                                         <stackView distribution="fillEqually" orientation="horizontal" alignment="centerY" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JN7-zA-nEY">
-                                            <rect key="frame" x="25" y="96" width="453" height="56"/>
+                                            <rect key="frame" x="25" y="126" width="453" height="56"/>
                                             <subviews>
                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="XOl-1E-K6c">
                                                     <rect key="frame" x="0.0" y="0.0" width="151" height="56"/>
@@ -457,15 +457,44 @@ It also provides a convenient and smart translation environment for users by pro
                                             </customSpacing>
                                         </stackView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2yH-Jj-FsK">
-                                            <rect key="frame" x="143" y="162" width="296" height="14"/>
+                                            <rect key="frame" x="143" y="187" width="296" height="14"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="(Select an interpreter to run first when starting an app.)" id="kyh-Ob-Rup">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hLb-33-im3">
+                                            <rect key="frame" x="23" y="41" width="71" height="19"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="ShortCut" id="2hr-WN-BtS">
+                                                <font key="font" metaFont="systemBold" size="15"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h9z-eJ-Vy5">
+                                            <rect key="frame" x="23" y="14" width="96" height="17"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Show ShortCut" id="LjX-33-Pfh">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lsO-ze-Uwt">
+                                            <rect key="frame" x="238" y="12" width="250" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="250" id="d4X-n0-9mq"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" drawsBackground="YES" id="Pfe-1d-NyF">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="lsO-ze-Uwt" firstAttribute="centerY" secondItem="h9z-eJ-Vy5" secondAttribute="centerY" id="18c-yX-TUB"/>
+                                        <constraint firstItem="hLb-33-im3" firstAttribute="top" secondItem="ttE-fy-QfH" secondAttribute="bottom" constant="10" id="55V-W0-NNE"/>
                                         <constraint firstItem="L1K-Sz-FGk" firstAttribute="leading" secondItem="4mb-fu-Kvi" secondAttribute="leading" id="AFJ-Ba-LZF"/>
                                         <constraint firstAttribute="trailing" secondItem="JN7-zA-nEY" secondAttribute="trailing" constant="20" id="D0x-11-xUC"/>
                                         <constraint firstItem="Z9a-Pd-fzz" firstAttribute="centerY" secondItem="LID-Wh-Dy9" secondAttribute="centerY" id="Da9-xO-VPT"/>
@@ -475,21 +504,25 @@ It also provides a convenient and smart translation environment for users by pro
                                         <constraint firstItem="ttE-fy-QfH" firstAttribute="leading" secondItem="A5z-nx-8XJ" secondAttribute="leading" id="HtM-L1-d6O"/>
                                         <constraint firstItem="2yH-Jj-FsK" firstAttribute="leading" secondItem="L1K-Sz-FGk" secondAttribute="trailing" constant="5" id="Iwq-H3-xui"/>
                                         <constraint firstItem="2yH-Jj-FsK" firstAttribute="bottom" secondItem="L1K-Sz-FGk" secondAttribute="bottom" id="J8k-cE-0so"/>
-                                        <constraint firstItem="XHi-FB-oIc" firstAttribute="top" secondItem="LkE-aV-acq" secondAttribute="bottom" constant="20" id="NUK-Gt-Qb2"/>
+                                        <constraint firstItem="XHi-FB-oIc" firstAttribute="top" secondItem="LkE-aV-acq" secondAttribute="bottom" constant="10" id="NUK-Gt-Qb2"/>
                                         <constraint firstItem="JN7-zA-nEY" firstAttribute="leading" secondItem="XHi-FB-oIc" secondAttribute="leading" id="Tce-8q-Bs6"/>
                                         <constraint firstItem="XHi-FB-oIc" firstAttribute="leading" secondItem="LkE-aV-acq" secondAttribute="leading" id="Vru-zb-nkv"/>
                                         <constraint firstItem="A5z-nx-8XJ" firstAttribute="top" secondItem="JN7-zA-nEY" secondAttribute="bottom" constant="10" id="WRl-Nc-KUA"/>
                                         <constraint firstAttribute="trailing" secondItem="Z9a-Pd-fzz" secondAttribute="trailing" constant="10" id="XqS-X2-XRV"/>
+                                        <constraint firstItem="h9z-eJ-Vy5" firstAttribute="leading" secondItem="hLb-33-im3" secondAttribute="leading" id="ZZH-Hn-pfm"/>
+                                        <constraint firstItem="h9z-eJ-Vy5" firstAttribute="top" secondItem="hLb-33-im3" secondAttribute="bottom" constant="10" id="bkw-q9-weO"/>
+                                        <constraint firstAttribute="trailing" secondItem="lsO-ze-Uwt" secondAttribute="trailing" constant="10" id="cvv-zZ-Ncd"/>
                                         <constraint firstItem="Z9a-Pd-fzz" firstAttribute="leading" secondItem="LID-Wh-Dy9" secondAttribute="trailing" constant="30" id="d3M-gl-itN"/>
+                                        <constraint firstItem="hLb-33-im3" firstAttribute="leading" secondItem="A5z-nx-8XJ" secondAttribute="leading" id="dhU-hq-80q"/>
                                         <constraint firstItem="4mb-fu-Kvi" firstAttribute="leading" secondItem="FMs-bX-Czr" secondAttribute="leading" constant="25" id="erp-Bx-7o7"/>
                                         <constraint firstItem="A5z-nx-8XJ" firstAttribute="leading" secondItem="4mb-fu-Kvi" secondAttribute="leading" id="fN7-78-4OQ"/>
-                                        <constraint firstItem="L1K-Sz-FGk" firstAttribute="top" secondItem="XHi-FB-oIc" secondAttribute="bottom" constant="20" id="g87-hu-wu4"/>
+                                        <constraint firstItem="L1K-Sz-FGk" firstAttribute="top" secondItem="XHi-FB-oIc" secondAttribute="bottom" constant="10" id="g87-hu-wu4"/>
                                         <constraint firstItem="LID-Wh-Dy9" firstAttribute="leading" secondItem="FMs-bX-Czr" secondAttribute="centerX" constant="15" id="lB3-JR-2i3"/>
                                         <constraint firstItem="ttE-fy-QfH" firstAttribute="top" secondItem="A5z-nx-8XJ" secondAttribute="bottom" constant="10" id="lBY-GR-dGi"/>
                                         <constraint firstItem="LkE-aV-acq" firstAttribute="leading" secondItem="4mb-fu-Kvi" secondAttribute="leading" id="oCH-th-sZl"/>
-                                        <constraint firstItem="JN7-zA-nEY" firstAttribute="top" secondItem="L1K-Sz-FGk" secondAttribute="bottom" constant="10" id="ox8-Cc-xpF"/>
+                                        <constraint firstItem="JN7-zA-nEY" firstAttribute="top" secondItem="L1K-Sz-FGk" secondAttribute="bottom" constant="5" id="ox8-Cc-xpF"/>
                                         <constraint firstItem="LID-Wh-Dy9" firstAttribute="leading" secondItem="5SK-m5-W51" secondAttribute="trailing" constant="20" id="q6A-lJ-cDT"/>
-                                        <constraint firstItem="4mb-fu-Kvi" firstAttribute="top" secondItem="FMs-bX-Czr" secondAttribute="top" constant="20" id="xny-2R-nSR"/>
+                                        <constraint firstItem="4mb-fu-Kvi" firstAttribute="top" secondItem="FMs-bX-Czr" secondAttribute="top" constant="15" id="xny-2R-nSR"/>
                                         <constraint firstItem="5SK-m5-W51" firstAttribute="leading" secondItem="ttE-fy-QfH" secondAttribute="trailing" constant="30" id="znK-HI-IEW"/>
                                     </constraints>
                                 </view>
@@ -512,6 +545,7 @@ It also provides a convenient and smart translation environment for users by pro
                         <outlet property="m_btnWelcome" destination="XHi-FB-oIc" id="gBM-Fz-czt"/>
                         <outlet property="m_cbHeight" destination="Z9a-Pd-fzz" id="5N1-Cb-bh0"/>
                         <outlet property="m_cbWidth" destination="5SK-m5-W51" id="8Bm-hl-JSY"/>
+                        <outlet property="m_tfShortCut" destination="lsO-ze-Uwt" id="2Iq-Og-3G9"/>
                     </connections>
                 </viewController>
                 <customObject id="Xpq-mx-Tkw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

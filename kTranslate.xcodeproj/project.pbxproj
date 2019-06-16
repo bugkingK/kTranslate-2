@@ -29,7 +29,6 @@
 		D2D3B86D22AF6F900086909D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2D3B86C22AF6F900086909D /* Assets.xcassets */; };
 		D2D3B87022AF6F900086909D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D3B86E22AF6F900086909D /* Main.storyboard */; };
 		D2D3B87822AF70750086909D /* LauncherApplication.app in Copy Launcher Application */ = {isa = PBXBuildFile; fileRef = D2D3B86622AF6F8F0086909D /* LauncherApplication.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D2D3B87A22AF854E0086909D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3B87922AF854E0086909D /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,7 +73,6 @@
 		D2D3B86F22AF6F900086909D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2D3B87122AF6F900086909D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2D3B87222AF6F900086909D /* LauncherApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LauncherApplication.entitlements; sourceTree = "<group>"; };
-		D2D3B87922AF854E0086909D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		E2B16400A1516FF01F6ADB74 /* Pods-kTranslate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.release.xcconfig"; path = "Target Support Files/Pods-kTranslate/Pods-kTranslate.release.xcconfig"; sourceTree = "<group>"; };
 		F6E349CDD74F97BC916CC54B /* Pods_kTranslate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kTranslate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -186,7 +184,6 @@
 				D2D3B85022AF5E260086909D /* CommonUtil.swift */,
 				D2D3B85122AF5E260086909D /* PopoverController.swift */,
 				D2D3B86022AF6F3E0086909D /* AutoLogin.swift */,
-				D2D3B87922AF854E0086909D /* Extension.swift */,
 				85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */,
 				D2CFDD2322B1E72E0056314B /* CTCircleButton.swift */,
 			);
@@ -392,7 +389,6 @@
 				D2D3B85922AF5E260086909D /* MainPopOverVC.swift in Sources */,
 				85DE7D5422AFD3FD00568C80 /* CTWindowController.swift in Sources */,
 				D22A423722B32D1800ADE25C /* Constants.swift in Sources */,
-				D2D3B87A22AF854E0086909D /* Extension.swift in Sources */,
 				D2CFDD2422B1E72E0056314B /* CTCircleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

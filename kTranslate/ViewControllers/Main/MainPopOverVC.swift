@@ -100,7 +100,7 @@ class MainPopOverVC: NSViewController {
             return
         }
         let windowVC = CTWindowController(window: NSWindow(contentViewController: vc))
-        windowVC.showPopupView(self)
+        windowVC.showWindow(self)
     }
     
     @objc public func onPreperences() {
@@ -108,7 +108,7 @@ class MainPopOverVC: NSViewController {
             return
         }
         let windowVC = CTWindowController(window: NSWindow(contentViewController: vc))
-        windowVC.showPopupView(self)
+        windowVC.showWindow(self)
         
         MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.itself, label: "", value: 0)
     }

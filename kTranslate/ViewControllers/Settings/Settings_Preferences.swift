@@ -9,7 +9,7 @@
 import Cocoa
 import GoogleAnalyticsTracker
 
-class Settings_Preferences: NSViewController, NSTextFieldDelegate {
+class Settings_Preferences: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,7 @@ class Settings_Preferences: NSViewController, NSTextFieldDelegate {
     
     @IBOutlet weak var m_btnAutoLogin: NSButton!
     @IBOutlet weak var m_btnWelcome: NSButton!
+    @IBOutlet weak var m_tfShortCut: NSTextField!
     
     @IBOutlet weak var m_cbWidth: NSComboBox!
     @IBOutlet weak var m_cbHeight: NSComboBox!
@@ -155,4 +156,8 @@ extension Settings_Preferences: NSWindowDelegate {
         
         PopoverController.sharedInstance().showPopover(sender: self)
     }
+}
+
+extension Settings_Preferences: NSTextFieldDelegate {
+    
 }

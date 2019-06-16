@@ -53,6 +53,6 @@ class HotKeyManager: NSObject {
             return
         }
         let windowVC = CTWindowController(window: NSWindow(contentViewController: vc))
-        windowVC.showPopupView(self)
+        windowVC.showWindow(self)
     }
 }
