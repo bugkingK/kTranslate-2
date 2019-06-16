@@ -55,6 +55,7 @@ struct AnalyticsAction {
     static let launch = "Launch"
     static let popover = "Popover"
     static let mTranslator = "Mtranslator"
+    static let alwaysShow = "AlwaysShow"
     
     // preference
     static let dTranslator = "Dtranslator"

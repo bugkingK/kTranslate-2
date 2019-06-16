@@ -119,6 +119,7 @@ class MainPopOverVC: NSViewController {
     
     @objc private func onClickAlwayShow(_ sender:NSButton) {
         UserDefaults.standard.set(sender.state == .on, forKey: UserDefaults_DEFINE_KEY.alwaysShowKey.rawValue)
+        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.kTranslate, action:AnalyticsAction.alwaysShow, label: "", value: 0)
     }
     
     @IBAction private func onClickSideMenu(_ sender: NSButton) {
