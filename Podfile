@@ -8,6 +8,6 @@ target 'kTranslate' do
   # Pods for kTranslate
   pod 'HotKey'
   pod 'Google-Analytics-for-OS-X'
-#  pod 'MASShortcut'
+  pod 'MASShortcut'
 
 end

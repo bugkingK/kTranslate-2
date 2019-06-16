@@ -51,7 +51,7 @@ class CTWindowController: NSWindowController, NSWindowDelegate {
     override func showWindow(_ sender: Any?) {
         PopoverController.sharedInstance().closePopover(sender: sender)
         super.showWindow(sender)
-        self.window?.level = .screenSaver
+        self.window?.level = .floating
         self.window?.makeKeyAndOrderFront(sender)
     }
 }
