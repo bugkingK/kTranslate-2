@@ -164,6 +164,10 @@ class MainPopOverVC: NSViewController {
         MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.mTranslator, label: label, value: 0)
     }
     
+    @IBAction func onClickBtnHelp(_ sender: NSButton) {
+        
+    }
+    
     private func loadingBar(show:Bool) {
         if show {
             self.m_indicator.isHidden = false
