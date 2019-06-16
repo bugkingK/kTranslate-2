@@ -21,7 +21,7 @@ enum UserDefaults_DEFINE_KEY:String, CaseIterable {
     case heightKey = "HeightKey"
     case welcomeKey = "WelcomeKey"
     case dontShowKey = "DontShowKey"
-    
+    case alwaysShowKey = "AlwaysShowKey"
 }
 
 

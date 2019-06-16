@@ -23,6 +23,9 @@ class MainPopOverVC: NSViewController {
         m_wvMain.bottomAnchor.constraint(equalTo: m_vwWebView.bottomAnchor).isActive = true
         m_wvMain.frameLoadDelegate = self
         
+        self.m_btnA.action = #selector(onClickAlwayShow(_:))
+        let bAlways = UserDefaults.standard.bool(forKey: UserDefaults_DEFINE_KEY.alwaysShowKey.rawValue)
+        self.m_btnA.state = bAlways ? .on : .off
         self.m_btnShortCut.action = #selector(onPreperences)
         self.m_arrBtnCircle = [m_btnG, m_btnP, m_btnK]
         for btn in self.m_arrBtnCircle {
@@ -51,6 +54,7 @@ class MainPopOverVC: NSViewController {
     @IBOutlet weak var m_btnG: CTCircleButton!
     @IBOutlet weak var m_btnP: CTCircleButton!
     @IBOutlet weak var m_btnK: CTCircleButton!
+    @IBOutlet weak var m_btnA: CTCircleButton!
     
     private var m_arrBtnCircle:[CTCircleButton] = []
     private let m_wvMain:WebView = {
@@ -113,6 +117,10 @@ class MainPopOverVC: NSViewController {
         NSApp.terminate(nil)
     }
     
+    @objc private func onClickAlwayShow(_ sender:NSButton) {
+        UserDefaults.standard.set(sender.state == .on, forKey: UserDefaults_DEFINE_KEY.alwaysShowKey.rawValue)
+    }
+    
     @IBAction private func onClickSideMenu(_ sender: NSButton) {
         let p = NSPoint(x: 0, y: (sender.frame.height*2)-10)
         self.m_side_menu.popUp(positioning: self.m_side_menu.item(at: 0), at: p, in: sender)
@@ -129,7 +137,7 @@ class MainPopOverVC: NSViewController {
         }
         
         for btn in m_arrBtnCircle {
-            btn.state = !(btn.tag == idx) ? .on : .off
+            btn.state = btn.tag == idx ? .on : .off
         }
         
         switch idx {

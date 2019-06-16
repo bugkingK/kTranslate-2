@@ -459,7 +459,7 @@ It also provides a convenient and smart translation environment for users by pro
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2yH-Jj-FsK">
                                             <rect key="frame" x="143" y="162" width="296" height="14"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="(Select an interpreter to run first when starting an app.)" id="kyh-Ob-Rup">
-                                                <font key="font" metaFont="system" size="11"/>
+                                                <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
