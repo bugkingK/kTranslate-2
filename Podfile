@@ -6,7 +6,7 @@ target 'kTranslate' do
   use_frameworks!
 
   # Pods for kTranslate
-  pod 'HotKey'
+#  pod 'HotKey'
   pod 'Google-Analytics-for-OS-X'
   pod 'MASShortcut'
 

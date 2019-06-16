@@ -1,24 +1,20 @@
 PODS:
   - Google-Analytics-for-OS-X (1.1)
-  - HotKey (0.1.1)
   - MASShortcut (2.3.6)
 
 DEPENDENCIES:
   - Google-Analytics-for-OS-X
-  - HotKey
   - MASShortcut
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Google-Analytics-for-OS-X
-    - HotKey
     - MASShortcut
 
 SPEC CHECKSUMS:
   Google-Analytics-for-OS-X: 66376760d74d980fd81ad48b125c5496d3d4402a
-  HotKey: 0be143fd015544a63c51be6dc2066dbf455ced72
   MASShortcut: 9c215e8a8a78f3d01ce56da48e2730ab66b538fa
 
-PODFILE CHECKSUM: 3269948bad5fd297e8dd4a567b6420bd1ecf3fda
+PODFILE CHECKSUM: 86fe7c695c23bba4b08d3d8e5d5e40def18b32df
 
 COCOAPODS: 1.7.0.rc.1
