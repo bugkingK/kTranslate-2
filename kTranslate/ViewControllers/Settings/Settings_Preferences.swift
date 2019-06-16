@@ -163,10 +163,10 @@ extension Settings_Preferences: NSWindowDelegate {
         }
         
         var shortcutString = "set any shortcut"
-        if let flags = m_masShortcut.shortcutValue.modifierFlagsString, let keycode = m_masShortcut.shortcutValue.keyCodeString {
+        if let flags = m_masShortcut.shortcutValue?.modifierFlagsString, let keycode = m_masShortcut.shortcutValue?.keyCodeString {
             shortcutString = self.getShortCutString(shortCut: flags)+keycode
         }
-        
+
         vc_main.onChangeShortcutButton(shortCut: shortcutString)
     }
     

@@ -11,7 +11,7 @@ typedef enum {
 
 @interface MASShortcutView : NSView
 
-@property (nonatomic, strong) MASShortcut *shortcutValue;
+@property (nonatomic, strong) MASShortcut * _Nullable shortcutValue;
 @property (nonatomic, strong) MASShortcutValidator *shortcutValidator;
 @property (nonatomic, getter = isRecording) BOOL recording;
 @property (nonatomic, getter = isEnabled) BOOL enabled;
