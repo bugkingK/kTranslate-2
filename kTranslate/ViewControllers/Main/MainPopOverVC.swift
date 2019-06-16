@@ -90,6 +90,10 @@ class MainPopOverVC: NSViewController {
         return root_menu
     }()
     
+    public func onChangeShortcutButton(shortCut:String) {
+        m_btnShortCut.title = shortCut
+    }
+    
     @objc public func onChangeTranslate(_ sender: AnyObject) {
 //        UserDefaults.standard.setValue(sender.tag, forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
         self.loadWebTranslate(idx: sender.tag)

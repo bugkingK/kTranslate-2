@@ -77,10 +77,7 @@ class Settings_Preferences: NSViewController {
         
         m_preference_data = PreferenceData(nMainTranslator: idx_domain, nWidth: value_width, nHeight: value_height)
         
-//        self.m_masShortcut.associatedUserDefaultsKey = globalShortcut
-//        self.m_masShortcut.shortcutValue = MASShortcut(keyCode: 14, modifierFlags: 0)
-        
-//        m_masShortcut.bind(.visible, to: self, withKeyPath: <#T##String#>, options: <#T##[NSBindingOption : Any]?#>)
+        HotKeyManager.shared.registerHotKey(shortcutView: m_masShortcut)
     }
     
     @objc func toggleAutostart(_ sender: NSButton) {
@@ -161,6 +158,40 @@ extension Settings_Preferences: NSWindowDelegate {
         }
         
         PopoverController.sharedInstance().showPopover(sender: self)
+        guard let vc_main = PopoverController.sharedInstance().getRootViewController() as? MainPopOverVC else {
+            return
+        }
+        
+        var shortcutString = "set any shortcut"
+        if let flags = m_masShortcut.shortcutValue.modifierFlagsString, let keycode = m_masShortcut.shortcutValue.keyCodeString {
+            shortcutString = self.getShortCutString(shortCut: flags)+keycode
+        }
+        
+        vc_main.onChangeShortcutButton(shortCut: shortcutString)
+    }
+    
+    private func getShortCutString(shortCut:String) -> String {
+        var ret_value:String = ""
+        
+        for c_value in shortCut {
+            if c_value == "⌘" {
+                ret_value = ret_value+"Command + "
+            }
+            
+            if c_value == "⇧" {
+                ret_value = ret_value+"Shift + "
+            }
+            
+            if c_value == "⌥" {
+                ret_value = ret_value+"Option + "
+            }
+            
+            if c_value == "⌃" {
+                ret_value = ret_value+"Control + "
+            }
+        }
+        
+        return ret_value
     }
 }
 

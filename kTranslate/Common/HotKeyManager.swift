@@ -25,7 +25,9 @@ class HotKeyManager: NSObject {
 //    }
     
     public func registerHotKey() {
-//        toggleKey = HotKey(keyCombo: KeyCombo(key: .e, modifiers: [.command, .shift]))
+        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: globalShortcut, toAction: { [weak self] in
+            PopoverController.sharedInstance().togglePopover(self)
+        })
         
         guard let fir_menu = NSApplication.shared.mainMenu?.items.first?.submenu?.items else {
             return
@@ -50,7 +52,10 @@ class HotKeyManager: NSObject {
     
     public func registerHotKey(shortcutView:MASShortcutView) {
         shortcutView.associatedUserDefaultsKey = globalShortcut
-//        shortcutView.shortcutValue = MASShortcut(keyCode: 14, modifierFlags: [.])
+        if !UserDefaults.standard.bool(forKey: UserDefaults_DEFINE_KEY.initShortcut.rawValue) {
+            shortcutView.shortcutValue = MASShortcut(keyCode: 14, modifierFlags: [.command, .shift])
+            UserDefaults.standard.set(true, forKey: UserDefaults_DEFINE_KEY.initShortcut.rawValue)
+        }
     }
     
     @objc func onPreperences() {
