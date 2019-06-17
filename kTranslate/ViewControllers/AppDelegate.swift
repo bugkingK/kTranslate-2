@@ -42,7 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         defaults.set(false, forKey: UserDefaults_DEFINE_KEY.alwaysShowKey.rawValue)
         defaults.set("set any shortcut", forKey: UserDefaults_DEFINE_KEY.shortCutStringKey.rawValue)
         UserDefaults.standard.synchronize()
-        AutoLogin.setEnabled(enabled: true)
+        AutoLogin.enabled = true
         MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.kTranslate, action: AnalyticsAction.launch, label: AnalyticsLabel.new, value: 0)
     }
     

@@ -81,7 +81,8 @@ class Settings_Preferences: NSViewController {
     }
     
     @objc func toggleAutostart(_ sender: NSButton) {
-        AutoLogin.setEnabled(enabled: sender.state == .on)
+        AutoLogin.enabled = sender.state == .on
+//        AutoLogin.setEnabled(enabled: sender.state == .on)
     }
     
     @objc func toggleWelcome(_ sender: NSButton) {
