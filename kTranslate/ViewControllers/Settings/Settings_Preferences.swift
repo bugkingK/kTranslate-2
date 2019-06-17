@@ -204,7 +204,3 @@ extension Settings_Preferences: NSWindowDelegate {
         return ret_value
     }
 }
-
-extension Settings_Preferences: NSTextFieldDelegate {
-    
-}

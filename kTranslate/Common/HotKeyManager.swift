@@ -12,17 +12,6 @@ import MASShortcut
 class HotKeyManager: NSObject {
     static let shared = HotKeyManager()
     private let globalShortcut = "GlobalShortcut"
-//    private var toggleKey: HotKey? {
-//        didSet {
-//            guard let toggleKey = toggleKey else {
-//                return
-//            }
-//
-//            toggleKey.keyDownHandler = { [weak self] in
-//                PopoverController.sharedInstance().togglePopover(self)
-//            }
-//        }
-//    }
     
     public func registerHotKey() {
         MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: globalShortcut, toAction: { [weak self] in
