@@ -40,6 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         defaults.set("500", forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)
         defaults.set(0, forKey:  UserDefaults_DEFINE_KEY.domainKey.rawValue)
         defaults.set(false, forKey: UserDefaults_DEFINE_KEY.alwaysShowKey.rawValue)
+        defaults.set("set any shortcut", forKey: UserDefaults_DEFINE_KEY.shortCutStringKey.rawValue)
         UserDefaults.standard.synchronize()
         AutoLogin.setEnabled(enabled: true)
         MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.kTranslate, action: AnalyticsAction.launch, label: AnalyticsLabel.new, value: 0)

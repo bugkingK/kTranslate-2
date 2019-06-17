@@ -163,11 +163,10 @@ extension Settings_Preferences: NSWindowDelegate {
                 MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.size, label:"\(value_width)-\(value_height)", value: 0)
             }
             
+            if let flags = m_masShortcut.shortcutValue?.modifierFlagsString, let keycode = m_masShortcut.shortcutValue?.keyCodeString {
+                shortcutString = self.getShortCutString(shortCut: flags)+keycode
+            }
             if m_preference_data.shortcutValue != m_masShortcut.shortcutValue {
-                if let flags = m_masShortcut.shortcutValue?.modifierFlagsString, let keycode = m_masShortcut.shortcutValue?.keyCodeString {
-                    shortcutString = self.getShortCutString(shortCut: flags)+keycode
-                }
-                
                 MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.shortCut, label: shortcutString, value: 0)
             }
         }
@@ -176,7 +175,7 @@ extension Settings_Preferences: NSWindowDelegate {
         guard let vc_main = PopoverController.sharedInstance().getRootViewController() as? MainPopOverVC else {
             return
         }
-        
+        defaults.set(shortcutString, forKey: UserDefaults_DEFINE_KEY.shortCutStringKey.rawValue)
         vc_main.onChangeShortcutButton(shortCut: shortcutString)
     }
     

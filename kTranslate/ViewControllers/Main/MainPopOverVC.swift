@@ -34,6 +34,11 @@ class MainPopOverVC: NSViewController {
         
         let idx = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
         self.loadWebTranslate(idx: idx)
+        guard let initShortCutString = UserDefaults.standard.string(forKey: UserDefaults_DEFINE_KEY.shortCutStringKey.rawValue) else {
+            self.onChangeShortcutButton(shortCut: "")
+            return
+        }
+        self.onChangeShortcutButton(shortCut: initShortCutString)
     }
     
     override func viewWillAppear() {

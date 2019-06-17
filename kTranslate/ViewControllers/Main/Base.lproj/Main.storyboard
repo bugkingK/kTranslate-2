@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14810.11"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -896,7 +896,7 @@
                                                     <constraint firstItem="BGv-dx-cL2" firstAttribute="top" secondItem="jFK-r8-xmu" secondAttribute="top" constant="10" id="mog-l3-FJD"/>
                                                 </constraints>
                                             </customView>
-                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="sEz-Jv-vD7" userLabel="Help View">
+                                            <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sEz-Jv-vD7" userLabel="Help View">
                                                 <rect key="frame" x="285" y="1" width="30" height="49"/>
                                                 <subviews>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IkP-Y1-aWz" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
