@@ -34,6 +34,7 @@ class Settings_Preferences: NSViewController {
     
     @IBOutlet weak var m_cbWidth: NSComboBox!
     @IBOutlet weak var m_cbHeight: NSComboBox!
+    @IBOutlet weak var m_cbMenuWIdth: NSComboBox!
     
     @IBOutlet weak var m_btnG: NSButton!
     @IBOutlet weak var m_btnP: NSButton!
@@ -69,12 +70,16 @@ class Settings_Preferences: NSViewController {
         
         let value_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)!
         let value_height = defaults.string(forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)!
+        let value_menu_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.menuWidthKey.rawValue)!
         m_cbWidth.target = self
         m_cbWidth.action = #selector(onClickWindowSize(_:))
         m_cbHeight.target = self
         m_cbHeight.action = #selector(onClickWindowSize(_:))
+        m_cbMenuWIdth.target = self
+        m_cbMenuWIdth.action = #selector(onClickWindowSize(_:))
         m_cbWidth.selectItem(withObjectValue: value_width)
         m_cbHeight.selectItem(withObjectValue: value_height)
+        m_cbMenuWIdth.selectItem(withObjectValue: value_menu_width)
         
         HotKeyManager.shared.registerHotKey(shortcutView: m_masShortcut)
         m_preference_data = PreferenceData(nMainTranslator: idx_domain, nWidth: value_width, nHeight: value_height, shortcutValue: m_masShortcut.shortcutValue)
@@ -94,8 +99,18 @@ class Settings_Preferences: NSViewController {
             return
         }
         
-        let key = (sender.tag == 0) ? UserDefaults_DEFINE_KEY.widthKey : UserDefaults_DEFINE_KEY.heightKey
-        UserDefaults.standard.set(int_size, forKey: key.rawValue)
+        var key = ""
+            switch sender.tag {
+            case 0:
+                key = UserDefaults_DEFINE_KEY.widthKey.rawValue
+            case 1:
+                key = UserDefaults_DEFINE_KEY.heightKey.rawValue
+            case 2:
+                key = UserDefaults_DEFINE_KEY.menuWidthKey.rawValue
+            default: break
+        }
+        
+        UserDefaults.standard.set(int_size, forKey: key)
     }
     
     @objc private func onClickRadioGPK(_ sender:NSButton) {
@@ -122,6 +137,7 @@ extension Settings_Preferences: NSWindowDelegate {
         let idx_domain = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
         let value_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)!
         let value_height = defaults.string(forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)!
+        let value_menu_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.menuWidthKey.rawValue)
         var shortcutString = "set any shortcut"
         
         if !initKey {
@@ -137,7 +153,7 @@ extension Settings_Preferences: NSWindowDelegate {
                 default: break
             }
             MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.dTranslator, label: label, value: 0)
-            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.size, label:"\(value_width)-\(value_height)", value: 0)
+            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.size, label:"\(value_width)-\(value_height)-\(value_menu_width)", value: 0)
             
             if let flags = m_masShortcut.shortcutValue?.modifierFlagsString, let keycode = m_masShortcut.shortcutValue?.keyCodeString {
                 shortcutString = self.getShortCutString(shortCut: flags)+keycode
@@ -173,7 +189,7 @@ extension Settings_Preferences: NSWindowDelegate {
         }
         
         PopoverController.sharedInstance().showPopover(sender: self)
-        guard let vc_main = PopoverController.sharedInstance().getRootViewController() as? MainPopOverVC else {
+        guard let vc_main = PopoverController.sharedInstance().getLeftViewController() as? MainPopOverVC else {
             return
         }
         defaults.set(shortcutString, forKey: UserDefaults_DEFINE_KEY.shortCutStringKey.rawValue)

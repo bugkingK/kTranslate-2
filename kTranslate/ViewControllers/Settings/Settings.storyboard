@@ -296,7 +296,10 @@ It also provides a convenient and smart translation environment for users by pro
                                             </textFieldCell>
                                         </textField>
                                         <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5SK-m5-W51">
-                                            <rect key="frame" x="91" y="65" width="156" height="26"/>
+                                            <rect key="frame" x="66" y="65" width="93" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="90" id="UpQ-yH-1M3"/>
+                                            </constraints>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="ZjP-8d-oq7">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -312,7 +315,10 @@ It also provides a convenient and smart translation environment for users by pro
                                             </comboBoxCell>
                                         </comboBox>
                                         <comboBox verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="Z9a-Pd-fzz">
-                                            <rect key="frame" x="335" y="65" width="156" height="26"/>
+                                            <rect key="frame" x="212" y="65" width="93" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="90" id="XUy-0z-BqW"/>
+                                            </constraints>
                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="LFa-qQ-Cc2">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -335,7 +341,7 @@ It also provides a convenient and smart translation environment for users by pro
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LID-Wh-Dy9">
-                                            <rect key="frame" x="262" y="70" width="45" height="17"/>
+                                            <rect key="frame" x="164" y="70" width="45" height="17"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Height" id="U28-uA-Vfl">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -487,39 +493,66 @@ It also provides a convenient and smart translation environment for users by pro
                                                 <constraint firstAttribute="width" constant="250" id="gzT-7U-Mcu"/>
                                             </constraints>
                                         </customView>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rH4-yi-P0D">
+                                            <rect key="frame" x="310" y="70" width="78" height="17"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Menu Width" id="j10-Ub-QCg">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <comboBox verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="uIR-vF-Bdm">
+                                            <rect key="frame" x="391" y="65" width="93" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="90" id="3ri-iZ-Amh"/>
+                                            </constraints>
+                                            <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="UWJ-0W-srX">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <objectValues>
+                                                    <string>200</string>
+                                                    <string>250</string>
+                                                    <string>300</string>
+                                                    <string>350</string>
+                                                </objectValues>
+                                            </comboBoxCell>
+                                        </comboBox>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="rH4-yi-P0D" firstAttribute="leading" secondItem="Z9a-Pd-fzz" secondAttribute="trailing" constant="10" id="10n-UY-Os0"/>
                                         <constraint firstItem="hLb-33-im3" firstAttribute="top" secondItem="ttE-fy-QfH" secondAttribute="bottom" constant="10" id="55V-W0-NNE"/>
+                                        <constraint firstItem="uIR-vF-Bdm" firstAttribute="leading" secondItem="rH4-yi-P0D" secondAttribute="trailing" constant="5" id="66Q-eb-22o"/>
                                         <constraint firstItem="L1K-Sz-FGk" firstAttribute="leading" secondItem="4mb-fu-Kvi" secondAttribute="leading" id="AFJ-Ba-LZF"/>
                                         <constraint firstAttribute="trailing" secondItem="JN7-zA-nEY" secondAttribute="trailing" constant="20" id="D0x-11-xUC"/>
-                                        <constraint firstItem="Z9a-Pd-fzz" firstAttribute="centerY" secondItem="LID-Wh-Dy9" secondAttribute="centerY" id="Da9-xO-VPT"/>
-                                        <constraint firstItem="LID-Wh-Dy9" firstAttribute="centerY" secondItem="5SK-m5-W51" secondAttribute="centerY" id="EVx-cU-dFR"/>
-                                        <constraint firstItem="5SK-m5-W51" firstAttribute="centerY" secondItem="ttE-fy-QfH" secondAttribute="centerY" id="FIE-Ci-IGc"/>
+                                        <constraint firstItem="Z9a-Pd-fzz" firstAttribute="centerY" secondItem="LID-Wh-Dy9" secondAttribute="centerY" id="GsF-hG-R0b"/>
                                         <constraint firstItem="LkE-aV-acq" firstAttribute="top" secondItem="4mb-fu-Kvi" secondAttribute="bottom" constant="10" id="Hi1-AB-ECb"/>
                                         <constraint firstItem="ttE-fy-QfH" firstAttribute="leading" secondItem="A5z-nx-8XJ" secondAttribute="leading" id="HtM-L1-d6O"/>
                                         <constraint firstItem="2yH-Jj-FsK" firstAttribute="leading" secondItem="L1K-Sz-FGk" secondAttribute="trailing" constant="5" id="Iwq-H3-xui"/>
                                         <constraint firstItem="2yH-Jj-FsK" firstAttribute="bottom" secondItem="L1K-Sz-FGk" secondAttribute="bottom" id="J8k-cE-0so"/>
                                         <constraint firstItem="XHi-FB-oIc" firstAttribute="top" secondItem="LkE-aV-acq" secondAttribute="bottom" constant="10" id="NUK-Gt-Qb2"/>
                                         <constraint firstItem="JN7-zA-nEY" firstAttribute="leading" secondItem="XHi-FB-oIc" secondAttribute="leading" id="Tce-8q-Bs6"/>
+                                        <constraint firstItem="LID-Wh-Dy9" firstAttribute="centerY" secondItem="ttE-fy-QfH" secondAttribute="centerY" id="UWb-4b-7Hl"/>
+                                        <constraint firstItem="uIR-vF-Bdm" firstAttribute="centerY" secondItem="rH4-yi-P0D" secondAttribute="centerY" id="Vef-yA-1IA"/>
                                         <constraint firstItem="XHi-FB-oIc" firstAttribute="leading" secondItem="LkE-aV-acq" secondAttribute="leading" id="Vru-zb-nkv"/>
                                         <constraint firstItem="A5z-nx-8XJ" firstAttribute="top" secondItem="JN7-zA-nEY" secondAttribute="bottom" constant="10" id="WRl-Nc-KUA"/>
-                                        <constraint firstAttribute="trailing" secondItem="Z9a-Pd-fzz" secondAttribute="trailing" constant="10" id="XqS-X2-XRV"/>
                                         <constraint firstItem="h9z-eJ-Vy5" firstAttribute="leading" secondItem="hLb-33-im3" secondAttribute="leading" id="ZZH-Hn-pfm"/>
                                         <constraint firstAttribute="trailing" secondItem="TDq-tn-CkK" secondAttribute="trailing" constant="10" id="Zy0-SL-kAh"/>
+                                        <constraint firstItem="rH4-yi-P0D" firstAttribute="centerY" secondItem="LID-Wh-Dy9" secondAttribute="centerY" id="aLV-nW-3cS"/>
                                         <constraint firstItem="TDq-tn-CkK" firstAttribute="centerY" secondItem="h9z-eJ-Vy5" secondAttribute="centerY" id="b02-B6-paG"/>
                                         <constraint firstItem="h9z-eJ-Vy5" firstAttribute="top" secondItem="hLb-33-im3" secondAttribute="bottom" constant="10" id="bkw-q9-weO"/>
-                                        <constraint firstItem="Z9a-Pd-fzz" firstAttribute="leading" secondItem="LID-Wh-Dy9" secondAttribute="trailing" constant="30" id="d3M-gl-itN"/>
                                         <constraint firstItem="hLb-33-im3" firstAttribute="leading" secondItem="A5z-nx-8XJ" secondAttribute="leading" id="dhU-hq-80q"/>
                                         <constraint firstItem="4mb-fu-Kvi" firstAttribute="leading" secondItem="FMs-bX-Czr" secondAttribute="leading" constant="25" id="erp-Bx-7o7"/>
                                         <constraint firstItem="A5z-nx-8XJ" firstAttribute="leading" secondItem="4mb-fu-Kvi" secondAttribute="leading" id="fN7-78-4OQ"/>
                                         <constraint firstItem="L1K-Sz-FGk" firstAttribute="top" secondItem="XHi-FB-oIc" secondAttribute="bottom" constant="10" id="g87-hu-wu4"/>
-                                        <constraint firstItem="LID-Wh-Dy9" firstAttribute="leading" secondItem="FMs-bX-Czr" secondAttribute="centerX" constant="15" id="lB3-JR-2i3"/>
                                         <constraint firstItem="ttE-fy-QfH" firstAttribute="top" secondItem="A5z-nx-8XJ" secondAttribute="bottom" constant="10" id="lBY-GR-dGi"/>
                                         <constraint firstItem="LkE-aV-acq" firstAttribute="leading" secondItem="4mb-fu-Kvi" secondAttribute="leading" id="oCH-th-sZl"/>
+                                        <constraint firstItem="LID-Wh-Dy9" firstAttribute="leading" secondItem="5SK-m5-W51" secondAttribute="trailing" constant="10" id="or6-ZF-3iQ"/>
                                         <constraint firstItem="JN7-zA-nEY" firstAttribute="top" secondItem="L1K-Sz-FGk" secondAttribute="bottom" constant="5" id="ox8-Cc-xpF"/>
-                                        <constraint firstItem="LID-Wh-Dy9" firstAttribute="leading" secondItem="5SK-m5-W51" secondAttribute="trailing" constant="20" id="q6A-lJ-cDT"/>
+                                        <constraint firstItem="Z9a-Pd-fzz" firstAttribute="leading" secondItem="LID-Wh-Dy9" secondAttribute="trailing" constant="5" id="qJ7-O9-gyW"/>
                                         <constraint firstItem="4mb-fu-Kvi" firstAttribute="top" secondItem="FMs-bX-Czr" secondAttribute="top" constant="15" id="xny-2R-nSR"/>
-                                        <constraint firstItem="5SK-m5-W51" firstAttribute="leading" secondItem="ttE-fy-QfH" secondAttribute="trailing" constant="30" id="znK-HI-IEW"/>
+                                        <constraint firstItem="5SK-m5-W51" firstAttribute="centerY" secondItem="ttE-fy-QfH" secondAttribute="centerY" id="zBq-zk-Hja"/>
+                                        <constraint firstItem="5SK-m5-W51" firstAttribute="leading" secondItem="ttE-fy-QfH" secondAttribute="trailing" constant="5" id="znK-HI-IEW"/>
                                     </constraints>
                                 </view>
                                 <color key="borderColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -540,6 +573,7 @@ It also provides a convenient and smart translation environment for users by pro
                         <outlet property="m_btnP" destination="YT2-Nl-JVi" id="z6P-GA-ok1"/>
                         <outlet property="m_btnWelcome" destination="XHi-FB-oIc" id="gBM-Fz-czt"/>
                         <outlet property="m_cbHeight" destination="Z9a-Pd-fzz" id="5N1-Cb-bh0"/>
+                        <outlet property="m_cbMenuWIdth" destination="uIR-vF-Bdm" id="VbP-CE-hNf"/>
                         <outlet property="m_cbWidth" destination="5SK-m5-W51" id="8Bm-hl-JSY"/>
                         <outlet property="m_masShortcut" destination="TDq-tn-CkK" id="hxP-iB-d20"/>
                     </connections>

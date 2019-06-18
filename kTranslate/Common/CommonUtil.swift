@@ -80,4 +80,12 @@ class CommonUtil: NSObject {
             break;
         }
     }
+    
+    static func getCurrentDate() -> String {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yy.MM.dd"
+        let now = dateFormatter.string(from: date)
+        return now
+    }
 }

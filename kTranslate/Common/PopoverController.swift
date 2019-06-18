@@ -15,6 +15,9 @@ open class PopoverController: NSObject {
     fileprivate let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
     fileprivate let popover = NSPopover()
     fileprivate var eventMonitor: EventMonitor?
+    fileprivate var m_splitVC:NSSplitViewController?
+    fileprivate var m_leftVC:NSViewController?
+    fileprivate var m_rightVC:NSViewController?
     
     @discardableResult
     open class func sharedInstance() -> PopoverController {
@@ -33,10 +36,18 @@ open class PopoverController: NSObject {
             button.setButtonType(.pushOnPushOff)
         }
         
-        guard let vc = NSStoryboard.init(name: "Main", bundle: nil).instantiateController(withIdentifier: "MainPopOverVC") as? NSViewController else {
+        guard let vc = NSStoryboard.init(name: "Main", bundle: nil).instantiateController(withIdentifier: "windowController") as? NSWindowController else {
             return
         }
-        popover.contentViewController = vc
+        
+        guard let splitVC = vc.contentViewController as? NSSplitViewController else {
+            return
+        }
+        
+        m_splitVC = splitVC
+        m_leftVC = splitVC.children.first
+        m_rightVC = splitVC.children.last
+        popover.contentViewController = splitVC
         
         eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
             if let strongSelf = self, strongSelf.popover.isShown {
@@ -70,8 +81,12 @@ open class PopoverController: NSObject {
         MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.kTranslate, action: AnalyticsAction.popover, label: AnalyticsLabel.close, value: 0)
     }
     
-    public func getRootViewController() -> NSViewController? {
-        return popover.contentViewController
+    public func getLeftViewController() -> NSViewController? {
+        return popover.contentViewController?.children.first
+    }
+    
+    public func toggleMemoMenu(isShow:Bool) {
+        isShow ? m_splitVC?.addChild(m_rightVC!) : m_splitVC?.removeChild(at: 1)
     }
 }
 

@@ -19,6 +19,7 @@ enum UserDefaults_DEFINE_KEY:String, CaseIterable {
     case domainKey = "number_translate_domain"
     case widthKey = "WidthKey"
     case heightKey = "HeightKey"
+    case menuWidthKey = "MenuWidthKey"
     case welcomeKey = "WelcomeKey"
     case dontShowKey = "DontShowKey"
     case alwaysShowKey = "AlwaysShowKey"

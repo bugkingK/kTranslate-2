@@ -28,7 +28,7 @@ class HotKeyManager: NSObject {
         guard let second_menu = NSApplication.shared.mainMenu?.items[1].submenu?.items else {
             return
         }
-        guard let vc_main = PopoverController.sharedInstance().getRootViewController() as? MainPopOverVC else {
+        guard let vc_main = PopoverController.sharedInstance().getLeftViewController() as? MainPopOverVC else {
             return
         }
         

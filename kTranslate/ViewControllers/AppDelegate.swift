@@ -38,6 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         defaults.set("400", forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)
         defaults.set("500", forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)
+        defaults.set("200", forKey: UserDefaults_DEFINE_KEY.menuWidthKey.rawValue)
         defaults.set(0, forKey:  UserDefaults_DEFINE_KEY.domainKey.rawValue)
         defaults.set(false, forKey: UserDefaults_DEFINE_KEY.alwaysShowKey.rawValue)
         defaults.set("set any shortcut", forKey: UserDefaults_DEFINE_KEY.shortCutStringKey.rawValue)

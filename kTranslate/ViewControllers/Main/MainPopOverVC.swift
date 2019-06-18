@@ -23,13 +23,29 @@ class MainPopOverVC: NSViewController {
         m_wvMain.bottomAnchor.constraint(equalTo: m_vwWebView.bottomAnchor).isActive = true
         m_wvMain.frameLoadDelegate = self
         
+        self.m_btnA.target = self
         self.m_btnA.action = #selector(onClickAlwayShow(_:))
         let bAlways = UserDefaults.standard.bool(forKey: UserDefaults_DEFINE_KEY.alwaysShowKey.rawValue)
         self.m_btnA.state = bAlways ? .on : .off
+        
+        self.m_btnShortCut.target = self
         self.m_btnShortCut.action = #selector(onPreperences)
         self.m_arrBtnCircle = [m_btnG, m_btnP, m_btnK]
         for btn in self.m_arrBtnCircle {
+            btn.target = self
             btn.action = #selector(onChangeTranslate(_:))
+        }
+        
+        for item in self.m_side_menu.items {
+            item.target = self
+        }
+        
+        guard let menu_trans = m_side_menu.item(at: 3)?.submenu else {
+            return
+        }
+        
+        for item in menu_trans.items {
+            item.target = self
         }
         
         let idx = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
@@ -168,8 +184,19 @@ class MainPopOverVC: NSViewController {
         MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.mTranslator, label: label, value: 0)
     }
     
-    @IBAction func onClickBtnHelp(_ sender: NSButton) {
+    @IBAction func onClickBtnMenu(_ sender: NSButton) {
+        let isShow = sender.state == .on
+//        [UIView transitionWithView:self.view.window
+//            duration:0.5
+//            options:UIViewAnimationOptionTransitionFlipFromLeft
+//            animations:^{
+//            appDelegate.window.rootViewController = splitVC;
+//            }
+//            completion:^(BOOL finished){
+//            }];
         
+        
+        PopoverController.sharedInstance().toggleMemoMenu(isShow: isShow)
     }
     
     private func loadingBar(show:Bool) {
