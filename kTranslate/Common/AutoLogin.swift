@@ -15,21 +15,19 @@ open class AutoLogin: NSObject {
     static let id = "tk.bugking.LauncherApplication"
     class var enabled: Bool {
         get {
-            guard let jobs = (SMCopyAllJobDictionaries(kSMDomainUserLaunchd).takeRetainedValue() as? [[String: AnyObject]]) else {
-                return false
+//            guard let jobs = (SMCopyAllJobDictionaries(kSMDomainUserLaunchd).takeRetainedValue() as? [[String: AnyObject]]) else {
+//                return false
+//            }
+//            let job = jobs.first { $0["Label"] as! String == id }
+//            return job?["OnDemand"] as? Bool ?? false
+            let foundHelper = NSWorkspace.shared.runningApplications.contains {
+                $0.bundleIdentifier == id
             }
-            let job = jobs.first { $0["Label"] as! String == id }
-            return job?["OnDemand"] as? Bool ?? false
+            
+            return foundHelper
         }
         set {
             SMLoginItemSetEnabled(id as CFString, newValue)
         }
     }
-    
-//    open class func setEnabled(enabled: Bool) {
-//
-//        SMLoginItemSetEnabled(launcherAppIdentifier as CFString, enabled)
-//
-//        UserDefaults.standard.set(enabled, forKey: KEY_AUTOSTART)
-//    }
 }
