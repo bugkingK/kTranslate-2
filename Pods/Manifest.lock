@@ -3,7 +3,7 @@ PODS:
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - Google-Analytics-for-OS-X (1.1)
-  - MASShortcut (2.3.6)
+  - MASShortcut (2.4.0)
 
 DEPENDENCIES:
   - FMDB
@@ -19,8 +19,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Google-Analytics-for-OS-X: 66376760d74d980fd81ad48b125c5496d3d4402a
-  MASShortcut: 9c215e8a8a78f3d01ce56da48e2730ab66b538fa
+  MASShortcut: d9e4909e878661cc42877cc9d6efbe638273ab57
 
-PODFILE CHECKSUM: 255906750c742f61ad36ad4121492cd9e953622a
+PODFILE CHECKSUM: 3d501a0617a7e6dbdda8e7945a9819dac715bd50
 
-COCOAPODS: 1.7.0.rc.1
+COCOAPODS: 1.5.3

@@ -1075,7 +1075,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="200" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <visualEffectView appearanceType="inheritedVibrantLight" blendingMode="withinWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="XRN-I5-r91">
+                            <visualEffectView appearanceType="inheritedVibrantLight" blendingMode="withinWindow" material="sidebar" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="XRN-I5-r91">
                                 <rect key="frame" x="0.0" y="0.0" width="200" height="500"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="emf-kG-USh" userLabel="Title View">
@@ -1162,7 +1162,7 @@
                                                                     </textFieldCell>
                                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                     <prototypeCellViews>
-                                                                        <tableCellView identifier="SplitVCStickerContentCell" id="XCx-ov-2JY" customClass="SplitVCStickerContentCell" customModule="LogiAppManager_v2" customModuleProvider="target">
+                                                                        <tableCellView identifier="SplitVCStickerContentCell" id="XCx-ov-2JY" customClass="SplitVCStickerContentCell" customModule="kTranslate" customModuleProvider="target">
                                                                             <rect key="frame" x="1" y="2" width="197" height="31"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
@@ -1172,7 +1172,7 @@
                                                                                         <rect key="frame" x="0.0" y="0.0" width="187" height="27"/>
                                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                         <subviews>
-                                                                                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="7e6-5h-BUG" customClass="DynamicTextField" customModule="LogiAppManager_v2" customModuleProvider="target">
+                                                                                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="7e6-5h-BUG" customClass="DynamicTextField" customModule="kTranslate" customModuleProvider="target">
                                                                                                 <rect key="frame" x="3" y="5" width="181" height="17"/>
                                                                                                 <textFieldCell key="cell" truncatesLastVisibleLine="YES" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" placeholderString="More Sticker to do.." id="ETU-a9-UDt">
                                                                                                     <font key="font" metaFont="system"/>
@@ -1204,7 +1204,7 @@
                                                                                 <outlet property="tf_content" destination="7e6-5h-BUG" id="d2B-Ee-KYI"/>
                                                                             </connections>
                                                                         </tableCellView>
-                                                                        <tableCellView identifier="SplitVCStickerAddCell" id="A3S-vg-UUW" customClass="SplitVCStickerAddCell" customModule="LogiAppManager_v2" customModuleProvider="target">
+                                                                        <tableCellView identifier="SplitVCStickerAddCell" id="A3S-vg-UUW" customClass="SplitVCStickerAddCell" customModule="kTranslate" customModuleProvider="target">
                                                                             <rect key="frame" x="1" y="38" width="197" height="25"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
