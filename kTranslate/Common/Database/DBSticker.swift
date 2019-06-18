@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import FMDB
 
 struct StickerData {
     var idx:Int = -1

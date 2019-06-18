@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import FMDB
 
 class DBManager: NSObject {
     fileprivate static let str_db_name:String = "apps.db"
