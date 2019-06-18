@@ -90,7 +90,7 @@ class MainPopOverVC: NSViewController {
         chg_trans.submenu = chg_menu
         root_menu.addItem(chg_trans)
         root_menu.addItem(NSMenuItem.separator())
-        root_menu.addItem(NSMenuItem(title: "Exit..", action: #selector(onExit), keyEquivalent: "q"))
+        root_menu.addItem(NSMenuItem(title: "Quit", action: #selector(onQuit), keyEquivalent: "q"))
         
         return root_menu
     }()
@@ -121,7 +121,7 @@ class MainPopOverVC: NSViewController {
         MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.itself, label: "", value: 0)
     }
     
-    @objc private func onExit() {
+    @objc private func onQuit() {
         NSApp.terminate(nil)
     }
     
