@@ -18,17 +18,18 @@ class HotKeyManager: NSObject {
             PopoverController.sharedInstance().togglePopover(self)
         })
         
+        guard let vc_main = PopoverController.sharedInstance().getLeftViewController() as? MainPopOverVC else {
+            return
+        }
+        
         guard let fir_menu = NSApplication.shared.mainMenu?.items.first?.submenu?.items else {
             return
         }
-        fir_menu[2].target = self
-        fir_menu[2].action = #selector(onPreperences)
         
+        fir_menu[2].target = vc_main
+        fir_menu[2].action = #selector(vc_main.onPreperences)
         
         guard let second_menu = NSApplication.shared.mainMenu?.items[1].submenu?.items else {
-            return
-        }
-        guard let vc_main = PopoverController.sharedInstance().getLeftViewController() as? MainPopOverVC else {
             return
         }
         
@@ -47,11 +48,11 @@ class HotKeyManager: NSObject {
         }
     }
     
-    @objc func onPreperences() {
-        guard let vc = NSStoryboard.init(name: "Settings", bundle: nil).instantiateController(withIdentifier: "Settings_Preferences") as? Settings_Preferences else {
-            return
-        }
-        let windowVC = CTWindowController(window: NSWindow(contentViewController: vc))
-        windowVC.showWindow(self)
-    }
+//    @objc func onPreperences() {
+//        guard let vc = NSStoryboard.init(name: "Settings", bundle: nil).instantiateController(withIdentifier: "Settings_Preferences") as? Settings_Preferences else {
+//            return
+//        }
+//        let windowVC = CTWindowController(window: NSWindow(contentViewController: vc))
+//        windowVC.showWindow(self)
+//    }
 }

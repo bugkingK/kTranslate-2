@@ -36,17 +36,7 @@ class MainPopOverVC: NSViewController {
             btn.action = #selector(onChangeTranslate(_:))
         }
         
-        for item in self.m_side_menu.items {
-            item.target = self
-        }
-        
-        guard let menu_trans = m_side_menu.item(at: 3)?.submenu else {
-            return
-        }
-        
-        for item in menu_trans.items {
-            item.target = self
-        }
+        self.initMenu()
         
         let idx = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
         self.loadWebTranslate(idx: idx)
@@ -67,6 +57,38 @@ class MainPopOverVC: NSViewController {
         m_lyContentHeight.constant = CGFloat(height)
     }
     
+    private func initMenu() {
+        let root_menu = NSMenu()
+        let arr_menu_items = [
+            NSMenuItem(title: "About kTranslate", action: #selector(onAbout), keyEquivalent: ""),
+            NSMenuItem(title: "Preperences..", action: #selector(onPreperences), keyEquivalent: ","),
+            NSMenuItem.separator(),
+            NSMenuItem(title: "translator change", action: nil, keyEquivalent: ""),
+            NSMenuItem.separator(),
+            NSMenuItem(title: "Quit", action: #selector(onQuit), keyEquivalent: "q")
+        ]
+        
+        let arr_trans:[NSMenuItem] = [
+            NSMenuItem(title: "Google Translator", action: #selector(onChangeTranslate(_:)), keyEquivalent: "1"),
+            NSMenuItem(title: "Papago Translator", action: #selector(onChangeTranslate(_:)), keyEquivalent: "2"),
+            NSMenuItem(title: "Kako Translator", action: #selector(onChangeTranslate(_:)), keyEquivalent: "3")
+        ]
+        
+        let chg_menu = NSMenu()
+        for (idx, trans) in arr_trans.enumerated() {
+            trans.target = self
+            trans.tag = idx
+            chg_menu.addItem(trans)
+        }
+        
+        arr_menu_items[3].submenu = chg_menu
+        for item in arr_menu_items {
+            item.target = self
+            root_menu.addItem(item)
+        }
+        m_side_menu = root_menu
+    }
+    
     @IBOutlet weak var m_vwWebView: NSView!
     @IBOutlet weak var m_btnShortCut: NSButton!
     @IBOutlet weak var m_indicator: NSProgressIndicator!
@@ -77,38 +99,13 @@ class MainPopOverVC: NSViewController {
     @IBOutlet weak var m_btnK: CTCircleButton!
     @IBOutlet weak var m_btnA: CTCircleButton!
     
+    private var m_side_menu: NSMenu!
     private var m_arrBtnCircle:[CTCircleButton] = []
     private let m_wvMain:WebView = {
         let wv = WebView()
         wv.shouldUpdateWhileOffscreen = true
         wv.translatesAutoresizingMaskIntoConstraints = false
         return wv
-    }()
-    private let m_side_menu: NSMenu = {
-        let root_menu = NSMenu()
-
-        root_menu.addItem(NSMenuItem(title: "About kTranslate", action: #selector(onAbout), keyEquivalent: ""))
-        root_menu.addItem(NSMenuItem(title: "Preperences..", action: #selector(onPreperences), keyEquivalent: ","))
-        root_menu.addItem(NSMenuItem.separator())
-        let chg_trans = NSMenuItem(title: "translator change", action: nil, keyEquivalent: "")
-        let chg_menu = NSMenu()
-        let arr_trans:[NSMenuItem] = [
-            NSMenuItem(title: "Google Translator", action: #selector(onChangeTranslate(_:)), keyEquivalent: "1"),
-            NSMenuItem(title: "Papago Translator", action: #selector(onChangeTranslate(_:)), keyEquivalent: "2"),
-            NSMenuItem(title: "Kako Translator", action: #selector(onChangeTranslate(_:)), keyEquivalent: "3")
-        ]
-
-        for (idx, trans) in arr_trans.enumerated() {
-            trans.tag = idx
-            chg_menu.addItem(trans)
-        }
-        
-        chg_trans.submenu = chg_menu
-        root_menu.addItem(chg_trans)
-        root_menu.addItem(NSMenuItem.separator())
-        root_menu.addItem(NSMenuItem(title: "Quit", action: #selector(onQuit), keyEquivalent: "q"))
-        
-        return root_menu
     }()
     
     public func onChangeShortcutButton(shortCut:String) {
