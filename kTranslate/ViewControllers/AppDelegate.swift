@@ -27,11 +27,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         UserDefaults.standard.synchronize()
     }
     
-    private func initUserDefaultKey() {
+    private func initUserDefaultKey(_ force:Bool = false) {
         let defaults = UserDefaults.standard
         let initKey = defaults.bool(forKey: UserDefaults_DEFINE_KEY.initKey.rawValue)
         
-        if initKey {
+        if initKey || !force {
             MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.kTranslate, action: AnalyticsAction.launch, label: AnalyticsLabel.existing, value: 0)
             return
         }
@@ -44,7 +44,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         defaults.set("set any shortcut", forKey: UserDefaults_DEFINE_KEY.shortCutStringKey.rawValue)
         UserDefaults.standard.synchronize()
 //        AutoLogin.enabled = true
-        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.kTranslate, action: AnalyticsAction.launch, label: AnalyticsLabel.new, value: 0)
+        if !force {
+            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.kTranslate, action: AnalyticsAction.launch, label: AnalyticsLabel.new, value: 0)
+        }
     }
     
     private func showWelcome() {

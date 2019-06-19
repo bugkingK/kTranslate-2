@@ -68,21 +68,36 @@ class Settings_Preferences: NSViewController {
             btn.state = btn.tag == idx_domain ? .on : .off
         }
         
-        let value_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)!
-        let value_height = defaults.string(forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)!
-        let value_menu_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.menuWidthKey.rawValue)!
+        var v_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)
+        if v_width == nil {
+            defaults.set("400", forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)
+            v_width = "400"
+        }
+        
+        var v_height = defaults.string(forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)
+        if v_height == nil {
+            defaults.set("400", forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)
+            v_height = "600"
+        }
+        
+        var v_menu_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.menuWidthKey.rawValue)
+        if v_menu_width == nil {
+            defaults.set("200", forKey: UserDefaults_DEFINE_KEY.menuWidthKey.rawValue)
+            v_menu_width = "200"
+        }
+        
         m_cbWidth.target = self
         m_cbWidth.action = #selector(onClickWindowSize(_:))
         m_cbHeight.target = self
         m_cbHeight.action = #selector(onClickWindowSize(_:))
         m_cbMenuWIdth.target = self
         m_cbMenuWIdth.action = #selector(onClickWindowSize(_:))
-        m_cbWidth.selectItem(withObjectValue: value_width)
-        m_cbHeight.selectItem(withObjectValue: value_height)
-        m_cbMenuWIdth.selectItem(withObjectValue: value_menu_width)
+        m_cbWidth.selectItem(withObjectValue: v_width)
+        m_cbHeight.selectItem(withObjectValue: v_height)
+        m_cbMenuWIdth.selectItem(withObjectValue: v_menu_width)
         
         HotKeyManager.shared.registerHotKey(shortcutView: m_masShortcut)
-        m_preference_data = PreferenceData(nMainTranslator: idx_domain, nWidth: value_width, nHeight: value_height, shortcutValue: m_masShortcut.shortcutValue)
+        m_preference_data = PreferenceData(nMainTranslator: idx_domain, nWidth: v_width!, nHeight: v_height!, shortcutValue: m_masShortcut.shortcutValue)
     }
     
     @objc func toggleAutostart(_ sender: NSButton) {
@@ -135,9 +150,9 @@ extension Settings_Preferences: NSWindowDelegate {
         
         let initKey = defaults.bool(forKey: UserDefaults_DEFINE_KEY.initKey.rawValue)
         let idx_domain = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
-        let value_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)!
-        let value_height = defaults.string(forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)!
-        let value_menu_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.menuWidthKey.rawValue)
+        let value_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue) ?? "no value"
+        let value_height = defaults.string(forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue) ?? "no value"
+        let value_menu_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.menuWidthKey.rawValue) ?? "no value"
         var shortcutString = "set any shortcut"
         
         if !initKey {

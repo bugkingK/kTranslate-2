@@ -179,8 +179,8 @@
 		D2D3B84322AF5E260086909D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				D2D3B84522AF5E260086909D /* Settings.storyboard */,
 				D2D3B84422AF5E260086909D /* Settings_Left.swift */,
+				D2D3B84522AF5E260086909D /* Settings.storyboard */,
 				D2D3B84622AF5E260086909D /* Settings_Preferences.swift */,
 				D2D3B84722AF5E260086909D /* Settings_About.swift */,
 				D2D3B84822AF5E260086909D /* Settings_Welcome.swift */,

@@ -22,6 +22,7 @@ class MainPopOverVC: NSViewController {
         m_wvMain.trailingAnchor.constraint(equalTo: m_vwWebView.trailingAnchor).isActive = true
         m_wvMain.bottomAnchor.constraint(equalTo: m_vwWebView.bottomAnchor).isActive = true
         m_wvMain.frameLoadDelegate = self
+        m_wvMain.editingDelegate = self
         
         self.m_btnA.target = self
         self.m_btnA.action = #selector(onClickAlwayShow(_:))
@@ -205,3 +206,39 @@ extension MainPopOverVC: WebFrameLoadDelegate {
         self.loadingBar(show: true)
     }
 }
+
+extension MainPopOverVC: WebEditingDelegate {
+//
+//    func webView(_ webView: WebView!, shouldChangeSelectedDOMRange currentRange: DOMRange!, to proposedRange: DOMRange!, affinity selectionAffinity: NSSelectionAffinity, stillSelecting flag: Bool) -> Bool {
+//
+//        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
+//            let script_outer = "document.getElementsByClassName('tlid-translation translation')[0].innerText"
+//            let script_inner = "document.getElementsByClassName('text-dummy')[0].textContent"
+//            if let innerText = self.m_wvMain.stringByEvaluatingJavaScript(from: script_inner), let outerText = self.m_wvMain.stringByEvaluatingJavaScript(from: script_outer) {
+//
+//                if innerText != "" {
+//                    print(innerText)
+//                }
+//
+//                if outerText != "" {
+//                    print(outerText)
+//                }
+//
+//            }
+//        }
+//
+//        return true
+//    }
+//
+//    func webView(_ webView: WebView!, shouldInsertText text: String!, replacing range: DOMRange!, given action: WebViewInsertAction) -> Bool {
+//
+//
+//        return true
+//    }
+//
+//    func webViewDidChange(_ notification: Notification!) {
+//
+//    }
+}
+
+
