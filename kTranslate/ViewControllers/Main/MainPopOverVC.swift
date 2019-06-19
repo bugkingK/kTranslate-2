@@ -185,18 +185,7 @@ class MainPopOverVC: NSViewController {
     }
     
     @IBAction func onClickBtnMenu(_ sender: NSButton) {
-        let isShow = sender.state == .on
-//        [UIView transitionWithView:self.view.window
-//            duration:0.5
-//            options:UIViewAnimationOptionTransitionFlipFromLeft
-//            animations:^{
-//            appDelegate.window.rootViewController = splitVC;
-//            }
-//            completion:^(BOOL finished){
-//            }];
-        
-        
-        PopoverController.sharedInstance().toggleMemoMenu(isShow: isShow)
+        PopoverController.sharedInstance().toggleMemoMenu(isShow: sender.state == .on)
     }
     
     private func loadingBar(show:Bool) {

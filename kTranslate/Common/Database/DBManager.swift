@@ -42,16 +42,27 @@ class DBManager: NSObject {
         // 데이터베이스 파일이 존재하지 않으면 데이터베이스 파일 생성
         let db = FMDatabase(path: dbPath)
         
-        if db.open() {
-            if !db.executeStatements(sql_create_sticker) {
-                print("Error \(db.lastErrorMessage())")
-            }
-            
-            db.close()
-        } else {
+        if FileManager.default.fileExists(atPath: dbPath) {
+            return db
+        }
+        
+        if !db.open() {
+            print("Error \(db.lastErrorMessage())")
+            return db
+        }
+        
+        if !db.executeStatements(sql_create_sticker) {
             print("Error \(db.lastErrorMessage())")
         }
         
+        let menu = "Press the +button and leave a brief note. \n\n You can change the note by double-clicking it and add, change, or delete it when you right-click it."
+        
+        if !db.executeUpdate(DBSticker.sql_insert_sticker, withArgumentsIn:[0, menu, 0, CommonUtil.getCurrentDate()]) {
+            print("Error \(db.lastErrorMessage())")
+        }
+        
+        db.close()
+
         return db
     }()
     
