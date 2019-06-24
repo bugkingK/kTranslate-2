@@ -44,8 +44,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         defaults.set(false, forKey: UserDefaults_DEFINE_KEY.alwaysShowKey.rawValue)
         defaults.set("set any shortcut", forKey: UserDefaults_DEFINE_KEY.shortCutStringKey.rawValue)
         
-        let add_site_name:[String] = ["Google Translate", "Papago Translate", "Naver Dic", "Daum Dic", ""]
-        let arr_site_address:[String] = ["https://translate.google.co.kr/", "https://papago.naver.com/", "https://endic.naver.com/", "http://small.dic.daum.net/", ""]
+        let add_site_name:[String] = ["Google Translate", "Wikipedia", "Naver Dic", "Daum Dic", ""]
+        let arr_site_address:[String] = ["https://translate.google.co.kr/", "https://wikipedia.org/wiki/", "https://endic.naver.com/", "http://small.dic.daum.net/", ""]
         
         defaults.set(add_site_name, forKey: UserDefaults_DEFINE_KEY.siteNameKey.rawValue)
         defaults.set(arr_site_address, forKey: UserDefaults_DEFINE_KEY.siteAddressKey.rawValue)

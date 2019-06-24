@@ -371,9 +371,9 @@ The Always button allows kTranslate to always be displayed above. Say goodbye to
                                                                     </userDefinedRuntimeAttributes>
                                                                 </button>
                                                                 <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="geQ-N0-NJ2">
-                                                                    <rect key="frame" x="33" y="4" width="104" height="17"/>
+                                                                    <rect key="frame" x="33" y="4" width="124" height="17"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="100" id="m7C-Wn-7Rb"/>
+                                                                        <constraint firstAttribute="width" constant="120" id="m7C-Wn-7Rb"/>
                                                                     </constraints>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Site Name" id="L7o-Xh-Jfy">
                                                                         <font key="font" metaFont="system"/>
@@ -382,7 +382,7 @@ The Always button allows kTranslate to always be displayed above. Say goodbye to
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <textField focusRingType="none" verticalHuggingPriority="750" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="ReD-JS-mKK">
-                                                                    <rect key="frame" x="143" y="4" width="322" height="17"/>
+                                                                    <rect key="frame" x="163" y="4" width="302" height="17"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Site Address" id="RW6-px-gVo">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -434,9 +434,9 @@ The Always button allows kTranslate to always be displayed above. Say goodbye to
                                                                     </userDefinedRuntimeAttributes>
                                                                 </button>
                                                                 <textField focusRingType="none" verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="LZQ-vS-3nW">
-                                                                    <rect key="frame" x="33" y="4" width="104" height="17"/>
+                                                                    <rect key="frame" x="33" y="4" width="124" height="17"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="100" id="c8n-LY-gDL"/>
+                                                                        <constraint firstAttribute="width" constant="120" id="c8n-LY-gDL"/>
                                                                     </constraints>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Site Name" id="iwt-DR-OzE">
                                                                         <font key="font" metaFont="system"/>
@@ -445,7 +445,7 @@ The Always button allows kTranslate to always be displayed above. Say goodbye to
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <textField focusRingType="none" verticalHuggingPriority="750" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="e1z-u1-I4S">
-                                                                    <rect key="frame" x="143" y="4" width="322" height="17"/>
+                                                                    <rect key="frame" x="163" y="4" width="302" height="17"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Site Address" id="Vd4-WO-c5p">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -497,9 +497,9 @@ The Always button allows kTranslate to always be displayed above. Say goodbye to
                                                                     </userDefinedRuntimeAttributes>
                                                                 </button>
                                                                 <textField focusRingType="none" verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="cDo-DF-pIl">
-                                                                    <rect key="frame" x="33" y="4" width="104" height="17"/>
+                                                                    <rect key="frame" x="33" y="4" width="124" height="17"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="100" id="vxw-t4-UtQ"/>
+                                                                        <constraint firstAttribute="width" constant="120" id="vxw-t4-UtQ"/>
                                                                     </constraints>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Site Name" id="s7t-1h-RYT">
                                                                         <font key="font" metaFont="system"/>
@@ -508,7 +508,7 @@ The Always button allows kTranslate to always be displayed above. Say goodbye to
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <textField focusRingType="none" verticalHuggingPriority="750" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="P1R-Iz-4LH">
-                                                                    <rect key="frame" x="143" y="4" width="322" height="17"/>
+                                                                    <rect key="frame" x="163" y="4" width="302" height="17"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Site Address" id="xFk-gI-cAs">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -560,9 +560,9 @@ The Always button allows kTranslate to always be displayed above. Say goodbye to
                                                                     </userDefinedRuntimeAttributes>
                                                                 </button>
                                                                 <textField focusRingType="none" verticalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="s7a-0N-VXg">
-                                                                    <rect key="frame" x="33" y="4" width="104" height="17"/>
+                                                                    <rect key="frame" x="33" y="4" width="124" height="17"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="100" id="F99-w8-oo7"/>
+                                                                        <constraint firstAttribute="width" constant="120" id="F99-w8-oo7"/>
                                                                     </constraints>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Site Name" id="YYP-SF-5rf">
                                                                         <font key="font" metaFont="system"/>
@@ -571,7 +571,7 @@ The Always button allows kTranslate to always be displayed above. Say goodbye to
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <textField focusRingType="none" verticalHuggingPriority="750" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="MSE-Ye-2qc">
-                                                                    <rect key="frame" x="143" y="4" width="322" height="17"/>
+                                                                    <rect key="frame" x="163" y="4" width="302" height="17"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Site Address" id="zeY-u8-SYT">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -623,9 +623,9 @@ The Always button allows kTranslate to always be displayed above. Say goodbye to
                                                                     </userDefinedRuntimeAttributes>
                                                                 </button>
                                                                 <textField focusRingType="none" verticalHuggingPriority="750" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="7nM-7I-gX0">
-                                                                    <rect key="frame" x="33" y="4" width="104" height="17"/>
+                                                                    <rect key="frame" x="33" y="4" width="124" height="17"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="100" id="KrF-lh-bDW"/>
+                                                                        <constraint firstAttribute="width" constant="120" id="KrF-lh-bDW"/>
                                                                     </constraints>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Site Name" id="d7d-z7-NNK">
                                                                         <font key="font" metaFont="system"/>
@@ -634,7 +634,7 @@ The Always button allows kTranslate to always be displayed above. Say goodbye to
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <textField focusRingType="none" verticalHuggingPriority="750" tag="9" translatesAutoresizingMaskIntoConstraints="NO" id="lSD-Wl-QMp">
-                                                                    <rect key="frame" x="143" y="4" width="322" height="17"/>
+                                                                    <rect key="frame" x="163" y="4" width="302" height="17"/>
                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Site Address" id="qP9-0p-Exs">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
