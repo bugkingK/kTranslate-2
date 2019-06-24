@@ -13,7 +13,7 @@ import GoogleAnalyticsTracker
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-//        UserDefaults.standard.DEFINE_Clear()
+        UserDefaults.standard.DEFINE_Clear()
         MPGoogleAnalyticsTracker.activate(.init(analyticsIdentifier: "UA-141906441-2"))
         
         self.initUserDefaultKey()
@@ -31,22 +31,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let defaults = UserDefaults.standard
         let initKey = defaults.bool(forKey: UserDefaults_DEFINE_KEY.initKey.rawValue)
         
-        if initKey || !force {
-            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.kTranslate, action: AnalyticsAction.launch, label: AnalyticsLabel.existing, value: 0)
+        if initKey {
+            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.root, action: AnalyticsAction.launch, label: AnalyticsLabel.existing, value: 0)
             return
         }
         
+        defaults.set(true, forKey: UserDefaults_DEFINE_KEY.initKey.rawValue)
+        defaults.set(0, forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
         defaults.set("400", forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)
         defaults.set("600", forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)
         defaults.set("200", forKey: UserDefaults_DEFINE_KEY.menuWidthKey.rawValue)
-        defaults.set(1, forKey:  UserDefaults_DEFINE_KEY.domainKey.rawValue)
         defaults.set(false, forKey: UserDefaults_DEFINE_KEY.alwaysShowKey.rawValue)
         defaults.set("set any shortcut", forKey: UserDefaults_DEFINE_KEY.shortCutStringKey.rawValue)
+        
+        let add_site_name:[String] = ["Google Translate", "Papago Translate", "Naver Dic", "Daum Dic", ""]
+        let arr_site_address:[String] = ["https://translate.google.co.kr/", "https://papago.naver.com/", "https://endic.naver.com/", "http://small.dic.daum.net/", ""]
+        
+        defaults.set(add_site_name, forKey: UserDefaults_DEFINE_KEY.siteNameKey.rawValue)
+        defaults.set(arr_site_address, forKey: UserDefaults_DEFINE_KEY.siteAddressKey.rawValue)
         UserDefaults.standard.synchronize()
-//        AutoLogin.enabled = true
-        if !force {
-            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.kTranslate, action: AnalyticsAction.launch, label: AnalyticsLabel.new, value: 0)
-        }
+        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.root, action: AnalyticsAction.launch, label: AnalyticsLabel.new, value: 0)
     }
     
     private func showWelcome() {

@@ -22,7 +22,8 @@ class MainPopOverVC: NSViewController {
         m_wvMain.trailingAnchor.constraint(equalTo: m_vwWebView.trailingAnchor).isActive = true
         m_wvMain.bottomAnchor.constraint(equalTo: m_vwWebView.bottomAnchor).isActive = true
         m_wvMain.frameLoadDelegate = self
-        m_wvMain.editingDelegate = self
+        m_wvMain.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 12_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecok) Version/12.0 Mobile/15E148 Safari/604.1"
+//        m_wvMain.editingDelegate = self
         
         self.m_btnA.target = self
         self.m_btnA.action = #selector(onClickAlwayShow(_:))
@@ -31,7 +32,7 @@ class MainPopOverVC: NSViewController {
         
         self.m_btnShortCut.target = self
         self.m_btnShortCut.action = #selector(onPreperences)
-        self.m_arrBtnCircle = [m_btnG, m_btnP, m_btnK]
+        self.m_arrBtnCircle = [m_btnCM1, m_btnCM2, m_btnCM3, m_btnCM4, m_btnCM5]
         for btn in self.m_arrBtnCircle {
             btn.target = self
             btn.action = #selector(onChangeTranslate(_:))
@@ -64,29 +65,14 @@ class MainPopOverVC: NSViewController {
             NSMenuItem(title: "About kTranslate", action: #selector(onAbout), keyEquivalent: ""),
             NSMenuItem(title: "Preperences..", action: #selector(onPreperences), keyEquivalent: ","),
             NSMenuItem.separator(),
-            NSMenuItem(title: "translator change", action: nil, keyEquivalent: ""),
-            NSMenuItem.separator(),
             NSMenuItem(title: "Quit", action: #selector(onQuit), keyEquivalent: "q")
         ]
         
-        let arr_trans:[NSMenuItem] = [
-            NSMenuItem(title: "Google Translator", action: #selector(onChangeTranslate(_:)), keyEquivalent: "1"),
-            NSMenuItem(title: "Papago Translator", action: #selector(onChangeTranslate(_:)), keyEquivalent: "2"),
-            NSMenuItem(title: "Kako Translator", action: #selector(onChangeTranslate(_:)), keyEquivalent: "3")
-        ]
-        
-        let chg_menu = NSMenu()
-        for (idx, trans) in arr_trans.enumerated() {
-            trans.target = self
-            trans.tag = idx
-            chg_menu.addItem(trans)
-        }
-        
-        arr_menu_items[3].submenu = chg_menu
         for item in arr_menu_items {
             item.target = self
             root_menu.addItem(item)
         }
+        
         m_side_menu = root_menu
     }
     
@@ -95,9 +81,11 @@ class MainPopOverVC: NSViewController {
     @IBOutlet weak var m_indicator: NSProgressIndicator!
     @IBOutlet weak var m_lyContentWidth: NSLayoutConstraint!
     @IBOutlet weak var m_lyContentHeight: NSLayoutConstraint!
-    @IBOutlet weak var m_btnG: CTCircleButton!
-    @IBOutlet weak var m_btnP: CTCircleButton!
-    @IBOutlet weak var m_btnK: CTCircleButton!
+    @IBOutlet weak var m_btnCM1: CTCircleButton!
+    @IBOutlet weak var m_btnCM2: CTCircleButton!
+    @IBOutlet weak var m_btnCM3: CTCircleButton!
+    @IBOutlet weak var m_btnCM4: CTCircleButton!
+    @IBOutlet weak var m_btnCM5: CTCircleButton!
     @IBOutlet weak var m_btnA: CTCircleButton!
     
     private var m_side_menu: NSMenu!
@@ -141,7 +129,7 @@ class MainPopOverVC: NSViewController {
     
     @objc private func onClickAlwayShow(_ sender:NSButton) {
         UserDefaults.standard.set(sender.state == .on, forKey: UserDefaults_DEFINE_KEY.alwaysShowKey.rawValue)
-        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.kTranslate, action:AnalyticsAction.alwaysShow, label: "", value: 0)
+        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.root, action:AnalyticsAction.alwaysShow, label: "", value: 0)
     }
     
     @IBAction private func onClickSideMenu(_ sender: NSButton) {
@@ -151,35 +139,27 @@ class MainPopOverVC: NSViewController {
     
     private func loadWebTranslate(idx:Int) {
         var url:URL?
-        var label:String?
-        guard let menu_trans = m_side_menu.item(at: 3)?.submenu else {
+        guard let m_arr_site = UserDefaults.standard.array(forKey: UserDefaults_DEFINE_KEY.siteAddressKey.rawValue) as? [String] else {
             return
         }
-        for trans in menu_trans.items {
-            trans.state = trans.tag == idx ? .on : .off
+        
+        url = URL(string: m_arr_site[idx])
+        
+        guard let v_url = url else {
+            m_arrBtnCircle[idx].state = .off
+            self.onPreperences()
+            return
         }
         
         for btn in m_arrBtnCircle {
             btn.state = btn.tag == idx ? .on : .off
         }
         
-        switch idx {
-        case 0:
-            url = TranslatorURL.googleURL
-            label = AnalyticsLabel.google
-        case 1:
-            url = TranslatorURL.papagoURL
-            label = AnalyticsLabel.papago
-        case 2:
-            url = TranslatorURL.kakaoURL
-            label = AnalyticsLabel.kakao
-        default: break
-        }
-        
-        guard let v_url = url else { return }
+        UserDefaults.standard.set(idx, forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
         let request = URLRequest(url: v_url)
         m_wvMain.mainFrame.load(request)
-        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.mTranslator, label: label, value: 0)
+        
+        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.root, action:AnalyticsAction.moveSite, label: v_url.path, value: 0)
     }
     
     @IBAction func onClickBtnMenu(_ sender: NSButton) {

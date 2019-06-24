@@ -36,20 +36,41 @@ class Settings_Preferences: NSViewController {
     @IBOutlet weak var m_cbHeight: NSComboBox!
     @IBOutlet weak var m_cbMenuWIdth: NSComboBox!
     
-    @IBOutlet weak var m_btnG: NSButton!
-    @IBOutlet weak var m_btnP: NSButton!
-    @IBOutlet weak var m_btnK: NSButton!
-    private var m_arrGPK:[NSButton] = []
-    private var m_preference_data:PreferenceData!
-    struct PreferenceData {
-        var nMainTranslator:Int
-        var nWidth:String
-        var nHeight:String
-        var shortcutValue:MASShortcut?
-    }
+    @IBOutlet weak var m_tfNameCM1: NSTextField!
+    @IBOutlet weak var m_tfNameCM2: NSTextField!
+    @IBOutlet weak var m_tfNameCM3: NSTextField!
+    @IBOutlet weak var m_tfNameCM4: NSTextField!
+    @IBOutlet weak var m_tfNameCM5: NSTextField!
+    private var m_arrNameCM:[NSTextField]!
+    
+    @IBOutlet weak var m_tfAddressCM1: NSTextField!
+    @IBOutlet weak var m_tfAddressCM2: NSTextField!
+    @IBOutlet weak var m_tfAddressCM3: NSTextField!
+    @IBOutlet weak var m_tfAddressCM4: NSTextField!
+    @IBOutlet weak var m_tfAddressCM5: NSTextField!
+    private var m_arrAddressCM:[NSTextField]!
+    private var m_arrSiteName:[String] = {
+        return UserDefaults.standard.array(forKey: UserDefaults_DEFINE_KEY.siteNameKey.rawValue) as! [String]
+    }()
+    private var m_arrSiteAddress:[String] = {
+        return UserDefaults.standard.array(forKey: UserDefaults_DEFINE_KEY.siteAddressKey.rawValue) as! [String]
+    }()
     
     private func setupLayout() {
         let defaults = UserDefaults.standard
+        
+        m_arrNameCM = [m_tfNameCM1, m_tfNameCM2, m_tfNameCM3, m_tfNameCM4, m_tfNameCM5]
+        m_arrAddressCM = [m_tfAddressCM1, m_tfAddressCM2, m_tfAddressCM3, m_tfAddressCM4, m_tfAddressCM5]
+        
+        for idx in 0..<m_arrSiteName.count {
+            m_arrNameCM[idx].target = self
+            m_arrNameCM[idx].action = #selector(onChangeTFSite(_:))
+            m_arrNameCM[idx].stringValue = m_arrSiteName[idx]
+            m_arrAddressCM[idx].target = self
+            m_arrAddressCM[idx].action = #selector(onChangeTFSite(_:))
+            m_arrAddressCM[idx].stringValue = m_arrSiteAddress[idx]
+        }
+        
         let bAutoLogin:Bool = AutoLogin.enabled
         m_btnAutoLogin.target = self
         m_btnAutoLogin.action = #selector(toggleAutostart(_:))
@@ -59,14 +80,6 @@ class Settings_Preferences: NSViewController {
         m_btnWelcome.target = self
         m_btnWelcome.action = #selector(toggleWelcome(_:))
         m_btnWelcome.state = bool_welcome ? .on : .off
-        
-        m_arrGPK = [m_btnG, m_btnP, m_btnK]
-        let idx_domain = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
-        for btn in m_arrGPK {
-            btn.target = self
-            btn.action = #selector(onClickRadioGPK(_:))
-            btn.state = btn.tag == idx_domain ? .on : .off
-        }
         
         var v_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)
         if v_width == nil {
@@ -97,12 +110,10 @@ class Settings_Preferences: NSViewController {
         m_cbMenuWIdth.selectItem(withObjectValue: v_menu_width)
         
         HotKeyManager.shared.registerHotKey(shortcutView: m_masShortcut)
-        m_preference_data = PreferenceData(nMainTranslator: idx_domain, nWidth: v_width!, nHeight: v_height!, shortcutValue: m_masShortcut.shortcutValue)
     }
     
     @objc func toggleAutostart(_ sender: NSButton) {
         AutoLogin.enabled = sender.state == .on
-//        AutoLogin.setEnabled(enabled: sender.state == .on)
     }
     
     @objc func toggleWelcome(_ sender: NSButton) {
@@ -128,19 +139,27 @@ class Settings_Preferences: NSViewController {
         UserDefaults.standard.set(int_size, forKey: key)
     }
     
-    @objc private func onClickRadioGPK(_ sender:NSButton) {
-        for btn in self.m_arrGPK {
-            btn.state = sender == btn ? .on : .off
+    @objc private func onChangeTFSite(_ sender:NSTextField) {
+        let tag = sender.tag
+        let value = sender.stringValue
+        
+        switch tag {
+        case 0..<5:
+            self.m_arrSiteName[tag] = value
+            UserDefaults.standard.set(self.m_arrSiteName, forKey: UserDefaults_DEFINE_KEY.siteNameKey.rawValue)
+        case 5..<10:
+            self.m_arrSiteAddress[tag-5] = value
+            UserDefaults.standard.set(self.m_arrSiteAddress, forKey: UserDefaults_DEFINE_KEY.siteAddressKey.rawValue)
+        default: break
         }
-        UserDefaults.standard.set(sender.tag, forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
     }
-    
 }
 
 extension Settings_Preferences: NSWindowDelegate {
     func windowWillClose(_ notification: Notification) {
         let defaults = UserDefaults.standard
         let b_dontShow = defaults.bool(forKey: UserDefaults_DEFINE_KEY.dontShowKey.rawValue)
+        var shortcutString = "set any shortcut"
         
         if !b_dontShow {
             CommonUtil.alertMessageWithKeep("kTranslate will continue to run in the background", "Do not show this message agin") {
@@ -148,59 +167,8 @@ extension Settings_Preferences: NSWindowDelegate {
             }
         }
         
-        let initKey = defaults.bool(forKey: UserDefaults_DEFINE_KEY.initKey.rawValue)
-        let idx_domain = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
-        let value_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue) ?? "no value"
-        let value_height = defaults.string(forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue) ?? "no value"
-        let value_menu_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.menuWidthKey.rawValue) ?? "no value"
-        var shortcutString = "set any shortcut"
-        
-        if !initKey {
-            defaults.set(true, forKey: UserDefaults_DEFINE_KEY.initKey.rawValue)
-            var label:String?
-            switch idx_domain {
-                case 0:
-                    label = AnalyticsLabel.google
-                case 1:
-                    label = AnalyticsLabel.papago
-                case 2:
-                    label = AnalyticsLabel.kakao
-                default: break
-            }
-            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.dTranslator, label: label, value: 0)
-            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.size, label:"\(value_width)-\(value_height)-\(value_menu_width)", value: 0)
-            
-            if let flags = m_masShortcut.shortcutValue?.modifierFlagsString, let keycode = m_masShortcut.shortcutValue?.keyCodeString {
-                shortcutString = self.getShortCutString(shortCut: flags)+keycode
-            }
-            
-            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.shortCut, label: shortcutString, value: 0)
-            
-        } else {
-            if m_preference_data.nMainTranslator != idx_domain {
-                var label:String?
-                switch idx_domain {
-                case 0:
-                    label = AnalyticsLabel.google
-                case 1:
-                    label = AnalyticsLabel.papago
-                case 2:
-                    label = AnalyticsLabel.kakao
-                default: break
-                }
-                MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.dTranslator, label: label, value: 0)
-            }
-            
-            if m_preference_data.nWidth != value_width || m_preference_data.nHeight != value_height {
-                MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.size, label:"\(value_width)-\(value_height)", value: 0)
-            }
-            
-            if let flags = m_masShortcut.shortcutValue?.modifierFlagsString, let keycode = m_masShortcut.shortcutValue?.keyCodeString {
-                shortcutString = self.getShortCutString(shortCut: flags)+keycode
-            }
-            if m_preference_data.shortcutValue != m_masShortcut.shortcutValue {
-                MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.shortCut, label: shortcutString, value: 0)
-            }
+        if let flags = m_masShortcut.shortcutValue?.modifierFlagsString, let keycode = m_masShortcut.shortcutValue?.keyCodeString {
+            shortcutString = self.getShortCutString(shortCut: flags)+keycode
         }
         
         PopoverController.sharedInstance().showPopover(sender: self)

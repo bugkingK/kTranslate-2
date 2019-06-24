@@ -25,6 +25,8 @@ enum UserDefaults_DEFINE_KEY:String, CaseIterable {
     case alwaysShowKey = "AlwaysShowKey"
     case initShortcut = "InitShortcut"
     case shortCutStringKey = "ShortCutStringKey"
+    case siteNameKey = "SiteNameKey"
+    case siteAddressKey = "SiteAddressKey"
 }
 
 
@@ -46,7 +48,7 @@ struct TranslatorURL {
 }
 
 struct AnalyticsCategory {
-    static let kTranslate = "kTranslate"
+    static let root = "kTranslate"
     static let preference = "Preference"
     static let about = "About"
 }
@@ -57,11 +59,10 @@ struct AnalyticsAction {
     // kTranslate
     static let launch = "Launch"
     static let popover = "Popover"
-    static let mTranslator = "Mtranslator"
     static let alwaysShow = "AlwaysShow"
+    static let moveSite = "MoveSite"
     
     // preference
-    static let dTranslator = "Dtranslator"
     static let size = "Size"
     static let shortCut = "ShortCut"
     
@@ -72,10 +73,6 @@ struct AnalyticsAction {
 }
 
 struct AnalyticsLabel {
-    static let google = "Google"
-    static let papago = "Papago"
-    static let kakao = "Kakao"
-    
     // kTranslate
     static let new = "New"
     static let existing = "Existing"

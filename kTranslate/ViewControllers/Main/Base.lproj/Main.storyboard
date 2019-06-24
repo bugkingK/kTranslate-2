@@ -61,9 +61,11 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Navigate" id="Anb-fw-z2Q">
                                     <items>
-                                        <menuItem title="Google Translator" keyEquivalent="1" id="Bqd-F4-AWG" userLabel="Google Translator"/>
-                                        <menuItem title="Papago Translator" keyEquivalent="2" id="VaR-3M-koJ"/>
-                                        <menuItem title="Kakao Translator" keyEquivalent="3" id="3jU-5e-eYi"/>
+                                        <menuItem title="Site 1" keyEquivalent="1" id="Bqd-F4-AWG"/>
+                                        <menuItem title="Site 2" keyEquivalent="2" id="VaR-3M-koJ"/>
+                                        <menuItem title="Site 3" keyEquivalent="3" id="3jU-5e-eYi"/>
+                                        <menuItem title="Site 4" keyEquivalent="4" id="a3y-9O-T9H"/>
+                                        <menuItem title="Site 5" keyEquivalent="5" id="OcC-nr-VJV"/>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -720,42 +722,42 @@
             <objects>
                 <viewController storyboardIdentifier="MainPopOverVC" id="XfG-lQ-9wD" customClass="MainPopOverVC" customModule="kTranslate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="350" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="450"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="T4x-D2-o8h">
-                                <rect key="frame" x="0.0" y="0.0" width="350" height="500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="450"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="eY6-HP-nRc">
-                                        <rect key="frame" x="0.0" y="450" width="350" height="50"/>
+                                        <rect key="frame" x="0.0" y="400" width="400" height="50"/>
                                         <subviews>
                                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="MNx-w8-IVq">
-                                                <rect key="frame" x="0.0" y="-2" width="350" height="5"/>
+                                                <rect key="frame" x="0.0" y="-2" width="400" height="5"/>
                                             </box>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VqE-og-UHz">
-                                                <rect key="frame" x="128" y="4" width="95" height="13"/>
+                                                <rect key="frame" x="153" y="4" width="95" height="13"/>
                                                 <buttonCell key="cell" type="bevel" title="Command+Shift+E" bezelStyle="regularSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="9Ct-LS-cOC">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system" size="10"/>
                                                 </buttonCell>
                                             </button>
                                             <stackView distribution="fillEqually" orientation="horizontal" alignment="centerY" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bai-zU-Gi5">
-                                                <rect key="frame" x="142" y="20" width="66" height="20"/>
+                                                <rect key="frame" x="139" y="20" width="122" height="22"/>
                                                 <subviews>
                                                     <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CRd-Mc-TLg" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="20" id="967-Pw-5Mc"/>
-                                                            <constraint firstAttribute="width" constant="20" id="zNw-t5-fvE"/>
+                                                            <constraint firstAttribute="height" constant="22" id="967-Pw-5Mc"/>
+                                                            <constraint firstAttribute="width" constant="22" id="zNw-t5-fvE"/>
                                                         </constraints>
-                                                        <buttonCell key="cell" type="smallSquare" title="G" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" inset="2" id="T1l-e6-HZP">
+                                                        <buttonCell key="cell" type="smallSquare" title="⌘1" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" inset="2" id="T1l-e6-HZP">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="system"/>
+                                                            <font key="font" metaFont="smallSystem"/>
                                                         </buttonCell>
                                                         <color key="contentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="1" green="0.49411764705882355" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                 <real key="value" value="0.0"/>
@@ -772,25 +774,25 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                     <button verticalHuggingPriority="750" tag="1" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G8V-jV-sEo" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
-                                                        <rect key="frame" x="23" y="0.0" width="20" height="20"/>
+                                                        <rect key="frame" x="25" y="0.0" width="22" height="22"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="20" id="9Wc-Qe-V8I"/>
-                                                            <constraint firstAttribute="width" constant="20" id="qwE-7A-M4o"/>
+                                                            <constraint firstAttribute="height" constant="22" id="9Wc-Qe-V8I"/>
+                                                            <constraint firstAttribute="width" constant="22" id="qwE-7A-M4o"/>
                                                         </constraints>
-                                                        <buttonCell key="cell" type="smallSquare" title="P" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="1ox-Md-Qjb">
+                                                        <buttonCell key="cell" type="smallSquare" title="⌘2" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="1ox-Md-Qjb">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="system"/>
+                                                            <font key="font" metaFont="system" size="11"/>
                                                         </buttonCell>
                                                         <color key="contentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.56862745098039214" green="0.8666666666666667" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                 <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                                <color key="value" red="0.56862745098039214" green="0.8666666666666667" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                                                 <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -801,25 +803,83 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                     <button verticalHuggingPriority="750" tag="2" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tqz-3v-CMM" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
-                                                        <rect key="frame" x="46" y="0.0" width="20" height="20"/>
+                                                        <rect key="frame" x="50" y="0.0" width="22" height="22"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="20" id="Z90-vA-nkW"/>
-                                                            <constraint firstAttribute="height" constant="20" id="eed-gU-e6m"/>
+                                                            <constraint firstAttribute="width" constant="22" id="Z90-vA-nkW"/>
+                                                            <constraint firstAttribute="height" constant="22" id="eed-gU-e6m"/>
                                                         </constraints>
-                                                        <buttonCell key="cell" type="smallSquare" title="K" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="lM5-Tg-ZdQ">
+                                                        <buttonCell key="cell" type="smallSquare" title="⌘3" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="lM5-Tg-ZdQ">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="system"/>
+                                                            <font key="font" metaFont="system" size="11"/>
                                                         </buttonCell>
                                                         <color key="contentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="1" green="0.83137254901960778" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                 <real key="value" value="0.0"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                                <color key="value" red="1" green="0.83137254901960778" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="isDisableBgColor">
+                                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" tag="3" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a8a-oS-10f" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
+                                                        <rect key="frame" x="75" y="0.0" width="22" height="22"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="22" id="3WA-mE-BXm"/>
+                                                            <constraint firstAttribute="height" constant="22" id="FGu-ll-vMu"/>
+                                                        </constraints>
+                                                        <buttonCell key="cell" type="smallSquare" title="⌘4" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="GRX-md-Aon">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system" size="11"/>
+                                                        </buttonCell>
+                                                        <color key="contentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                                <color key="value" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="isDisableBgColor">
+                                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" tag="4" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U5m-S2-IrE" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
+                                                        <rect key="frame" x="100" y="0.0" width="22" height="22"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="22" id="brH-NV-dBZ"/>
+                                                            <constraint firstAttribute="width" constant="22" id="hhg-ld-BZb"/>
+                                                        </constraints>
+                                                        <buttonCell key="cell" type="smallSquare" title="⌘5" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="wfr-IT-VBF">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system" size="11"/>
+                                                        </buttonCell>
+                                                        <color key="contentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                                <color key="value" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                                                 <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -834,8 +894,12 @@
                                                     <integer value="1000"/>
                                                     <integer value="1000"/>
                                                     <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
                                                 </visibilityPriorities>
                                                 <customSpacing>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
                                                     <real value="3.4028234663852886e+38"/>
                                                     <real value="3.4028234663852886e+38"/>
                                                     <real value="3.4028234663852886e+38"/>
@@ -892,7 +956,7 @@
                                                 </constraints>
                                             </customView>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="jFK-r8-xmu" userLabel="Info View">
-                                                <rect key="frame" x="285" y="0.0" width="30" height="50"/>
+                                                <rect key="frame" x="335" y="0.0" width="30" height="50"/>
                                                 <subviews>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BGv-dx-cL2" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="20" width="20" height="20"/>
@@ -945,7 +1009,7 @@
                                                 </constraints>
                                             </customView>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="oTd-bN-wd9" userLabel="Show Menu View">
-                                                <rect key="frame" x="315" y="0.0" width="30" height="50"/>
+                                                <rect key="frame" x="365" y="0.0" width="30" height="50"/>
                                                 <subviews>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="L7m-uT-TqK" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="20" width="20" height="20"/>
@@ -1003,7 +1067,7 @@
                                             <constraint firstAttribute="bottom" secondItem="jFK-r8-xmu" secondAttribute="bottom" id="7Sn-2r-gUP"/>
                                             <constraint firstItem="wsn-ve-LOd" firstAttribute="top" secondItem="eY6-HP-nRc" secondAttribute="top" id="9ob-DX-Lzh"/>
                                             <constraint firstItem="Bai-zU-Gi5" firstAttribute="centerX" secondItem="eY6-HP-nRc" secondAttribute="centerX" id="CZw-Sn-HPK"/>
-                                            <constraint firstItem="Bai-zU-Gi5" firstAttribute="top" secondItem="eY6-HP-nRc" secondAttribute="top" constant="10" id="Hnx-Kk-xW3"/>
+                                            <constraint firstItem="Bai-zU-Gi5" firstAttribute="top" secondItem="eY6-HP-nRc" secondAttribute="top" constant="8" id="Hnx-Kk-xW3"/>
                                             <constraint firstItem="VqE-og-UHz" firstAttribute="top" secondItem="Bai-zU-Gi5" secondAttribute="bottom" constant="3" id="OcI-la-U1u"/>
                                             <constraint firstItem="oTd-bN-wd9" firstAttribute="leading" secondItem="jFK-r8-xmu" secondAttribute="trailing" id="VGw-4y-uRV"/>
                                             <constraint firstItem="oTd-bN-wd9" firstAttribute="top" secondItem="eY6-HP-nRc" secondAttribute="top" id="Z2h-vG-AvE"/>
@@ -1019,10 +1083,14 @@
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="jyz-5m-OY4">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="450"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="400" id="E1c-pU-JyW"/>
+                                            <constraint firstAttribute="width" constant="400" id="zRX-ga-QI3"/>
+                                        </constraints>
                                     </customView>
                                     <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="ZXe-Xg-Gnc">
-                                        <rect key="frame" x="163" y="238" width="25" height="25"/>
+                                        <rect key="frame" x="188" y="213" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="2IP-83-TGb"/>
                                             <constraint firstAttribute="width" constant="25" id="tBB-JR-3Zy"/>
@@ -1031,7 +1099,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="eY6-HP-nRc" firstAttribute="leading" secondItem="T4x-D2-o8h" secondAttribute="leading" id="9LI-3H-ryH"/>
-                                    <constraint firstAttribute="height" constant="500" id="KHE-Ok-4dy"/>
                                     <constraint firstItem="jyz-5m-OY4" firstAttribute="top" secondItem="eY6-HP-nRc" secondAttribute="bottom" id="NKS-p5-oi7"/>
                                     <constraint firstItem="ZXe-Xg-Gnc" firstAttribute="centerY" secondItem="T4x-D2-o8h" secondAttribute="centerY" id="OIu-Mp-Ivp"/>
                                     <constraint firstItem="ZXe-Xg-Gnc" firstAttribute="centerX" secondItem="T4x-D2-o8h" secondAttribute="centerX" id="Uqn-EB-kG8"/>
@@ -1040,7 +1107,6 @@
                                     <constraint firstAttribute="trailing" secondItem="jyz-5m-OY4" secondAttribute="trailing" id="ceB-NF-7Jl"/>
                                     <constraint firstItem="jyz-5m-OY4" firstAttribute="leading" secondItem="T4x-D2-o8h" secondAttribute="leading" id="jIT-tL-lwN"/>
                                     <constraint firstItem="eY6-HP-nRc" firstAttribute="top" secondItem="T4x-D2-o8h" secondAttribute="top" id="rA0-Zd-rCe"/>
-                                    <constraint firstAttribute="width" constant="350" id="wPe-Mi-whT"/>
                                 </constraints>
                             </customView>
                         </subviews>
@@ -1053,13 +1119,15 @@
                     </view>
                     <connections>
                         <outlet property="m_btnA" destination="gAG-ZW-AAY" id="Td6-XR-sGP"/>
-                        <outlet property="m_btnG" destination="CRd-Mc-TLg" id="iVL-TN-Ha7"/>
-                        <outlet property="m_btnK" destination="tqz-3v-CMM" id="G1A-a5-t6D"/>
-                        <outlet property="m_btnP" destination="G8V-jV-sEo" id="llh-2j-HDW"/>
+                        <outlet property="m_btnCM1" destination="CRd-Mc-TLg" id="CJ6-NF-pUo"/>
+                        <outlet property="m_btnCM2" destination="G8V-jV-sEo" id="IaQ-32-Fp0"/>
+                        <outlet property="m_btnCM3" destination="tqz-3v-CMM" id="ehe-yn-j2f"/>
+                        <outlet property="m_btnCM4" destination="a8a-oS-10f" id="8p7-yK-eXk"/>
+                        <outlet property="m_btnCM5" destination="U5m-S2-IrE" id="ecm-4b-0Ff"/>
                         <outlet property="m_btnShortCut" destination="VqE-og-UHz" id="6WJ-ZB-reo"/>
                         <outlet property="m_indicator" destination="ZXe-Xg-Gnc" id="ZoC-IX-bVs"/>
-                        <outlet property="m_lyContentHeight" destination="KHE-Ok-4dy" id="5FJ-9u-asI"/>
-                        <outlet property="m_lyContentWidth" destination="wPe-Mi-whT" id="I5s-9l-AI2"/>
+                        <outlet property="m_lyContentHeight" destination="E1c-pU-JyW" id="huD-pS-iTO"/>
+                        <outlet property="m_lyContentWidth" destination="zRX-ga-QI3" id="Tdi-qa-HHh"/>
                         <outlet property="m_vwWebView" destination="jyz-5m-OY4" id="ufA-L7-sY9"/>
                     </connections>
                 </viewController>
@@ -1162,7 +1230,7 @@
                                                                     </textFieldCell>
                                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                     <prototypeCellViews>
-                                                                        <tableCellView identifier="SplitVCStickerContentCell" id="XCx-ov-2JY" customClass="SplitVCStickerContentCell" customModule="LogiAppManager_v2" customModuleProvider="target">
+                                                                        <tableCellView identifier="SplitVCStickerContentCell" id="XCx-ov-2JY" customClass="SplitVCStickerContentCell" customModule="kTranslate" customModuleProvider="target">
                                                                             <rect key="frame" x="1" y="2" width="197" height="31"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
@@ -1172,7 +1240,7 @@
                                                                                         <rect key="frame" x="0.0" y="0.0" width="187" height="27"/>
                                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                         <subviews>
-                                                                                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="7e6-5h-BUG" customClass="DynamicTextField" customModule="LogiAppManager_v2" customModuleProvider="target">
+                                                                                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="7e6-5h-BUG" customClass="DynamicTextField" customModule="kTranslate" customModuleProvider="target">
                                                                                                 <rect key="frame" x="3" y="5" width="181" height="17"/>
                                                                                                 <textFieldCell key="cell" truncatesLastVisibleLine="YES" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" placeholderString="More Sticker to do.." id="ETU-a9-UDt">
                                                                                                     <font key="font" metaFont="system"/>
@@ -1204,7 +1272,7 @@
                                                                                 <outlet property="tf_content" destination="7e6-5h-BUG" id="d2B-Ee-KYI"/>
                                                                             </connections>
                                                                         </tableCellView>
-                                                                        <tableCellView identifier="SplitVCStickerAddCell" id="A3S-vg-UUW" customClass="SplitVCStickerAddCell" customModule="LogiAppManager_v2" customModuleProvider="target">
+                                                                        <tableCellView identifier="SplitVCStickerAddCell" id="A3S-vg-UUW" customClass="SplitVCStickerAddCell" customModule="kTranslate" customModuleProvider="target">
                                                                             <rect key="frame" x="1" y="38" width="197" height="25"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>

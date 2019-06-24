@@ -26,7 +26,7 @@ class Settings_Left: NSViewController, NSTableViewDelegate, NSTableViewDataSourc
         }
         
         m_tbMain = tabVC
-        m_tbMain.preferredContentSize = NSSize(width: 500, height: 300)
+        m_tbMain.preferredContentSize = NSSize(width: 500, height: 400)
     }
     
     override func viewWillAppear() {

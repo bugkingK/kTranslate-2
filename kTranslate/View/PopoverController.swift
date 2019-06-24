@@ -71,14 +71,14 @@ open class PopoverController: NSObject {
         if let button = statusItem.button {
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
             eventMonitor?.start()
-            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.kTranslate, action: AnalyticsAction.popover, label:AnalyticsLabel.open, value: 0)
+            MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.root, action: AnalyticsAction.popover, label:AnalyticsLabel.open, value: 0)
         }
     }
     
     func closePopover(sender: Any?) {
         popover.performClose(sender)
         eventMonitor?.stop()
-        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.kTranslate, action: AnalyticsAction.popover, label: AnalyticsLabel.close, value: 0)
+        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.root, action: AnalyticsAction.popover, label: AnalyticsLabel.close, value: 0)
     }
     
     public func getLeftViewController() -> NSViewController? {
