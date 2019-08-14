@@ -13,7 +13,7 @@ import GoogleAnalyticsTracker
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        UserDefaults.standard.DEFINE_Clear()
+//        UserDefaults.standard.DEFINE_Clear()
         MPGoogleAnalyticsTracker.activate(.init(analyticsIdentifier: "UA-141906441-2"))
         
         self.initUserDefaultKey()

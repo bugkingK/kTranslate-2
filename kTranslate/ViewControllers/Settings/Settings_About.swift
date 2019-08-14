@@ -35,7 +35,7 @@ class Settings_About: NSViewController {
                 url = URL(string: "https://github.com/bugkingK")
                 action = AnalyticsAction.github
             case 2:
-                url = URL(string: "http://blog.bugking.tk")
+                url = URL(string: "https://bugkingk.github.io")
                 action = AnalyticsAction.page
             default:
                 break
