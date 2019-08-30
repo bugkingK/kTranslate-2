@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,6 +37,9 @@
 		85B7E59222B920D60074CAE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85B7E59122B920D60074CAE9 /* Assets.xcassets */; };
 		85B7E59522B920D60074CAE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85B7E59322B920D60074CAE9 /* Main.storyboard */; };
 		85B7E59C22B921390074CAE9 /* LauncherApplication.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 85B7E58B22B920D60074CAE9 /* LauncherApplication.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D254CF512317C36A0002676C /* VMGoogleTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D254CF502317C36A0002676C /* VMGoogleTranslate.swift */; };
+		D2FB6DF6231902B4008881FF /* VMPapagoTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB6DF5231902B4008881FF /* VMPapagoTranslate.swift */; };
+		D2FB6DF82319075E008881FF /* VMKakaoTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB6DF72319075E008881FF /* VMKakaoTranslate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -94,6 +97,9 @@
 		85B7E59622B920D60074CAE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85B7E59722B920D60074CAE9 /* LauncherApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LauncherApplication.entitlements; sourceTree = "<group>"; };
 		C82EA836802C54663635F86D /* Pods-kTranslate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kTranslate/Pods-kTranslate.debug.xcconfig"; sourceTree = "<group>"; };
+		D254CF502317C36A0002676C /* VMGoogleTranslate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMGoogleTranslate.swift; sourceTree = "<group>"; };
+		D2FB6DF5231902B4008881FF /* VMPapagoTranslate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMPapagoTranslate.swift; sourceTree = "<group>"; };
+		D2FB6DF72319075E008881FF /* VMKakaoTranslate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMKakaoTranslate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,7 @@
 		85B7E4CF22B918960074CAE9 /* kTranslate */ = {
 			isa = PBXGroup;
 			children = (
+				D254CF4F2317C33C0002676C /* ViewModel */,
 				85B7E4E022B918AF0074CAE9 /* Common */,
 				85B7E4F822B918B00074CAE9 /* ViewControllers */,
 				85B7E4F422B918AF0074CAE9 /* SupportFiles */,
@@ -257,6 +264,16 @@
 				85B7E59722B920D60074CAE9 /* LauncherApplication.entitlements */,
 			);
 			path = LauncherApplication;
+			sourceTree = "<group>";
+		};
+		D254CF4F2317C33C0002676C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D254CF502317C36A0002676C /* VMGoogleTranslate.swift */,
+				D2FB6DF5231902B4008881FF /* VMPapagoTranslate.swift */,
+				D2FB6DF72319075E008881FF /* VMKakaoTranslate.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,24 +393,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-kTranslate/Pods-kTranslate-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
-				"${BUILT_PRODUCTS_DIR}/Google-Analytics-for-OS-X/GoogleAnalyticsTracker.framework",
-				"${BUILT_PRODUCTS_DIR}/MASShortcut/MASShortcut.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-kTranslate/Pods-kTranslate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAnalyticsTracker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MASShortcut.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-kTranslate/Pods-kTranslate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-kTranslate/Pods-kTranslate-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kTranslate/Pods-kTranslate-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DB9B2C224B7841B2F5264090 /* [CP] Check Pods Manifest.lock */ = {
@@ -437,12 +445,15 @@
 				85B7E50922B918B00074CAE9 /* FMDatabasePool.m in Sources */,
 				85B7E51022B918B00074CAE9 /* CommonUtil.swift in Sources */,
 				85B7E50D22B918B00074CAE9 /* HotKeyManager.swift in Sources */,
+				D2FB6DF82319075E008881FF /* VMKakaoTranslate.swift in Sources */,
+				D254CF512317C36A0002676C /* VMGoogleTranslate.swift in Sources */,
 				85B7E51422B918B00074CAE9 /* Settings_Left.swift in Sources */,
 				85B7E51C22B918B00074CAE9 /* SplitVC_Sticker.swift in Sources */,
 				85B7E50A22B918B00074CAE9 /* DBSticker.swift in Sources */,
 				85B7E50622B918B00074CAE9 /* DBManager.swift in Sources */,
 				85B7E50C22B918B00074CAE9 /* AutoLogin.swift in Sources */,
 				85B7E50E22B918B00074CAE9 /* CTWindowController.swift in Sources */,
+				D2FB6DF6231902B4008881FF /* VMPapagoTranslate.swift in Sources */,
 				85B7E50822B918B00074CAE9 /* FMDatabaseAdditions.m in Sources */,
 				85B7E50F22B918B00074CAE9 /* CTCircleButton.swift in Sources */,
 			);
