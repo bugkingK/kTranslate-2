@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85623463231963DD0029725E /* VMKakaoTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85623460231963DD0029725E /* VMKakaoTranslate.swift */; };
+		85623464231963DD0029725E /* VMPapagoTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85623461231963DD0029725E /* VMPapagoTranslate.swift */; };
+		85623465231963DD0029725E /* VMGoogleTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85623462231963DD0029725E /* VMGoogleTranslate.swift */; };
 		85B255A622AFDC470084272A /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B255A522AFDC470084272A /* ServiceManagement.framework */; };
 		85DE7D5422AFD3FD00568C80 /* CTWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */; };
 		B819391F6A17D3594B55EF00 /* Pods_kTranslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E349CDD74F97BC916CC54B /* Pods_kTranslate.framework */; };
@@ -51,6 +54,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		85623460231963DD0029725E /* VMKakaoTranslate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMKakaoTranslate.swift; sourceTree = "<group>"; };
+		85623461231963DD0029725E /* VMPapagoTranslate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMPapagoTranslate.swift; sourceTree = "<group>"; };
+		85623462231963DD0029725E /* VMGoogleTranslate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMGoogleTranslate.swift; sourceTree = "<group>"; };
 		85B255A522AFDC470084272A /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWindowController.swift; sourceTree = "<group>"; };
 		9B40A2464413ED268A050DE7 /* Pods-kTranslate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.debug.xcconfig"; path = "Target Support Files/Pods-kTranslate/Pods-kTranslate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +114,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8562345F231963DD0029725E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				85623460231963DD0029725E /* VMKakaoTranslate.swift */,
+				85623461231963DD0029725E /* VMPapagoTranslate.swift */,
+				85623462231963DD0029725E /* VMGoogleTranslate.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		CA1D9EC4634B843153FA0676 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +175,7 @@
 		D2D3B83122AF5DB60086909D /* kTranslate */ = {
 			isa = PBXGroup;
 			children = (
+				8562345F231963DD0029725E /* ViewModel */,
 				D2D6D8F222C061A8009D0C8F /* View */,
 				D2D3B84E22AF5E260086909D /* Common */,
 				D2D3B84222AF5E260086909D /* ViewControllers */,
@@ -409,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85623465231963DD0029725E /* VMGoogleTranslate.swift in Sources */,
 				D2D3B85622AF5E260086909D /* Settings_About.swift in Sources */,
 				D2D3B85D22AF5E260086909D /* PopoverController.swift in Sources */,
 				D2D3B85722AF5E260086909D /* Settings_Welcome.swift in Sources */,
@@ -420,10 +438,12 @@
 				D204813322B885E300369A6D /* DBSticker.swift in Sources */,
 				D2D3B85522AF5E260086909D /* Settings_Preferences.swift in Sources */,
 				D2D3B85C22AF5E260086909D /* CommonUtil.swift in Sources */,
+				85623463231963DD0029725E /* VMKakaoTranslate.swift in Sources */,
 				D204811A22B8853C00369A6D /* SplitVC_Sticker.swift in Sources */,
 				D204813122B885C200369A6D /* DBManager.swift in Sources */,
 				D2D3B85922AF5E260086909D /* MainPopOverVC.swift in Sources */,
 				85DE7D5422AFD3FD00568C80 /* CTWindowController.swift in Sources */,
+				85623464231963DD0029725E /* VMPapagoTranslate.swift in Sources */,
 				D22A423722B32D1800ADE25C /* Constants.swift in Sources */,
 				D2CFDD2422B1E72E0056314B /* CTCircleButton.swift in Sources */,
 			);
