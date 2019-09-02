@@ -8,97 +8,111 @@
 
 import Cocoa
 import WebKit
-import GoogleAnalyticsTracker
+import RxSwift
 
 class MainPopOverVC: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
-        NSApp.activate(ignoringOtherApps: true)
-        m_vwWebView.addSubview(m_wvMain)
-        m_wvMain.topAnchor.constraint(equalTo: m_vwWebView.topAnchor).isActive = true
-        m_wvMain.leadingAnchor.constraint(equalTo: m_vwWebView.leadingAnchor).isActive = true
-        m_wvMain.trailingAnchor.constraint(equalTo: m_vwWebView.trailingAnchor).isActive = true
-        m_wvMain.bottomAnchor.constraint(equalTo: m_vwWebView.bottomAnchor).isActive = true
-        m_wvMain.frameLoadDelegate = self
-        m_wvMain.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 12_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecok) Version/12.0 Mobile/15E148 Safari/604.1"
-//        m_wvMain.editingDelegate = self
-        
-        self.m_btnA.target = self
-        self.m_btnA.action = #selector(onClickAlwayShow(_:))
-        let bAlways = UserDefaults.standard.bool(forKey: UserDefaults_DEFINE_KEY.alwaysShowKey.rawValue)
-        self.m_btnA.state = bAlways ? .on : .off
-        
-        self.m_btnShortCut.target = self
-        self.m_btnShortCut.action = #selector(onPreperences)
-        self.m_arrBtnCircle = [m_btnCM1, m_btnCM2, m_btnCM3, m_btnCM4, m_btnCM5]
-        for btn in self.m_arrBtnCircle {
-            btn.target = self
-            btn.action = #selector(onChangeTranslate(_:))
-        }
-        
-        self.initMenu()
-        
-        let idx = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
-        self.loadWebTranslate(idx: idx)
-        guard let initShortCutString = UserDefaults.standard.string(forKey: UserDefaults_DEFINE_KEY.shortCutStringKey.rawValue) else {
-            self.onChangeShortcutButton(shortCut: "")
-            return
-        }
-        self.onChangeShortcutButton(shortCut: initShortCutString)
+        setupLayout()
+        bindLayout()
     }
     
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        let width = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)
-        let height = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)
-        
+        let width = UserDefaults.standard.integer(forKey: DEFINE_KEY.widthKey.rawValue)
+        let height = UserDefaults.standard.integer(forKey: DEFINE_KEY.heightKey.rawValue)
         m_lyContentWidth.constant = CGFloat(width)
         m_lyContentHeight.constant = CGFloat(height)
+        
+        m_btnShortCut.title = UserDefaults.standard.string(forKey: DEFINE_KEY.shortCutStringKey.rawValue) ?? ""
     }
     
-    private func initMenu() {
-        let root_menu = NSMenu()
-        let arr_menu_items = [
-            NSMenuItem(title: "About kTranslate", action: #selector(onAbout), keyEquivalent: ""),
-            NSMenuItem(title: "Preperences..", action: #selector(onPreperences), keyEquivalent: ","),
-            NSMenuItem.separator(),
-            NSMenuItem(title: "Quit", action: #selector(onQuit), keyEquivalent: "q")
-        ]
-        
-        for item in arr_menu_items {
-            item.target = self
-            root_menu.addItem(item)
-        }
-        
-        m_side_menu = root_menu
-    }
+    @IBOutlet fileprivate weak var m_lyContentWidth: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var m_lyContentHeight: NSLayoutConstraint!
     
-    @IBOutlet weak var m_vwWebView: NSView!
-    @IBOutlet weak var m_btnShortCut: NSButton!
-    @IBOutlet weak var m_indicator: NSProgressIndicator!
-    @IBOutlet weak var m_lyContentWidth: NSLayoutConstraint!
-    @IBOutlet weak var m_lyContentHeight: NSLayoutConstraint!
-    @IBOutlet weak var m_btnCM1: CTCircleButton!
-    @IBOutlet weak var m_btnCM2: CTCircleButton!
-    @IBOutlet weak var m_btnCM3: CTCircleButton!
-    @IBOutlet weak var m_btnCM4: CTCircleButton!
-    @IBOutlet weak var m_btnCM5: CTCircleButton!
-    @IBOutlet weak var m_btnA: CTCircleButton!
+    @IBOutlet fileprivate weak var m_vwWebView: NSView!
+    @IBOutlet fileprivate weak var m_btnShortCut: NSButton!
+    @IBOutlet fileprivate weak var m_indicator: NSProgressIndicator!
+    @IBOutlet fileprivate weak var m_st_btns: NSStackView!
+    @IBOutlet fileprivate weak var m_btnA: CTCircleButton!
+    @IBOutlet fileprivate weak var m_btnI: CTCircleButton!
+//    @IBOutlet fileprivate weak var m_btnM: CTCircleButton!
     
-    private var m_side_menu: NSMenu!
-    private var m_arrBtnCircle:[CTCircleButton] = []
-    private let m_wvMain:WebView = {
+    fileprivate var m_side_menu: NSMenu = NSMenu()
+    fileprivate var m_arrBtnCircle:[CTCircleButton] = []
+    fileprivate let m_dispose_bag:DisposeBag = DisposeBag()
+    fileprivate let m_wvMain:WebView = {
         let wv = WebView()
         wv.shouldUpdateWhileOffscreen = true
         wv.translatesAutoresizingMaskIntoConstraints = false
+        wv.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 12_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecok) Version/12.0 Mobile/15E148 Safari/604.1"
         return wv
     }()
     
-    public func onChangeShortcutButton(shortCut:String) {
-        m_btnShortCut.title = shortCut
+    fileprivate func setupLayout() {
+        NSApp.activate(ignoringOtherApps: true)
+        
+        m_wvMain.frameLoadDelegate = self
+        m_vwWebView.addSubview(m_wvMain)
+        NSLayoutConstraint.activate([
+            m_wvMain.topAnchor.constraint(equalTo: m_vwWebView.topAnchor),
+            m_wvMain.leadingAnchor.constraint(equalTo: m_vwWebView.leadingAnchor),
+            m_wvMain.trailingAnchor.constraint(equalTo: m_vwWebView.trailingAnchor),
+            m_wvMain.bottomAnchor.constraint(equalTo: m_vwWebView.bottomAnchor)
+        ])
+        
+        let bAlways = UserDefaults.standard.bool(forKey: DEFINE_KEY.alwaysShowKey.rawValue)
+        self.m_btnA.state = bAlways ? .on : .off
+        self.m_btnA.actionKey = AnalyticsAction.alwaysShow
+        
+        m_side_menu.addItems([
+            NSMenuItem.make(title: "About kTranslate", target: self, action: #selector(onAbout), keyEquivalent: ""),
+            NSMenuItem.make(title: "Preperences..", target: self, action: #selector(onPreperences), keyEquivalent: ""),
+            NSMenuItem.separator(),
+            NSMenuItem.make(title: "Quit", target: NSApp, action: #selector(NSApp.terminate(_:)), keyEquivalent: "q")
+        ])
+        
+        self.m_arrBtnCircle = m_st_btns.subviews as! [CTCircleButton]
+        let idx = UserDefaults.standard.integer(forKey: DEFINE_KEY.domainKey.rawValue)
+        self.loadWebTranslate(idx: idx)
+    }
+    
+    fileprivate func bindLayout() {
+        m_btnA.rx.tap
+            .subscribe(onNext: { [unowned self] _ in
+                let state = self.m_btnA.state == .on
+                UserDefaults.standard.set(state, forKey: DEFINE_KEY.alwaysShowKey.rawValue)
+            })
+            .disposed(by: m_dispose_bag)
+        
+        m_btnI.rx.tap
+            .subscribe(onNext: { [unowned self] _ in
+                guard let sender = self.m_btnI else { return }
+                let p = NSPoint(x: 0, y: (sender.frame.height*2)-10)
+                self.m_side_menu.popUp(positioning: self.m_side_menu.item(at: 0), at: p, in: sender)
+            })
+            .disposed(by: m_dispose_bag)
+        
+//        m_btnM.rx.tap
+//            .subscribe(onNext: { [unowned self] _ in
+//                guard let sender = self.m_btnI else { return }
+//                PopoverController.sharedInstance().toggleMemoMenu(isShow: sender.state == .on)
+//            })
+//            .disposed(by: m_dispose_bag)
+        
+        m_btnShortCut.rx.tap
+            .bind(onNext: onPreperences)
+            .disposed(by: m_dispose_bag)
+        
+        for btn in self.m_arrBtnCircle {
+            btn.rx.tap
+                .subscribe(onNext: { [unowned self] _ in
+                    self.onChangeTranslate(btn)
+                })
+                .disposed(by: m_dispose_bag)
+        }
     }
     
     @objc public func onChangeTranslate(_ sender: AnyObject) {
@@ -106,40 +120,16 @@ class MainPopOverVC: NSViewController {
     }
     
     @objc private func onAbout() {
-        guard let vc = NSStoryboard.init(name: "Settings", bundle: nil).instantiateController(withIdentifier: "Settings_About") as? Settings_About else {
-            return
-        }
-        let windowVC = CTWindowController(window: NSWindow(contentViewController: vc))
-        windowVC.showWindow(self)
+        NSStoryboard.showStoryboard(sbName: "Settings", vcName: "Settings_About")
     }
     
     @objc public func onPreperences() {
-        guard let vc = NSStoryboard.init(name: "Settings", bundle: nil).instantiateController(withIdentifier: "Settings_Preferences") as? Settings_Preferences else {
-            return
-        }
-        let windowVC = CTWindowController(window: NSWindow(contentViewController: vc))
-        windowVC.showWindow(self)
-        
-        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.itself, label: "", value: 0)
-    }
-    
-    @objc private func onQuit() {
-        NSApp.terminate(nil)
-    }
-    
-    @objc private func onClickAlwayShow(_ sender:NSButton) {
-        UserDefaults.standard.set(sender.state == .on, forKey: UserDefaults_DEFINE_KEY.alwaysShowKey.rawValue)
-        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.root, action:AnalyticsAction.alwaysShow, label: "", value: 0)
-    }
-    
-    @IBAction private func onClickSideMenu(_ sender: NSButton) {
-        let p = NSPoint(x: 0, y: (sender.frame.height*2)-10)
-        self.m_side_menu.popUp(positioning: self.m_side_menu.item(at: 0), at: p, in: sender)
+        NSStoryboard.showStoryboard(sbName: "Settings", vcName: "Settings_Preferences")
     }
     
     private func loadWebTranslate(idx:Int) {
         var url:URL?
-        guard let m_arr_site = UserDefaults.standard.array(forKey: UserDefaults_DEFINE_KEY.siteAddressKey.rawValue) as? [String] else {
+        guard let m_arr_site = UserDefaults.standard.array(forKey: DEFINE_KEY.siteAddressKey.rawValue) as? [String] else {
             return
         }
         
@@ -155,17 +145,15 @@ class MainPopOverVC: NSViewController {
             btn.state = btn.tag == idx ? .on : .off
         }
         
-        UserDefaults.standard.set(idx, forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
+        UserDefaults.standard.set(idx, forKey: DEFINE_KEY.domainKey.rawValue)
         let request = URLRequest(url: v_url)
         m_wvMain.mainFrame.load(request)
         
-        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.root, action:AnalyticsAction.moveSite, label: v_url.path, value: 0)
+//        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.root, action:AnalyticsAction.moveSite, label: v_url.path, value: 0)
     }
-    
-    @IBAction func onClickBtnMenu(_ sender: NSButton) {
-        PopoverController.sharedInstance().toggleMemoMenu(isShow: sender.state == .on)
-    }
-    
+}
+
+extension MainPopOverVC: WebFrameLoadDelegate {
     private func loadingBar(show:Bool) {
         if show {
             self.m_indicator.isHidden = false
@@ -175,9 +163,7 @@ class MainPopOverVC: NSViewController {
             self.m_indicator.stopAnimation(self)
         }
     }
-}
-
-extension MainPopOverVC: WebFrameLoadDelegate {
+    
     func webView(_ sender: WebView!, didFinishLoadFor frame: WebFrame!) {
         self.loadingBar(show: false)
     }
@@ -186,39 +172,3 @@ extension MainPopOverVC: WebFrameLoadDelegate {
         self.loadingBar(show: true)
     }
 }
-
-extension MainPopOverVC: WebEditingDelegate {
-//
-//    func webView(_ webView: WebView!, shouldChangeSelectedDOMRange currentRange: DOMRange!, to proposedRange: DOMRange!, affinity selectionAffinity: NSSelectionAffinity, stillSelecting flag: Bool) -> Bool {
-//
-//        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
-//            let script_outer = "document.getElementsByClassName('tlid-translation translation')[0].innerText"
-//            let script_inner = "document.getElementsByClassName('text-dummy')[0].textContent"
-//            if let innerText = self.m_wvMain.stringByEvaluatingJavaScript(from: script_inner), let outerText = self.m_wvMain.stringByEvaluatingJavaScript(from: script_outer) {
-//
-//                if innerText != "" {
-//                    print(innerText)
-//                }
-//
-//                if outerText != "" {
-//                    print(outerText)
-//                }
-//
-//            }
-//        }
-//
-//        return true
-//    }
-//
-//    func webView(_ webView: WebView!, shouldInsertText text: String!, replacing range: DOMRange!, given action: WebViewInsertAction) -> Bool {
-//
-//
-//        return true
-//    }
-//
-//    func webViewDidChange(_ notification: Notification!) {
-//
-//    }
-}
-
-

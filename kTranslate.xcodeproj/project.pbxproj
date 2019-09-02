@@ -3,16 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10D907522230267CA144AEF2 /* Pods_kTranslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C521C7C1C5231D87AB99406C /* Pods_kTranslate.framework */; };
 		85623463231963DD0029725E /* VMKakaoTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85623460231963DD0029725E /* VMKakaoTranslate.swift */; };
 		85623464231963DD0029725E /* VMPapagoTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85623461231963DD0029725E /* VMPapagoTranslate.swift */; };
 		85623465231963DD0029725E /* VMGoogleTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85623462231963DD0029725E /* VMGoogleTranslate.swift */; };
 		85B255A622AFDC470084272A /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B255A522AFDC470084272A /* ServiceManagement.framework */; };
 		85DE7D5422AFD3FD00568C80 /* CTWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */; };
-		B819391F6A17D3594B55EF00 /* Pods_kTranslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E349CDD74F97BC916CC54B /* Pods_kTranslate.framework */; };
+		85FA51C6231D3C5F00012327 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FA51C5231D3C5F00012327 /* CustomButton.swift */; };
+		85FA51C8231D48D900012327 /* Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FA51C7231D48D900012327 /* Ex.swift */; };
 		D204811A22B8853C00369A6D /* SplitVC_Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D204811922B8853C00369A6D /* SplitVC_Sticker.swift */; };
 		D204813122B885C200369A6D /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D204813022B885C200369A6D /* DBManager.swift */; };
 		D204813322B885E300369A6D /* DBSticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D204813222B885E300369A6D /* DBSticker.swift */; };
@@ -59,7 +61,10 @@
 		85623462231963DD0029725E /* VMGoogleTranslate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMGoogleTranslate.swift; sourceTree = "<group>"; };
 		85B255A522AFDC470084272A /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWindowController.swift; sourceTree = "<group>"; };
-		9B40A2464413ED268A050DE7 /* Pods-kTranslate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.debug.xcconfig"; path = "Target Support Files/Pods-kTranslate/Pods-kTranslate.debug.xcconfig"; sourceTree = "<group>"; };
+		85FA51C5231D3C5F00012327 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		85FA51C7231D48D900012327 /* Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex.swift; sourceTree = "<group>"; };
+		86AF1C113C15730803CCC98A /* Pods-kTranslate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kTranslate/Pods-kTranslate.debug.xcconfig"; sourceTree = "<group>"; };
+		C521C7C1C5231D87AB99406C /* Pods_kTranslate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kTranslate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D204811922B8853C00369A6D /* SplitVC_Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitVC_Sticker.swift; sourceTree = "<group>"; };
 		D204813022B885C200369A6D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		D204813222B885E300369A6D /* DBSticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSticker.swift; sourceTree = "<group>"; };
@@ -89,8 +94,7 @@
 		D2D3B86F22AF6F900086909D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2D3B87122AF6F900086909D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2D3B87222AF6F900086909D /* LauncherApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LauncherApplication.entitlements; sourceTree = "<group>"; };
-		E2B16400A1516FF01F6ADB74 /* Pods-kTranslate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.release.xcconfig"; path = "Target Support Files/Pods-kTranslate/Pods-kTranslate.release.xcconfig"; sourceTree = "<group>"; };
-		F6E349CDD74F97BC916CC54B /* Pods_kTranslate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kTranslate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF0CC783044FF0DB8C87161A /* Pods-kTranslate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.release.xcconfig"; path = "Pods/Target Support Files/Pods-kTranslate/Pods-kTranslate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +104,7 @@
 			files = (
 				D204813522B8861B00369A6D /* libsqlite3.0.tbd in Frameworks */,
 				85B255A622AFDC470084272A /* ServiceManagement.framework in Frameworks */,
-				B819391F6A17D3594B55EF00 /* Pods_kTranslate.framework in Frameworks */,
+				10D907522230267CA144AEF2 /* Pods_kTranslate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +118,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C763263A261FDAF8582B9E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86AF1C113C15730803CCC98A /* Pods-kTranslate.debug.xcconfig */,
+				DF0CC783044FF0DB8C87161A /* Pods-kTranslate.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8562345F231963DD0029725E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,15 +135,6 @@
 				85623462231963DD0029725E /* VMGoogleTranslate.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		CA1D9EC4634B843153FA0676 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9B40A2464413ED268A050DE7 /* Pods-kTranslate.debug.xcconfig */,
-				E2B16400A1516FF01F6ADB74 /* Pods-kTranslate.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		D204811B22B8858300369A6D /* Database */ = {
@@ -147,7 +151,7 @@
 			children = (
 				D204813422B8861B00369A6D /* libsqlite3.0.tbd */,
 				85B255A522AFDC470084272A /* ServiceManagement.framework */,
-				F6E349CDD74F97BC916CC54B /* Pods_kTranslate.framework */,
+				C521C7C1C5231D87AB99406C /* Pods_kTranslate.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -158,8 +162,8 @@
 				D2D3B83122AF5DB60086909D /* kTranslate */,
 				D2D3B86722AF6F8F0086909D /* LauncherApplication */,
 				D2D3B83022AF5DB60086909D /* Products */,
-				CA1D9EC4634B843153FA0676 /* Pods */,
 				D26994B4603421D65477EE75 /* Frameworks */,
+				6C763263A261FDAF8582B9E5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,8 +201,8 @@
 		D2D3B84322AF5E260086909D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				D2D3B84422AF5E260086909D /* Settings_Left.swift */,
 				D2D3B84522AF5E260086909D /* Settings.storyboard */,
+				D2D3B84422AF5E260086909D /* Settings_Left.swift */,
 				D2D3B84622AF5E260086909D /* Settings_Preferences.swift */,
 				D2D3B84722AF5E260086909D /* Settings_About.swift */,
 				D2D3B84822AF5E260086909D /* Settings_Welcome.swift */,
@@ -209,8 +213,8 @@
 		D2D3B84A22AF5E260086909D /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				D2D3B84B22AF5E260086909D /* MainPopOverVC.swift */,
 				D2D3B84C22AF5E260086909D /* Main.storyboard */,
+				D2D3B84B22AF5E260086909D /* MainPopOverVC.swift */,
 				D204811922B8853C00369A6D /* SplitVC_Sticker.swift */,
 			);
 			path = Main;
@@ -257,6 +261,8 @@
 				85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */,
 				D2CFDD2322B1E72E0056314B /* CTCircleButton.swift */,
 				D204813622B8864B00369A6D /* DynamicTextField.swift */,
+				85FA51C5231D3C5F00012327 /* CustomButton.swift */,
+				85FA51C7231D48D900012327 /* Ex.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -268,12 +274,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2D3B83F22AF5DB70086909D /* Build configuration list for PBXNativeTarget "kTranslate" */;
 			buildPhases = (
-				CC0FF3F8BA1DABB984DEB428 /* [CP] Check Pods Manifest.lock */,
+				24F58D766C4D3206BF5E5D5C /* [CP] Check Pods Manifest.lock */,
 				D2D3B82B22AF5DB60086909D /* Sources */,
 				D2D3B82C22AF5DB60086909D /* Frameworks */,
 				D2D3B82D22AF5DB60086909D /* Resources */,
-				78B44BFE080901E7D4BBC4E0 /* [CP] Embed Pods Frameworks */,
 				D2D3B87722AF70640086909D /* Copy Launcher Application */,
+				F00B3F449AC53D5FC00E2B08 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -380,24 +386,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		78B44BFE080901E7D4BBC4E0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-kTranslate/Pods-kTranslate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-kTranslate/Pods-kTranslate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kTranslate/Pods-kTranslate-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CC0FF3F8BA1DABB984DEB428 /* [CP] Check Pods Manifest.lock */ = {
+		24F58D766C4D3206BF5E5D5C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -419,6 +408,42 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F00B3F449AC53D5FC00E2B08 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-kTranslate/Pods-kTranslate-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/Google-Analytics-for-OS-X/GoogleAnalyticsTracker.framework",
+				"${BUILT_PRODUCTS_DIR}/MASShortcut/MASShortcut.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAnalyticsTracker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MASShortcut.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-kTranslate/Pods-kTranslate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -437,12 +462,14 @@
 				D2D3B85322AF5E260086909D /* Settings_Left.swift in Sources */,
 				D204813322B885E300369A6D /* DBSticker.swift in Sources */,
 				D2D3B85522AF5E260086909D /* Settings_Preferences.swift in Sources */,
+				85FA51C6231D3C5F00012327 /* CustomButton.swift in Sources */,
 				D2D3B85C22AF5E260086909D /* CommonUtil.swift in Sources */,
 				85623463231963DD0029725E /* VMKakaoTranslate.swift in Sources */,
 				D204811A22B8853C00369A6D /* SplitVC_Sticker.swift in Sources */,
 				D204813122B885C200369A6D /* DBManager.swift in Sources */,
 				D2D3B85922AF5E260086909D /* MainPopOverVC.swift in Sources */,
 				85DE7D5422AFD3FD00568C80 /* CTWindowController.swift in Sources */,
+				85FA51C8231D48D900012327 /* Ex.swift in Sources */,
 				85623464231963DD0029725E /* VMPapagoTranslate.swift in Sources */,
 				D22A423722B32D1800ADE25C /* Constants.swift in Sources */,
 				D2CFDD2422B1E72E0056314B /* CTCircleButton.swift in Sources */,
@@ -596,7 +623,7 @@
 		};
 		D2D3B84022AF5DB70086909D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B40A2464413ED268A050DE7 /* Pods-kTranslate.debug.xcconfig */;
+			baseConfigurationReference = 86AF1C113C15730803CCC98A /* Pods-kTranslate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = kTranslate/SupportFiles/kTranslate.entitlements;
@@ -622,7 +649,7 @@
 		};
 		D2D3B84122AF5DB70086909D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2B16400A1516FF01F6ADB74 /* Pods-kTranslate.release.xcconfig */;
+			baseConfigurationReference = DF0CC783044FF0DB8C87161A /* Pods-kTranslate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = kTranslate/SupportFiles/kTranslate.entitlements;

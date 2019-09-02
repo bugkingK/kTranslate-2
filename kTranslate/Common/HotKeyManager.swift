@@ -42,9 +42,9 @@ class HotKeyManager: NSObject {
     
     public func registerHotKey(shortcutView:MASShortcutView) {
         shortcutView.associatedUserDefaultsKey = globalShortcut
-        if !UserDefaults.standard.bool(forKey: UserDefaults_DEFINE_KEY.initShortcut.rawValue) {
+        if !UserDefaults.standard.bool(forKey: DEFINE_KEY.initShortcut.rawValue) {
             shortcutView.shortcutValue = MASShortcut(keyCode: 14, modifierFlags: [.command, .shift])
-            UserDefaults.standard.set(true, forKey: UserDefaults_DEFINE_KEY.initShortcut.rawValue)
+            UserDefaults.standard.set(true, forKey: DEFINE_KEY.initShortcut.rawValue)
         }
     }
     

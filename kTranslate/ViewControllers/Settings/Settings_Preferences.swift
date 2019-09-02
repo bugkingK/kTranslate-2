@@ -50,10 +50,10 @@ class Settings_Preferences: NSViewController {
     @IBOutlet weak var m_tfAddressCM5: NSTextField!
     private var m_arrAddressCM:[NSTextField]!
     private var m_arrSiteName:[String] = {
-        return UserDefaults.standard.array(forKey: UserDefaults_DEFINE_KEY.siteNameKey.rawValue) as! [String]
+        return UserDefaults.standard.array(forKey: DEFINE_KEY.siteNameKey.rawValue) as! [String]
     }()
     private var m_arrSiteAddress:[String] = {
-        return UserDefaults.standard.array(forKey: UserDefaults_DEFINE_KEY.siteAddressKey.rawValue) as! [String]
+        return UserDefaults.standard.array(forKey: DEFINE_KEY.siteAddressKey.rawValue) as! [String]
     }()
     
     private func setupLayout() {
@@ -76,26 +76,26 @@ class Settings_Preferences: NSViewController {
         m_btnAutoLogin.action = #selector(toggleAutostart(_:))
         m_btnAutoLogin.state = bAutoLogin ? .on : .off
         
-        let bool_welcome = defaults.bool(forKey: UserDefaults_DEFINE_KEY.welcomeKey.rawValue)
+        let bool_welcome = defaults.bool(forKey: DEFINE_KEY.welcomeKey.rawValue)
         m_btnWelcome.target = self
         m_btnWelcome.action = #selector(toggleWelcome(_:))
         m_btnWelcome.state = bool_welcome ? .on : .off
         
-        var v_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)
+        var v_width = defaults.string(forKey: DEFINE_KEY.widthKey.rawValue)
         if v_width == nil {
-            defaults.set("400", forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)
+            defaults.set("400", forKey: DEFINE_KEY.widthKey.rawValue)
             v_width = "400"
         }
         
-        var v_height = defaults.string(forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)
+        var v_height = defaults.string(forKey: DEFINE_KEY.heightKey.rawValue)
         if v_height == nil {
-            defaults.set("400", forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)
+            defaults.set("400", forKey: DEFINE_KEY.heightKey.rawValue)
             v_height = "600"
         }
         
-        var v_menu_width = defaults.string(forKey: UserDefaults_DEFINE_KEY.menuWidthKey.rawValue)
+        var v_menu_width = defaults.string(forKey: DEFINE_KEY.menuWidthKey.rawValue)
         if v_menu_width == nil {
-            defaults.set("200", forKey: UserDefaults_DEFINE_KEY.menuWidthKey.rawValue)
+            defaults.set("200", forKey: DEFINE_KEY.menuWidthKey.rawValue)
             v_menu_width = "200"
         }
         
@@ -117,7 +117,7 @@ class Settings_Preferences: NSViewController {
     }
     
     @objc func toggleWelcome(_ sender: NSButton) {
-        UserDefaults.standard.set(sender.state == .on, forKey: UserDefaults_DEFINE_KEY.welcomeKey.rawValue)
+        UserDefaults.standard.set(sender.state == .on, forKey: DEFINE_KEY.welcomeKey.rawValue)
     }
     
     @objc private func onClickWindowSize(_ sender:NSComboBox) {
@@ -128,11 +128,11 @@ class Settings_Preferences: NSViewController {
         var key = ""
             switch sender.tag {
             case 0:
-                key = UserDefaults_DEFINE_KEY.widthKey.rawValue
+                key = DEFINE_KEY.widthKey.rawValue
             case 1:
-                key = UserDefaults_DEFINE_KEY.heightKey.rawValue
+                key = DEFINE_KEY.heightKey.rawValue
             case 2:
-                key = UserDefaults_DEFINE_KEY.menuWidthKey.rawValue
+                key = DEFINE_KEY.menuWidthKey.rawValue
             default: break
         }
         
@@ -146,10 +146,10 @@ class Settings_Preferences: NSViewController {
         switch tag {
         case 0..<5:
             self.m_arrSiteName[tag] = value
-            UserDefaults.standard.set(self.m_arrSiteName, forKey: UserDefaults_DEFINE_KEY.siteNameKey.rawValue)
+            UserDefaults.standard.set(self.m_arrSiteName, forKey: DEFINE_KEY.siteNameKey.rawValue)
         case 5..<10:
             self.m_arrSiteAddress[tag-5] = value
-            UserDefaults.standard.set(self.m_arrSiteAddress, forKey: UserDefaults_DEFINE_KEY.siteAddressKey.rawValue)
+            UserDefaults.standard.set(self.m_arrSiteAddress, forKey: DEFINE_KEY.siteAddressKey.rawValue)
         default: break
         }
     }
@@ -158,12 +158,12 @@ class Settings_Preferences: NSViewController {
 extension Settings_Preferences: NSWindowDelegate {
     func windowWillClose(_ notification: Notification) {
         let defaults = UserDefaults.standard
-        let b_dontShow = defaults.bool(forKey: UserDefaults_DEFINE_KEY.dontShowKey.rawValue)
+        let b_dontShow = defaults.bool(forKey: DEFINE_KEY.dontShowKey.rawValue)
         var shortcutString = "set any shortcut"
         
         if !b_dontShow {
             CommonUtil.alertMessageWithKeep("kTranslate will continue to run in the background", "Do not show this message agin") {
-                defaults.set(true, forKey: UserDefaults_DEFINE_KEY.dontShowKey.rawValue)
+                defaults.set(true, forKey: DEFINE_KEY.dontShowKey.rawValue)
             }
         }
         
@@ -172,11 +172,7 @@ extension Settings_Preferences: NSWindowDelegate {
         }
         
         PopoverController.sharedInstance().showPopover(sender: self)
-        guard let vc_main = PopoverController.sharedInstance().getLeftViewController() as? MainPopOverVC else {
-            return
-        }
-        defaults.set(shortcutString, forKey: UserDefaults_DEFINE_KEY.shortCutStringKey.rawValue)
-        vc_main.onChangeShortcutButton(shortCut: shortcutString)
+        defaults.set(shortcutString, forKey: DEFINE_KEY.shortCutStringKey.rawValue)
     }
     
     private func getShortCutString(shortCut:String) -> String {

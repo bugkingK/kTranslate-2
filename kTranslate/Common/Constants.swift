@@ -14,7 +14,7 @@ struct BundleInfo {
     static let bundleName = Bundle.main.infoDictionary?["CFBundleName"] as! String
 }
 
-enum UserDefaults_DEFINE_KEY:String, CaseIterable {
+enum DEFINE_KEY:String, CaseIterable {
     case initKey = "init"
     case domainKey = "number_translate_domain"
     case widthKey = "WidthKey"
@@ -32,19 +32,11 @@ enum UserDefaults_DEFINE_KEY:String, CaseIterable {
 
 extension UserDefaults {
     func DEFINE_Clear() {
-        _ = UserDefaults_DEFINE_KEY.allCases.map {
+        _ = DEFINE_KEY.allCases.map {
             UserDefaults.standard.removeObject(forKey: $0.rawValue)
             UserDefaults.standard.synchronize()
         }
     }
-}
-
-
-struct TranslatorURL {
-    static let kakaoURL:URL = URL(string: "https://m.translate.kakao.com/")!
-    static let papagoURL:URL = URL(string: "https://papago.naver.com/")!
-    static let googleURL:URL = URL(string: "https://translate.google.co.kr/")!
-    static let betterURL:URL = URL(string: "http://better-translator.com/")!
 }
 
 struct AnalyticsCategory {

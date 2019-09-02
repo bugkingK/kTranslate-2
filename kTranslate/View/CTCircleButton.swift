@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class CTCircleButton: NSButton {
+class CTCircleButton: CustomButton {
     
     @IBInspectable var borderColor: NSColor?
     @IBInspectable var borderWidth: CGFloat = 0
