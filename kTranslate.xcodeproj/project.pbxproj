@@ -63,7 +63,6 @@
 		85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWindowController.swift; sourceTree = "<group>"; };
 		85FA51C5231D3C5F00012327 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		85FA51C7231D48D900012327 /* Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ex.swift; sourceTree = "<group>"; };
-		86AF1C113C15730803CCC98A /* Pods-kTranslate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kTranslate/Pods-kTranslate.debug.xcconfig"; sourceTree = "<group>"; };
 		C521C7C1C5231D87AB99406C /* Pods_kTranslate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kTranslate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D204811922B8853C00369A6D /* SplitVC_Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitVC_Sticker.swift; sourceTree = "<group>"; };
 		D204813022B885C200369A6D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
@@ -94,7 +93,6 @@
 		D2D3B86F22AF6F900086909D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2D3B87122AF6F900086909D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2D3B87222AF6F900086909D /* LauncherApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LauncherApplication.entitlements; sourceTree = "<group>"; };
-		DF0CC783044FF0DB8C87161A /* Pods-kTranslate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.release.xcconfig"; path = "Pods/Target Support Files/Pods-kTranslate/Pods-kTranslate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,15 +116,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6C763263A261FDAF8582B9E5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				86AF1C113C15730803CCC98A /* Pods-kTranslate.debug.xcconfig */,
-				DF0CC783044FF0DB8C87161A /* Pods-kTranslate.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		8562345F231963DD0029725E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,7 +152,6 @@
 				D2D3B86722AF6F8F0086909D /* LauncherApplication */,
 				D2D3B83022AF5DB60086909D /* Products */,
 				D26994B4603421D65477EE75 /* Frameworks */,
-				6C763263A261FDAF8582B9E5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -623,7 +611,6 @@
 		};
 		D2D3B84022AF5DB70086909D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86AF1C113C15730803CCC98A /* Pods-kTranslate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = kTranslate/SupportFiles/kTranslate.entitlements;
@@ -649,7 +636,6 @@
 		};
 		D2D3B84122AF5DB70086909D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF0CC783044FF0DB8C87161A /* Pods-kTranslate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = kTranslate/SupportFiles/kTranslate.entitlements;
