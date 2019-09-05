@@ -64,15 +64,13 @@ extension Main_ChooseLanguage: NSCollectionViewDataSource, NSCollectionViewDeleg
             return NSCollectionViewItem.init()
         }
 
+        let item = indexPath.item
         cell.btnTitle.title = language.name
         cell.btnTitle.target = self
-        cell.btnTitle.tag = indexPath.item
+        cell.btnTitle.tag = item
         cell.btnTitle.action = #selector(onClickBtnTitle(_:))
-        if indexPath.item == m_n_select {
-            cell.btnTitle.backgroundColor = NSColor.init(red: 250/255, green: 229/255, blue: 77/255, alpha: 1)
-        } else {
-            cell.btnTitle.backgroundColor = NSColor.white
-        }
+        cell.btnTitle.backgroundColor = item == m_n_select ? .hex_EE768A : .white
+        cell.btnTitle.textColor = item == m_n_select ? .white : .hex_222428
         return cell
     }
 }

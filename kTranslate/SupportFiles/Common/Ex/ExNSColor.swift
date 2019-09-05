@@ -17,9 +17,6 @@ extension NSColor {
     static let hex_F7F7F7:NSColor = .init(hexFromString: "#f7f7f7")
 }
 
-
-
-
 extension NSColor {
     // hexFromString
     convenience init(hexFromString:String, alpha:CGFloat = 1.0) {

@@ -30,13 +30,8 @@ class Main_Container: CTContainerViewController {
     
     fileprivate func setupLayout() {
         m_side_menu.addItems([
-            NSMenuItem.make("About kTranslate", "", {
-                NSApplication.shared.orderFrontStandardAboutPanel(nil)
-                PopoverController.shared.closePopover(sender: nil)
-            }),
-            NSMenuItem.make("Preperences..", "", {
-                
-            }),
+            NSMenuItem.make("About kTranslate", self, #selector(onClickMenuAbout), ""),
+            NSMenuItem.make("Preperences..", NSApp, #selector(NSApp.terminate(_:)), ""),
             NSMenuItem.separator(),
             NSMenuItem.make("Quit", NSApp, #selector(NSApp.terminate(_:)), "")
         ])
@@ -72,6 +67,11 @@ class Main_Container: CTContainerViewController {
                 
             })
             .disposed(by: m_dispose_bag)
+    }
+    
+    @objc fileprivate func onClickMenuAbout() {
+        PopoverController.shared.closePopover(sender: self)
+        NSApplication.shared.orderFrontStandardAboutPanel(self)
     }
     
 }

@@ -18,7 +18,13 @@ class CustomButton: NSButton {
     @IBInspectable var borderColor:NSColor = .white
     @IBInspectable var borderWidth:CGFloat = 0
     @IBInspectable var cornerRadius:CGFloat = 0
-    @IBInspectable var textColor:NSColor = .black
+    @IBInspectable var textColor:NSColor = .black {
+        didSet {
+            let myAttribute = [NSAttributedString.Key.foregroundColor: textColor ]
+            let myAttrString = NSAttributedString(string: title, attributes: myAttribute)
+            self.attributedTitle = myAttrString
+        }
+    }
     
     override var title: String {
         didSet {

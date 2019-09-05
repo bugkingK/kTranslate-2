@@ -210,10 +210,10 @@
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_logo" id="4ay-3t-Pbv"/>
                                         </imageView>
                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="Kz9-MU-vQl">
-                                            <rect key="frame" x="210" y="60" width="268" height="278"/>
+                                            <rect key="frame" x="210" y="90" width="268" height="218"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nhh-3s-f3X">
-                                                    <rect key="frame" x="-2" y="250" width="116" height="28"/>
+                                                    <rect key="frame" x="-2" y="190" width="116" height="28"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="App Name" id="XoM-A4-FCQ">
                                                         <font key="font" metaFont="systemBold" size="23"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -221,14 +221,12 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="fYt-EC-mJ7">
-                                                    <rect key="frame" x="-2" y="0.0" width="272" height="240"/>
+                                                    <rect key="frame" x="-2" y="0.0" width="272" height="180"/>
                                                     <textFieldCell key="cell" selectable="YES" id="EAO-4A-aJY">
                                                         <font key="font" size="12" name=".AppleSDGothicNeoI-Regular"/>
-                                                        <string key="title">kTranslate provides Google, Papago, and Cacao Translator with great translation capabilities. In addition, shortcut keys provide users with a convenient and smart translation environment.
+                                                        <string key="title">kTranslate provides Google, Papago, and Kakao Translator with great translation capabilities. In addition, shortcut keys provide users with a convenient and smart translation environment.
 
 Pressing the default shortcut (Command + Shift + E) allows you to use various translators at any time.
-
-Forget sticky notes often or write down important things. You do not have to worry about it being stored in internal storage only.
 
 The Always button allows kTranslate to always be displayed above. Say goodbye to the tedious task of switching screens
 </string>
