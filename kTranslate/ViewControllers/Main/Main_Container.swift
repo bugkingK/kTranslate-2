@@ -30,8 +30,13 @@ class Main_Container: CTContainerViewController {
     
     fileprivate func setupLayout() {
         m_side_menu.addItems([
-            NSMenuItem.make("About kTranslate", self, nil, ""),
-            NSMenuItem.make("Preperences..", self, nil, ""),
+            NSMenuItem.make("About kTranslate", "", {
+                NSApplication.shared.orderFrontStandardAboutPanel(nil)
+                PopoverController.shared.closePopover(sender: nil)
+            }),
+            NSMenuItem.make("Preperences..", "", {
+                
+            }),
             NSMenuItem.separator(),
             NSMenuItem.make("Quit", NSApp, #selector(NSApp.terminate(_:)), "")
         ])
@@ -41,6 +46,7 @@ class Main_Container: CTContainerViewController {
     }
     
     fileprivate func bindLayout() {
+        m_btn_always.state = UserDefault.bool(forKey: .bAlways) ? .on : .off
         m_btn_always.rx.tap
             .subscribe(onNext: { [unowned self] _ in
                 UserDefault.set(self.m_btn_always.state == .on, key: .bAlways)

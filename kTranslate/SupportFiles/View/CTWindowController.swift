@@ -54,4 +54,12 @@ class CTWindowController: NSWindowController, NSWindowDelegate {
         self.window?.level = .floating
         self.window?.makeKeyAndOrderFront(sender)
     }
+    
+    static func showWindow(sbName:String, vcName:String) {
+        guard let vc = NSStoryboard.init(name: sbName, bundle: nil).instantiateController(withIdentifier: vcName) as? NSViewController else {
+            return
+        }
+        let windowVC = CTWindowController(window: NSWindow(contentViewController: vc))
+        windowVC.showWindow(self)
+    }
 }
