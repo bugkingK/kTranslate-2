@@ -51,7 +51,7 @@ open class PopoverController: NSObject {
         
         eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
             if let strongSelf = self, strongSelf.popover.isShown {
-                let bAlways = UserDefaults.standard.bool(forKey: UserDefaults_DEFINE_KEY.alwaysShowKey.rawValue)
+                let bAlways = UserDefaults.standard.bool(forKey: UserKey.alwaysShowKey.rawValue)
                 if !bAlways {
                     strongSelf.closePopover(sender: event)
                 }

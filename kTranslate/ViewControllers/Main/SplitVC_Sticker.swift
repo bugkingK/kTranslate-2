@@ -19,9 +19,9 @@ class SplitVC_Sticker: NSViewController, NSTableViewDelegate, NSTableViewDataSou
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        var width = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.menuWidthKey.rawValue)
+        var width = UserDefaults.standard.integer(forKey: UserKey.menuWidthKey.rawValue)
         if width < 200 {
-            UserDefaults.standard.set(200, forKey: UserDefaults_DEFINE_KEY.menuWidthKey.rawValue)
+            UserDefaults.standard.set(200, forKey: UserKey.menuWidthKey.rawValue)
             width = 200
         }
         m_lyWidth.constant = CGFloat(width)

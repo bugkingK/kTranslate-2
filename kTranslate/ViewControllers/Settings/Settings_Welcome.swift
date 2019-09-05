@@ -13,7 +13,7 @@ class Settings_Welcome: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        m_appName.stringValue = BundleInfo.bundleName
+        m_appName.stringValue = Bundle.main.infoDictionary?["CFBundleName"] as! String
     }
     
     @IBOutlet weak var m_appName: NSTextField!

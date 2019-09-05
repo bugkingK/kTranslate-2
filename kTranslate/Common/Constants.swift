@@ -8,13 +8,7 @@
 
 import Cocoa
 
-struct BundleInfo {
-    static let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
-    static let build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
-    static let bundleName = Bundle.main.infoDictionary?["CFBundleName"] as! String
-}
-
-enum UserDefaults_DEFINE_KEY:String, CaseIterable {
+enum UserKey:String, CaseIterable {
     case initKey = "init"
     case domainKey = "number_translate_domain"
     case widthKey = "WidthKey"
@@ -29,22 +23,13 @@ enum UserDefaults_DEFINE_KEY:String, CaseIterable {
     case siteAddressKey = "SiteAddressKey"
 }
 
-
 extension UserDefaults {
     func DEFINE_Clear() {
-        _ = UserDefaults_DEFINE_KEY.allCases.map {
+        _ = UserKey.allCases.map {
             UserDefaults.standard.removeObject(forKey: $0.rawValue)
             UserDefaults.standard.synchronize()
         }
     }
-}
-
-
-struct TranslatorURL {
-    static let kakaoURL:URL = URL(string: "https://m.translate.kakao.com/")!
-    static let papagoURL:URL = URL(string: "https://papago.naver.com/")!
-    static let googleURL:URL = URL(string: "https://translate.google.co.kr/")!
-    static let betterURL:URL = URL(string: "http://better-translator.com/")!
 }
 
 struct AnalyticsCategory {

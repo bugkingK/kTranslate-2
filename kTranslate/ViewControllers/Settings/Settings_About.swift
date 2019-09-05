@@ -14,8 +14,10 @@ class Settings_About: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        m_appName.stringValue = BundleInfo.bundleName
-        m_lbVersion.stringValue = "Version \(BundleInfo.version)"
+        
+        m_appName.stringValue = Bundle.main.infoDictionary?["CFBundleName"] as! String
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+        m_lbVersion.stringValue = "Version \(version)"
         MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.about, action: AnalyticsAction.itself, label: "", value: 0)
     }
     

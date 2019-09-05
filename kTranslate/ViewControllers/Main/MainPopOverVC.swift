@@ -21,13 +21,12 @@ class MainPopOverVC: NSViewController {
         m_wvMain.leadingAnchor.constraint(equalTo: m_vwWebView.leadingAnchor).isActive = true
         m_wvMain.trailingAnchor.constraint(equalTo: m_vwWebView.trailingAnchor).isActive = true
         m_wvMain.bottomAnchor.constraint(equalTo: m_vwWebView.bottomAnchor).isActive = true
-        m_wvMain.frameLoadDelegate = self
         m_wvMain.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 12_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecok) Version/12.0 Mobile/15E148 Safari/604.1"
 //        m_wvMain.editingDelegate = self
         
         self.m_btnA.target = self
         self.m_btnA.action = #selector(onClickAlwayShow(_:))
-        let bAlways = UserDefaults.standard.bool(forKey: UserDefaults_DEFINE_KEY.alwaysShowKey.rawValue)
+        let bAlways = UserDefaults.standard.bool(forKey: UserKey.alwaysShowKey.rawValue)
         self.m_btnA.state = bAlways ? .on : .off
         
         self.m_btnShortCut.target = self
@@ -40,9 +39,9 @@ class MainPopOverVC: NSViewController {
         
         self.initMenu()
         
-        let idx = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
+        let idx = UserDefaults.standard.integer(forKey: UserKey.domainKey.rawValue)
         self.loadWebTranslate(idx: idx)
-        guard let initShortCutString = UserDefaults.standard.string(forKey: UserDefaults_DEFINE_KEY.shortCutStringKey.rawValue) else {
+        guard let initShortCutString = UserDefaults.standard.string(forKey: UserKey.shortCutStringKey.rawValue) else {
             self.onChangeShortcutButton(shortCut: "")
             return
         }
@@ -52,8 +51,8 @@ class MainPopOverVC: NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        let width = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)
-        let height = UserDefaults.standard.integer(forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)
+        let width = UserDefaults.standard.integer(forKey: UserKey.widthKey.rawValue)
+        let height = UserDefaults.standard.integer(forKey: UserKey.heightKey.rawValue)
         
         m_lyContentWidth.constant = CGFloat(width)
         m_lyContentHeight.constant = CGFloat(height)
@@ -78,7 +77,6 @@ class MainPopOverVC: NSViewController {
     
     @IBOutlet weak var m_vwWebView: NSView!
     @IBOutlet weak var m_btnShortCut: NSButton!
-    @IBOutlet weak var m_indicator: NSProgressIndicator!
     @IBOutlet weak var m_lyContentWidth: NSLayoutConstraint!
     @IBOutlet weak var m_lyContentHeight: NSLayoutConstraint!
     @IBOutlet weak var m_btnCM1: CTCircleButton!
@@ -128,7 +126,7 @@ class MainPopOverVC: NSViewController {
     }
     
     @objc private func onClickAlwayShow(_ sender:NSButton) {
-        UserDefaults.standard.set(sender.state == .on, forKey: UserDefaults_DEFINE_KEY.alwaysShowKey.rawValue)
+        UserDefaults.standard.set(sender.state == .on, forKey: UserKey.alwaysShowKey.rawValue)
         MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.root, action:AnalyticsAction.alwaysShow, label: "", value: 0)
     }
     
@@ -139,7 +137,7 @@ class MainPopOverVC: NSViewController {
     
     private func loadWebTranslate(idx:Int) {
         var url:URL?
-        guard let m_arr_site = UserDefaults.standard.array(forKey: UserDefaults_DEFINE_KEY.siteAddressKey.rawValue) as? [String] else {
+        guard let m_arr_site = UserDefaults.standard.array(forKey: UserKey.siteAddressKey.rawValue) as? [String] else {
             return
         }
         
@@ -155,7 +153,7 @@ class MainPopOverVC: NSViewController {
             btn.state = btn.tag == idx ? .on : .off
         }
         
-        UserDefaults.standard.set(idx, forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
+        UserDefaults.standard.set(idx, forKey: UserKey.domainKey.rawValue)
         let request = URLRequest(url: v_url)
         m_wvMain.mainFrame.load(request)
         
@@ -165,60 +163,4 @@ class MainPopOverVC: NSViewController {
     @IBAction func onClickBtnMenu(_ sender: NSButton) {
         PopoverController.sharedInstance().toggleMemoMenu(isShow: sender.state == .on)
     }
-    
-    private func loadingBar(show:Bool) {
-        if show {
-            self.m_indicator.isHidden = false
-            self.m_indicator.startAnimation(self)
-        } else {
-            self.m_indicator.isHidden = true
-            self.m_indicator.stopAnimation(self)
-        }
-    }
 }
-
-extension MainPopOverVC: WebFrameLoadDelegate {
-    func webView(_ sender: WebView!, didFinishLoadFor frame: WebFrame!) {
-        self.loadingBar(show: false)
-    }
-    
-    func webView(_ sender: WebView!, didStartProvisionalLoadFor frame: WebFrame!) {
-        self.loadingBar(show: true)
-    }
-}
-
-extension MainPopOverVC: WebEditingDelegate {
-//
-//    func webView(_ webView: WebView!, shouldChangeSelectedDOMRange currentRange: DOMRange!, to proposedRange: DOMRange!, affinity selectionAffinity: NSSelectionAffinity, stillSelecting flag: Bool) -> Bool {
-//
-//        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
-//            let script_outer = "document.getElementsByClassName('tlid-translation translation')[0].innerText"
-//            let script_inner = "document.getElementsByClassName('text-dummy')[0].textContent"
-//            if let innerText = self.m_wvMain.stringByEvaluatingJavaScript(from: script_inner), let outerText = self.m_wvMain.stringByEvaluatingJavaScript(from: script_outer) {
-//
-//                if innerText != "" {
-//                    print(innerText)
-//                }
-//
-//                if outerText != "" {
-//                    print(outerText)
-//                }
-//
-//            }
-//        }
-//
-//        return true
-//    }
-//
-//    func webView(_ webView: WebView!, shouldInsertText text: String!, replacing range: DOMRange!, given action: WebViewInsertAction) -> Bool {
-//
-//
-//        return true
-//    }
-//
-//    func webViewDidChange(_ notification: Notification!) {
-//
-//    }
-}
-
-

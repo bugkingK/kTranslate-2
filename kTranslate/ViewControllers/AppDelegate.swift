@@ -29,35 +29,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private func initUserDefaultKey(_ force:Bool = false) {
         let defaults = UserDefaults.standard
-        let initKey = defaults.bool(forKey: UserDefaults_DEFINE_KEY.initKey.rawValue)
+        let initKey = defaults.bool(forKey: UserKey.initKey.rawValue)
         
         if initKey {
             MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.root, action: AnalyticsAction.launch, label: AnalyticsLabel.existing, value: 0)
             return
         }
         
-        defaults.set(true, forKey: UserDefaults_DEFINE_KEY.initKey.rawValue)
-        defaults.set(0, forKey: UserDefaults_DEFINE_KEY.domainKey.rawValue)
-        defaults.set("400", forKey: UserDefaults_DEFINE_KEY.widthKey.rawValue)
-        defaults.set("600", forKey: UserDefaults_DEFINE_KEY.heightKey.rawValue)
-        defaults.set("200", forKey: UserDefaults_DEFINE_KEY.menuWidthKey.rawValue)
-        defaults.set(false, forKey: UserDefaults_DEFINE_KEY.alwaysShowKey.rawValue)
-        defaults.set("set any shortcut", forKey: UserDefaults_DEFINE_KEY.shortCutStringKey.rawValue)
+        defaults.set(true, forKey: UserKey.initKey.rawValue)
+        defaults.set(0, forKey: UserKey.domainKey.rawValue)
+        defaults.set("400", forKey: UserKey.widthKey.rawValue)
+        defaults.set("600", forKey: UserKey.heightKey.rawValue)
+        defaults.set("200", forKey: UserKey.menuWidthKey.rawValue)
+        defaults.set(false, forKey: UserKey.alwaysShowKey.rawValue)
+        defaults.set("set any shortcut", forKey: UserKey.shortCutStringKey.rawValue)
         
         let add_site_name:[String] = ["Kakao", "Papago", "Naver Dic", "Daum Dic", ""]
         let arr_site_address:[String] = ["https://m.translate.kakao.com/", "https://papago.naver.com/", "https://endic.naver.com/", "http://small.dic.daum.net/", ""]
         
-        defaults.set(add_site_name, forKey: UserDefaults_DEFINE_KEY.siteNameKey.rawValue)
-        defaults.set(arr_site_address, forKey: UserDefaults_DEFINE_KEY.siteAddressKey.rawValue)
+        defaults.set(add_site_name, forKey: UserKey.siteNameKey.rawValue)
+        defaults.set(arr_site_address, forKey: UserKey.siteAddressKey.rawValue)
         UserDefaults.standard.synchronize()
         MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.root, action: AnalyticsAction.launch, label: AnalyticsLabel.new, value: 0)
     }
     
     private func showWelcome() {
         // defaultValue false
-        let isShowWelcome = UserDefaults.standard.bool(forKey: UserDefaults_DEFINE_KEY.welcomeKey.rawValue)
+        let isShowWelcome = UserDefaults.standard.bool(forKey: UserKey.welcomeKey.rawValue)
         if !isShowWelcome {
-            UserDefaults.standard.set(true, forKey: UserDefaults_DEFINE_KEY.welcomeKey.rawValue)
+            UserDefaults.standard.set(true, forKey: UserKey.welcomeKey.rawValue)
             UserDefaults.standard.synchronize()
             
             guard let vc = NSStoryboard.init(name: "Settings", bundle: nil).instantiateController(withIdentifier: "Settings_Window") as? NSWindowController else {
