@@ -39,9 +39,11 @@ class CTWindowController: NSWindowController, NSWindowDelegate {
     override init(window: NSWindow?) {
         window?.styleMask = [.titled, .closable]
         window?.backingType = .buffered
+        window?.titlebarAppearsTransparent = true
         super.init(window: window)
         window?.delegate = self
         window?.hasShadow = true
+        window?.title = ""
     }
     
     required init?(coder: NSCoder) {

@@ -27,4 +27,28 @@ class HotKeyManager: NSObject {
             UserDefaults.standard.set(true, forKey: HOTKEY)
         }
     }
+    
+    static public func getShortCutString(shortCut:String) -> String {
+        var ret_value:String = ""
+        
+        for c_value in shortCut {
+            if c_value == "⌘" {
+                ret_value = ret_value+"Command + "
+            }
+            
+            if c_value == "⇧" {
+                ret_value = ret_value+"Shift + "
+            }
+            
+            if c_value == "⌥" {
+                ret_value = ret_value+"Option + "
+            }
+            
+            if c_value == "⌃" {
+                ret_value = ret_value+"Control + "
+            }
+        }
+        
+        return ret_value
+    }
 }

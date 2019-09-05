@@ -19,6 +19,18 @@ class Main_Container: CTContainerViewController {
         bindLayout()
     }
     
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        let width = UserDefault.cgfloat(forKey: .sWidth)
+        let height = UserDefault.cgfloat(forKey: .sHeight)
+        resizeContainer(width: width, height: height)
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        m_btn_command.title = UserDefault.string(forKey: .sShortCutKey) ?? "set any shortcut"
+    }
+    
     @IBOutlet weak var m_btn_always: CTCircleButton!
     @IBOutlet weak var m_btn_info: CTCircleButton!
     @IBOutlet weak var m_btn_translator: NSButton!
@@ -31,7 +43,7 @@ class Main_Container: CTContainerViewController {
     fileprivate func setupLayout() {
         m_side_menu.addItems([
             NSMenuItem.make("About kTranslate", self, #selector(onClickMenuAbout), ""),
-            NSMenuItem.make("Preperences..", NSApp, #selector(NSApp.terminate(_:)), ""),
+            NSMenuItem.make("Preperences..", self, #selector(onClickMenuPreference), ""),
             NSMenuItem.separator(),
             NSMenuItem.make("Quit", NSApp, #selector(NSApp.terminate(_:)), "")
         ])
@@ -70,8 +82,11 @@ class Main_Container: CTContainerViewController {
     }
     
     @objc fileprivate func onClickMenuAbout() {
-        PopoverController.shared.closePopover(sender: self)
-        NSApplication.shared.orderFrontStandardAboutPanel(self)
+        CTWindowController.showWindow(sbName: "Setting", vcName: "Setting_About")
+    }
+    
+    @objc fileprivate func onClickMenuPreference() {
+        CTWindowController.showWindow(sbName: "Setting", vcName: "Setting_Preference")
     }
     
 }

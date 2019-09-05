@@ -11,7 +11,11 @@ import Foundation
 class UserDefault {
     enum Key:String, CaseIterable {
         /// Popover Always
+        case bLaunchInit = "bLaunchInit"
         case bAlways = "bAlways"
+        case sWidth = "sWidth"
+        case sHeight = "sHeight"
+        case sShortCutKey = "sShortCutKey"
     }
     
     static func set(_ value:Any?, key:Key) {
@@ -29,6 +33,10 @@ class UserDefault {
     
     static func string(forKey:Key) -> String? {
         return UserDefaults.standard.string(forKey: forKey.rawValue)
+    }
+    
+    static func cgfloat(forKey:Key) -> CGFloat {
+        return CGFloat(UserDefaults.standard.float(forKey: forKey.rawValue))
     }
     
     static func clear() {

@@ -719,11 +719,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="Main_Container" customModule="kTranslate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="450"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="650"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="eY6-HP-nRc">
-                                <rect key="frame" x="0.0" y="400" width="400" height="50"/>
+                                <rect key="frame" x="0.0" y="600" width="400" height="50"/>
                                 <subviews>
                                     <box autoresizesSubviews="NO" boxType="custom" borderType="none" borderWidth="0.0" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="IrM-bF-qfH">
                                         <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
@@ -903,7 +903,11 @@
                                 </constraints>
                             </customView>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="ixg-JQ-5Ed">
-                                <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="BpT-Vb-ND7"/>
+                                    <constraint firstAttribute="height" constant="600" id="DIb-Cg-u53"/>
+                                </constraints>
                             </containerView>
                         </subviews>
                         <constraints>
@@ -921,12 +925,14 @@
                         <outlet property="m_btn_command" destination="VqE-og-UHz" id="Lbd-sQ-Gmw"/>
                         <outlet property="m_btn_info" destination="BGv-dx-cL2" id="p4l-ZN-rO4"/>
                         <outlet property="m_btn_translator" destination="CRd-Mc-TLg" id="fbP-Wm-zv6"/>
+                        <outlet property="m_height_container" destination="DIb-Cg-u53" id="Pnj-aj-lGj"/>
+                        <outlet property="m_width_container" destination="BpT-Vb-ND7" id="A6P-nN-TLC"/>
                         <outlet property="vwContain" destination="ixg-JQ-5Ed" id="P5i-cb-61N"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-101" y="1192"/>
+            <point key="canvasLocation" x="-98" y="1292"/>
         </scene>
         <!--Main Chatting-->
         <scene sceneID="kgc-Q5-cfq">

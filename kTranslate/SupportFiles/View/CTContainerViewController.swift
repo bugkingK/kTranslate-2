@@ -16,7 +16,15 @@ class CTContainerViewController: NSViewController {
     }
     
     @IBOutlet weak var vwContain:NSView?
+    @IBOutlet weak var m_width_container:NSLayoutConstraint?
+    @IBOutlet weak var m_height_container:NSLayoutConstraint?
     public var vcCurrent:NSViewController?
+    
+    public func resizeContainer(width:CGFloat?, height:CGFloat?) {
+        guard let v_width = width, let v_height = height else { return }
+        self.m_width_container?.constant = v_width
+        self.m_height_container?.constant = v_height
+    }
     
     public func removeViewController() {
         vcCurrent?.view.removeFromSuperview()
