@@ -26,25 +26,34 @@ class Main_Container: CTContainerViewController {
     
     fileprivate var m_dispose_bag:DisposeBag = DisposeBag()
     fileprivate var m_vc_chatting:ChattingVC!
+    fileprivate var m_side_menu:NSMenu = NSMenu()
     
     fileprivate func setupLayout() {
+        m_side_menu.addItems([
+            NSMenuItem.make("About kTranslate", self, nil, ""),
+            NSMenuItem.make("Preperences..", self, nil, ""),
+            NSMenuItem.separator(),
+            NSMenuItem.make("Quit", NSApp, #selector(NSApp.terminate(_:)), "")
+        ])
+        
         m_vc_chatting = NSStoryboard.make(sbName: "Main", vcName: "ChattingVC") as? ChattingVC
-        self.bindToViewController(targetVC: m_vc_chatting)
+        bindToViewController(targetVC: m_vc_chatting)
     }
     
     fileprivate func bindLayout() {
         m_btn_always.rx.tap
-            .subscribe(onNext: { _ in
-                
+            .subscribe(onNext: { [unowned self] _ in
+                UserDefault.set(self.m_btn_always.state == .on, key: .bAlways)
             })
             .disposed(by: m_dispose_bag)
         
         m_btn_info.rx.tap
-            .subscribe(onNext: { _ in
-                
+            .subscribe(onNext: { [unowned self] _ in
+                let sender = self.m_btn_info!
+                let p = NSPoint(x: 0, y: (sender.frame.height*2)-10)
+                self.m_side_menu.popUp(positioning: self.m_side_menu.item(at: 0), at: p, in: sender)
             })
             .disposed(by: m_dispose_bag)
-        
         
         m_btn_translator.rx.tap
             .subscribe(onNext: { _ in

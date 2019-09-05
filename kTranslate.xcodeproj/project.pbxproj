@@ -10,6 +10,7 @@
 		3620EED960352464F3E317B6 /* Pods_kTranslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D60C686D95A68F6DD4A77E /* Pods_kTranslate.framework */; };
 		85B255A622AFDC470084272A /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B255A522AFDC470084272A /* ServiceManagement.framework */; };
 		85DE7D5422AFD3FD00568C80 /* CTWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */; };
+		85E68B2D232138FF00AEBB26 /* ExNSMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E68B2C232138FF00AEBB26 /* ExNSMenuItem.swift */; };
 		D204813122B885C200369A6D /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D204813022B885C200369A6D /* DBManager.swift */; };
 		D204813322B885E300369A6D /* DBSticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D204813222B885E300369A6D /* DBSticker.swift */; };
 		D204813522B8861B00369A6D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D204813422B8861B00369A6D /* libsqlite3.0.tbd */; };
@@ -70,6 +71,7 @@
 		80D60C686D95A68F6DD4A77E /* Pods_kTranslate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kTranslate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B255A522AFDC470084272A /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWindowController.swift; sourceTree = "<group>"; };
+		85E68B2C232138FF00AEBB26 /* ExNSMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNSMenuItem.swift; sourceTree = "<group>"; };
 		A4F9F6EDEBCC55AB8A70A37B /* Pods-kTranslate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.release.xcconfig"; path = "Target Support Files/Pods-kTranslate/Pods-kTranslate.release.xcconfig"; sourceTree = "<group>"; };
 		D204813022B885C200369A6D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		D204813222B885E300369A6D /* DBSticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSticker.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				D2C035942320E9BA00E3BEEF /* ExControl.swift */,
 				D2C035972320EED900E3BEEF /* ExUserDefaults.swift */,
 				D2C035B323210E3400E3BEEF /* ExNSView.swift */,
+				85E68B2C232138FF00AEBB26 /* ExNSMenuItem.swift */,
 			);
 			path = Ex;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				D2D3B85722AF5E260086909D /* Settings_Welcome.swift in Sources */,
 				D2D3B86122AF6F3E0086909D /* AutoLogin.swift in Sources */,
 				D2C035A723210DF700E3BEEF /* ChooseLanguage.swift in Sources */,
+				85E68B2D232138FF00AEBB26 /* ExNSMenuItem.swift in Sources */,
 				D2D3B85822AF5E260086909D /* AppDelegate.swift in Sources */,
 				D2D3B85B22AF5E260086909D /* HotKeyManager.swift in Sources */,
 				D2C0359B232103A600E3BEEF /* Main_Container.swift in Sources */,

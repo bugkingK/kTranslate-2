@@ -942,7 +942,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="387" height="50"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eL3-yh-hCp" customClass="CustomButton" customModule="Translate_Text" customModuleProvider="target">
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eL3-yh-hCp" customClass="CustomButton" customModule="kTranslate" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="-1" width="194" height="52"/>
                                             <buttonCell key="cell" type="smallSquare" title="언어 감지" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kb2-RB-AFk">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -954,7 +954,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </button>
-                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FSm-Mi-EG9" customClass="CustomButton" customModule="Translate_Text" customModuleProvider="target">
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FSm-Mi-EG9" customClass="CustomButton" customModule="kTranslate" customModuleProvider="target">
                                             <rect key="frame" x="194" y="-1" width="193" height="52"/>
                                             <buttonCell key="cell" type="smallSquare" title="영어" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xra-pS-SAf">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1010,11 +1010,11 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="ChattingSendCell" id="om0-M0-a0I" customClass="ChattingCell" customModule="Translate_Text" customModuleProvider="target">
+                                                        <tableCellView identifier="ChattingSendCell" id="om0-M0-a0I" customClass="ChattingCell" customModule="kTranslate" customModuleProvider="target">
                                                             <rect key="frame" x="1" y="1" width="384" height="57"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="5" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="jCb-n7-o9g" customClass="MessageBox" customModule="Translate_Text" customModuleProvider="target">
+                                                                <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="5" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="jCb-n7-o9g" customClass="MessageBox" customModule="kTranslate" customModuleProvider="target">
                                                                     <rect key="frame" x="164" y="10" width="200" height="37"/>
                                                                     <view key="contentView" id="wM5-Tx-T7Z">
                                                                         <rect key="frame" x="0.0" y="0.0" width="200" height="37"/>
@@ -1062,7 +1062,7 @@
                                                                 <outlet property="lbMessage" destination="02L-YJ-dn2" id="QEf-40-jgf"/>
                                                             </connections>
                                                         </tableCellView>
-                                                        <tableCellView identifier="ChattingReciveCell" id="pvW-Ur-77v" customClass="ChattingCell" customModule="Translate_Text" customModuleProvider="target">
+                                                        <tableCellView identifier="ChattingReciveCell" id="pvW-Ur-77v" customClass="ChattingCell" customModule="kTranslate" customModuleProvider="target">
                                                             <rect key="frame" x="1" y="60" width="384" height="84"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -1099,7 +1099,7 @@
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
-                                                                <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="5" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="WMN-7S-Zxs" customClass="MessageBox" customModule="Translate_Text" customModuleProvider="target">
+                                                                <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="5" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="WMN-7S-Zxs" customClass="MessageBox" customModule="kTranslate" customModuleProvider="target">
                                                                     <rect key="frame" x="65" y="10" width="200" height="37"/>
                                                                     <view key="contentView" id="OXk-us-W9a">
                                                                         <rect key="frame" x="0.0" y="0.0" width="200" height="37"/>
@@ -1194,7 +1194,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="387" height="95"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lcc-0c-ftC" customClass="CustomButton" customModule="Translate_Text" customModuleProvider="target">
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lcc-0c-ftC" customClass="CustomButton" customModule="kTranslate" customModuleProvider="target">
                                             <rect key="frame" x="300" y="7" width="79" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Lcc-0c-ftC" secondAttribute="height" multiplier="1:1" id="3Xq-be-pvx"/>
@@ -1295,7 +1295,7 @@
         <!--Choose Language-->
         <scene sceneID="tJQ-QW-iXS">
             <objects>
-                <viewController storyboardIdentifier="ChooseLanguage" id="Cxm-fj-mt0" customClass="ChooseLanguage" customModule="Translate_Text" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseLanguage" id="Cxm-fj-mt0" customClass="ChooseLanguage" customModule="kTranslate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="cQe-tC-hLY">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
