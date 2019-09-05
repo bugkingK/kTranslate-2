@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         NSApp.activate(ignoringOtherApps: true)
         HotKeyManager.shared.registerHotKey()
-        UserDefault.clear()
+//        UserDefault.clear()
         LaunchInit()
         
         let windowVC = NSStoryboard.make(sbName: "Main", vcName: "windowController") as! NSWindowController
