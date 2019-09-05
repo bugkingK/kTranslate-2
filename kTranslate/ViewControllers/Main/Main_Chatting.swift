@@ -71,27 +71,33 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
         m_ttv_input.insertionPointColor = .black
         m_ttv_input.font = NSFont.systemFont(ofSize: 13)
         
-        m_arr_datas = [
-            ChattingData(message: "번역하는 내용을 입력해주세요.", type: .Me),
-        ]
-        
         let sourceVC = NSStoryboard.make(sbName: "Main", vcName: "Main_ChooseLanguage") as! Main_ChooseLanguage
         let targetVC = NSStoryboard.make(sbName: "Main", vcName: "Main_ChooseLanguage") as! Main_ChooseLanguage
         let target = NSLocale.preferredLanguages[0] == "ko-KR" ? "ko" : "en"
-        GoogleTranslation.supportLanguages(target: target) { (support) in
+        GoogleTranslation.supportLanguages(target: target) { [unowned self] (support) in
             var addDetect = support
-            addDetect.languages.insert((name: "언어감지", key: nil), at: 0)
+            let sourceName = target == "ko" ? "언어감지" : "Detect"
+            self.m_btn_source.title = sourceName
+            addDetect.languages.insert((name: sourceName, key: nil), at: 0)
             sourceVC.setup(datas: addDetect, select:nil, selBlock: { [unowned self] sel in
                 self.m_btn_source.title = sel.0
                 self.m_sel_source = sel.1
                 self.m_source_presenter.popup_dismiss()
             })
+            
+            let targetName = target == "ko" ? "영어" : "English"
+            self.m_btn_target.title = targetName
             targetVC.setup(datas: support, select:"en", selBlock: { [unowned self] sel in
                 self.m_btn_target.title = sel.0
                 self.m_sel_target = sel.1!
                 self.m_target_presenter.popup_dismiss()
             })
         }
+        
+        let message = target == "ko" ? "번역하는 내용을 입력해주세요." : "Please enter your translation."
+        m_arr_datas = [
+            ChattingData(message: message, type: .Me),
+        ]
         
         m_source_presenter = Presenter.instance()
                                 .setTarget(self, m_box_present)
@@ -136,7 +142,7 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
         m_ttv_input.rx.string
             .scan("") { (previous, new) -> String in
                 if new.count > 1000 {
-                    self.toast(message: "1000자까지 입력할 수 있습니다.")
+                    self.toast(message: "You can enter up to 1000 characters.")
                     return previous
                 } else {
                     return new

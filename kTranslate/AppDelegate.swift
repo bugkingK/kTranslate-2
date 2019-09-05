@@ -36,7 +36,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     fileprivate func LaunchInit() {
         if !UserDefault.bool(forKey: .bLaunchInit) {
-            CTWindowController.showWindow(sbName: "Setting", vcName: "Setting_About")
+            CTWindowController.showWindow(sbName: "Setting", vcName: "Setting_Preference")
             UserDefault.set(true, key: .bLaunchInit)
             UserDefault.set(false, key: .bAlways)
             UserDefault.set("400", key: .sWidth)

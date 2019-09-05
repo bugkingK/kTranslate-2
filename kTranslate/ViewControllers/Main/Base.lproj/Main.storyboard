@@ -1030,7 +1030,7 @@
                                                                                 <rect key="frame" x="8" y="10" width="179" height="17"/>
                                                                                 <textFieldCell key="cell" selectable="YES" alignment="left" title="Multiline LabelMultiline Label" id="oe9-6W-sln">
                                                                                     <font key="font" usesAppearanceFont="YES"/>
-                                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                             </textField>
@@ -1072,14 +1072,14 @@
                                                             <rect key="frame" x="1" y="60" width="384" height="84"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <box boxType="custom" cornerRadius="10" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="YPo-fa-FXS" userLabel="icon View">
+                                                                <box boxType="custom" borderWidth="0.0" cornerRadius="10" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="YPo-fa-FXS" userLabel="icon View">
                                                                     <rect key="frame" x="10" y="29" width="45" height="45"/>
                                                                     <view key="contentView" id="I0W-HL-Mqn">
-                                                                        <rect key="frame" x="1" y="1" width="43" height="43"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
                                                                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VGR-A6-wCn">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="43" height="43"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                                                                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-google" id="OIs-Mb-waz"/>
                                                                             </imageView>
                                                                         </subviews>
@@ -1094,8 +1094,8 @@
                                                                         <constraint firstAttribute="height" constant="45" id="3VE-Nc-1we"/>
                                                                         <constraint firstAttribute="width" constant="45" id="jmz-8h-gtD"/>
                                                                     </constraints>
-                                                                    <color key="borderColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                                    <color key="fillColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="borderColor" red="0.58823529409999997" green="0.58431372550000005" blue="0.58823529409999997" alpha="0.70303819444444449" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="fillColor" red="1" green="1" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </box>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vge-ID-reB">
                                                                     <rect key="frame" x="63" y="57" width="48" height="17"/>
@@ -1205,7 +1205,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Lcc-0c-ftC" secondAttribute="height" multiplier="1:1" id="3Xq-be-pvx"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="bevel" title="번역" bezelStyle="regularSquare" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="M7A-Kx-zl7">
+                                            <buttonCell key="cell" type="bevel" title="Send" bezelStyle="regularSquare" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="M7A-Kx-zl7">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
