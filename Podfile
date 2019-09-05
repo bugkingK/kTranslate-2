@@ -10,5 +10,8 @@ target 'kTranslate' do
   pod 'FMDB'
   pod 'Google-Analytics-for-OS-X'
   pod 'MASShortcut'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxAlamofire'
 
 end
