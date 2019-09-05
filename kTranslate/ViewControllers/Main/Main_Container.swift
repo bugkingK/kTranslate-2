@@ -25,7 +25,7 @@ class Main_Container: CTContainerViewController {
     @IBOutlet weak var m_btn_command: NSButton!
     
     fileprivate var m_dispose_bag:DisposeBag = DisposeBag()
-    fileprivate var m_vc_chatting:ChattingVC!
+    fileprivate var m_vc_chatting:Main_Chatting!
     fileprivate var m_side_menu:NSMenu = NSMenu()
     
     fileprivate func setupLayout() {
@@ -36,7 +36,7 @@ class Main_Container: CTContainerViewController {
             NSMenuItem.make("Quit", NSApp, #selector(NSApp.terminate(_:)), "")
         ])
         
-        m_vc_chatting = NSStoryboard.make(sbName: "Main", vcName: "ChattingVC") as? ChattingVC
+        m_vc_chatting = NSStoryboard.make(sbName: "Main", vcName: "Main_Chatting") as? Main_Chatting
         bindToViewController(targetVC: m_vc_chatting)
     }
     

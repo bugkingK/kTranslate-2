@@ -1,5 +1,5 @@
 //
-//  ChattingVC.swift
+//  Main_Chatting.swift
 //  Translate-Text
 //
 //  Created by moon on 03/09/2019.
@@ -31,7 +31,7 @@ struct ChattingData {
     }
 }
 
-class ChattingVC: NSViewController, NSTextViewDelegate {
+class Main_Chatting: NSViewController, NSTextViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,8 +75,8 @@ class ChattingVC: NSViewController, NSTextViewDelegate {
             ChattingData(message: "번역하는 내용을 입력해주세요.", type: .Me),
         ]
         
-        let sourceVC = self.storyboard?.instantiateController(withIdentifier: "ChooseLanguage") as! ChooseLanguage
-        let targetVC = self.storyboard?.instantiateController(withIdentifier: "ChooseLanguage") as! ChooseLanguage
+        let sourceVC = NSStoryboard.make(sbName: "Main", vcName: "Main_ChooseLanguage") as! Main_ChooseLanguage
+        let targetVC = NSStoryboard.make(sbName: "Main", vcName: "Main_ChooseLanguage") as! Main_ChooseLanguage
         let target = NSLocale.preferredLanguages[0] == "ko-KR" ? "ko" : "en"
         GoogleTranslation.supportLanguages(target: target) { (support) in
             var addDetect = support
@@ -167,7 +167,7 @@ class ChattingVC: NSViewController, NSTextViewDelegate {
     
 }
 
-extension ChattingVC: NSTableViewDataSource, NSTableViewDelegate {
+extension Main_Chatting: NSTableViewDataSource, NSTableViewDelegate {
     func numberOfRows(in tableView: NSTableView) -> Int {
         return m_arr_datas.count
     }

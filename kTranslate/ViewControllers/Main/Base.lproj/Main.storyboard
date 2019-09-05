@@ -928,10 +928,10 @@
             </objects>
             <point key="canvasLocation" x="-101" y="1192"/>
         </scene>
-        <!--ChattingVC-->
+        <!--Main Chatting-->
         <scene sceneID="kgc-Q5-cfq">
             <objects>
-                <viewController storyboardIdentifier="ChattingVC" id="n9i-Ux-NKV" customClass="ChattingVC" customModule="kTranslate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main_Chatting" id="n9i-Ux-NKV" customClass="Main_Chatting" customModule="kTranslate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="AIr-WD-3pn">
                         <rect key="frame" x="0.0" y="0.0" width="387" height="630"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1292,10 +1292,10 @@
             </objects>
             <point key="canvasLocation" x="318" y="1282"/>
         </scene>
-        <!--Choose Language-->
+        <!--Main Choose Language-->
         <scene sceneID="tJQ-QW-iXS">
             <objects>
-                <viewController storyboardIdentifier="ChooseLanguage" id="Cxm-fj-mt0" customClass="ChooseLanguage" customModule="kTranslate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main_ChooseLanguage" id="Cxm-fj-mt0" customClass="Main_ChooseLanguage" customModule="kTranslate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="cQe-tC-hLY">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>

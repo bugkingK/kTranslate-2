@@ -23,9 +23,9 @@
 		D2C0359B232103A600E3BEEF /* Main_Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0359A232103A600E3BEEF /* Main_Container.swift */; };
 		D2C0359D2321043400E3BEEF /* CTContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0359C2321043400E3BEEF /* CTContainerViewController.swift */; };
 		D2C0359F23210B5F00E3BEEF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0359E23210B5F00E3BEEF /* CustomButton.swift */; };
-		D2C035A523210DF700E3BEEF /* ChattingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035A223210DF600E3BEEF /* ChattingVC.swift */; };
+		D2C035A523210DF700E3BEEF /* Main_Chatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035A223210DF600E3BEEF /* Main_Chatting.swift */; };
 		D2C035A623210DF700E3BEEF /* ChooseLanguageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C035A323210DF600E3BEEF /* ChooseLanguageCell.xib */; };
-		D2C035A723210DF700E3BEEF /* ChooseLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035A423210DF600E3BEEF /* ChooseLanguage.swift */; };
+		D2C035A723210DF700E3BEEF /* Main_ChooseLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035A423210DF600E3BEEF /* Main_ChooseLanguage.swift */; };
 		D2C035AB23210E0A00E3BEEF /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035A923210E0A00E3BEEF /* Translator.swift */; };
 		D2C035AC23210E0A00E3BEEF /* DefaultTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035AA23210E0A00E3BEEF /* DefaultTranslate.swift */; };
 		D2C035B023210E1900E3BEEF /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035AD23210E1900E3BEEF /* Toast.swift */; };
@@ -85,9 +85,9 @@
 		D2C0359A232103A600E3BEEF /* Main_Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main_Container.swift; sourceTree = "<group>"; };
 		D2C0359C2321043400E3BEEF /* CTContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTContainerViewController.swift; sourceTree = "<group>"; };
 		D2C0359E23210B5F00E3BEEF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		D2C035A223210DF600E3BEEF /* ChattingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChattingVC.swift; sourceTree = "<group>"; };
+		D2C035A223210DF600E3BEEF /* Main_Chatting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main_Chatting.swift; sourceTree = "<group>"; };
 		D2C035A323210DF600E3BEEF /* ChooseLanguageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseLanguageCell.xib; sourceTree = "<group>"; };
-		D2C035A423210DF600E3BEEF /* ChooseLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseLanguage.swift; sourceTree = "<group>"; };
+		D2C035A423210DF600E3BEEF /* Main_ChooseLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main_ChooseLanguage.swift; sourceTree = "<group>"; };
 		D2C035A923210E0A00E3BEEF /* Translator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
 		D2C035AA23210E0A00E3BEEF /* DefaultTranslate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTranslate.swift; sourceTree = "<group>"; };
 		D2C035AD23210E1900E3BEEF /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
@@ -263,8 +263,8 @@
 			children = (
 				D2D3B84C22AF5E260086909D /* Main.storyboard */,
 				D2C0359A232103A600E3BEEF /* Main_Container.swift */,
-				D2C035A223210DF600E3BEEF /* ChattingVC.swift */,
-				D2C035A423210DF600E3BEEF /* ChooseLanguage.swift */,
+				D2C035A223210DF600E3BEEF /* Main_Chatting.swift */,
+				D2C035A423210DF600E3BEEF /* Main_ChooseLanguage.swift */,
 				D2C035A323210DF600E3BEEF /* ChooseLanguageCell.xib */,
 				D2D3B84B22AF5E260086909D /* MainPopOverVC.swift */,
 			);
@@ -503,7 +503,7 @@
 				D2D3B85D22AF5E260086909D /* PopoverController.swift in Sources */,
 				D2D3B85722AF5E260086909D /* Settings_Welcome.swift in Sources */,
 				D2D3B86122AF6F3E0086909D /* AutoLogin.swift in Sources */,
-				D2C035A723210DF700E3BEEF /* ChooseLanguage.swift in Sources */,
+				D2C035A723210DF700E3BEEF /* Main_ChooseLanguage.swift in Sources */,
 				85E68B2D232138FF00AEBB26 /* ExNSMenuItem.swift in Sources */,
 				D2D3B85822AF5E260086909D /* AppDelegate.swift in Sources */,
 				D2D3B85B22AF5E260086909D /* HotKeyManager.swift in Sources */,
@@ -525,7 +525,7 @@
 				D2C035932320E8F200E3BEEF /* ExNSStoryboard.swift in Sources */,
 				85DE7D5422AFD3FD00568C80 /* CTWindowController.swift in Sources */,
 				D2C035B123210E1900E3BEEF /* Presenter.swift in Sources */,
-				D2C035A523210DF700E3BEEF /* ChattingVC.swift in Sources */,
+				D2C035A523210DF700E3BEEF /* Main_Chatting.swift in Sources */,
 				D2C0359F23210B5F00E3BEEF /* CustomButton.swift in Sources */,
 				D2C0359D2321043400E3BEEF /* CTContainerViewController.swift in Sources */,
 				D22A423722B32D1800ADE25C /* Constants.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  ChooseLanguage.swift
+//  Main_ChooseLanguage.swift
 //  Translate-Text
 //
 //  Created by moon on 04/09/2019.
@@ -8,24 +8,11 @@
 
 import Cocoa
 
-class ChooseLanguage: NSViewController {
+class Main_ChooseLanguage: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
-    }
-    
-    override func viewWillAppear() {
-        super.viewWillAppear()
-//        if m_arr_datas == nil {
-//            let target = NSLocale.preferredLanguages[0] == "ko-KR" ? "ko" : "en"
-//            GoogleTranslation.supportLanguages(target: target) { (support) in
-//                var addDetect = support
-//                addDetect.languages.insert((name: "언어감지", key: nil), at: 0)
-//                self.setup(datas: addDetect, select:nil)
-//                self.m_cv_main.reloadData()
-//            }
-//        }
     }
     
     @IBOutlet weak var m_cv_main: NSCollectionView!
@@ -63,7 +50,7 @@ class ChooseLanguage: NSViewController {
     
 }
 
-extension ChooseLanguage: NSCollectionViewDataSource, NSCollectionViewDelegate {
+extension Main_ChooseLanguage: NSCollectionViewDataSource, NSCollectionViewDelegate {
     func numberOfRows(in tableView: NSTableView) -> Int {
         return 1
     }
