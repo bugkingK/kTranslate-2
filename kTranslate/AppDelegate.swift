@@ -15,10 +15,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApp.activate(ignoringOtherApps: true)
         HotKeyManager.shared.registerHotKey()
         
-        guard let windowVC = NSStoryboard.make(sbName: "Main", vcName: "windowController") as? NSWindowController else { return }
-        PopoverController.shared.setLayout("icon-status", vc: windowVC.contentViewController) { (shared) in
+        let windowVC = NSStoryboard.make(sbName: "Main", vcName: "windowController") as! NSWindowController
+        let contentVC = windowVC.contentViewController
+        PopoverController.shared
+            .setLayout("icon-status", vc: contentVC) { (shared) in
             if shared.popover.isShown {
-                if !UserDefault.bool(forKey: .always) {
+                if !UserDefault.bool(forKey: .bAlways) {
                     shared.closePopover(sender: nil)
                 }
             }

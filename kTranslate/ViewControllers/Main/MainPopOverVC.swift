@@ -51,8 +51,8 @@ class MainPopOverVC: NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
         
-        let width = UserDefaults.standard.integer(forKey: UserKey.widthKey.rawValue)
-        let height = UserDefaults.standard.integer(forKey: UserKey.heightKey.rawValue)
+//        let width = UserDefaults.standard.integer(forKey: UserKey.widthKey.rawValue)
+//        let height = UserDefaults.standard.integer(forKey: UserKey.heightKey.rawValue)
         
 //        m_lyContentWidth.constant = CGFloat(width)
 //        m_lyContentHeight.constant = CGFloat(height)
@@ -117,8 +117,6 @@ class MainPopOverVC: NSViewController {
         }
         let windowVC = CTWindowController(window: NSWindow(contentViewController: vc))
         windowVC.showWindow(self)
-        
-        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.preference, action:AnalyticsAction.itself, label: "", value: 0)
     }
     
     @objc private func onQuit() {
@@ -126,7 +124,7 @@ class MainPopOverVC: NSViewController {
     }
     
     @objc private func onClickAlwayShow(_ sender:NSButton) {
-        UserDefault.set(sender.state == .on, key: .always)
+        UserDefault.set(sender.state == .on, key: .bAlways)
     }
     
     @IBAction private func onClickSideMenu(_ sender: NSButton) {
@@ -155,8 +153,6 @@ class MainPopOverVC: NSViewController {
         UserDefaults.standard.set(idx, forKey: UserKey.domainKey.rawValue)
         let request = URLRequest(url: v_url)
         m_wvMain.mainFrame.load(request)
-        
-        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.root, action:AnalyticsAction.moveSite, label: v_url.path, value: 0)
     }
     
     @IBAction func onClickBtnMenu(_ sender: NSButton) {

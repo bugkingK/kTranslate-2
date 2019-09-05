@@ -11,7 +11,7 @@ import Foundation
 class UserDefault {
     enum Key:String, CaseIterable {
         /// Popover Always
-        case always = "always"
+        case bAlways = "bAlways"
     }
     
     static func set(_ value:Any?, key:Key) {
@@ -29,6 +29,13 @@ class UserDefault {
     
     static func string(forKey:Key) -> String? {
         return UserDefaults.standard.string(forKey: forKey.rawValue)
+    }
+    
+    static func clear() {
+        _ = Key.allCases.map {
+            UserDefaults.standard.removeObject(forKey: $0.rawValue)
+            UserDefaults.standard.synchronize()
+        }
     }
 }
 

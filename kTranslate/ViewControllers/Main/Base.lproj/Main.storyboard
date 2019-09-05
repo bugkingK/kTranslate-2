@@ -714,328 +714,214 @@
             </objects>
             <point key="canvasLocation" x="132" y="657"/>
         </scene>
-        <!--Main Pop OverVC-->
+        <!--Main Container-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController storyboardIdentifier="MainPopOverVC" id="XfG-lQ-9wD" customClass="MainPopOverVC" customModule="kTranslate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="Main_Container" customModule="kTranslate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="400" height="450"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="T4x-D2-o8h">
-                                <rect key="frame" x="0.0" y="0.0" width="400" height="450"/>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="eY6-HP-nRc">
+                                <rect key="frame" x="0.0" y="400" width="400" height="50"/>
                                 <subviews>
-                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="eY6-HP-nRc">
-                                        <rect key="frame" x="0.0" y="400" width="400" height="50"/>
-                                        <subviews>
-                                            <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="MNx-w8-IVq">
-                                                <rect key="frame" x="0.0" y="-2" width="400" height="5"/>
-                                            </box>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VqE-og-UHz">
-                                                <rect key="frame" x="153" y="4" width="95" height="13"/>
-                                                <buttonCell key="cell" type="bevel" title="Command+Shift+E" bezelStyle="regularSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="9Ct-LS-cOC">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system" size="10"/>
-                                                </buttonCell>
-                                            </button>
-                                            <stackView distribution="fillEqually" orientation="horizontal" alignment="centerY" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bai-zU-Gi5">
-                                                <rect key="frame" x="142" y="20" width="117" height="22"/>
-                                                <subviews>
-                                                    <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CRd-Mc-TLg" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="4" width="21" height="14"/>
-                                                        <buttonCell key="cell" type="smallSquare" title="⌘1" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" inset="2" id="T1l-e6-HZP">
-                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="smallSystem"/>
-                                                        </buttonCell>
-                                                        <color key="contentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="0.0"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                                <color key="value" red="1" green="0.49411764705882355" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="isDisableBgColor">
-                                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </button>
-                                                    <button verticalHuggingPriority="750" tag="1" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G8V-jV-sEo" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
-                                                        <rect key="frame" x="24" y="4" width="21" height="14"/>
-                                                        <buttonCell key="cell" type="smallSquare" title="⌘2" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="1ox-Md-Qjb">
-                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="smallSystem"/>
-                                                        </buttonCell>
-                                                        <color key="contentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="0.0"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                                <color key="value" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="isDisableBgColor">
-                                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </button>
-                                                    <button verticalHuggingPriority="750" tag="2" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tqz-3v-CMM" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
-                                                        <rect key="frame" x="48" y="4" width="21" height="14"/>
-                                                        <buttonCell key="cell" type="smallSquare" title="⌘3" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="lM5-Tg-ZdQ">
-                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="smallSystem"/>
-                                                        </buttonCell>
-                                                        <color key="contentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="0.0"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                                <color key="value" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="isDisableBgColor">
-                                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </button>
-                                                    <button verticalHuggingPriority="750" tag="3" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a8a-oS-10f" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
-                                                        <rect key="frame" x="72" y="4" width="21" height="14"/>
-                                                        <buttonCell key="cell" type="smallSquare" title="⌘4" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="GRX-md-Aon">
-                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="smallSystem"/>
-                                                        </buttonCell>
-                                                        <color key="contentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="0.0"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                                <color key="value" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="isDisableBgColor">
-                                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </button>
-                                                    <button verticalHuggingPriority="750" tag="4" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U5m-S2-IrE" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
-                                                        <rect key="frame" x="96" y="4" width="21" height="14"/>
-                                                        <buttonCell key="cell" type="smallSquare" title="⌘5" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="wfr-IT-VBF">
-                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="smallSystem"/>
-                                                        </buttonCell>
-                                                        <color key="contentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="0.0"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                                <color key="value" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="isDisableBgColor">
-                                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="22" id="f7J-fQ-Utw"/>
-                                                </constraints>
-                                                <visibilityPriorities>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                    <integer value="1000"/>
-                                                </visibilityPriorities>
-                                                <customSpacing>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                    <real value="3.4028234663852886e+38"/>
-                                                </customSpacing>
-                                            </stackView>
-                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="wsn-ve-LOd" userLabel="Always View">
-                                                <rect key="frame" x="0.0" y="1" width="40" height="49"/>
-                                                <subviews>
-                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gAG-ZW-AAY" userLabel="A" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="19" width="20" height="20"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="20" id="dyA-5l-8jw"/>
-                                                            <constraint firstAttribute="width" constant="20" id="qKM-lk-toh"/>
-                                                        </constraints>
-                                                        <buttonCell key="cell" type="smallSquare" title="A" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="Gfi-Fd-nUK">
-                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                        <color key="contentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                                <color key="value" red="0.0" green="0.58823529411764708" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="isDisableBgColor">
-                                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="0.0"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </button>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pTp-A3-P0g">
-                                                        <rect key="frame" x="-2" y="3" width="44" height="13"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Always" id="fa4-iC-5k4">
-                                                            <font key="font" metaFont="system" size="10"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="gAG-ZW-AAY" firstAttribute="centerX" secondItem="wsn-ve-LOd" secondAttribute="centerX" id="4Wv-2B-Zqz"/>
-                                                    <constraint firstItem="pTp-A3-P0g" firstAttribute="top" secondItem="gAG-ZW-AAY" secondAttribute="bottom" constant="3" id="VAh-V2-ncw"/>
-                                                    <constraint firstAttribute="width" constant="40" id="gQa-jt-OJJ"/>
-                                                    <constraint firstItem="pTp-A3-P0g" firstAttribute="leading" secondItem="wsn-ve-LOd" secondAttribute="leading" id="nXm-3M-AWe"/>
-                                                    <constraint firstAttribute="trailing" secondItem="pTp-A3-P0g" secondAttribute="trailing" id="sYR-Oo-zwI"/>
-                                                    <constraint firstItem="gAG-ZW-AAY" firstAttribute="top" secondItem="wsn-ve-LOd" secondAttribute="top" constant="10" id="xss-oZ-Wf1"/>
-                                                </constraints>
-                                            </customView>
-                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="jFK-r8-xmu" userLabel="Info View">
-                                                <rect key="frame" x="370" y="0.0" width="30" height="50"/>
-                                                <subviews>
-                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BGv-dx-cL2" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="20" width="20" height="20"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="20" id="Pzv-f6-KSy"/>
-                                                            <constraint firstAttribute="height" constant="20" id="Siz-ir-Hjw"/>
-                                                        </constraints>
-                                                        <buttonCell key="cell" type="smallSquare" title="i" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyUpOrDown" inset="2" id="QFE-ps-gI6">
-                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                        </buttonCell>
-                                                        <color key="contentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.93425506349999998" green="0.50727903839999999" blue="0.69381058220000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                                <color key="value" red="0.93425506349999998" green="0.50727903839999999" blue="0.69381058220000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="isDisableBgColor">
-                                                                <color key="value" red="0.93425506349999998" green="0.50727903839999999" blue="0.69381058220000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="0.0"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="onClickSideMenu:" target="XfG-lQ-9wD" id="Vj6-L4-qy2"/>
-                                                        </connections>
-                                                    </button>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TXK-fX-r4t">
-                                                        <rect key="frame" x="-2" y="4" width="34" height="13"/>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Info" id="UCT-Ic-IwH">
-                                                            <font key="font" metaFont="system" size="10"/>
-                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                    </textField>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="BGv-dx-cL2" firstAttribute="centerX" secondItem="jFK-r8-xmu" secondAttribute="centerX" id="Feh-Ht-QOu"/>
-                                                    <constraint firstItem="TXK-fX-r4t" firstAttribute="top" secondItem="BGv-dx-cL2" secondAttribute="bottom" constant="3" id="K5x-pJ-vX1"/>
-                                                    <constraint firstAttribute="trailing" secondItem="TXK-fX-r4t" secondAttribute="trailing" id="MQL-xl-l9l"/>
-                                                    <constraint firstAttribute="width" constant="30" id="VZg-wx-bYa"/>
-                                                    <constraint firstItem="TXK-fX-r4t" firstAttribute="leading" secondItem="jFK-r8-xmu" secondAttribute="leading" id="iv9-hp-vVe"/>
-                                                    <constraint firstItem="BGv-dx-cL2" firstAttribute="top" secondItem="jFK-r8-xmu" secondAttribute="top" constant="10" id="mog-l3-FJD"/>
-                                                </constraints>
-                                            </customView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="2Yh-CW-z6F"/>
-                                            <constraint firstAttribute="bottom" secondItem="jFK-r8-xmu" secondAttribute="bottom" id="7Sn-2r-gUP"/>
-                                            <constraint firstItem="wsn-ve-LOd" firstAttribute="top" secondItem="eY6-HP-nRc" secondAttribute="top" id="9ob-DX-Lzh"/>
-                                            <constraint firstItem="Bai-zU-Gi5" firstAttribute="centerX" secondItem="eY6-HP-nRc" secondAttribute="centerX" id="CZw-Sn-HPK"/>
-                                            <constraint firstItem="Bai-zU-Gi5" firstAttribute="top" secondItem="eY6-HP-nRc" secondAttribute="top" constant="8" id="Hnx-Kk-xW3"/>
-                                            <constraint firstItem="VqE-og-UHz" firstAttribute="top" secondItem="Bai-zU-Gi5" secondAttribute="bottom" constant="3" id="OcI-la-U1u"/>
-                                            <constraint firstAttribute="trailing" secondItem="jFK-r8-xmu" secondAttribute="trailing" id="SUv-4l-kFY"/>
-                                            <constraint firstAttribute="trailing" secondItem="MNx-w8-IVq" secondAttribute="trailing" id="dPk-Wr-v0I"/>
-                                            <constraint firstAttribute="bottom" secondItem="MNx-w8-IVq" secondAttribute="bottom" id="da5-o2-wd6"/>
-                                            <constraint firstItem="wsn-ve-LOd" firstAttribute="leading" secondItem="eY6-HP-nRc" secondAttribute="leading" id="fdA-eO-dB7"/>
-                                            <constraint firstItem="MNx-w8-IVq" firstAttribute="leading" secondItem="eY6-HP-nRc" secondAttribute="leading" id="mkq-tS-DEE"/>
-                                            <constraint firstItem="jFK-r8-xmu" firstAttribute="top" secondItem="eY6-HP-nRc" secondAttribute="top" id="rj5-NB-cJW"/>
-                                            <constraint firstItem="MNx-w8-IVq" firstAttribute="top" secondItem="wsn-ve-LOd" secondAttribute="bottom" id="sZZ-0m-BLB"/>
-                                            <constraint firstItem="VqE-og-UHz" firstAttribute="centerX" secondItem="eY6-HP-nRc" secondAttribute="centerX" id="zQA-5Q-8PX"/>
-                                        </constraints>
-                                    </customView>
-                                    <containerView translatesAutoresizingMaskIntoConstraints="NO" id="ixg-JQ-5Ed">
-                                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
-                                    </containerView>
+                                    <box autoresizesSubviews="NO" boxType="custom" borderType="none" borderWidth="0.0" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="IrM-bF-qfH">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
+                                        <view key="contentView" id="lI0-bx-mJm">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="8xz-Eq-k5r" userLabel="Logo">
+                                                    <rect key="frame" x="5" y="5" width="140" height="40"/>
+                                                    <subviews>
+                                                        <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CRd-Mc-TLg">
+                                                            <rect key="frame" x="5" y="5" width="30" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="CRd-Mc-TLg" secondAttribute="height" multiplier="1:1" id="U0v-L6-EI9"/>
+                                                            </constraints>
+                                                            <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="icon_logo" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="T1l-e6-HZP">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="smallSystem"/>
+                                                            </buttonCell>
+                                                            <color key="contentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </button>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VqE-og-UHz" customClass="CustomButton" customModule="kTranslate" customModuleProvider="target">
+                                                            <rect key="frame" x="40" y="5" width="95" height="13"/>
+                                                            <buttonCell key="cell" type="bevel" title="Command+Shift+E" bezelStyle="regularSquare" alignment="left" imageScaling="proportionallyDown" inset="2" id="9Ct-LS-cOC">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system" size="10"/>
+                                                            </buttonCell>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                                    <color key="value" red="0.13333333333333333" green="0.14117647058823529" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="38b-3i-cgJ">
+                                                            <rect key="frame" x="40" y="20" width="102" height="17"/>
+                                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="kTranslate" id="xNC-zW-E4U">
+                                                                <font key="font" metaFont="systemSemibold" size="13"/>
+                                                                <color key="textColor" red="0.13333333333333333" green="0.14117647058823529" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="VqE-og-UHz" secondAttribute="trailing" constant="5" id="9Qv-VV-YQn"/>
+                                                        <constraint firstItem="CRd-Mc-TLg" firstAttribute="leading" secondItem="8xz-Eq-k5r" secondAttribute="leading" constant="5" id="C0o-iJ-Bkt"/>
+                                                        <constraint firstItem="VqE-og-UHz" firstAttribute="top" secondItem="38b-3i-cgJ" secondAttribute="bottom" constant="2" id="M2R-sS-0lq"/>
+                                                        <constraint firstItem="38b-3i-cgJ" firstAttribute="leading" secondItem="CRd-Mc-TLg" secondAttribute="trailing" constant="7" id="REV-TO-2Hm"/>
+                                                        <constraint firstAttribute="trailing" secondItem="38b-3i-cgJ" secondAttribute="trailing" id="XBL-G0-jno"/>
+                                                        <constraint firstItem="CRd-Mc-TLg" firstAttribute="top" secondItem="8xz-Eq-k5r" secondAttribute="top" constant="5" id="ZG9-Bg-FsW"/>
+                                                        <constraint firstItem="VqE-og-UHz" firstAttribute="leading" secondItem="38b-3i-cgJ" secondAttribute="leading" constant="-2" id="hxn-ir-nKn"/>
+                                                        <constraint firstAttribute="bottom" secondItem="CRd-Mc-TLg" secondAttribute="bottom" constant="5" id="mDB-ZO-4XR"/>
+                                                        <constraint firstItem="VqE-og-UHz" firstAttribute="bottom" secondItem="CRd-Mc-TLg" secondAttribute="bottom" id="tB8-0y-jFy"/>
+                                                    </constraints>
+                                                </customView>
+                                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="wsn-ve-LOd" userLabel="Always View">
+                                                    <rect key="frame" x="325" y="0.0" width="40" height="50"/>
+                                                    <subviews>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gAG-ZW-AAY" userLabel="A" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
+                                                            <rect key="frame" x="10" y="20" width="20" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="dyA-5l-8jw"/>
+                                                                <constraint firstAttribute="width" constant="20" id="qKM-lk-toh"/>
+                                                            </constraints>
+                                                            <buttonCell key="cell" type="smallSquare" title="A" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="Gfi-Fd-nUK">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <color key="contentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                                    <color key="value" red="0.0" green="0.58823529411764708" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="isDisableBgColor">
+                                                                    <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="0.0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                    <color key="value" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pTp-A3-P0g">
+                                                            <rect key="frame" x="-2" y="4" width="44" height="13"/>
+                                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Always" id="fa4-iC-5k4">
+                                                                <font key="font" metaFont="system" size="10"/>
+                                                                <color key="textColor" red="0.13333333333333333" green="0.14117647058823529" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="gAG-ZW-AAY" firstAttribute="centerX" secondItem="wsn-ve-LOd" secondAttribute="centerX" id="4Wv-2B-Zqz"/>
+                                                        <constraint firstItem="pTp-A3-P0g" firstAttribute="top" secondItem="gAG-ZW-AAY" secondAttribute="bottom" constant="3" id="VAh-V2-ncw"/>
+                                                        <constraint firstAttribute="width" constant="40" id="gQa-jt-OJJ"/>
+                                                        <constraint firstItem="pTp-A3-P0g" firstAttribute="leading" secondItem="wsn-ve-LOd" secondAttribute="leading" id="nXm-3M-AWe"/>
+                                                        <constraint firstAttribute="trailing" secondItem="pTp-A3-P0g" secondAttribute="trailing" id="sYR-Oo-zwI"/>
+                                                        <constraint firstItem="gAG-ZW-AAY" firstAttribute="top" secondItem="wsn-ve-LOd" secondAttribute="top" constant="10" id="xss-oZ-Wf1"/>
+                                                    </constraints>
+                                                </customView>
+                                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="jFK-r8-xmu" userLabel="Info View">
+                                                    <rect key="frame" x="365" y="0.0" width="30" height="50"/>
+                                                    <subviews>
+                                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BGv-dx-cL2" customClass="CTCircleButton" customModule="kTranslate" customModuleProvider="target">
+                                                            <rect key="frame" x="5" y="20" width="20" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="20" id="Pzv-f6-KSy"/>
+                                                                <constraint firstAttribute="height" constant="20" id="Siz-ir-Hjw"/>
+                                                            </constraints>
+                                                            <buttonCell key="cell" type="smallSquare" title="i" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyUpOrDown" inset="2" id="QFE-ps-gI6">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="system"/>
+                                                            </buttonCell>
+                                                            <color key="contentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                    <color key="value" red="0.93425506349999998" green="0.50727903839999999" blue="0.69381058220000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                                    <color key="value" red="0.93425506349999998" green="0.50727903839999999" blue="0.69381058220000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="isDisableBgColor">
+                                                                    <color key="value" red="0.93425506349999998" green="0.50727903839999999" blue="0.69381058220000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="0.0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TXK-fX-r4t">
+                                                            <rect key="frame" x="-2" y="4" width="34" height="13"/>
+                                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Info" id="UCT-Ic-IwH">
+                                                                <font key="font" metaFont="system" size="10"/>
+                                                                <color key="textColor" red="0.13333333333333333" green="0.14117647058823529" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            </textFieldCell>
+                                                        </textField>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="BGv-dx-cL2" firstAttribute="centerX" secondItem="jFK-r8-xmu" secondAttribute="centerX" id="Feh-Ht-QOu"/>
+                                                        <constraint firstItem="TXK-fX-r4t" firstAttribute="top" secondItem="BGv-dx-cL2" secondAttribute="bottom" constant="3" id="K5x-pJ-vX1"/>
+                                                        <constraint firstAttribute="trailing" secondItem="TXK-fX-r4t" secondAttribute="trailing" id="MQL-xl-l9l"/>
+                                                        <constraint firstAttribute="width" constant="30" id="VZg-wx-bYa"/>
+                                                        <constraint firstItem="TXK-fX-r4t" firstAttribute="leading" secondItem="jFK-r8-xmu" secondAttribute="leading" id="iv9-hp-vVe"/>
+                                                        <constraint firstItem="BGv-dx-cL2" firstAttribute="top" secondItem="jFK-r8-xmu" secondAttribute="top" constant="10" id="mog-l3-FJD"/>
+                                                    </constraints>
+                                                </customView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="jFK-r8-xmu" secondAttribute="trailing" constant="5" id="5W5-9i-nbz"/>
+                                                <constraint firstItem="jFK-r8-xmu" firstAttribute="leading" secondItem="wsn-ve-LOd" secondAttribute="trailing" id="I7n-5u-BuB"/>
+                                                <constraint firstItem="wsn-ve-LOd" firstAttribute="top" secondItem="lI0-bx-mJm" secondAttribute="top" id="JSD-1l-vic"/>
+                                                <constraint firstItem="8xz-Eq-k5r" firstAttribute="leading" secondItem="lI0-bx-mJm" secondAttribute="leading" constant="5" id="ShY-6H-1ry"/>
+                                                <constraint firstAttribute="bottom" secondItem="8xz-Eq-k5r" secondAttribute="bottom" constant="5" id="Zf5-GK-5LE"/>
+                                                <constraint firstAttribute="bottom" secondItem="wsn-ve-LOd" secondAttribute="bottom" id="aWx-eu-Pxc"/>
+                                                <constraint firstAttribute="bottom" secondItem="jFK-r8-xmu" secondAttribute="bottom" id="cAh-Uz-kiQ"/>
+                                                <constraint firstItem="8xz-Eq-k5r" firstAttribute="top" secondItem="lI0-bx-mJm" secondAttribute="top" constant="5" id="jis-xy-XZa"/>
+                                                <constraint firstItem="jFK-r8-xmu" firstAttribute="top" secondItem="lI0-bx-mJm" secondAttribute="top" id="qrJ-uS-riN"/>
+                                            </constraints>
+                                        </view>
+                                        <color key="fillColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </box>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="ixg-JQ-5Ed" firstAttribute="leading" secondItem="T4x-D2-o8h" secondAttribute="leading" id="91Y-kL-ibs"/>
-                                    <constraint firstItem="eY6-HP-nRc" firstAttribute="leading" secondItem="T4x-D2-o8h" secondAttribute="leading" id="9LI-3H-ryH"/>
-                                    <constraint firstItem="ixg-JQ-5Ed" firstAttribute="top" secondItem="eY6-HP-nRc" secondAttribute="bottom" id="Js4-oA-rIW"/>
-                                    <constraint firstAttribute="trailing" secondItem="eY6-HP-nRc" secondAttribute="trailing" id="Zxb-wL-2NV"/>
-                                    <constraint firstItem="eY6-HP-nRc" firstAttribute="top" secondItem="T4x-D2-o8h" secondAttribute="top" id="rA0-Zd-rCe"/>
-                                    <constraint firstAttribute="trailing" secondItem="ixg-JQ-5Ed" secondAttribute="trailing" id="rK5-OK-6s5"/>
-                                    <constraint firstAttribute="bottom" secondItem="ixg-JQ-5Ed" secondAttribute="bottom" id="s6P-5N-Vjj"/>
+                                    <constraint firstAttribute="height" constant="50" id="2Yh-CW-z6F"/>
+                                    <constraint firstAttribute="trailing" secondItem="IrM-bF-qfH" secondAttribute="trailing" id="9oU-op-3Hw"/>
+                                    <constraint firstItem="IrM-bF-qfH" firstAttribute="leading" secondItem="eY6-HP-nRc" secondAttribute="leading" id="bSX-w1-I2r"/>
+                                    <constraint firstItem="IrM-bF-qfH" firstAttribute="top" secondItem="eY6-HP-nRc" secondAttribute="top" id="ddS-pd-yfT"/>
+                                    <constraint firstAttribute="bottom" secondItem="IrM-bF-qfH" secondAttribute="bottom" id="vty-5O-tHO"/>
                                 </constraints>
                             </customView>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="ixg-JQ-5Ed">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                            </containerView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="T4x-D2-o8h" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="5nX-Pc-IAA"/>
-                            <constraint firstAttribute="bottom" secondItem="T4x-D2-o8h" secondAttribute="bottom" id="e3E-bs-VWy"/>
-                            <constraint firstItem="T4x-D2-o8h" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="tZd-bp-JVl"/>
-                            <constraint firstAttribute="trailing" secondItem="T4x-D2-o8h" secondAttribute="trailing" id="uFY-1o-OBq"/>
+                            <constraint firstAttribute="trailing" secondItem="ixg-JQ-5Ed" secondAttribute="trailing" id="9V3-cq-JA6"/>
+                            <constraint firstAttribute="bottom" secondItem="ixg-JQ-5Ed" secondAttribute="bottom" id="NyB-11-eS2"/>
+                            <constraint firstItem="eY6-HP-nRc" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="aK4-tE-dfo"/>
+                            <constraint firstItem="ixg-JQ-5Ed" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="abh-T2-NIW"/>
+                            <constraint firstItem="eY6-HP-nRc" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="cX2-TQ-63X"/>
+                            <constraint firstAttribute="trailing" secondItem="eY6-HP-nRc" secondAttribute="trailing" id="fXA-2C-vvJ"/>
+                            <constraint firstItem="ixg-JQ-5Ed" firstAttribute="top" secondItem="eY6-HP-nRc" secondAttribute="bottom" id="yPg-cD-AAM"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="m_btnA" destination="gAG-ZW-AAY" id="Td6-XR-sGP"/>
-                        <outlet property="m_btnCM1" destination="CRd-Mc-TLg" id="CJ6-NF-pUo"/>
-                        <outlet property="m_btnCM2" destination="G8V-jV-sEo" id="IaQ-32-Fp0"/>
-                        <outlet property="m_btnCM3" destination="tqz-3v-CMM" id="ehe-yn-j2f"/>
-                        <outlet property="m_btnCM4" destination="a8a-oS-10f" id="8p7-yK-eXk"/>
-                        <outlet property="m_btnCM5" destination="U5m-S2-IrE" id="ecm-4b-0Ff"/>
-                        <outlet property="m_btnShortCut" destination="VqE-og-UHz" id="6WJ-ZB-reo"/>
+                        <outlet property="m_btn_always" destination="gAG-ZW-AAY" id="gMX-vA-fTX"/>
+                        <outlet property="m_btn_command" destination="VqE-og-UHz" id="Lbd-sQ-Gmw"/>
+                        <outlet property="m_btn_info" destination="BGv-dx-cL2" id="p4l-ZN-rO4"/>
+                        <outlet property="m_btn_translator" destination="CRd-Mc-TLg" id="fbP-Wm-zv6"/>
+                        <outlet property="vwContain" destination="ixg-JQ-5Ed" id="P5i-cb-61N"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1043,4 +929,7 @@
             <point key="canvasLocation" x="-101" y="1192"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_logo" width="256" height="256"/>
+    </resources>
 </document>

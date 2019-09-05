@@ -13,13 +13,15 @@
 		D204813122B885C200369A6D /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D204813022B885C200369A6D /* DBManager.swift */; };
 		D204813322B885E300369A6D /* DBSticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D204813222B885E300369A6D /* DBSticker.swift */; };
 		D204813522B8861B00369A6D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D204813422B8861B00369A6D /* libsqlite3.0.tbd */; };
-		D204813722B8864B00369A6D /* DynamicTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D204813622B8864B00369A6D /* DynamicTextField.swift */; };
 		D22A423722B32D1800ADE25C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22A423622B32D1800ADE25C /* Constants.swift */; };
 		D2C0358C2320E30500E3BEEF /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C0358B2320E30500E3BEEF /* Setting.storyboard */; };
 		D2C035912320E49400E3BEEF /* ExNSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035902320E49400E3BEEF /* ExNSColor.swift */; };
 		D2C035932320E8F200E3BEEF /* ExNSStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035922320E8F200E3BEEF /* ExNSStoryboard.swift */; };
 		D2C035952320E9BA00E3BEEF /* ExControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035942320E9BA00E3BEEF /* ExControl.swift */; };
 		D2C035982320EED900E3BEEF /* ExUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035972320EED900E3BEEF /* ExUserDefaults.swift */; };
+		D2C0359B232103A600E3BEEF /* Main_Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0359A232103A600E3BEEF /* Main_Container.swift */; };
+		D2C0359D2321043400E3BEEF /* CTContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0359C2321043400E3BEEF /* CTContainerViewController.swift */; };
+		D2C0359F23210B5F00E3BEEF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0359E23210B5F00E3BEEF /* CustomButton.swift */; };
 		D2CFDD2422B1E72E0056314B /* CTCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CFDD2322B1E72E0056314B /* CTCircleButton.swift */; };
 		D2D3B83722AF5DB70086909D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2D3B83622AF5DB70086909D /* Assets.xcassets */; };
 		D2D3B85322AF5E260086909D /* Settings_Left.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3B84422AF5E260086909D /* Settings_Left.swift */; };
@@ -63,13 +65,15 @@
 		D204813022B885C200369A6D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		D204813222B885E300369A6D /* DBSticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSticker.swift; sourceTree = "<group>"; };
 		D204813422B8861B00369A6D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		D204813622B8864B00369A6D /* DynamicTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTextField.swift; sourceTree = "<group>"; };
 		D22A423622B32D1800ADE25C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D2C0358B2320E30500E3BEEF /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		D2C035902320E49400E3BEEF /* ExNSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNSColor.swift; sourceTree = "<group>"; };
 		D2C035922320E8F200E3BEEF /* ExNSStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNSStoryboard.swift; sourceTree = "<group>"; };
 		D2C035942320E9BA00E3BEEF /* ExControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExControl.swift; sourceTree = "<group>"; };
 		D2C035972320EED900E3BEEF /* ExUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUserDefaults.swift; sourceTree = "<group>"; };
+		D2C0359A232103A600E3BEEF /* Main_Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main_Container.swift; sourceTree = "<group>"; };
+		D2C0359C2321043400E3BEEF /* CTContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTContainerViewController.swift; sourceTree = "<group>"; };
+		D2C0359E23210B5F00E3BEEF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		D2CFDD2322B1E72E0056314B /* CTCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTCircleButton.swift; sourceTree = "<group>"; };
 		D2D3B82F22AF5DB60086909D /* kTranslate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kTranslate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D3B83622AF5DB70086909D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +166,14 @@
 			path = Popover;
 			sourceTree = "<group>";
 		};
+		D2C035992321006D00E3BEEF /* HotKeyManager */ = {
+			isa = PBXGroup;
+			children = (
+				D2D3B84F22AF5E260086909D /* HotKeyManager.swift */,
+			);
+			path = HotKeyManager;
+			sourceTree = "<group>";
+		};
 		D2D3B82622AF5DB60086909D = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				D2D3B84C22AF5E260086909D /* Main.storyboard */,
+				D2C0359A232103A600E3BEEF /* Main_Container.swift */,
 				D2D3B84B22AF5E260086909D /* MainPopOverVC.swift */,
 			);
 			path = Main;
@@ -229,7 +242,6 @@
 				D2C0358F2320E48000E3BEEF /* Ex */,
 				D204811B22B8858300369A6D /* Database */,
 				D22A423622B32D1800ADE25C /* Constants.swift */,
-				D2D3B84F22AF5E260086909D /* HotKeyManager.swift */,
 				D2D3B85022AF5E260086909D /* CommonUtil.swift */,
 				D2D3B86022AF6F3E0086909D /* AutoLogin.swift */,
 			);
@@ -239,6 +251,7 @@
 		D2D3B85F22AF5E380086909D /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				D2C035992321006D00E3BEEF /* HotKeyManager */,
 				D2C035962320EA2600E3BEEF /* Popover */,
 				D2D6D8F222C061A8009D0C8F /* View */,
 				D2D3B84E22AF5E260086909D /* Common */,
@@ -266,7 +279,8 @@
 			children = (
 				85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */,
 				D2CFDD2322B1E72E0056314B /* CTCircleButton.swift */,
-				D204813622B8864B00369A6D /* DynamicTextField.swift */,
+				D2C0359C2321043400E3BEEF /* CTContainerViewController.swift */,
+				D2C0359E23210B5F00E3BEEF /* CustomButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -452,7 +466,7 @@
 				D2D3B86122AF6F3E0086909D /* AutoLogin.swift in Sources */,
 				D2D3B85822AF5E260086909D /* AppDelegate.swift in Sources */,
 				D2D3B85B22AF5E260086909D /* HotKeyManager.swift in Sources */,
-				D204813722B8864B00369A6D /* DynamicTextField.swift in Sources */,
+				D2C0359B232103A600E3BEEF /* Main_Container.swift in Sources */,
 				D2C035952320E9BA00E3BEEF /* ExControl.swift in Sources */,
 				D2D3B85322AF5E260086909D /* Settings_Left.swift in Sources */,
 				D204813322B885E300369A6D /* DBSticker.swift in Sources */,
@@ -464,6 +478,8 @@
 				D2C035982320EED900E3BEEF /* ExUserDefaults.swift in Sources */,
 				D2C035932320E8F200E3BEEF /* ExNSStoryboard.swift in Sources */,
 				85DE7D5422AFD3FD00568C80 /* CTWindowController.swift in Sources */,
+				D2C0359F23210B5F00E3BEEF /* CustomButton.swift in Sources */,
+				D2C0359D2321043400E3BEEF /* CTContainerViewController.swift in Sources */,
 				D22A423722B32D1800ADE25C /* Constants.swift in Sources */,
 				D2CFDD2422B1E72E0056314B /* CTCircleButton.swift in Sources */,
 			);

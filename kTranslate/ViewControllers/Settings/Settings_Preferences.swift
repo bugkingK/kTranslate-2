@@ -133,7 +133,7 @@ extension Settings_Preferences: NSWindowDelegate {
     func windowWillClose(_ notification: Notification) {
         let defaults = UserDefaults.standard
         let b_dontShow = defaults.bool(forKey: UserKey.dontShowKey.rawValue)
-        var shortcutString = "set any shortcut"
+//        var shortcutString = "set any shortcut"
         
         if !b_dontShow {
             CommonUtil.alertMessageWithKeep("kTranslate will continue to run in the background", "Do not show this message agin") {
@@ -142,7 +142,7 @@ extension Settings_Preferences: NSWindowDelegate {
         }
         
         if let flags = m_masShortcut.shortcutValue?.modifierFlagsString, let keycode = m_masShortcut.shortcutValue?.keyCodeString {
-            shortcutString = self.getShortCutString(shortCut: flags)+keycode
+//            shortcutString = self.getShortCutString(shortCut: flags)+keycode
         }
         
         PopoverController.shared.showPopover(sender: self)
