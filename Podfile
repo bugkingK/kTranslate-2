@@ -13,5 +13,6 @@ target 'kTranslate' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'RxAlamofire'
+  pod 'SwiftyJSON'
 
 end

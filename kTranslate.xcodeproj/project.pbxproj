@@ -22,6 +22,15 @@
 		D2C0359B232103A600E3BEEF /* Main_Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0359A232103A600E3BEEF /* Main_Container.swift */; };
 		D2C0359D2321043400E3BEEF /* CTContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0359C2321043400E3BEEF /* CTContainerViewController.swift */; };
 		D2C0359F23210B5F00E3BEEF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0359E23210B5F00E3BEEF /* CustomButton.swift */; };
+		D2C035A523210DF700E3BEEF /* ChattingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035A223210DF600E3BEEF /* ChattingVC.swift */; };
+		D2C035A623210DF700E3BEEF /* ChooseLanguageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C035A323210DF600E3BEEF /* ChooseLanguageCell.xib */; };
+		D2C035A723210DF700E3BEEF /* ChooseLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035A423210DF600E3BEEF /* ChooseLanguage.swift */; };
+		D2C035AB23210E0A00E3BEEF /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035A923210E0A00E3BEEF /* Translator.swift */; };
+		D2C035AC23210E0A00E3BEEF /* DefaultTranslate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035AA23210E0A00E3BEEF /* DefaultTranslate.swift */; };
+		D2C035B023210E1900E3BEEF /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035AD23210E1900E3BEEF /* Toast.swift */; };
+		D2C035B123210E1900E3BEEF /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035AE23210E1900E3BEEF /* Presenter.swift */; };
+		D2C035B223210E1900E3BEEF /* MessageBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035AF23210E1900E3BEEF /* MessageBox.swift */; };
+		D2C035B423210E3400E3BEEF /* ExNSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035B323210E3400E3BEEF /* ExNSView.swift */; };
 		D2CFDD2422B1E72E0056314B /* CTCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CFDD2322B1E72E0056314B /* CTCircleButton.swift */; };
 		D2D3B83722AF5DB70086909D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2D3B83622AF5DB70086909D /* Assets.xcassets */; };
 		D2D3B85322AF5E260086909D /* Settings_Left.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D3B84422AF5E260086909D /* Settings_Left.swift */; };
@@ -74,6 +83,15 @@
 		D2C0359A232103A600E3BEEF /* Main_Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main_Container.swift; sourceTree = "<group>"; };
 		D2C0359C2321043400E3BEEF /* CTContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTContainerViewController.swift; sourceTree = "<group>"; };
 		D2C0359E23210B5F00E3BEEF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		D2C035A223210DF600E3BEEF /* ChattingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChattingVC.swift; sourceTree = "<group>"; };
+		D2C035A323210DF600E3BEEF /* ChooseLanguageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseLanguageCell.xib; sourceTree = "<group>"; };
+		D2C035A423210DF600E3BEEF /* ChooseLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseLanguage.swift; sourceTree = "<group>"; };
+		D2C035A923210E0A00E3BEEF /* Translator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
+		D2C035AA23210E0A00E3BEEF /* DefaultTranslate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTranslate.swift; sourceTree = "<group>"; };
+		D2C035AD23210E1900E3BEEF /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		D2C035AE23210E1900E3BEEF /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		D2C035AF23210E1900E3BEEF /* MessageBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBox.swift; sourceTree = "<group>"; };
+		D2C035B323210E3400E3BEEF /* ExNSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNSView.swift; sourceTree = "<group>"; };
 		D2CFDD2322B1E72E0056314B /* CTCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTCircleButton.swift; sourceTree = "<group>"; };
 		D2D3B82F22AF5DB60086909D /* kTranslate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kTranslate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D3B83622AF5DB70086909D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -154,6 +172,7 @@
 				D2C035922320E8F200E3BEEF /* ExNSStoryboard.swift */,
 				D2C035942320E9BA00E3BEEF /* ExControl.swift */,
 				D2C035972320EED900E3BEEF /* ExUserDefaults.swift */,
+				D2C035B323210E3400E3BEEF /* ExNSView.swift */,
 			);
 			path = Ex;
 			sourceTree = "<group>";
@@ -172,6 +191,15 @@
 				D2D3B84F22AF5E260086909D /* HotKeyManager.swift */,
 			);
 			path = HotKeyManager;
+			sourceTree = "<group>";
+		};
+		D2C035A823210E0A00E3BEEF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D2C035A923210E0A00E3BEEF /* Translator.swift */,
+				D2C035AA23210E0A00E3BEEF /* DefaultTranslate.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		D2D3B82622AF5DB60086909D = {
@@ -198,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				D2D3B84922AF5E260086909D /* AppDelegate.swift */,
+				D2C035A823210E0A00E3BEEF /* ViewModels */,
 				D2D3B84222AF5E260086909D /* ViewControllers */,
 				D2D3B85F22AF5E380086909D /* SupportFiles */,
 			);
@@ -231,6 +260,9 @@
 			children = (
 				D2D3B84C22AF5E260086909D /* Main.storyboard */,
 				D2C0359A232103A600E3BEEF /* Main_Container.swift */,
+				D2C035A223210DF600E3BEEF /* ChattingVC.swift */,
+				D2C035A423210DF600E3BEEF /* ChooseLanguage.swift */,
+				D2C035A323210DF600E3BEEF /* ChooseLanguageCell.xib */,
 				D2D3B84B22AF5E260086909D /* MainPopOverVC.swift */,
 			);
 			path = Main;
@@ -280,6 +312,9 @@
 				85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */,
 				D2CFDD2322B1E72E0056314B /* CTCircleButton.swift */,
 				D2C0359C2321043400E3BEEF /* CTContainerViewController.swift */,
+				D2C035AF23210E1900E3BEEF /* MessageBox.swift */,
+				D2C035AE23210E1900E3BEEF /* Presenter.swift */,
+				D2C035AD23210E1900E3BEEF /* Toast.swift */,
 				D2C0359E23210B5F00E3BEEF /* CustomButton.swift */,
 			);
 			path = View;
@@ -398,6 +433,7 @@
 				D2D3B85422AF5E260086909D /* Settings.storyboard in Resources */,
 				D2D3B83722AF5DB70086909D /* Assets.xcassets in Resources */,
 				D2D3B85A22AF5E260086909D /* Main.storyboard in Resources */,
+				D2C035A623210DF700E3BEEF /* ChooseLanguageCell.xib in Resources */,
 				D2C0358C2320E30500E3BEEF /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +500,7 @@
 				D2D3B85D22AF5E260086909D /* PopoverController.swift in Sources */,
 				D2D3B85722AF5E260086909D /* Settings_Welcome.swift in Sources */,
 				D2D3B86122AF6F3E0086909D /* AutoLogin.swift in Sources */,
+				D2C035A723210DF700E3BEEF /* ChooseLanguage.swift in Sources */,
 				D2D3B85822AF5E260086909D /* AppDelegate.swift in Sources */,
 				D2D3B85B22AF5E260086909D /* HotKeyManager.swift in Sources */,
 				D2C0359B232103A600E3BEEF /* Main_Container.swift in Sources */,
@@ -471,13 +508,20 @@
 				D2D3B85322AF5E260086909D /* Settings_Left.swift in Sources */,
 				D204813322B885E300369A6D /* DBSticker.swift in Sources */,
 				D2D3B85522AF5E260086909D /* Settings_Preferences.swift in Sources */,
+				D2C035AC23210E0A00E3BEEF /* DefaultTranslate.swift in Sources */,
+				D2C035AB23210E0A00E3BEEF /* Translator.swift in Sources */,
 				D2D3B85C22AF5E260086909D /* CommonUtil.swift in Sources */,
 				D204813122B885C200369A6D /* DBManager.swift in Sources */,
+				D2C035B223210E1900E3BEEF /* MessageBox.swift in Sources */,
+				D2C035B023210E1900E3BEEF /* Toast.swift in Sources */,
 				D2C035912320E49400E3BEEF /* ExNSColor.swift in Sources */,
 				D2D3B85922AF5E260086909D /* MainPopOverVC.swift in Sources */,
+				D2C035B423210E3400E3BEEF /* ExNSView.swift in Sources */,
 				D2C035982320EED900E3BEEF /* ExUserDefaults.swift in Sources */,
 				D2C035932320E8F200E3BEEF /* ExNSStoryboard.swift in Sources */,
 				85DE7D5422AFD3FD00568C80 /* CTWindowController.swift in Sources */,
+				D2C035B123210E1900E3BEEF /* Presenter.swift in Sources */,
+				D2C035A523210DF700E3BEEF /* ChattingVC.swift in Sources */,
 				D2C0359F23210B5F00E3BEEF /* CustomButton.swift in Sources */,
 				D2C0359D2321043400E3BEEF /* CTContainerViewController.swift in Sources */,
 				D22A423722B32D1800ADE25C /* Constants.swift in Sources */,

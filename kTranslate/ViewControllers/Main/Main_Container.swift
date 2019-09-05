@@ -15,6 +15,7 @@ class Main_Container: CTContainerViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        setupLayout()
         bindLayout()
     }
     
@@ -24,6 +25,12 @@ class Main_Container: CTContainerViewController {
     @IBOutlet weak var m_btn_command: NSButton!
     
     fileprivate var m_dispose_bag:DisposeBag = DisposeBag()
+    fileprivate var m_vc_chatting:ChattingVC!
+    
+    fileprivate func setupLayout() {
+        m_vc_chatting = NSStoryboard.make(sbName: "Main", vcName: "ChattingVC") as? ChattingVC
+        self.bindToViewController(targetVC: m_vc_chatting)
+    }
     
     fileprivate func bindLayout() {
         m_btn_always.rx.tap
