@@ -15,13 +15,13 @@ class MainPopOverVC: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        NSApp.activate(ignoringOtherApps: true)
-        m_vwWebView.addSubview(m_wvMain)
-        m_wvMain.topAnchor.constraint(equalTo: m_vwWebView.topAnchor).isActive = true
-        m_wvMain.leadingAnchor.constraint(equalTo: m_vwWebView.leadingAnchor).isActive = true
-        m_wvMain.trailingAnchor.constraint(equalTo: m_vwWebView.trailingAnchor).isActive = true
-        m_wvMain.bottomAnchor.constraint(equalTo: m_vwWebView.bottomAnchor).isActive = true
-        m_wvMain.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 12_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecok) Version/12.0 Mobile/15E148 Safari/604.1"
+        
+//        m_vwWebView.addSubview(m_wvMain)
+//        m_wvMain.topAnchor.constraint(equalTo: m_vwWebView.topAnchor).isActive = true
+//        m_wvMain.leadingAnchor.constraint(equalTo: m_vwWebView.leadingAnchor).isActive = true
+//        m_wvMain.trailingAnchor.constraint(equalTo: m_vwWebView.trailingAnchor).isActive = true
+//        m_wvMain.bottomAnchor.constraint(equalTo: m_vwWebView.bottomAnchor).isActive = true
+//        m_wvMain.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 12_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecok) Version/12.0 Mobile/15E148 Safari/604.1"
 //        m_wvMain.editingDelegate = self
         
         self.m_btnA.target = self
@@ -54,8 +54,8 @@ class MainPopOverVC: NSViewController {
         let width = UserDefaults.standard.integer(forKey: UserKey.widthKey.rawValue)
         let height = UserDefaults.standard.integer(forKey: UserKey.heightKey.rawValue)
         
-        m_lyContentWidth.constant = CGFloat(width)
-        m_lyContentHeight.constant = CGFloat(height)
+//        m_lyContentWidth.constant = CGFloat(width)
+//        m_lyContentHeight.constant = CGFloat(height)
     }
     
     private func initMenu() {
@@ -126,8 +126,7 @@ class MainPopOverVC: NSViewController {
     }
     
     @objc private func onClickAlwayShow(_ sender:NSButton) {
-        UserDefaults.standard.set(sender.state == .on, forKey: UserKey.alwaysShowKey.rawValue)
-        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.root, action:AnalyticsAction.alwaysShow, label: "", value: 0)
+        UserDefault.set(sender.state == .on, key: .always)
     }
     
     @IBAction private func onClickSideMenu(_ sender: NSButton) {
@@ -161,6 +160,6 @@ class MainPopOverVC: NSViewController {
     }
     
     @IBAction func onClickBtnMenu(_ sender: NSButton) {
-        PopoverController.sharedInstance().toggleMemoMenu(isShow: sender.state == .on)
+//        PopoverController.shared.toggleMemoMenu(isShow: sender.state == .on)
     }
 }

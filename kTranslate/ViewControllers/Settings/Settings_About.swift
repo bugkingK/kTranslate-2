@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import GoogleAnalyticsTracker
 
 class Settings_About: NSViewController {
 
@@ -18,7 +17,6 @@ class Settings_About: NSViewController {
         m_appName.stringValue = Bundle.main.infoDictionary?["CFBundleName"] as! String
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         m_lbVersion.stringValue = "Version \(version)"
-        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.about, action: AnalyticsAction.itself, label: "", value: 0)
     }
     
     @IBOutlet weak var m_lbVersion: NSTextField!
@@ -27,24 +25,15 @@ class Settings_About: NSViewController {
     @IBAction private func onClickBtnProfile(_ sender:NSButton) {
         sender.state = .on
         var url:URL?
-        var action:String?
         
         switch sender.tag {
-            case 0:
-                url = URL(string: "mailto:myway0710@naver.com")
-                action = AnalyticsAction.mail
-            case 1:
-                url = URL(string: "https://github.com/bugkingK")
-                action = AnalyticsAction.github
-            case 2:
-                url = URL(string: "https://bugkingk.github.io")
-                action = AnalyticsAction.page
-            default:
-                break
+            case 0: url = URL(string: "mailto:myway0710@naver.com")
+            case 1: url = URL(string: "https://github.com/bugkingK")
+            case 2: url = URL(string: "https://bugkingk.github.io")
+            default: break
         }
         
-        guard let v_url = url, let v_action = action else { return }
-        MPGoogleAnalyticsTracker.trackEvent(ofCategory: AnalyticsCategory.about, action: v_action, label: "", value: 0)
+        guard let v_url = url else { return }
         NSWorkspace.shared.open(v_url)
     }
     

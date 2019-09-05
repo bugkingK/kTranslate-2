@@ -9,24 +9,6 @@
 import Cocoa
 
 class CommonUtil: NSObject {
-    @discardableResult
-    static public func shell(_ args: String) -> String {
-        debugPrint(args)
-        var outstr = ""
-        let task = Process()
-        task.launchPath = "/bin/sh"
-        task.arguments = ["-c", args]
-        let pipe = Pipe()
-        task.standardOutput = pipe
-        task.launch()
-        let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        
-        if let output = String(data: data, encoding: .utf8) {
-            outstr = output as String
-        }
-        task.waitUntilExit()
-        return outstr
-    }
     
     static func alertMessage(_ alert_msg:String, _ alert_infoText:String? = nil){
         let alert = NSAlert()

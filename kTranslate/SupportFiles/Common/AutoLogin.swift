@@ -25,11 +25,4 @@ open class AutoLogin: NSObject {
             SMLoginItemSetEnabled(id as CFString, newValue)
         }
     }
-    
-//    open class func setEnabled(enabled: Bool) {
-//
-//        SMLoginItemSetEnabled(launcherAppIdentifier as CFString, enabled)
-//
-//        UserDefaults.standard.set(enabled, forKey: KEY_AUTOSTART)
-//    }
 }

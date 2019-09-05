@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import GoogleAnalyticsTracker
 import MASShortcut
 
 class Settings_Preferences: NSViewController {
@@ -36,19 +35,6 @@ class Settings_Preferences: NSViewController {
     @IBOutlet weak var m_cbHeight: NSComboBox!
     @IBOutlet weak var m_cbMenuWIdth: NSComboBox!
     
-    @IBOutlet weak var m_tfNameCM1: NSTextField!
-    @IBOutlet weak var m_tfNameCM2: NSTextField!
-    @IBOutlet weak var m_tfNameCM3: NSTextField!
-    @IBOutlet weak var m_tfNameCM4: NSTextField!
-    @IBOutlet weak var m_tfNameCM5: NSTextField!
-    private var m_arrNameCM:[NSTextField]!
-    
-    @IBOutlet weak var m_tfAddressCM1: NSTextField!
-    @IBOutlet weak var m_tfAddressCM2: NSTextField!
-    @IBOutlet weak var m_tfAddressCM3: NSTextField!
-    @IBOutlet weak var m_tfAddressCM4: NSTextField!
-    @IBOutlet weak var m_tfAddressCM5: NSTextField!
-    private var m_arrAddressCM:[NSTextField]!
     private var m_arrSiteName:[String] = {
         return UserDefaults.standard.array(forKey: UserKey.siteNameKey.rawValue) as! [String]
     }()
@@ -58,18 +44,6 @@ class Settings_Preferences: NSViewController {
     
     private func setupLayout() {
         let defaults = UserDefaults.standard
-        
-        m_arrNameCM = [m_tfNameCM1, m_tfNameCM2, m_tfNameCM3, m_tfNameCM4, m_tfNameCM5]
-        m_arrAddressCM = [m_tfAddressCM1, m_tfAddressCM2, m_tfAddressCM3, m_tfAddressCM4, m_tfAddressCM5]
-        
-        for idx in 0..<m_arrSiteName.count {
-            m_arrNameCM[idx].target = self
-            m_arrNameCM[idx].action = #selector(onChangeTFSite(_:))
-            m_arrNameCM[idx].stringValue = m_arrSiteName[idx]
-            m_arrAddressCM[idx].target = self
-            m_arrAddressCM[idx].action = #selector(onChangeTFSite(_:))
-            m_arrAddressCM[idx].stringValue = m_arrSiteAddress[idx]
-        }
         
         let bAutoLogin:Bool = AutoLogin.enabled
         m_btnAutoLogin.target = self
@@ -171,12 +145,12 @@ extension Settings_Preferences: NSWindowDelegate {
             shortcutString = self.getShortCutString(shortCut: flags)+keycode
         }
         
-        PopoverController.sharedInstance().showPopover(sender: self)
-        guard let vc_main = PopoverController.sharedInstance().getLeftViewController() as? MainPopOverVC else {
-            return
-        }
-        defaults.set(shortcutString, forKey: UserKey.shortCutStringKey.rawValue)
-        vc_main.onChangeShortcutButton(shortCut: shortcutString)
+        PopoverController.shared.showPopover(sender: self)
+//        guard let vc_main = PopoverController.shared.getLeftViewController() as? MainPopOverVC else {
+//            return
+//        }
+//        defaults.set(shortcutString, forKey: UserKey.shortCutStringKey.rawValue)
+//        vc_main.onChangeShortcutButton(shortCut: shortcutString)
     }
     
     private func getShortCutString(shortCut:String) -> String {

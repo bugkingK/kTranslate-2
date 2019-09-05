@@ -1,0 +1,50 @@
+//
+//  HotKeyManager.swift
+//  AirPodsManager
+//
+//  Created by moon on 05/06/2019.
+//  Copyright © 2019 bugking. All rights reserved.
+//
+
+import Cocoa
+import MASShortcut
+
+class HotKeyManager: NSObject {
+    static let shared = HotKeyManager()
+    private let globalShortcut = "GlobalShortcut"
+    
+    public func registerHotKey() {
+        MASShortcutBinder.shared()?.bindShortcut(withDefaultsKey: globalShortcut, toAction: { [weak self] in
+            PopoverController.shared.togglePopover(self)
+        })
+        
+//        guard let vc_main = PopoverController.shared().getLeftViewController() as? MainPopOverVC else {
+//            return
+//        }
+//
+//        guard let fir_menu = NSApplication.shared.mainMenu?.items.first?.submenu?.items else {
+//            return
+//        }
+//
+//        fir_menu[2].target = vc_main
+//        fir_menu[2].action = #selector(vc_main.onPreperences)
+//
+//        guard let second_menu = NSApplication.shared.mainMenu?.items[1].submenu?.items else {
+//            return
+//        }
+//
+//        for (idx, menu) in second_menu.enumerated() {
+//            menu.tag = idx
+//            menu.target = vc_main
+//            menu.action = #selector(vc_main.onChangeTranslate(_:))
+//        }
+    }
+    
+    public func registerHotKey(shortcutView:MASShortcutView) {
+        shortcutView.associatedUserDefaultsKey = globalShortcut
+        if !UserDefaults.standard.bool(forKey: UserKey.initShortcut.rawValue) {
+            shortcutView.shortcutValue = MASShortcut(keyCode: 14, modifierFlags: [.command, .shift])
+            UserDefaults.standard.set(true, forKey: UserKey.initShortcut.rawValue)
+        }
+    }
+}
