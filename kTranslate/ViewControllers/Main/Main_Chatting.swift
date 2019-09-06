@@ -160,6 +160,7 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
             self.m_ttv_input.string = ""
             self.m_translator.run(text: text, source: m_sel_source, target: m_sel_target)
         }
+        Analyst.shared.track(event: .translate)
     }
     
     func textView(_ textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {

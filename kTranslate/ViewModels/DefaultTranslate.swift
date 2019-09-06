@@ -19,8 +19,8 @@ enum TranslatorType:String {
 }
 
 struct TranslatorError {
-    static let notSupport = "지원하지 않습니다."
-    static let reconnect = "오류가 발생했습니다. 다시 시도해주세요."
+    static let notSupport = "I'm off today ~ See you tomorrow"
+    static let reconnect = "An error occurred. please try again."
 }
 
 class DefaultTranslation:NSObject {

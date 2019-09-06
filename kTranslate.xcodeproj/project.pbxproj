@@ -45,6 +45,7 @@
 		D2D3B86D22AF6F900086909D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2D3B86C22AF6F900086909D /* Assets.xcassets */; };
 		D2D3B87022AF6F900086909D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D3B86E22AF6F900086909D /* Main.storyboard */; };
 		D2D3B87822AF70750086909D /* LauncherApplication.app in Copy Launcher Application */ = {isa = PBXBuildFile; fileRef = D2D3B86622AF6F8F0086909D /* LauncherApplication.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D2F7D3BB2321F5B400A9C3C4 /* Analyst.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7D3BA2321F5B400A9C3C4 /* Analyst.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -107,6 +108,7 @@
 		D2D3B86F22AF6F900086909D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2D3B87122AF6F900086909D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2D3B87222AF6F900086909D /* LauncherApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LauncherApplication.entitlements; sourceTree = "<group>"; };
+		D2F7D3BA2321F5B400A9C3C4 /* Analyst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyst.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +298,7 @@
 		D2D6D8F222C061A8009D0C8F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D2F7D3B92321F59400A9C3C4 /* Analyst */,
 				D2C035992321006D00E3BEEF /* HotKeyManager */,
 				D2C035962320EA2600E3BEEF /* Popover */,
 				85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */,
@@ -307,6 +310,14 @@
 				D2C0359E23210B5F00E3BEEF /* CustomButton.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D2F7D3B92321F59400A9C3C4 /* Analyst */ = {
+			isa = PBXGroup;
+			children = (
+				D2F7D3BA2321F5B400A9C3C4 /* Analyst.swift */,
+			);
+			path = Analyst;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,8 +492,9 @@
 				D2C035A723210DF700E3BEEF /* Main_ChooseLanguage.swift in Sources */,
 				85E68B2D232138FF00AEBB26 /* ExNSMenuItem.swift in Sources */,
 				D2D3B85822AF5E260086909D /* AppDelegate.swift in Sources */,
-				D2D3B85B22AF5E260086909D /* HotKeyManager.swift in Sources */,
 				D2C0359B232103A600E3BEEF /* Main_Container.swift in Sources */,
+				D2D3B85B22AF5E260086909D /* HotKeyManager.swift in Sources */,
+				D2F7D3BB2321F5B400A9C3C4 /* Analyst.swift in Sources */,
 				D2C035952320E9BA00E3BEEF /* ExControl.swift in Sources */,
 				D204813322B885E300369A6D /* DBSticker.swift in Sources */,
 				D2C035AC23210E0A00E3BEEF /* DefaultTranslate.swift in Sources */,

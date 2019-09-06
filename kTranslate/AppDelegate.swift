@@ -21,13 +21,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let contentVC = windowVC.contentViewController
         PopoverController.shared
             .setLayout("icon-status", vc: contentVC) { (shared) in
+            Analyst.shared.track(event: .using)
             if shared.popover.isShown {
                 if !UserDefault.bool(forKey: .bAlways) {
                     shared.closePopover(sender: nil)
                 }
             }
         }
-        
     }
     
     func applicationWillTerminate(_ notification: Notification) {
