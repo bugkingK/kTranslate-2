@@ -95,7 +95,6 @@ class GoogleTranslation: DefaultTranslation {
         
         guard let url = URL(string: strUrl.urlQueryAllowed()) else { return }
         _ = RxAlamofire.requestData(.post, url)
-            .retry(3)
             .map { TranslationData(googleData: $0.1) }
             .subscribe(onNext: { (trans) in
                 self.translatedText.accept((trans.translatedText, .google))
@@ -121,7 +120,6 @@ class kTranslateTranslation: GoogleTranslation {
         
         guard let convertUrl = URL(string: strConvertUrl.urlQueryAllowed()) else { return }
         _ = RxAlamofire.requestData(.post, convertUrl)
-            .retry(3)
             .map { TranslationData(googleData: $0.1) }
             .subscribe(onNext: { (trans) in
                 var strOriginUrl = GoogleTranslation.m_str_home
@@ -133,7 +131,6 @@ class kTranslateTranslation: GoogleTranslation {
                 
                 guard let originUrl = URL(string: strOriginUrl.urlQueryAllowed()) else { return }
                 _ = RxAlamofire.requestData(.post, originUrl)
-                    .retry(3)
                     .map { TranslationData(googleData: $0.1) }
                     .subscribe(onNext: { (trans) in
                         self.translatedText.accept((trans.translatedText, .kTranslate))
@@ -158,7 +155,6 @@ class PapagoTranslation: DefaultTranslation {
         
         let strUrl = "https://openapi.naver.com/v1/language/translate"
         _ = RxAlamofire.requestData(.post, strUrl, parameters: ["source":source, "target":target, "text":text], headers: m_headers)
-            .retry(3)
             .map { TranslationData(papagoData: $0.1) }
             .subscribe(onNext: { (trans) in
                 self.translatedText.accept((trans.translatedText, .papago))
@@ -186,7 +182,6 @@ class KakaoTranslation: DefaultTranslation {
         strUrl.append("&query=\(text)")
         guard let url = URL(string: strUrl.urlQueryAllowed()) else { return }
         _ = RxAlamofire.requestData(.post, url, headers: m_headers)
-            .retry(3)
             .map { TranslationData(kakaoData: $0.1) }
             .subscribe(onNext: { (trans) in
                 self.translatedText.accept((trans.translatedText, .kakao))
@@ -252,7 +247,6 @@ extension GoogleTranslation {
         
         guard let url = URL(string: strUrl.urlQueryAllowed()) else { return }
         _ = RxAlamofire.requestData(.post, url)
-            .retry(3)
             .map { DetectData(data:$0.1) }
             .subscribe(onNext: onNext)
     }
@@ -265,7 +259,6 @@ extension GoogleTranslation {
         
         guard let url = URL(string: strUrl.urlQueryAllowed()) else { return }
         _ = RxAlamofire.requestData(.get, url)
-            .retry(3)
             .map { SupportData(data: $0.1) }
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: onNext)

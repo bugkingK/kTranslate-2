@@ -70,44 +70,13 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
         m_ttv_input.delegate = self
         m_ttv_input.insertionPointColor = .black
         m_ttv_input.font = NSFont.systemFont(ofSize: 13)
-        
-        let sourceVC = NSStoryboard.make(sbName: "Main", vcName: "Main_ChooseLanguage") as! Main_ChooseLanguage
-        let targetVC = NSStoryboard.make(sbName: "Main", vcName: "Main_ChooseLanguage") as! Main_ChooseLanguage
-        let target = NSLocale.preferredLanguages[0] == "ko-KR" ? "ko" : "en"
-        GoogleTranslation.supportLanguages(target: target) { [unowned self] (support) in
-            var addDetect = support
-            let sourceName = target == "ko" ? "언어감지" : "Detect"
-            self.m_btn_source.title = sourceName
-            addDetect.languages.insert((name: sourceName, key: nil), at: 0)
-            sourceVC.setup(datas: addDetect, select:nil, selBlock: { [unowned self] sel in
-                self.m_btn_source.title = sel.0
-                self.m_sel_source = sel.1
-                self.m_source_presenter.popup_dismiss()
-            })
-            
-            let targetName = target == "ko" ? "영어" : "English"
-            self.m_btn_target.title = targetName
-            targetVC.setup(datas: support, select:"en", selBlock: { [unowned self] sel in
-                self.m_btn_target.title = sel.0
-                self.m_sel_target = sel.1!
-                self.m_target_presenter.popup_dismiss()
-            })
-        }
-        
-        let message = target == "ko" ? "번역하는 내용을 입력해주세요." : "Please enter your translation."
+        let isKorean = NSLocale.preferredLanguages[0] == "ko-KR"
+        let target = isKorean ? "ko" : "en"
+        let message = isKorean ? "번역하는 내용을 입력해주세요." : "Please enter your translation."
         m_arr_datas = [
             ChattingData(message: message, type: .Me),
         ]
-        
-        m_source_presenter = Presenter.instance()
-                                .setTarget(self, m_box_present)
-                                .setHeight(250)
-                                .setContent(sourceVC)
-        
-        m_target_presenter = Presenter.instance()
-                                .setTarget(self, m_box_present)
-                                .setHeight(250)
-                                .setContent(targetVC)
+        setSupportLanguage(target: target)
     }
     
     fileprivate func bindLayout() {
@@ -170,6 +139,41 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
         }
         
         return false
+    }
+    
+    public func setSupportLanguage(target:String) {
+        let sourceVC = NSStoryboard.make(sbName: "Main", vcName: "Main_ChooseLanguage") as! Main_ChooseLanguage
+        let targetVC = NSStoryboard.make(sbName: "Main", vcName: "Main_ChooseLanguage") as! Main_ChooseLanguage
+        let isKorean = NSLocale.preferredLanguages[0] == "ko-KR"
+        let sourceName = isKorean ? "언어감지" : "Detect"
+        self.m_btn_source.title = sourceName
+        let targetName = isKorean ? "영어" : "English"
+        self.m_btn_target.title = targetName
+        GoogleTranslation.supportLanguages(target: target) { [unowned self] (support) in
+            var addDetect = support
+            addDetect.languages.insert((name: sourceName, key: nil), at: 0)
+            sourceVC.setup(datas: addDetect, select:nil, selBlock: { [unowned self] sel in
+                self.m_btn_source.title = sel.0
+                self.m_sel_source = sel.1
+                self.m_source_presenter.popup_dismiss()
+            })
+            
+            targetVC.setup(datas: support, select:"en", selBlock: { [unowned self] sel in
+                self.m_btn_target.title = sel.0
+                self.m_sel_target = sel.1!
+                self.m_target_presenter.popup_dismiss()
+            })
+        }
+        
+        m_source_presenter = Presenter.instance()
+            .setTarget(self, m_box_present)
+            .setHeight(250)
+            .setContent(sourceVC)
+        
+        m_target_presenter = Presenter.instance()
+            .setTarget(self, m_box_present)
+            .setHeight(250)
+            .setContent(targetVC)
     }
     
 }

@@ -15,6 +15,16 @@ class Main_ChooseLanguage: NSViewController {
         setupLayout()
     }
     
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        if m_arr_datas == nil {
+            guard let parent = self.parent as? Main_Chatting else { return }
+            let isKorean = NSLocale.preferredLanguages[0] == "ko-KR"
+            let target = isKorean ? "ko" : "en"
+            parent.setSupportLanguage(target: target)
+        }
+    }
+    
     @IBOutlet weak var m_cv_main: NSCollectionView!
     fileprivate var m_arr_datas:GoogleTranslation.SupportData?
     fileprivate var m_n_select:Int = 0
