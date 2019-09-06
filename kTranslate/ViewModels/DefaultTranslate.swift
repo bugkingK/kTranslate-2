@@ -43,7 +43,14 @@ class DefaultTranslation:NSObject {
         init(kakaoData:Data) {
             do {
                 let json = try JSON(data: kakaoData)
-                translatedText = json["translated_text"][0][0].stringValue
+                let arr_text = json["translated_text"].arrayValue
+            
+                for arr_element in arr_text {
+                    for element in arr_element.arrayValue {
+                        translatedText.append(element.stringValue)
+                    }
+                    translatedText.append("\n")
+                }
                 if translatedText == "" {
                     translatedText = TranslatorError.notSupport
                 }
