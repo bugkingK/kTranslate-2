@@ -21,6 +21,7 @@ class Translator:NSObject {
     public let papago:PapagoTranslation = PapagoTranslation()
     public let kakao:KakaoTranslation = KakaoTranslation()
     public let kTranslate:kTranslateTranslation = kTranslateTranslation()
+    public var meText:PublishRelay<String> = PublishRelay<String>()
     
     func run(text:String, source:String?, target:String) {
         if let v_source = source {
@@ -28,12 +29,18 @@ class Translator:NSObject {
                 trans.translate(text: text, source: v_source, target: target)
             }
         } else {
-            GoogleTranslation.detect(text: text) { [weak self] (detect) in
-                guard let `self` = self else { return }
+            guard let obsDetect = GoogleTranslation.detect(text: text) else {
+                meText.accept(TranslatorError.reconnect)
+                return
+            }
+            
+            _ = obsDetect.subscribe(onNext: { [unowned self] (detect) in
                 for trans in self.m_arr_trans {
                     trans.translate(text: text, source: detect.source, target: target)
                 }
-            }
+            }, onError: { [unowned self] (err) in
+                self.meText.accept(err.localizedDescription)
+            })
         }
     }
     

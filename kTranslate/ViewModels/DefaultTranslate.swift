@@ -49,7 +49,9 @@ class DefaultTranslation:NSObject {
                     for element in arr_element.arrayValue {
                         translatedText.append(element.stringValue)
                     }
-                    translatedText.append("\n")
+                    if arr_text.last != arr_element {
+                        translatedText.append("\n")
+                    }
                 }
                 if translatedText == "" {
                     translatedText = TranslatorError.notSupport
@@ -122,6 +124,10 @@ class kTranslateTranslation: GoogleTranslation {
         _ = RxAlamofire.requestData(.post, convertUrl)
             .map { TranslationData(googleData: $0.1) }
             .subscribe(onNext: { (trans) in
+                if target == "ja" {
+                    self.translatedText.accept((trans.translatedText, .kTranslate))
+                    return
+                }
                 var strOriginUrl = GoogleTranslation.m_str_home
                 strOriginUrl.append("?key=\(GoogleTranslation.apiKey)")
                 strOriginUrl.append("&q=\(trans.translatedText)")
@@ -239,16 +245,15 @@ extension GoogleTranslation {
         }
     }
     
-    static func detect(text:String, onNext:@escaping (_ dect:DetectData)->()) {
+    static func detect(text:String) -> Observable<DetectData>? {
         var strUrl = GoogleTranslation.m_str_home
         strUrl.append("/detect")
         strUrl.append("?key=\(GoogleTranslation.apiKey)")
         strUrl.append("&q=\(text)")
         
-        guard let url = URL(string: strUrl.urlQueryAllowed()) else { return }
-        _ = RxAlamofire.requestData(.post, url)
+        guard let url = URL(string: strUrl.urlQueryAllowed()) else { return nil }
+        return RxAlamofire.requestData(.post, url)
             .map { DetectData(data:$0.1) }
-            .subscribe(onNext: onNext)
     }
     
     static func supportLanguages(target:String, onNext:@escaping (_ langs:SupportData)->()) {

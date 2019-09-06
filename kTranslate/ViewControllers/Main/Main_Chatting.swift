@@ -84,6 +84,12 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
             .bind(onNext: onClickBtnSend)
             .disposed(by: m_dispose_bag)
         
+        m_translator.meText
+            .subscribe(onNext: { (text) in
+                let data = ChattingData(message: text, type: .Me)
+                self.m_arr_datas.append(data)
+            }).disposed(by: m_dispose_bag)
+        
         Observable.of(m_translator.google.translatedText,
                       m_translator.papago.translatedText,
                       m_translator.kakao.translatedText,
