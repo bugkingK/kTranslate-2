@@ -19,7 +19,8 @@ enum TranslatorType:String {
 }
 
 struct TranslatorError {
-    static let notSupport = "I'm off today ~ See you tomorrow"
+    static let notSupport = "not Support"
+    static let offToday = "I'm off today ~ See you tomorrow"
     static let reconnect = "An error occurred. please try again."
 }
 
@@ -192,7 +193,7 @@ class KakaoTranslation: DefaultTranslation {
             .subscribe(onNext: { (trans) in
                 self.translatedText.accept((trans.translatedText, .kakao))
             }, onError: { (err) in
-                self.translatedText.accept((TranslatorError.reconnect, .kakao))
+                self.translatedText.accept((err.localizedDescription, .kakao))
             })
     }
     

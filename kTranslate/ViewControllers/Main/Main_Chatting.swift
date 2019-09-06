@@ -148,28 +148,25 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
     }
     
     public func setSupportLanguage(target:String) {
-        let sourceVC = NSStoryboard.make(sbName: "Main", vcName: "Main_ChooseLanguage") as! Main_ChooseLanguage
-        let targetVC = NSStoryboard.make(sbName: "Main", vcName: "Main_ChooseLanguage") as! Main_ChooseLanguage
         let isKorean = NSLocale.preferredLanguages[0] == "ko-KR"
         let sourceName = isKorean ? "언어감지" : "Detect"
         self.m_btn_source.title = sourceName
         let targetName = isKorean ? "영어" : "English"
         self.m_btn_target.title = targetName
-        GoogleTranslation.supportLanguages(target: target) { [unowned self] (support) in
-            var addDetect = support
-            addDetect.languages.insert((name: sourceName, key: nil), at: 0)
-            sourceVC.setup(datas: addDetect, select:nil, selBlock: { [unowned self] sel in
-                self.m_btn_source.title = sel.0
-                self.m_sel_source = sel.1
-                self.m_source_presenter.popup_dismiss()
-            })
-            
-            targetVC.setup(datas: support, select:"en", selBlock: { [unowned self] sel in
-                self.m_btn_target.title = sel.0
-                self.m_sel_target = sel.1!
-                self.m_target_presenter.popup_dismiss()
-            })
-        }
+        
+        let sourceVC = NSStoryboard.make(sbName: "Main", vcName: "Main_ChooseLanguage") as! Main_ChooseLanguage
+        sourceVC.setup(select:nil, isSource: true, selBlock: { [unowned self] sel in
+            self.m_btn_source.title = sel.0
+            self.m_sel_source = sel.1
+            self.m_source_presenter.popup_dismiss()
+        })
+        
+        let targetVC = NSStoryboard.make(sbName: "Main", vcName: "Main_ChooseLanguage") as! Main_ChooseLanguage
+        targetVC.setup(select:"en", isSource: false, selBlock: { [unowned self] sel in
+            self.m_btn_target.title = sel.0
+            self.m_sel_target = sel.1!
+            self.m_target_presenter.popup_dismiss()
+        })
         
         m_source_presenter = Presenter.instance()
             .setTarget(self, m_box_present)

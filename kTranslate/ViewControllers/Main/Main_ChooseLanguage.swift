@@ -9,7 +9,7 @@
 import Cocoa
 
 class Main_ChooseLanguage: NSViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
@@ -18,17 +18,20 @@ class Main_ChooseLanguage: NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
         if m_arr_datas == nil {
-            guard let parent = self.parent as? Main_Chatting else { return }
-            let isKorean = NSLocale.preferredLanguages[0] == "ko-KR"
-            let target = isKorean ? "ko" : "en"
-            parent.setSupportLanguage(target: target)
+            loadData()
+            self.m_cv_main.reloadData()
         }
+        let indexPath = IndexPath(item: self.m_n_select, section: 0)
+        self.m_cv_main.scrollToItems(at: [indexPath], scrollPosition: .centeredVertically)
     }
     
     @IBOutlet weak var m_cv_main: NSCollectionView!
     fileprivate var m_arr_datas:GoogleTranslation.SupportData?
-    fileprivate var m_n_select:Int = 0
     fileprivate var m_sel_block:((_ sel:(String, String?))->())? = nil
+    
+    fileprivate var m_str_select:String? = nil
+    fileprivate var m_n_select:Int = 0
+    fileprivate var m_b_source:Bool = false
     
     fileprivate func setupLayout() {
         m_cv_main.delegate = self
@@ -38,17 +41,34 @@ class Main_ChooseLanguage: NSViewController {
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.minimumLineSpacing = 0
         m_cv_main.collectionViewLayout = flowLayout
+        self.m_cv_main.reloadData()
     }
     
-    public func setup(datas:GoogleTranslation.SupportData, select:String?, selBlock:((_ sel:(String, String?))->())? = nil) {
-        m_arr_datas = datas
-        for (idx, data) in datas.languages.enumerated() {
-            if data.key == select {
-                m_n_select = idx
+    public func setup(select:String?, isSource:Bool, selBlock:((_ sel:(String, String?))->())? = nil) {
+        m_sel_block = selBlock
+        m_b_source = isSource
+        m_str_select = select
+        loadData()
+    }
+    
+    public func loadData() {
+        let isKorean = NSLocale.preferredLanguages[0] == "ko-KR"
+        let target = isKorean ? "ko" : "en"
+        GoogleTranslation.supportLanguages(target: target) { [unowned self] (datas) in
+            var v_datas = datas
+            if self.m_b_source {
+                let isKorean = NSLocale.preferredLanguages[0] == "ko-KR"
+                let sourceName = isKorean ? "언어감지" : "Detect"
+                v_datas.languages.insert((name: sourceName, key: nil), at: 0)
+            }
+            
+            self.m_arr_datas = v_datas
+            for (idx, data) in v_datas.languages.enumerated() {
+                if data.key == self.m_str_select {
+                    self.m_n_select = idx
+                }
             }
         }
-        
-        m_sel_block = selBlock
     }
     
     @objc fileprivate func onClickBtnTitle(_ sender:NSButton) {
