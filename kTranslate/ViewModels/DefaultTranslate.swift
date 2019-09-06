@@ -196,10 +196,11 @@ class KakaoTranslation: DefaultTranslation {
     }
     
     fileprivate func convert(source:String) -> String {
-        if source == "ko" {
-            return "kr"
-        } else {
-            return source
+        switch source {
+        case "ko": return "kr"
+        case "ja": return "jp"
+        case "zh", "zh-TW": return "cn"
+        default: return source
         }
     }
 }
