@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		12FED9FD2579F0D6A694C86D /* Pods_kTranslate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7A2C9AECB52D403C182D4B /* Pods_kTranslate.framework */; };
 		854DBB3623236A71008BE86A /* ExNSPasteboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854DBB3523236A71008BE86A /* ExNSPasteboard.swift */; };
+		854DBB562323ED13008BE86A /* DBUseHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854DBB552323ED13008BE86A /* DBUseHistory.swift */; };
 		85B255A622AFDC470084272A /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85B255A522AFDC470084272A /* ServiceManagement.framework */; };
 		85DE7D5422AFD3FD00568C80 /* CTWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */; };
 		85E68B2D232138FF00AEBB26 /* ExNSMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E68B2C232138FF00AEBB26 /* ExNSMenuItem.swift */; };
@@ -67,6 +68,7 @@
 		5E5F42E900FE05FED2EB6CD7 /* Pods-kTranslate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kTranslate/Pods-kTranslate.debug.xcconfig"; sourceTree = "<group>"; };
 		6C7A2C9AECB52D403C182D4B /* Pods_kTranslate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kTranslate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		854DBB3523236A71008BE86A /* ExNSPasteboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNSPasteboard.swift; sourceTree = "<group>"; };
+		854DBB552323ED13008BE86A /* DBUseHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUseHistory.swift; sourceTree = "<group>"; };
 		85B255A522AFDC470084272A /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		85DE7D5322AFD3FD00568C80 /* CTWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTWindowController.swift; sourceTree = "<group>"; };
 		85E68B2C232138FF00AEBB26 /* ExNSMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNSMenuItem.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				D204813022B885C200369A6D /* DBManager.swift */,
+				854DBB552323ED13008BE86A /* DBUseHistory.swift */,
 				D204813222B885E300369A6D /* DBSticker.swift */,
 			);
 			path = Database;
@@ -510,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				854DBB562323ED13008BE86A /* DBUseHistory.swift in Sources */,
 				D2D3B85D22AF5E260086909D /* PopoverController.swift in Sources */,
 				85E68B2F2321590500AEBB26 /* Setting_About.swift in Sources */,
 				D2D3B86122AF6F3E0086909D /* AutoLogin.swift in Sources */,

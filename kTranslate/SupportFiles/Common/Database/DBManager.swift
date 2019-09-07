@@ -13,17 +13,8 @@ class DBManager: NSObject {
     fileprivate static let str_db_name:String = "apps.db"
     
     public enum DB_NAME {
-        static let SK = "STICKER"
+        static let UseHistory = "UseHistory"
     }
-    
-    fileprivate static let sql_create_sticker = ""
-        + "CREATE TABLE IF NOT EXISTS \(DB_NAME.SK) ("
-        + "IDX INTEGER PRIMARY KEY AUTOINCREMENT, "
-        + "JOIN_IDX_PJ INTEGER, "
-        + "CONTENT TEXT, "
-        + "ORDER_SK INTEGER, "
-        + "DATE_CREATE TEXT "
-        + ");"
     
     internal static var db:FMDatabase = {
         let path_application = FileManager.default.urls(for: .documentationDirectory, in: .userDomainMask).first!
@@ -51,13 +42,7 @@ class DBManager: NSObject {
             return db
         }
         
-        if !db.executeStatements(sql_create_sticker) {
-            print("Error \(db.lastErrorMessage())")
-        }
-        
-        let menu = "Press the +button and leave a brief note. \n\n You can change the note by double-clicking it and add, change, or delete it when you right-click it."
-        
-        if !db.executeUpdate(DBSticker.sql_insert_sticker, withArgumentsIn:[0, menu, 0, CommonUtil.getCurrentDate()]) {
+        if !db.executeStatements(DBUseHistory.sql_create) {
             print("Error \(db.lastErrorMessage())")
         }
         
@@ -65,17 +50,6 @@ class DBManager: NSObject {
 
         return db
     }()
-    
-    static public func reloadDB() {
-        let url = URL(fileURLWithPath: Bundle.main.resourcePath!)
-        let path = url.deletingLastPathComponent().deletingLastPathComponent().absoluteString
-        let task = Process()
-        task.launchPath = "/usr/bin/open"
-        task.arguments = [path]
-        task.launch()
-        exit(0)
-        
-    }
 }
 
 
