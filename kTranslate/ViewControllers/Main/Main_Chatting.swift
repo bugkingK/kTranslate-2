@@ -9,6 +9,7 @@
 import Cocoa
 import RxSwift
 import RxCocoa
+import AVFoundation
 
 struct ChattingData {
     enum TYPE { case You, Me }
@@ -208,19 +209,32 @@ class ChattingCell:NSTableCellView {
     @IBOutlet weak var lbName:NSTextField?
     @IBOutlet weak var lbMessage:NSTextField!
     @IBOutlet weak var boxType: NSBox!
-    @IBOutlet weak var btnCopy: NSButton?
+    @IBOutlet weak var btnCopy: NSButton!
+    @IBOutlet weak var btnSpeaker: NSButton!
     
     fileprivate var m_dispose_bag:DisposeBag = DisposeBag()
+    fileprivate var m_synthesizer:NSSpeechSynthesizer = NSSpeechSynthesizer()
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        btnCopy?.rx.tap
+        btnCopy.rx.tap
             .subscribe(onNext: { [unowned self] _ in
                 let pasteBoard = NSPasteboard.general
                 pasteBoard.declareTypes([], owner: nil)
                 pasteBoard.setString(self.lbMessage.stringValue, forType: .string)
                 self.findViewController()?.toast(message: "It's been copied.")
-            }).disposed(by: m_dispose_bag)
+            })
+            .disposed(by: m_dispose_bag)
+        
+        btnSpeaker.rx.tap
+            .subscribe(onNext: { [unowned self] in
+                if self.m_synthesizer.isSpeaking {
+                   self.m_synthesizer.stopSpeaking()
+                } else {
+                    self.m_synthesizer.startSpeaking(self.lbMessage.stringValue)
+                }
+            })
+            .disposed(by: m_dispose_bag)
     }
 }
 

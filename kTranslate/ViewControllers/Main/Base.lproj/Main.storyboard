@@ -1017,11 +1017,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="ChattingSendCell" id="om0-M0-a0I" customClass="ChattingCell" customModule="kTranslate" customModuleProvider="target">
-                                                            <rect key="frame" x="1" y="1" width="384" height="57"/>
+                                                            <rect key="frame" x="1" y="1" width="384" height="77"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="5" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="jCb-n7-o9g" customClass="MessageBox" customModule="kTranslate" customModuleProvider="target">
-                                                                    <rect key="frame" x="164" y="10" width="200" height="37"/>
+                                                                    <rect key="frame" x="164" y="30" width="200" height="37"/>
                                                                     <view key="contentView" id="wM5-Tx-T7Z">
                                                                         <rect key="frame" x="0.0" y="0.0" width="200" height="37"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1046,6 +1046,7 @@
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="H1e-tW-IKG"/>
                                                                     </constraints>
                                                                     <color key="borderColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="fillColor" red="0.92941176469999998" green="0.46274509800000002" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isIncoming" value="NO"/>
                                                                         <userDefinedRuntimeAttribute type="color" keyPath="incomingColor">
@@ -1056,20 +1057,49 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </box>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wnt-Or-nWe">
+                                                                    <rect key="frame" x="144" y="30" width="15" height="15"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="15" id="QiF-lV-EaK"/>
+                                                                        <constraint firstAttribute="height" constant="15" id="aCl-j3-qAn"/>
+                                                                    </constraints>
+                                                                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="icon-copy" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="Mxi-QA-CVW">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nUf-bD-Jee">
+                                                                    <rect key="frame" x="144" y="50" width="15" height="15"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="15" id="1bO-sc-LJz"/>
+                                                                        <constraint firstAttribute="width" constant="15" id="rEE-eB-Vhj"/>
+                                                                    </constraints>
+                                                                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="icon-speaker-left" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="ORV-06-PyR">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <color key="contentTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </button>
                                                             </subviews>
                                                             <constraints>
                                                                 <constraint firstItem="jCb-n7-o9g" firstAttribute="top" secondItem="om0-M0-a0I" secondAttribute="top" constant="10" id="7CK-w5-Xlf"/>
-                                                                <constraint firstItem="jCb-n7-o9g" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="om0-M0-a0I" secondAttribute="leading" constant="20" id="7He-AL-ype"/>
-                                                                <constraint firstAttribute="bottom" secondItem="jCb-n7-o9g" secondAttribute="bottom" constant="10" id="LR7-mZ-cMh"/>
+                                                                <constraint firstItem="wnt-Or-nWe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="om0-M0-a0I" secondAttribute="leading" constant="20" id="DuF-fg-BPx"/>
+                                                                <constraint firstAttribute="bottom" secondItem="jCb-n7-o9g" secondAttribute="bottom" constant="30" id="LR7-mZ-cMh"/>
                                                                 <constraint firstAttribute="trailing" secondItem="jCb-n7-o9g" secondAttribute="trailing" constant="20" id="TGO-W2-kxf"/>
+                                                                <constraint firstItem="wnt-Or-nWe" firstAttribute="top" secondItem="nUf-bD-Jee" secondAttribute="bottom" constant="5" id="ka3-Xg-1U1"/>
+                                                                <constraint firstItem="jCb-n7-o9g" firstAttribute="leading" secondItem="wnt-Or-nWe" secondAttribute="trailing" constant="5" id="lUS-3r-fpK"/>
+                                                                <constraint firstItem="wnt-Or-nWe" firstAttribute="bottom" secondItem="wM5-Tx-T7Z" secondAttribute="bottom" id="nmP-a0-Bwg"/>
+                                                                <constraint firstItem="nUf-bD-Jee" firstAttribute="centerX" secondItem="wnt-Or-nWe" secondAttribute="centerX" id="ttk-h2-Ock"/>
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="boxType" destination="jCb-n7-o9g" id="3xk-3W-78f"/>
+                                                                <outlet property="btnCopy" destination="wnt-Or-nWe" id="ofW-R9-jE7"/>
+                                                                <outlet property="btnSpeaker" destination="nUf-bD-Jee" id="B0G-Ut-5WH"/>
                                                                 <outlet property="lbMessage" destination="02L-YJ-dn2" id="QEf-40-jgf"/>
                                                             </connections>
                                                         </tableCellView>
                                                         <tableCellView identifier="ChattingReciveCell" id="pvW-Ur-77v" customClass="ChattingCell" customModule="kTranslate" customModuleProvider="target">
-                                                            <rect key="frame" x="1" y="60" width="384" height="84"/>
+                                                            <rect key="frame" x="1" y="80" width="384" height="84"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <box boxType="custom" borderWidth="0.0" cornerRadius="10" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="YPo-fa-FXS" userLabel="icon View">
@@ -1152,8 +1182,22 @@
                                                                         <font key="font" metaFont="system"/>
                                                                     </buttonCell>
                                                                 </button>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2J1-I7-GJQ">
+                                                                    <rect key="frame" x="270" y="30" width="15" height="15"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="15" id="IC8-jA-hp6"/>
+                                                                        <constraint firstAttribute="height" constant="15" id="VJz-sK-vRn"/>
+                                                                    </constraints>
+                                                                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="icon-speaker-right" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="ifc-JM-Xsj">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <color key="contentTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </button>
                                                             </subviews>
                                                             <constraints>
+                                                                <constraint firstItem="2J1-I7-GJQ" firstAttribute="centerX" secondItem="3ch-d2-cHW" secondAttribute="centerX" id="2A4-Xh-fcE"/>
+                                                                <constraint firstItem="3ch-d2-cHW" firstAttribute="top" secondItem="2J1-I7-GJQ" secondAttribute="bottom" constant="5" id="3gZ-DN-liS"/>
                                                                 <constraint firstItem="YPo-fa-FXS" firstAttribute="leading" secondItem="pvW-Ur-77v" secondAttribute="leading" constant="10" id="6b4-Zj-fD6"/>
                                                                 <constraint firstItem="3ch-d2-cHW" firstAttribute="leading" secondItem="WMN-7S-Zxs" secondAttribute="trailing" constant="5" id="8ly-FD-VAd"/>
                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3ch-d2-cHW" secondAttribute="trailing" constant="20" id="BBv-Lh-gKK"/>
@@ -1169,6 +1213,7 @@
                                                             <connections>
                                                                 <outlet property="boxType" destination="WMN-7S-Zxs" id="0H9-C1-Flr"/>
                                                                 <outlet property="btnCopy" destination="3ch-d2-cHW" id="Lxu-uY-JWq"/>
+                                                                <outlet property="btnSpeaker" destination="2J1-I7-GJQ" id="b7a-Ip-8Ps"/>
                                                                 <outlet property="imgProfile" destination="VGR-A6-wCn" id="xMI-Ho-1LR"/>
                                                                 <outlet property="lbMessage" destination="UKc-gs-eV4" id="LMI-h6-zmg"/>
                                                                 <outlet property="lbName" destination="Vge-ID-reB" id="K0h-qR-eSn"/>
@@ -1352,6 +1397,8 @@
     <resources>
         <image name="icon-copy" width="512" height="512"/>
         <image name="icon-google" width="28" height="29"/>
+        <image name="icon-speaker-left" width="686" height="720"/>
+        <image name="icon-speaker-right" width="686" height="720"/>
         <image name="icon_logo" width="256" height="256"/>
     </resources>
 </document>
