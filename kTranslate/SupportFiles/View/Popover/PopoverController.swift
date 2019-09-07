@@ -16,6 +16,7 @@ open class PopoverController: NSObject {
     public let popover = NSPopover()
     fileprivate var eventMonitor: EventMonitor?
     fileprivate var m_event_handler:((NSEvent?)->())?
+    fileprivate var m_event_show:((PopoverController)->())?
     
     fileprivate override init() {
         super.init()
@@ -36,6 +37,10 @@ open class PopoverController: NSObject {
         }
     }
     
+    public func setShowEvent(_ event:((PopoverController)->())?) {
+        m_event_show = event
+    }
+    
     @objc open func togglePopover(_ sender: Any?) {
         if popover.isShown {
             closePopover(sender: sender)
@@ -48,6 +53,7 @@ open class PopoverController: NSObject {
         if let button = statusItem.button {
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
             eventMonitor?.start()
+            m_event_show?(self)
         }
     }
     

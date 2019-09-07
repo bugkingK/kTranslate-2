@@ -28,6 +28,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 }
             }
         }
+        
+        PopoverController.shared.setShowEvent { (shared) in
+            if let clipboard = NSPasteboard.general.clipboardContent() {
+                CommonUtil.alertMessage(clipboard)
+            }
+        }
     }
     
     func applicationWillTerminate(_ notification: Notification) {

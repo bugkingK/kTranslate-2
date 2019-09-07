@@ -200,6 +200,7 @@ extension Main_Chatting: NSTableViewDataSource, NSTableViewDelegate {
         }
         
         cell.lbMessage.stringValue = item.strMessage
+        cell.lbNumberOfChar.stringValue = "\(item.strMessage.count)"
         return cell
     }
 }
@@ -211,6 +212,7 @@ class ChattingCell:NSTableCellView {
     @IBOutlet weak var boxType: NSBox!
     @IBOutlet weak var btnCopy: NSButton!
     @IBOutlet weak var btnSpeaker: NSButton!
+    @IBOutlet weak var lbNumberOfChar: NSTextField!
     
     fileprivate var m_dispose_bag:DisposeBag = DisposeBag()
     fileprivate var m_synthesizer:NSSpeechSynthesizer = NSSpeechSynthesizer()
