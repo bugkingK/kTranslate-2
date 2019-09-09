@@ -35,11 +35,12 @@ class DBUseHistory: DBManager {
         + "DATE_CREATE TEXT "
         + ");"
     
-    public static func get() -> [UseHistoryData] {
+    public static func get(limit:Int? = nil) -> [UseHistoryData] {
         var datas:[UseHistoryData] = []
         if !db.open() { return datas }
+        let strLimit = limit == nil ? "" : "LIMIT \(limit!)"
         
-        let sql = "SELECT * FROM \(DB_NAME.UseHistory) ORDER BY DATE_CREATE"
+        let sql = "SELECT * FROM \(DB_NAME.UseHistory) ORDER BY IDX DESC \(strLimit)"
         guard let result = db.executeQuery(sql, withArgumentsIn: []) else {
             print("Error \(db.lastErrorMessage())")
             db.close()

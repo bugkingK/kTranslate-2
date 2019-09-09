@@ -37,7 +37,7 @@ class Main_Container: CTContainerViewController {
     @IBOutlet weak var m_btn_command: NSButton!
     
     fileprivate var m_dispose_bag:DisposeBag = DisposeBag()
-    fileprivate var m_vc_chatting:Main_Chatting!
+    public var m_vc_chatting:Main_Chatting!
     fileprivate var m_side_menu:NSMenu = NSMenu()
     
     fileprivate func setupLayout() {

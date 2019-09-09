@@ -27,7 +27,7 @@ class Popup_UseHistory: NSViewController {
     fileprivate func setupLayout() {
         m_tv_main.delegate = self
         m_tv_main.dataSource = self
-        m_arr_datas = DBUseHistory.get()
+        m_arr_datas = DBUseHistory.get(limit: 50)
         m_tv_main.reloadData()
     }
     
@@ -53,7 +53,18 @@ extension Popup_UseHistory: NSTableViewDelegate, NSTableViewDataSource {
         }
         
         cell.lbMessage.stringValue = item.sContent
-        cell.lbNumberOfChar.stringValue = "\(item.sContent.count)"
+        cell.lbNumberOfChar.stringValue = "\(item.sCreatedDate)"
         return cell
     }
+    
+    func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+        guard let containerVC = self.presentingViewController as? Main_Container else { return true }
+        let item = m_arr_datas[row]
+        containerVC.m_vc_chatting.m_ttv_input.string = item.sContent
+        containerVC.m_vc_chatting.m_btn_send.performClick(self)
+        self.dismiss(self)
+        return true
+    }
+    
+    
 }

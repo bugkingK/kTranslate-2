@@ -200,8 +200,18 @@
                                             </buttonCell>
                                             <color key="contentTintColor" red="0.1333333333" green="0.14117647059999999" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </button>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IF5-0e-awS">
+                                            <rect key="frame" x="121" y="17" width="240" height="17"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Only 50 recent searches are displayed." id="mCB-kW-VZi">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" red="0.1333333333" green="0.14117647059999999" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="IF5-0e-awS" firstAttribute="centerY" secondItem="fXH-fT-oe3" secondAttribute="centerY" id="3aU-Kk-oVZ"/>
+                                        <constraint firstItem="IF5-0e-awS" firstAttribute="leading" secondItem="ABI-4l-Arp" secondAttribute="trailing" constant="20" id="3x3-UU-x1V"/>
                                         <constraint firstItem="ABI-4l-Arp" firstAttribute="top" secondItem="3To-He-rAI" secondAttribute="top" constant="5" id="6zz-j0-JNj"/>
                                         <constraint firstAttribute="bottom" secondItem="ABI-4l-Arp" secondAttribute="bottom" constant="5" id="CIl-nw-Ngu"/>
                                         <constraint firstItem="rSL-l4-nnt" firstAttribute="centerY" secondItem="3To-He-rAI" secondAttribute="centerY" id="Clf-On-fx5"/>
