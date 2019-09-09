@@ -33,6 +33,7 @@ class Main_Container: CTContainerViewController {
     
     @IBOutlet weak var m_btn_always: CTCircleButton!
     @IBOutlet weak var m_btn_info: CTCircleButton!
+    @IBOutlet weak var m_btn_history: CTCircleButton!
     @IBOutlet weak var m_btn_translator: NSButton!
     @IBOutlet weak var m_btn_command: NSButton!
     
@@ -80,6 +81,10 @@ class Main_Container: CTContainerViewController {
             .subscribe(onNext: { _ in
                 
             })
+            .disposed(by: m_dispose_bag)
+        
+        m_btn_history.rx.tap
+            .bind(onNext: onClickMenuHistory)
             .disposed(by: m_dispose_bag)
     }
     
