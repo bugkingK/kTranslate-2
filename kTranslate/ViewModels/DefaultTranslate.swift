@@ -270,13 +270,25 @@ extension GoogleTranslation {
             .subscribe(onNext: onNext)
     }
     
-    static func detect(image:NSImage) {
+    struct DetectImageData {
+        var text:String?
+        init(data:Data) {
+            let json = try! JSON(data: data)
+            let responses = json["responses"].arrayValue
+            for res in responses {
+                guard let fullTextAnnotation = res.dictionaryValue["fullTextAnnotation"]?.dictionaryValue else { continue }
+                text = fullTextAnnotation["text"]?.stringValue
+            }
+        }
+    }
+    
+    static func detect(image:NSImage) -> Observable<DetectImageData>? {
         var strUrl = "https://vision.googleapis.com/v1/images:annotate"
         strUrl.append("?key=\(GoogleTranslation.apiKey)")
         
-        guard let url = URL(string: strUrl.urlQueryAllowed()) else { return }
+        guard let url = URL(string: strUrl.urlQueryAllowed()) else { return nil }
         var request = URLRequest(url: url)
-        guard let base64image = image.base64String else { return }
+        guard let base64image = image.base64String else { return nil }
         
         let json: [String: Any] = [
             "requests" : [
@@ -293,16 +305,11 @@ extension GoogleTranslation {
         request.httpBody = data
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        _ = RxAlamofire.requestJSON(request)
-            .subscribe(onNext: { (r,j) in
-                print(r)
-                print(j)
-            }, onError: { (err) in
-                print(err)
-            })
-        
+        return RxAlamofire.requestData(request)
+            .map { DetectImageData(data: $0.1) }
     }
 }
+
 extension NSImage {
     var base64String: String? {
         guard let rep = NSBitmapImageRep(
