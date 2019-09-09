@@ -45,6 +45,8 @@ class Main_Container: CTContainerViewController {
             NSMenuItem.make("About kTranslate", self, #selector(onClickMenuAbout), ""),
             NSMenuItem.make("Preperences..", self, #selector(onClickMenuPreference), ""),
             NSMenuItem.separator(),
+            NSMenuItem.make("History", self, #selector(onClickMenuHistory), ""),
+            NSMenuItem.separator(),
             NSMenuItem.make("Quit", NSApp, #selector(NSApp.terminate(_:)), "")
         ])
         
@@ -89,4 +91,8 @@ class Main_Container: CTContainerViewController {
         CTWindowController.showWindow(sbName: "Setting", vcName: "Setting_Preference")
     }
     
+    @objc fileprivate func onClickMenuHistory() {
+        let vc = NSStoryboard.make(sbName: "Popup", vcName: "Popup_UseHistory") as! Popup_UseHistory
+        self.presentAsSheet(vc)
+    }
 }

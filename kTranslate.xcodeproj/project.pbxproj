@@ -18,6 +18,8 @@
 		D204813122B885C200369A6D /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D204813022B885C200369A6D /* DBManager.swift */; };
 		D204813322B885E300369A6D /* DBSticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D204813222B885E300369A6D /* DBSticker.swift */; };
 		D204813522B8861B00369A6D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D204813422B8861B00369A6D /* libsqlite3.0.tbd */; };
+		D21C86382325E32600A55DF4 /* Popup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D21C86372325E32600A55DF4 /* Popup.storyboard */; };
+		D21C863A2325E3F900A55DF4 /* Popup_UseHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C86392325E3F900A55DF4 /* Popup_UseHistory.swift */; };
 		D2C0358C2320E30500E3BEEF /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C0358B2320E30500E3BEEF /* Setting.storyboard */; };
 		D2C035912320E49400E3BEEF /* ExNSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035902320E49400E3BEEF /* ExNSColor.swift */; };
 		D2C035932320E8F200E3BEEF /* ExNSStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035922320E8F200E3BEEF /* ExNSStoryboard.swift */; };
@@ -77,6 +79,8 @@
 		D204813022B885C200369A6D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		D204813222B885E300369A6D /* DBSticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSticker.swift; sourceTree = "<group>"; };
 		D204813422B8861B00369A6D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		D21C86372325E32600A55DF4 /* Popup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Popup.storyboard; sourceTree = "<group>"; };
+		D21C86392325E3F900A55DF4 /* Popup_UseHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup_UseHistory.swift; sourceTree = "<group>"; };
 		D2C0358B2320E30500E3BEEF /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		D2C035902320E49400E3BEEF /* ExNSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNSColor.swift; sourceTree = "<group>"; };
 		D2C035922320E8F200E3BEEF /* ExNSStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNSStoryboard.swift; sourceTree = "<group>"; };
@@ -153,6 +157,15 @@
 				D204813222B885E300369A6D /* DBSticker.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		D21C86362325E30800A55DF4 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				D21C86372325E32600A55DF4 /* Popup.storyboard */,
+				D21C86392325E3F900A55DF4 /* Popup_UseHistory.swift */,
+			);
+			path = Popup;
 			sourceTree = "<group>";
 		};
 		D26994B4603421D65477EE75 /* Frameworks */ = {
@@ -250,6 +263,7 @@
 			children = (
 				D2D3B84A22AF5E260086909D /* Main */,
 				D2C0358A2320E2EC00E3BEEF /* Setting */,
+				D21C86362325E30800A55DF4 /* Popup */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -431,6 +445,7 @@
 				D2D3B85A22AF5E260086909D /* Main.storyboard in Resources */,
 				D2C035A623210DF700E3BEEF /* ChooseLanguageCell.xib in Resources */,
 				D2C0358C2320E30500E3BEEF /* Setting.storyboard in Resources */,
+				D21C86382325E32600A55DF4 /* Popup.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21C863A2325E3F900A55DF4 /* Popup_UseHistory.swift in Sources */,
 				854DBB562323ED13008BE86A /* DBUseHistory.swift in Sources */,
 				D2D3B85D22AF5E260086909D /* PopoverController.swift in Sources */,
 				85E68B2F2321590500AEBB26 /* Setting_About.swift in Sources */,

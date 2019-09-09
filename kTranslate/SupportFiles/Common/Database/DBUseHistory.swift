@@ -35,7 +35,7 @@ class DBUseHistory: DBManager {
         + "DATE_CREATE TEXT "
         + ");"
     
-    public static func getUseHistory() -> [UseHistoryData] {
+    public static func get() -> [UseHistoryData] {
         var datas:[UseHistoryData] = []
         if !db.open() { return datas }
         
@@ -54,5 +54,48 @@ class DBUseHistory: DBManager {
         return datas
     }
     
+    @discardableResult
+    public static func add(content:String) -> Bool {
+        if !db.open() { return false }
+        
+        let sql = "INSERT INTO \(DB_NAME.UseHistory) (CONTENT, DATE_CREATE) VALUES (?, ?)"
+        if !db.executeUpdate(sql, withArgumentsIn:[content, CommonUtil.getCurrentDate()]) {
+            print("Error \(db.lastErrorMessage())")
+            db.close()
+            return false
+        }
+        
+        db.close()
+        return true
+    }
+    
+    @discardableResult
+    public static func update(data:UseHistoryData) -> Bool {
+        if !db.open() { return false }
+
+        let sql = "UPDATE \(DB_NAME.UseHistory) SET CONTENT=?, DATE_CREATE=? WHERE IDX=?"
+        if !db.executeUpdate(sql, withArgumentsIn:[data.sContent, data.sCreatedDate, data.idx]) {
+            print("Error \(db.lastErrorMessage())")
+            db.close()
+            return false
+        }
+        db.close()
+        return true
+    }
+    
+    @discardableResult
+    public static func deleteSticker(idx:Int) -> Bool {
+        if !db.open() { return false }
+
+        let sql = "DELETE FROM \(DB_NAME.UseHistory) WHERE IDX=?"
+        if !db.executeUpdate(sql, withArgumentsIn:[idx]) {
+            print("Error \(db.lastErrorMessage())")
+            db.close()
+            return false
+        }
+        db.close()
+        return true
+    }
+
 
 }
