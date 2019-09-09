@@ -68,6 +68,11 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
     fileprivate func setupLayout() {
         m_tv_main.delegate = self
         m_tv_main.dataSource = self
+        if #available(OSX 10.13, *) {
+            m_tv_main.registerForDraggedTypes([.URL])
+        } else {
+            m_tv_main.registerForDraggedTypes([NSPasteboard.PasteboardType("NSFilenamesPboardType")])
+        }
         m_ttv_input.delegate = self
         m_ttv_input.insertionPointColor = .black
         m_ttv_input.font = NSFont.systemFont(ofSize: 13)
@@ -203,6 +208,16 @@ extension Main_Chatting: NSTableViewDataSource, NSTableViewDelegate {
         cell.lbMessage.stringValue = item.strMessage
         cell.lbNumberOfChar.stringValue = "\(item.strMessage.count)"
         return cell
+    }
+    
+    func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableView.DropOperation) -> NSDragOperation {
+        
+        return NSDragOperation.private
+    }
+    
+    func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableView.DropOperation) -> Bool {
+        
+        return true
     }
 }
 
