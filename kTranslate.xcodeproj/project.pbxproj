@@ -20,6 +20,7 @@
 		D204813522B8861B00369A6D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D204813422B8861B00369A6D /* libsqlite3.0.tbd */; };
 		D21C86382325E32600A55DF4 /* Popup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D21C86372325E32600A55DF4 /* Popup.storyboard */; };
 		D21C863A2325E3F900A55DF4 /* Popup_UseHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C86392325E3F900A55DF4 /* Popup_UseHistory.swift */; };
+		D21C86582325FC3C00A55DF4 /* Popup_Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C86572325FC3C00A55DF4 /* Popup_Alert.swift */; };
 		D2C0358C2320E30500E3BEEF /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C0358B2320E30500E3BEEF /* Setting.storyboard */; };
 		D2C035912320E49400E3BEEF /* ExNSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035902320E49400E3BEEF /* ExNSColor.swift */; };
 		D2C035932320E8F200E3BEEF /* ExNSStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035922320E8F200E3BEEF /* ExNSStoryboard.swift */; };
@@ -81,6 +82,7 @@
 		D204813422B8861B00369A6D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		D21C86372325E32600A55DF4 /* Popup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Popup.storyboard; sourceTree = "<group>"; };
 		D21C86392325E3F900A55DF4 /* Popup_UseHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup_UseHistory.swift; sourceTree = "<group>"; };
+		D21C86572325FC3C00A55DF4 /* Popup_Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup_Alert.swift; sourceTree = "<group>"; };
 		D2C0358B2320E30500E3BEEF /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		D2C035902320E49400E3BEEF /* ExNSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNSColor.swift; sourceTree = "<group>"; };
 		D2C035922320E8F200E3BEEF /* ExNSStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNSStoryboard.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			children = (
 				D21C86372325E32600A55DF4 /* Popup.storyboard */,
 				D21C86392325E3F900A55DF4 /* Popup_UseHistory.swift */,
+				D21C86572325FC3C00A55DF4 /* Popup_Alert.swift */,
 			);
 			path = Popup;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				D2C035912320E49400E3BEEF /* ExNSColor.swift in Sources */,
 				D2C035B423210E3400E3BEEF /* ExNSView.swift in Sources */,
 				D2C035982320EED900E3BEEF /* ExUserDefaults.swift in Sources */,
+				D21C86582325FC3C00A55DF4 /* Popup_Alert.swift in Sources */,
 				D2C035932320E8F200E3BEEF /* ExNSStoryboard.swift in Sources */,
 				85DE7D5422AFD3FD00568C80 /* CTWindowController.swift in Sources */,
 				D2C035B123210E1900E3BEEF /* Presenter.swift in Sources */,

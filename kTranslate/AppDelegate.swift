@@ -11,6 +11,8 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    var prevClipboard:String?
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         NSApp.activate(ignoringOtherApps: true)
         HotKeyManager.shared.registerHotKey()
@@ -28,12 +30,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 }
             }
         }
-        
-//        PopoverController.shared.setShowEvent { (shared) in
-//            if let clipboard = NSPasteboard.general.clipboardContent() {
-//                CommonUtil.alertMessage(clipboard)
-//            }
-//        }
+
+        PopoverController.shared.setShowEvent { (shared) in
+            if let clipboard = NSPasteboard.general.clipboardContent() {
+                if self.prevClipboard != clipboard {
+                    self.prevClipboard = clipboard
+                    let vc = NSStoryboard.make(sbName: "Popup", vcName: "Popup_Alert") as! Popup_Alert
+                    vc.presentVC = contentVC
+                    vc.clipboardContent = clipboard
+                    contentVC?.presentAsSheet(vc)
+                }
+            }
+        }
     }
     
     func applicationWillTerminate(_ notification: Notification) {
