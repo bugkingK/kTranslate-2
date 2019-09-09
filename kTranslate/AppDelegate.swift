@@ -42,6 +42,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 }
             }
         }
+        
+//        GoogleTranslation.detect(image: NSImage(named: "test")!)
     }
     
     func applicationWillTerminate(_ notification: Notification) {
