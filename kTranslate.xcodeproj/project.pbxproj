@@ -21,6 +21,8 @@
 		D21C86382325E32600A55DF4 /* Popup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D21C86372325E32600A55DF4 /* Popup.storyboard */; };
 		D21C863A2325E3F900A55DF4 /* Popup_UseHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C86392325E3F900A55DF4 /* Popup_UseHistory.swift */; };
 		D21C86582325FC3C00A55DF4 /* Popup_Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C86572325FC3C00A55DF4 /* Popup_Alert.swift */; };
+		D22221722327424A00F5A81A /* ADragDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22221712327424A00F5A81A /* ADragDropView.swift */; };
+		D22221742327425E00F5A81A /* NSDraggingInfo+FilePathURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22221732327425E00F5A81A /* NSDraggingInfo+FilePathURL.swift */; };
 		D2C0358C2320E30500E3BEEF /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C0358B2320E30500E3BEEF /* Setting.storyboard */; };
 		D2C035912320E49400E3BEEF /* ExNSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035902320E49400E3BEEF /* ExNSColor.swift */; };
 		D2C035932320E8F200E3BEEF /* ExNSStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035922320E8F200E3BEEF /* ExNSStoryboard.swift */; };
@@ -68,7 +70,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5E5F42E900FE05FED2EB6CD7 /* Pods-kTranslate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kTranslate/Pods-kTranslate.debug.xcconfig"; sourceTree = "<group>"; };
+		23C07FDBD120B6B47167D046 /* Pods-kTranslate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.release.xcconfig"; path = "Target Support Files/Pods-kTranslate/Pods-kTranslate.release.xcconfig"; sourceTree = "<group>"; };
+		6BABB3970138FB8C447C35BD /* Pods-kTranslate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.debug.xcconfig"; path = "Target Support Files/Pods-kTranslate/Pods-kTranslate.debug.xcconfig"; sourceTree = "<group>"; };
 		6C7A2C9AECB52D403C182D4B /* Pods_kTranslate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kTranslate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		854DBB3523236A71008BE86A /* ExNSPasteboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNSPasteboard.swift; sourceTree = "<group>"; };
 		854DBB552323ED13008BE86A /* DBUseHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBUseHistory.swift; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 		D21C86372325E32600A55DF4 /* Popup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Popup.storyboard; sourceTree = "<group>"; };
 		D21C86392325E3F900A55DF4 /* Popup_UseHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup_UseHistory.swift; sourceTree = "<group>"; };
 		D21C86572325FC3C00A55DF4 /* Popup_Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup_Alert.swift; sourceTree = "<group>"; };
+		D22221712327424A00F5A81A /* ADragDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADragDropView.swift; sourceTree = "<group>"; };
+		D22221732327425E00F5A81A /* NSDraggingInfo+FilePathURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDraggingInfo+FilePathURL.swift"; sourceTree = "<group>"; };
 		D2C0358B2320E30500E3BEEF /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		D2C035902320E49400E3BEEF /* ExNSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNSColor.swift; sourceTree = "<group>"; };
 		D2C035922320E8F200E3BEEF /* ExNSStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNSStoryboard.swift; sourceTree = "<group>"; };
@@ -118,7 +123,6 @@
 		D2D3B87122AF6F900086909D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2D3B87222AF6F900086909D /* LauncherApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LauncherApplication.entitlements; sourceTree = "<group>"; };
 		D2F7D3BA2321F5B400A9C3C4 /* Analyst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyst.swift; sourceTree = "<group>"; };
-		DEE54588166BFED7F1F987A0 /* Pods-kTranslate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kTranslate.release.xcconfig"; path = "Pods/Target Support Files/Pods-kTranslate/Pods-kTranslate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,13 +146,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		58E76D04C11586CA610F9FFB /* Pods */ = {
+		B0AA1A73242893A6B6231A9D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5E5F42E900FE05FED2EB6CD7 /* Pods-kTranslate.debug.xcconfig */,
-				DEE54588166BFED7F1F987A0 /* Pods-kTranslate.release.xcconfig */,
+				6BABB3970138FB8C447C35BD /* Pods-kTranslate.debug.xcconfig */,
+				23C07FDBD120B6B47167D046 /* Pods-kTranslate.release.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		D204811B22B8858300369A6D /* Database */ = {
@@ -169,6 +173,15 @@
 				D21C86572325FC3C00A55DF4 /* Popup_Alert.swift */,
 			);
 			path = Popup;
+			sourceTree = "<group>";
+		};
+		D22221752327429600F5A81A /* ADragDropView */ = {
+			isa = PBXGroup;
+			children = (
+				D22221712327424A00F5A81A /* ADragDropView.swift */,
+				D22221732327425E00F5A81A /* NSDraggingInfo+FilePathURL.swift */,
+			);
+			path = ADragDropView;
 			sourceTree = "<group>";
 		};
 		D26994B4603421D65477EE75 /* Frameworks */ = {
@@ -237,7 +250,7 @@
 				D2D3B86722AF6F8F0086909D /* LauncherApplication */,
 				D2D3B83022AF5DB60086909D /* Products */,
 				D26994B4603421D65477EE75 /* Frameworks */,
-				58E76D04C11586CA610F9FFB /* Pods */,
+				B0AA1A73242893A6B6231A9D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -321,6 +334,7 @@
 		D2D6D8F222C061A8009D0C8F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D22221752327429600F5A81A /* ADragDropView */,
 				D2F7D3B92321F59400A9C3C4 /* Analyst */,
 				D2C035992321006D00E3BEEF /* HotKeyManager */,
 				D2C035962320EA2600E3BEEF /* Popover */,
@@ -514,9 +528,11 @@
 				854DBB562323ED13008BE86A /* DBUseHistory.swift in Sources */,
 				D2D3B85D22AF5E260086909D /* PopoverController.swift in Sources */,
 				85E68B2F2321590500AEBB26 /* Setting_About.swift in Sources */,
+				D22221722327424A00F5A81A /* ADragDropView.swift in Sources */,
 				D2D3B86122AF6F3E0086909D /* AutoLogin.swift in Sources */,
 				854DBB3623236A71008BE86A /* ExNSPasteboard.swift in Sources */,
 				D2C035A723210DF700E3BEEF /* Main_ChooseLanguage.swift in Sources */,
+				D22221742327425E00F5A81A /* NSDraggingInfo+FilePathURL.swift in Sources */,
 				85E68B2D232138FF00AEBB26 /* ExNSMenuItem.swift in Sources */,
 				D2D3B85822AF5E260086909D /* AppDelegate.swift in Sources */,
 				D2C0359B232103A600E3BEEF /* Main_Container.swift in Sources */,
@@ -692,7 +708,7 @@
 		};
 		D2D3B84022AF5DB70086909D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E5F42E900FE05FED2EB6CD7 /* Pods-kTranslate.debug.xcconfig */;
+			baseConfigurationReference = 6BABB3970138FB8C447C35BD /* Pods-kTranslate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = kTranslate/SupportFiles/kTranslate.entitlements;
@@ -718,7 +734,7 @@
 		};
 		D2D3B84122AF5DB70086909D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DEE54588166BFED7F1F987A0 /* Pods-kTranslate.release.xcconfig */;
+			baseConfigurationReference = 23C07FDBD120B6B47167D046 /* Pods-kTranslate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = kTranslate/SupportFiles/kTranslate.entitlements;

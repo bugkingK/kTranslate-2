@@ -12,7 +12,7 @@ import RxCocoa
 import AVFoundation
 
 struct ChattingData {
-    enum TYPE { case You, Me }
+    enum TYPE { case You, Me, Image }
     
     var strProfile:String?
     var strName:String?
@@ -47,6 +47,7 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
     @IBOutlet weak var m_btn_source: CustomButton!
     @IBOutlet weak var m_btn_target: CustomButton!
     @IBOutlet weak var m_box_present: NSBox!
+    @IBOutlet weak var m_vw_drag_drop: ADragDropView!
     
     fileprivate var m_translator:Translator = Translator()
     fileprivate var m_dispose_bag:DisposeBag = DisposeBag()
@@ -76,6 +77,8 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
         m_ttv_input.delegate = self
         m_ttv_input.insertionPointColor = .black
         m_ttv_input.font = NSFont.systemFont(ofSize: 13)
+        m_vw_drag_drop.delegate = self
+        m_vw_drag_drop.acceptedFileExtensions = ["png", "jpg", "jpeg"]
         let isKorean = NSLocale.preferredLanguages[0] == "ko-KR"
         let target = isKorean ? "ko" : "en"
         let message = isKorean ? "번역하는 내용을 입력해주세요." : "Please enter your translation."
@@ -195,7 +198,13 @@ extension Main_Chatting: NSTableViewDataSource, NSTableViewDelegate {
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let item = m_arr_datas[row]
-        let identifier = item.type == .Me ? "ChattingSendCell" : "ChattingReciveCell"
+        var identifier = ""
+        switch item.type {
+        case .Me: identifier = "ChattingSendCell"
+        case .You: identifier = "ChattingReciveCell"
+        case .Image: identifier = "ChattingSendImageCell"
+        }
+        
         guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier.init(identifier), owner: nil) as? ChattingCell else {
             return nil
         }
@@ -205,52 +214,75 @@ extension Main_Chatting: NSTableViewDataSource, NSTableViewDelegate {
             cell.lbName?.stringValue = name
         }
         
-        cell.lbMessage.stringValue = item.strMessage
-        cell.lbNumberOfChar.stringValue = "\(item.strMessage.count)"
+        if item.type != .Image {
+            cell.lbMessage?.stringValue = item.strMessage
+            cell.lbNumberOfChar?.stringValue = "\(item.strMessage.count)"
+        } else {
+            guard let v_url = URL(string: item.strMessage) else { return nil }
+            cell.btnSendImage?.image = NSImage(contentsOf: v_url)
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableView.DropOperation) -> NSDragOperation {
-        
-        return NSDragOperation.private
+        m_vw_drag_drop.isHidden = false
+        return NSDragOperation.generic
     }
-    
-    func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableView.DropOperation) -> Bool {
-        
-        return true
+}
+
+extension Main_Chatting: ADragDropViewDelegate {
+    func dragDropView(_ draggingExited: ADragDropView) {
+        m_vw_drag_drop.isHidden = true
+    }
+    func dragDropView(_ dragDropView: ADragDropView, droppedFileWithURL URL: URL) {
+        m_vw_drag_drop.isHidden = true
+        guard let v_img = NSImage(contentsOf: URL) else { return }
+        let data = ChattingData(message: URL.absoluteString, type: .Image)
+        self.m_arr_datas.append(data)
+        m_translator.run(image: v_img, target: m_sel_target)
     }
 }
 
 class ChattingCell:NSTableCellView {
     @IBOutlet weak var imgProfile:NSImageView?
     @IBOutlet weak var lbName:NSTextField?
-    @IBOutlet weak var lbMessage:NSTextField!
+    @IBOutlet weak var lbMessage:NSTextField?
     @IBOutlet weak var boxType: NSBox!
-    @IBOutlet weak var btnCopy: NSButton!
-    @IBOutlet weak var btnSpeaker: NSButton!
-    @IBOutlet weak var lbNumberOfChar: NSTextField!
+    @IBOutlet weak var btnCopy: NSButton?
+    @IBOutlet weak var btnSpeaker: NSButton?
+    @IBOutlet weak var lbNumberOfChar: NSTextField?
+    @IBOutlet weak var btnSendImage: NSButton?
     
     fileprivate var m_dispose_bag:DisposeBag = DisposeBag()
     fileprivate var m_synthesizer:NSSpeechSynthesizer = NSSpeechSynthesizer()
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        btnCopy.rx.tap
+        btnCopy?.rx.tap
             .subscribe(onNext: { [unowned self] _ in
+                guard let message = self.lbMessage?.stringValue else { return }
                 let pasteBoard = NSPasteboard.general
                 pasteBoard.declareTypes([], owner: nil)
-                pasteBoard.setString(self.lbMessage.stringValue, forType: .string)
+                pasteBoard.setString(message, forType: .string)
                 self.findViewController()?.toast(message: "It's been copied.")
             })
             .disposed(by: m_dispose_bag)
         
-        btnSpeaker.rx.tap
+        btnSpeaker?.rx.tap
             .subscribe(onNext: { [unowned self] in
                 if self.m_synthesizer.isSpeaking {
                    self.m_synthesizer.stopSpeaking()
                 } else {
-                    self.m_synthesizer.startSpeaking(self.lbMessage.stringValue)
+                    guard let message = self.lbMessage?.stringValue else { return }
+                    self.m_synthesizer.startSpeaking(message)
                 }
+            })
+            .disposed(by: m_dispose_bag)
+        
+        btnSendImage?.rx.tap
+            .subscribe(onNext: {
+                print("새로운 창에 이미지 크게 보여줘야함")
             })
             .disposed(by: m_dispose_bag)
     }

@@ -52,8 +52,8 @@ extension Popup_UseHistory: NSTableViewDelegate, NSTableViewDataSource {
             return nil
         }
         
-        cell.lbMessage.stringValue = item.sContent
-        cell.lbNumberOfChar.stringValue = "\(item.sCreatedDate)"
+        cell.lbMessage?.stringValue = item.sContent
+        cell.lbNumberOfChar?.stringValue = "\(item.sCreatedDate)"
         return cell
     }
     

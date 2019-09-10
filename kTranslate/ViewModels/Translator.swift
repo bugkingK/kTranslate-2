@@ -44,4 +44,23 @@ class Translator:NSObject {
         }
     }
     
+    func run(image:NSImage, target:String) {
+        guard let obsDetect = GoogleTranslation.detect(image: image) else {
+            meText.accept(TranslatorError.reconnect)
+            return
+        }
+        
+        _ = obsDetect.subscribe(onNext: { [unowned self ](detect) in
+                guard let v_text = detect.text else {
+                    self.meText.accept("문자를 찾지 못했습니다.")
+                    return
+                }
+                self.run(text: v_text, source: nil, target: target)
+            }, onError: { (err) in
+                self.meText.accept(err.localizedDescription)
+            }, onDisposed: {
+                // 다이얼 로그 ...
+            })
+    }
+    
 }

@@ -14,6 +14,5 @@ target 'kTranslate' do
   pod 'RxCocoa'
   pod 'RxAlamofire'
   pod 'SwiftyJSON'
-  pod 'ADragDropView'
 
 end
