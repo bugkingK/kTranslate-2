@@ -69,11 +69,7 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
     fileprivate func setupLayout() {
         m_tv_main.delegate = self
         m_tv_main.dataSource = self
-        if #available(OSX 10.13, *) {
-            m_tv_main.registerForDraggedTypes([.URL])
-        } else {
-            m_tv_main.registerForDraggedTypes([NSPasteboard.PasteboardType("NSFilenamesPboardType")])
-        }
+        m_tv_main.registerForDraggedTypes([.URL])
         m_ttv_input.delegate = self
         m_ttv_input.insertionPointColor = .black
         m_ttv_input.font = NSFont.systemFont(ofSize: 13)

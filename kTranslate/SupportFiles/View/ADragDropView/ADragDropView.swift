@@ -25,12 +25,7 @@ public final class ADragDropView: NSView {
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        if #available(OSX 10.13, *) {
-            registerForDraggedTypes([NSPasteboard.PasteboardType.fileURL])
-        } else {
-            // Fallback on earlier versions
-            registerForDraggedTypes([NSPasteboard.PasteboardType("NSFilenamesPboardType")])
-        }
+        registerForDraggedTypes([NSPasteboard.PasteboardType.fileURL])
     }
     
     public override init(frame frameRect: NSRect) {

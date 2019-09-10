@@ -170,6 +170,7 @@
 		D21C86362325E30800A55DF4 /* Popup */ = {
 			isa = PBXGroup;
 			children = (
+				D2C0358A2320E2EC00E3BEEF /* Setting */,
 				D21C86372325E32600A55DF4 /* Popup.storyboard */,
 				D21C86392325E3F900A55DF4 /* Popup_UseHistory.swift */,
 				D21C86572325FC3C00A55DF4 /* Popup_Alert.swift */,
@@ -281,7 +282,6 @@
 			isa = PBXGroup;
 			children = (
 				D2D3B84A22AF5E260086909D /* Main */,
-				D2C0358A2320E2EC00E3BEEF /* Setting */,
 				D21C86362325E30800A55DF4 /* Popup */,
 			);
 			path = ViewControllers;
@@ -726,7 +726,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tk.bugking.kTranslate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -752,7 +752,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tk.bugking.kTranslate;
 				PRODUCT_NAME = "$(TARGET_NAME)";

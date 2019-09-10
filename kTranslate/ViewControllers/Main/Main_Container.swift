@@ -17,15 +17,6 @@ class Main_Container: CTContainerViewController {
         // Do view setup here.
         setupLayout()
         bindLayout()
-//        guard let obsDetect = GoogleTranslation.detect(image: NSImage(named: "test")!) else {
-//            return
-//        }
-//
-//        obsDetect.subscribe(onNext: { (data) in
-//            print("번역 결과 - \(data.text)")
-//        }, onError: { (err) in
-//            print("err - \(err.localizedDescription)")
-//        }).disposed(by: m_dispose_bag)
     }
     
     override func viewWillAppear() {
