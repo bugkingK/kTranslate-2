@@ -281,8 +281,11 @@ class ChattingCell:NSTableCellView {
             .disposed(by: m_dispose_bag)
         
         btnSendImage?.rx.tap
-            .subscribe(onNext: {
-                print("새로운 창에 이미지 크게 보여줘야함")
+            .subscribe(onNext: { [unowned self] in
+                let img = self.btnSendImage?.image
+                Popup_Viewer.shared()
+                    .setupImage(img)
+                    .show(self.findViewController())
             })
             .disposed(by: m_dispose_bag)
     }

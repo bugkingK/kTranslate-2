@@ -14,13 +14,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="481" height="346"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="59" horizontalPageScroll="10" verticalLineScroll="59" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBX-i7-BEX">
+                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="69" horizontalPageScroll="10" verticalLineScroll="69" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBX-i7-BEX">
                                 <rect key="frame" x="0.0" y="0.0" width="481" height="296"/>
                                 <clipView key="contentView" drawsBackground="NO" id="SMc-Vp-F4F">
                                     <rect key="frame" x="0.0" y="0.0" width="481" height="296"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="57" rowSizeStyle="automatic" usesAutomaticRowHeights="YES" viewBased="YES" id="XIU-lT-mgv">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="67" rowSizeStyle="automatic" usesAutomaticRowHeights="YES" viewBased="YES" id="XIU-lT-mgv">
                                             <rect key="frame" x="0.0" y="0.0" width="481" height="296"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -241,6 +241,38 @@
                 <customObject id="Jv9-r3-nWn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="86.5" y="100"/>
+        </scene>
+        <!--Popup Viewer-->
+        <scene sceneID="TgS-qm-CSJ">
+            <objects>
+                <viewController storyboardIdentifier="Popup_Viewer" id="TIg-Km-g7n" customClass="Popup_Viewer" customModule="kTranslate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="tC2-5W-7RC">
+                        <rect key="frame" x="0.0" y="0.0" width="700" height="500"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YfB-bB-44i">
+                                <rect key="frame" x="0.0" y="0.0" width="700" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="KlK-GC-cbp"/>
+                                    <constraint firstAttribute="width" constant="700" id="tuM-WH-fhm"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="CWK-4F-B1Y"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="YfB-bB-44i" secondAttribute="bottom" id="bUr-w8-O1z"/>
+                            <constraint firstAttribute="trailing" secondItem="YfB-bB-44i" secondAttribute="trailing" id="lee-sf-HID"/>
+                            <constraint firstItem="YfB-bB-44i" firstAttribute="leading" secondItem="tC2-5W-7RC" secondAttribute="leading" id="tDZ-f2-XFa"/>
+                            <constraint firstItem="YfB-bB-44i" firstAttribute="top" secondItem="tC2-5W-7RC" secondAttribute="top" id="tx7-TP-Tbq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="m_img_viewer" destination="YfB-bB-44i" id="ESv-iW-ntL"/>
+                    </connections>
+                </viewController>
+                <customObject id="sCP-Sr-ryt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-232" y="643"/>
         </scene>
         <!--Popup Alert-->
         <scene sceneID="x4b-Vz-RCC">

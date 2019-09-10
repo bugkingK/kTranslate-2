@@ -23,6 +23,7 @@
 		D21C86582325FC3C00A55DF4 /* Popup_Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C86572325FC3C00A55DF4 /* Popup_Alert.swift */; };
 		D22221722327424A00F5A81A /* ADragDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22221712327424A00F5A81A /* ADragDropView.swift */; };
 		D22221742327425E00F5A81A /* NSDraggingInfo+FilePathURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22221732327425E00F5A81A /* NSDraggingInfo+FilePathURL.swift */; };
+		D22221772327502100F5A81A /* Popup_Viewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22221762327502100F5A81A /* Popup_Viewer.swift */; };
 		D2C0358C2320E30500E3BEEF /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C0358B2320E30500E3BEEF /* Setting.storyboard */; };
 		D2C035912320E49400E3BEEF /* ExNSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035902320E49400E3BEEF /* ExNSColor.swift */; };
 		D2C035932320E8F200E3BEEF /* ExNSStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C035922320E8F200E3BEEF /* ExNSStoryboard.swift */; };
@@ -88,6 +89,7 @@
 		D21C86572325FC3C00A55DF4 /* Popup_Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup_Alert.swift; sourceTree = "<group>"; };
 		D22221712327424A00F5A81A /* ADragDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADragDropView.swift; sourceTree = "<group>"; };
 		D22221732327425E00F5A81A /* NSDraggingInfo+FilePathURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDraggingInfo+FilePathURL.swift"; sourceTree = "<group>"; };
+		D22221762327502100F5A81A /* Popup_Viewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup_Viewer.swift; sourceTree = "<group>"; };
 		D2C0358B2320E30500E3BEEF /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		D2C035902320E49400E3BEEF /* ExNSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNSColor.swift; sourceTree = "<group>"; };
 		D2C035922320E8F200E3BEEF /* ExNSStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExNSStoryboard.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				D21C86372325E32600A55DF4 /* Popup.storyboard */,
 				D21C86392325E3F900A55DF4 /* Popup_UseHistory.swift */,
 				D21C86572325FC3C00A55DF4 /* Popup_Alert.swift */,
+				D22221762327502100F5A81A /* Popup_Viewer.swift */,
 			);
 			path = Popup;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				85E68B2D232138FF00AEBB26 /* ExNSMenuItem.swift in Sources */,
 				D2D3B85822AF5E260086909D /* AppDelegate.swift in Sources */,
 				D2C0359B232103A600E3BEEF /* Main_Container.swift in Sources */,
+				D22221772327502100F5A81A /* Popup_Viewer.swift in Sources */,
 				D2D3B85B22AF5E260086909D /* HotKeyManager.swift in Sources */,
 				D2F7D3BB2321F5B400A9C3C4 /* Analyst.swift in Sources */,
 				D2C035952320E9BA00E3BEEF /* ExControl.swift in Sources */,
