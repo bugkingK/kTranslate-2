@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import RxSwift
 
 class Main_ChooseLanguage: NSViewController {
     
@@ -32,6 +33,7 @@ class Main_ChooseLanguage: NSViewController {
     fileprivate var m_str_select:String? = nil
     fileprivate var m_n_select:Int = 0
     fileprivate var m_b_source:Bool = false
+    fileprivate let m_dispose_bag:DisposeBag = DisposeBag()
     
     fileprivate func setupLayout() {
         m_cv_main.delegate = self
@@ -54,7 +56,8 @@ class Main_ChooseLanguage: NSViewController {
     public func loadData() {
         let isKorean = NSLocale.preferredLanguages[0] == "ko-KR"
         let target = isKorean ? "ko" : "en"
-        GoogleTranslation.supportLanguages(target: target) { [unowned self] (datas) in
+        guard let obs = GoogleTranslation.supportLanguages(target: target) else { return }
+        obs.subscribe(onNext: { (datas) in
             var v_datas = datas
             if self.m_b_source {
                 let isKorean = NSLocale.preferredLanguages[0] == "ko-KR"
@@ -68,7 +71,10 @@ class Main_ChooseLanguage: NSViewController {
                     self.m_n_select = idx
                 }
             }
-        }
+        }, onError: { (err) in
+            print("supportLanguages err \(err.localizedDescription)")
+        })
+        .disposed(by: m_dispose_bag)
     }
     
     @objc fileprivate func onClickBtnTitle(_ sender:NSButton) {

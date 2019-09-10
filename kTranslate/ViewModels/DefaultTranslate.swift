@@ -257,17 +257,15 @@ extension GoogleTranslation {
             .map { DetectData(data:$0.1) }
     }
     
-    static func supportLanguages(target:String, onNext:@escaping (_ langs:SupportData)->()) {
+    static func supportLanguages(target:String) -> Observable<SupportData>? {
         var strUrl = GoogleTranslation.m_str_home
         strUrl.append("/languages")
         strUrl.append("?key=\(GoogleTranslation.apiKey)")
         strUrl.append("&target=\(target)")
         
-        guard let url = URL(string: strUrl.urlQueryAllowed()) else { return }
-        _ = RxAlamofire.requestData(.get, url)
+        guard let url = URL(string: strUrl.urlQueryAllowed()) else { return nil }
+        return RxAlamofire.requestData(.get, url)
             .map { SupportData(data: $0.1) }
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: onNext)
     }
     
     struct DetectImageData {
