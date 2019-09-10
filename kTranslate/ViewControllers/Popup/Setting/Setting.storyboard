@@ -230,17 +230,17 @@ The Always button allows kTranslate to always be displayed above. Say goodbye to
             <objects>
                 <viewController title="Preferences" storyboardIdentifier="Setting_Preference" id="j3X-6O-ZxP" customClass="Setting_Preference" customModule="kTranslate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="pyO-1b-sQe">
-                        <rect key="frame" x="0.0" y="0.0" width="385" height="216"/>
+                        <rect key="frame" x="0.0" y="0.0" width="385" height="348"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box boxType="custom" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="d7W-oX-Zc1">
-                                <rect key="frame" x="0.0" y="0.0" width="385" height="216"/>
+                                <rect key="frame" x="0.0" y="0.0" width="385" height="348"/>
                                 <view key="contentView" id="taX-Mt-NK3">
-                                    <rect key="frame" x="1" y="1" width="383" height="214"/>
+                                    <rect key="frame" x="1" y="1" width="383" height="346"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="T8b-cQ-ZfS" userLabel="General View">
-                                            <rect key="frame" x="25" y="141" width="333" height="58"/>
+                                            <rect key="frame" x="25" y="273" width="333" height="58"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dz3-xo-Bsf">
                                                     <rect key="frame" x="-2" y="39" width="61" height="19"/>
@@ -267,7 +267,7 @@ The Always button allows kTranslate to always be displayed above. Say goodbye to
                                             </constraints>
                                         </customView>
                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="Uhd-Tt-kzD" userLabel="Window View">
-                                            <rect key="frame" x="25" y="84" width="333" height="47"/>
+                                            <rect key="frame" x="25" y="216" width="333" height="47"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5ps-fC-ufg">
                                                     <rect key="frame" x="-2" y="28" width="63" height="19"/>
@@ -346,7 +346,7 @@ The Always button allows kTranslate to always be displayed above. Say goodbye to
                                             </constraints>
                                         </customView>
                                         <customView translatesAutoresizingMaskIntoConstraints="NO" id="dt9-3L-Wjq" userLabel="Shortcut View">
-                                            <rect key="frame" x="25" y="28" width="333" height="46"/>
+                                            <rect key="frame" x="25" y="160" width="333" height="46"/>
                                             <subviews>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RW2-fC-pO8">
                                                     <rect key="frame" x="-2" y="27" width="71" height="19"/>
@@ -382,16 +382,247 @@ The Always button allows kTranslate to always be displayed above. Say goodbye to
                                                 <constraint firstItem="M40-6C-oOc" firstAttribute="top" secondItem="RW2-fC-pO8" secondAttribute="bottom" constant="10" id="mY9-0f-suR"/>
                                             </constraints>
                                         </customView>
+                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="hNY-38-e5C" userLabel="Translator View">
+                                            <rect key="frame" x="25" y="20" width="333" height="130"/>
+                                            <subviews>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wdc-QS-w5p">
+                                                    <rect key="frame" x="-2" y="111" width="80" height="19"/>
+                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Translator" id="vnO-7J-FmT">
+                                                        <font key="font" metaFont="systemBold" size="15"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                                <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wf7-q6-w1Y">
+                                                    <rect key="frame" x="13" y="10" width="308" height="69"/>
+                                                    <subviews>
+                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="I0N-Fa-FZZ">
+                                                            <rect key="frame" x="0.0" y="5" width="62" height="64"/>
+                                                            <subviews>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9Fo-03-28M">
+                                                                    <rect key="frame" x="-2" y="-2" width="66" height="18"/>
+                                                                    <buttonCell key="cell" type="check" title="Google" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="3WB-ac-Yd6">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                </button>
+                                                                <box boxType="custom" borderWidth="0.0" cornerRadius="10" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Eeh-fX-hsI" userLabel="icon View">
+                                                                    <rect key="frame" x="8" y="19" width="45" height="45"/>
+                                                                    <view key="contentView" id="egp-u5-K2P">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                        <subviews>
+                                                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ain-BE-aAb">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-google" id="Fpb-MC-oXH"/>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="trailing" secondItem="ain-BE-aAb" secondAttribute="trailing" id="Apd-SG-BKT"/>
+                                                                            <constraint firstItem="ain-BE-aAb" firstAttribute="leading" secondItem="egp-u5-K2P" secondAttribute="leading" id="F8l-oy-6L2"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="ain-BE-aAb" secondAttribute="bottom" id="XcJ-D7-HBQ"/>
+                                                                            <constraint firstItem="ain-BE-aAb" firstAttribute="top" secondItem="egp-u5-K2P" secondAttribute="top" id="tB5-Ro-1sN"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="45" id="goO-kz-mRa"/>
+                                                                        <constraint firstAttribute="width" constant="45" id="k03-8E-jZ0"/>
+                                                                    </constraints>
+                                                                    <color key="borderColor" red="0.58823529409999997" green="0.58431372550000005" blue="0.58823529409999997" alpha="0.70303819440000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="fillColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </box>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="Eeh-fX-hsI" firstAttribute="centerX" secondItem="I0N-Fa-FZZ" secondAttribute="centerX" id="42q-pV-Jek"/>
+                                                                <constraint firstItem="Eeh-fX-hsI" firstAttribute="top" secondItem="I0N-Fa-FZZ" secondAttribute="top" id="4tW-28-ekQ"/>
+                                                                <constraint firstAttribute="bottom" secondItem="9Fo-03-28M" secondAttribute="bottom" id="Iya-uA-SqK"/>
+                                                                <constraint firstAttribute="trailing" secondItem="9Fo-03-28M" secondAttribute="trailing" id="Kmt-MP-hmO"/>
+                                                                <constraint firstItem="9Fo-03-28M" firstAttribute="top" secondItem="Eeh-fX-hsI" secondAttribute="bottom" constant="5" id="Y8C-nQ-bTz"/>
+                                                                <constraint firstItem="9Fo-03-28M" firstAttribute="leading" secondItem="I0N-Fa-FZZ" secondAttribute="leading" id="rXc-Qf-UOO"/>
+                                                            </constraints>
+                                                        </customView>
+                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="w3a-Yh-eCu">
+                                                            <rect key="frame" x="77" y="5" width="64" height="64"/>
+                                                            <subviews>
+                                                                <button verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="m03-Ov-XSF">
+                                                                    <rect key="frame" x="-2" y="-2" width="68" height="18"/>
+                                                                    <buttonCell key="cell" type="check" title="Papago" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="nAh-3R-koz">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                </button>
+                                                                <box boxType="custom" borderWidth="0.0" cornerRadius="10" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="wSG-Ux-bGB" userLabel="icon View">
+                                                                    <rect key="frame" x="9" y="19" width="45" height="45"/>
+                                                                    <view key="contentView" id="X3s-Sc-lAK">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                        <subviews>
+                                                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="38B-gS-vaH">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-papago" id="khH-iv-vkp"/>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="trailing" secondItem="38B-gS-vaH" secondAttribute="trailing" id="Hft-es-84e"/>
+                                                                            <constraint firstItem="38B-gS-vaH" firstAttribute="top" secondItem="X3s-Sc-lAK" secondAttribute="top" id="RMV-St-msA"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="38B-gS-vaH" secondAttribute="bottom" id="fGL-nm-WkI"/>
+                                                                            <constraint firstItem="38B-gS-vaH" firstAttribute="leading" secondItem="X3s-Sc-lAK" secondAttribute="leading" id="oVi-s8-QN1"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="45" id="Nxh-jA-VX9"/>
+                                                                        <constraint firstAttribute="height" constant="45" id="UhK-zZ-UU9"/>
+                                                                    </constraints>
+                                                                    <color key="borderColor" red="0.58823529409999997" green="0.58431372550000005" blue="0.58823529409999997" alpha="0.70303819440000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="fillColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </box>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="m03-Ov-XSF" firstAttribute="top" secondItem="wSG-Ux-bGB" secondAttribute="bottom" constant="5" id="7l5-lQ-Gd1"/>
+                                                                <constraint firstAttribute="trailing" secondItem="m03-Ov-XSF" secondAttribute="trailing" id="H32-Aa-C8j"/>
+                                                                <constraint firstItem="m03-Ov-XSF" firstAttribute="leading" secondItem="w3a-Yh-eCu" secondAttribute="leading" id="JAA-5U-jfn"/>
+                                                                <constraint firstAttribute="bottom" secondItem="m03-Ov-XSF" secondAttribute="bottom" id="Mmh-vU-ZNu"/>
+                                                                <constraint firstItem="wSG-Ux-bGB" firstAttribute="centerX" secondItem="w3a-Yh-eCu" secondAttribute="centerX" id="hWC-Ca-UjL"/>
+                                                                <constraint firstItem="wSG-Ux-bGB" firstAttribute="top" secondItem="w3a-Yh-eCu" secondAttribute="top" id="xjf-Ga-8Iy"/>
+                                                            </constraints>
+                                                        </customView>
+                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="vyT-Fc-H4Z">
+                                                            <rect key="frame" x="156" y="5" width="57" height="64"/>
+                                                            <subviews>
+                                                                <button verticalHuggingPriority="750" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="kv9-9k-hAF">
+                                                                    <rect key="frame" x="-2" y="-2" width="61" height="18"/>
+                                                                    <buttonCell key="cell" type="check" title="Kakao" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="AFD-ho-5yf">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                </button>
+                                                                <box boxType="custom" borderWidth="0.0" cornerRadius="10" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="xP0-XG-SXp" userLabel="icon View">
+                                                                    <rect key="frame" x="6" y="19" width="45" height="45"/>
+                                                                    <view key="contentView" id="hHw-f5-CCb">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                        <subviews>
+                                                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Ab-HD-Bc7">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-kakao" id="FQS-4t-OxD"/>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="trailing" secondItem="6Ab-HD-Bc7" secondAttribute="trailing" id="84S-qJ-3vM"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="6Ab-HD-Bc7" secondAttribute="bottom" id="cgE-Xp-38B"/>
+                                                                            <constraint firstItem="6Ab-HD-Bc7" firstAttribute="leading" secondItem="hHw-f5-CCb" secondAttribute="leading" id="iyT-QE-BdP"/>
+                                                                            <constraint firstItem="6Ab-HD-Bc7" firstAttribute="top" secondItem="hHw-f5-CCb" secondAttribute="top" id="zU9-We-nlG"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="45" id="bYQ-FY-FL5"/>
+                                                                        <constraint firstAttribute="height" constant="45" id="j9d-ru-zUX"/>
+                                                                    </constraints>
+                                                                    <color key="borderColor" red="0.58823529409999997" green="0.58431372550000005" blue="0.58823529409999997" alpha="0.70303819440000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="fillColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </box>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="kv9-9k-hAF" secondAttribute="trailing" id="7bE-B2-LeQ"/>
+                                                                <constraint firstItem="xP0-XG-SXp" firstAttribute="centerX" secondItem="vyT-Fc-H4Z" secondAttribute="centerX" id="EQd-fU-MQr"/>
+                                                                <constraint firstItem="xP0-XG-SXp" firstAttribute="top" secondItem="vyT-Fc-H4Z" secondAttribute="top" id="MjL-Qi-1sp"/>
+                                                                <constraint firstAttribute="bottom" secondItem="kv9-9k-hAF" secondAttribute="bottom" id="RNw-xw-OhP"/>
+                                                                <constraint firstItem="kv9-9k-hAF" firstAttribute="leading" secondItem="vyT-Fc-H4Z" secondAttribute="leading" id="kYj-fp-SBN"/>
+                                                                <constraint firstItem="kv9-9k-hAF" firstAttribute="top" secondItem="xP0-XG-SXp" secondAttribute="bottom" constant="5" id="t6d-fC-8Xc"/>
+                                                            </constraints>
+                                                        </customView>
+                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="j0x-aq-5Xv">
+                                                            <rect key="frame" x="228" y="5" width="80" height="64"/>
+                                                            <subviews>
+                                                                <button verticalHuggingPriority="750" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="FWI-Le-cun">
+                                                                    <rect key="frame" x="-2" y="-2" width="84" height="18"/>
+                                                                    <buttonCell key="cell" type="check" title="kTranslate" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="KCJ-Eo-Qmf">
+                                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                </button>
+                                                                <box boxType="custom" borderWidth="0.0" cornerRadius="10" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-F6-dac" userLabel="icon View">
+                                                                    <rect key="frame" x="17" y="19" width="45" height="45"/>
+                                                                    <view key="contentView" id="cuL-hT-DqS">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                        <subviews>
+                                                                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ly2-LM-9gV">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-kTranslate" id="GQb-Os-DNr"/>
+                                                                            </imageView>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="bottom" secondItem="ly2-LM-9gV" secondAttribute="bottom" id="3Fh-BH-ypU"/>
+                                                                            <constraint firstItem="ly2-LM-9gV" firstAttribute="leading" secondItem="cuL-hT-DqS" secondAttribute="leading" id="4d8-Ir-qA2"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="ly2-LM-9gV" secondAttribute="trailing" id="Gbv-Po-ix3"/>
+                                                                            <constraint firstItem="ly2-LM-9gV" firstAttribute="top" secondItem="cuL-hT-DqS" secondAttribute="top" id="k4q-NU-RoY"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="45" id="Mnz-AU-ANs"/>
+                                                                        <constraint firstAttribute="height" constant="45" id="e0t-sj-SQB"/>
+                                                                    </constraints>
+                                                                    <color key="borderColor" red="0.58823529409999997" green="0.58431372550000005" blue="0.58823529409999997" alpha="0.70303819440000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="fillColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </box>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="FWI-Le-cun" firstAttribute="leading" secondItem="j0x-aq-5Xv" secondAttribute="leading" id="247-wE-clj"/>
+                                                                <constraint firstAttribute="trailing" secondItem="FWI-Le-cun" secondAttribute="trailing" id="5X2-tY-BAD"/>
+                                                                <constraint firstItem="dLA-F6-dac" firstAttribute="top" secondItem="j0x-aq-5Xv" secondAttribute="top" id="6bH-iO-rBE"/>
+                                                                <constraint firstAttribute="bottom" secondItem="FWI-Le-cun" secondAttribute="bottom" id="Iu9-7d-gye"/>
+                                                                <constraint firstItem="FWI-Le-cun" firstAttribute="top" secondItem="dLA-F6-dac" secondAttribute="bottom" constant="5" id="h6T-GY-ogX"/>
+                                                                <constraint firstItem="dLA-F6-dac" firstAttribute="centerX" secondItem="j0x-aq-5Xv" secondAttribute="centerX" id="hxU-qq-vg5"/>
+                                                            </constraints>
+                                                        </customView>
+                                                    </subviews>
+                                                    <visibilityPriorities>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                        <integer value="1000"/>
+                                                    </visibilityPriorities>
+                                                    <customSpacing>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                        <real value="3.4028234663852886e+38"/>
+                                                    </customSpacing>
+                                                </stackView>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3G4-xr-zxN">
+                                                    <rect key="frame" x="11" y="89" width="256" height="17"/>
+                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="Only the selected translator will translate." id="ko8-qE-Kgr">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wdc-QS-w5p" firstAttribute="top" secondItem="hNY-38-e5C" secondAttribute="top" id="2Rq-j1-SuH"/>
+                                                <constraint firstAttribute="bottom" secondItem="wf7-q6-w1Y" secondAttribute="bottom" constant="10" id="EVB-bf-QSP"/>
+                                                <constraint firstItem="wf7-q6-w1Y" firstAttribute="centerX" secondItem="hNY-38-e5C" secondAttribute="centerX" id="FBU-dN-N1i"/>
+                                                <constraint firstItem="3G4-xr-zxN" firstAttribute="top" secondItem="wdc-QS-w5p" secondAttribute="bottom" constant="5" id="MdL-R1-VKT"/>
+                                                <constraint firstItem="wf7-q6-w1Y" firstAttribute="top" secondItem="3G4-xr-zxN" secondAttribute="bottom" constant="10" id="Vfm-uO-HCh"/>
+                                                <constraint firstItem="wdc-QS-w5p" firstAttribute="leading" secondItem="hNY-38-e5C" secondAttribute="leading" id="Xpf-Fi-qAa"/>
+                                                <constraint firstItem="3G4-xr-zxN" firstAttribute="leading" secondItem="wf7-q6-w1Y" secondAttribute="leading" id="YKb-CN-CEo"/>
+                                            </constraints>
+                                        </customView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="dt9-3L-Wjq" firstAttribute="top" secondItem="Uhd-Tt-kzD" secondAttribute="bottom" constant="10" id="1p3-jR-gx2"/>
                                         <constraint firstItem="dt9-3L-Wjq" firstAttribute="leading" secondItem="Uhd-Tt-kzD" secondAttribute="leading" id="3ht-RJ-XAN"/>
                                         <constraint firstAttribute="trailing" secondItem="Uhd-Tt-kzD" secondAttribute="trailing" constant="25" id="5Gn-T0-12q"/>
                                         <constraint firstAttribute="trailing" secondItem="dt9-3L-Wjq" secondAttribute="trailing" constant="25" id="6Ux-3G-3Aq"/>
+                                        <constraint firstItem="hNY-38-e5C" firstAttribute="top" secondItem="dt9-3L-Wjq" secondAttribute="bottom" constant="10" id="8Qa-1s-S61"/>
                                         <constraint firstAttribute="trailing" secondItem="T8b-cQ-ZfS" secondAttribute="trailing" constant="25" id="B2m-MV-ZYl"/>
                                         <constraint firstItem="T8b-cQ-ZfS" firstAttribute="top" secondItem="taX-Mt-NK3" secondAttribute="top" constant="15" id="Ldd-zT-XT4"/>
+                                        <constraint firstItem="hNY-38-e5C" firstAttribute="trailing" secondItem="dt9-3L-Wjq" secondAttribute="trailing" id="VRj-fV-oMj"/>
                                         <constraint firstItem="T8b-cQ-ZfS" firstAttribute="leading" secondItem="taX-Mt-NK3" secondAttribute="leading" constant="25" id="WQB-BB-xxS"/>
+                                        <constraint firstItem="hNY-38-e5C" firstAttribute="leading" secondItem="dt9-3L-Wjq" secondAttribute="leading" id="cQD-jK-CRO"/>
                                         <constraint firstItem="Uhd-Tt-kzD" firstAttribute="leading" secondItem="T8b-cQ-ZfS" secondAttribute="leading" id="gsY-EN-S02"/>
+                                        <constraint firstAttribute="bottom" secondItem="hNY-38-e5C" secondAttribute="bottom" constant="20" id="r9w-FP-nd1"/>
                                         <constraint firstItem="Uhd-Tt-kzD" firstAttribute="top" secondItem="T8b-cQ-ZfS" secondAttribute="bottom" constant="10" id="zw4-H3-QPP"/>
                                     </constraints>
                                 </view>
@@ -410,15 +641,20 @@ The Always button allows kTranslate to always be displayed above. Say goodbye to
                         <outlet property="m_btn_auto_login" destination="3CM-ao-Qoe" id="9rD-Ku-80E"/>
                         <outlet property="m_cb_height" destination="Es8-FJ-q2u" id="f4t-WQ-LsI"/>
                         <outlet property="m_cb_width" destination="ylA-yq-K86" id="XT1-Ov-Yng"/>
+                        <outlet property="m_st_translator" destination="wf7-q6-w1Y" id="dxC-zh-jTY"/>
                         <outlet property="m_vw_shortcut" destination="GF9-sm-lPt" id="u0d-5M-SS4"/>
                     </connections>
                 </viewController>
                 <customObject id="Hsf-yc-k4l" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-108" y="293"/>
+            <point key="canvasLocation" x="-108.5" y="338"/>
         </scene>
     </scenes>
     <resources>
+        <image name="icon-google" width="28" height="29"/>
+        <image name="icon-kTranslate" width="512" height="512"/>
+        <image name="icon-kakao" width="41" height="37"/>
+        <image name="icon-papago" width="135" height="177"/>
         <image name="icon_logo" width="256" height="256"/>
     </resources>
 </document>

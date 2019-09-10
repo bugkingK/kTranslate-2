@@ -28,6 +28,8 @@ class Setting_Preference: NSViewController {
     @IBOutlet weak var m_cb_width: NSComboBox!
     @IBOutlet weak var m_cb_height: NSComboBox!
     @IBOutlet weak var m_vw_shortcut: MASShortcutView!
+    @IBOutlet weak var m_st_translator: NSStackView!
+    
     fileprivate let m_dispose_bag:DisposeBag = DisposeBag()
     
     fileprivate func setupLayout() {
@@ -69,6 +71,28 @@ class Setting_Preference: NSViewController {
                 UserDefault.set(int_size, key: .sHeight)
             })
             .disposed(by: m_dispose_bag)
+        
+        for subview in m_st_translator.subviews {
+            guard let btn = subview.subviews.first as? NSButton else { continue }
+            
+            var key: UserDefault.Key = .bTransGoogle
+            switch btn.tag {
+            case 0: key = .bTransGoogle
+            case 1: key = .bTransPapago
+            case 2: key = .bTransKakao
+            case 3: key = .bTranskTranslate
+            default: break
+            }
+            
+            let state = UserDefault.bool(forKey: key)
+            btn.state = state ? .on : .off
+
+            btn.rx.tap
+                .subscribe(onNext: { _ in
+                    let state = btn.state == .on
+                    UserDefault.set(state, key: key)
+                }).disposed(by: m_dispose_bag)
+        }
         
         HotKeyManager.shared.registerHotKey(shortcutView: m_vw_shortcut)
     }

@@ -24,6 +24,11 @@ class Translator:NSObject {
     public var meText:PublishRelay<String> = PublishRelay<String>()
     
     func run(text:String, source:String?, target:String) {
+        if !isActive() {
+            meText.accept(TranslatorError.chooseTranslator)
+            return
+        }
+        
         if let v_source = source {
             for trans in self.m_arr_trans {
                 trans.translate(text: text, source: v_source, target: target)
@@ -45,6 +50,10 @@ class Translator:NSObject {
     }
     
     func run(image:NSImage, target:String) {
+        if !isActive() {
+            meText.accept(TranslatorError.chooseTranslator)
+            return
+        }
         guard let obsDetect = GoogleTranslation.detect(image: image) else {
             meText.accept(TranslatorError.reconnect)
             return
@@ -61,6 +70,17 @@ class Translator:NSObject {
             }, onDisposed: {
                 // 다이얼 로그 ...
             })
+    }
+    
+    fileprivate func isActive() -> Bool {
+        var count = 0
+        for trans in m_arr_trans {
+            if trans.isActive {
+                count += 1
+            }
+        }
+        
+        return count != 0
     }
     
 }

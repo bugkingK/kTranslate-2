@@ -50,12 +50,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     fileprivate func LaunchInit() {
         if !UserDefault.bool(forKey: .bLaunchInit) {
-            CTWindowController.showWindow(sbName: "Setting", vcName: "Setting_Preference")
             UserDefault.set(true, key: .bLaunchInit)
             UserDefault.set(false, key: .bAlways)
             UserDefault.set("400", key: .sWidth)
             UserDefault.set("600", key: .sHeight)
+            
+            UserDefault.set(true, key: .bTransGoogle)
+            UserDefault.set(true, key: .bTransPapago)
+            UserDefault.set(true, key: .bTransKakao)
+            UserDefault.set(true, key: .bTranskTranslate)
             AutoLogin.enabled = false
+            CTWindowController.showWindow(sbName: "Setting", vcName: "Setting_Preference")
         }
     }
 

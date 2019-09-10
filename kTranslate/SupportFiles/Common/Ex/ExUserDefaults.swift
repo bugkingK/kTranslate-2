@@ -16,6 +16,11 @@ class UserDefault {
         case sWidth = "sWidth"
         case sHeight = "sHeight"
         case sShortCutKey = "sShortCutKey"
+        
+        case bTransGoogle = "sTransGoogle"
+        case bTransPapago = "bTransPapago"
+        case bTransKakao = "bTransKakao"
+        case bTranskTranslate = "bTranskTranslate"
     }
     
     static func set(_ value:Any?, key:Key) {
@@ -37,6 +42,10 @@ class UserDefault {
     
     static func cgfloat(forKey:Key) -> CGFloat {
         return CGFloat(UserDefaults.standard.float(forKey: forKey.rawValue))
+    }
+    
+    static func dictionary(forKey:Key) -> Dictionary<String, Any>? {
+        return UserDefaults.standard.dictionary(forKey: forKey.rawValue)
     }
     
     static func clear() {

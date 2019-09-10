@@ -22,6 +22,7 @@ struct TranslatorError {
     static let notSupport = "not Support"
     static let offToday = "I'm off today ~ See you tomorrow"
     static let reconnect = "An error occurred. please try again."
+    static let chooseTranslator = "preferences에서 번역기를 선택해주세요."
 }
 
 class DefaultTranslation:NSObject {
@@ -75,6 +76,7 @@ class DefaultTranslation:NSObject {
         }
     }
     
+    var isActive:Bool = true
     var translatedText:PublishRelay<(String, TranslatorType)> = PublishRelay<(String, TranslatorType)>()
     func translate(text:String, source:String, target:String) {}
 }
@@ -84,6 +86,7 @@ class GoogleTranslation: DefaultTranslation {
     fileprivate static let m_str_home = "https://translation.googleapis.com/language/translate/v2"
     
     override func translate(text:String, source:String, target:String) {
+        if !isActive { return }
         if source == target {
             translatedText.accept((text, .google))
             return
@@ -109,6 +112,7 @@ class GoogleTranslation: DefaultTranslation {
 
 class kTranslateTranslation: GoogleTranslation {
     override func translate(text: String, source: String, target: String) {
+        if !isActive { return }
         if source == target {
             translatedText.accept((text, .kTranslate))
             return
@@ -155,6 +159,7 @@ class PapagoTranslation: DefaultTranslation {
                                                   "X-Naver-Client-Secret" : "5DSlLmNYxU" ]
     
     override func translate(text:String, source:String, target:String) {
+        if !isActive { return }
         if source == target {
             translatedText.accept((text, .papago))
             return
@@ -176,6 +181,7 @@ class KakaoTranslation: DefaultTranslation {
     fileprivate let m_headers:[String:String] = [ "Authorization": "KakaoAK daab7870042dad08bdcbd6f37eaf8689" ]
     
     override func translate(text:String, source:String, target:String) {
+        if !isActive { return }
         if source == target {
             translatedText.accept((text, .kakao))
             return

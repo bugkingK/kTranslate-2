@@ -1046,7 +1046,7 @@
                             </box>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="152" horizontalPageScroll="10" verticalLineScroll="152" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNi-Ur-COC">
                                 <rect key="frame" x="0.0" y="95" width="387" height="485"/>
-                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="jTW-lG-eOu">
+                                <clipView key="contentView" copiesOnScroll="NO" id="jTW-lG-eOu">
                                     <rect key="frame" x="0.0" y="0.0" width="387" height="485"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -1054,7 +1054,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="387" height="485"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
-                                            <color key="backgroundColor" red="0.96854275465011597" green="0.96868163347244263" blue="0.96851235628128052" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
                                                 <tableColumn width="384" minWidth="40" maxWidth="1000" id="3vw-1B-u0B">
@@ -1354,7 +1354,7 @@
                                             </tableColumns>
                                         </tableView>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.75686274509999996" green="0.81960784310000001" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </clipView>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="31x-74-0oK"/>

@@ -41,6 +41,14 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
         bindLayout()
     }
     
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        m_translator.google.isActive = UserDefault.bool(forKey: .bTransGoogle)
+        m_translator.papago.isActive = UserDefault.bool(forKey: .bTransPapago)
+        m_translator.kakao.isActive = UserDefault.bool(forKey: .bTransKakao)
+        m_translator.kTranslate.isActive = UserDefault.bool(forKey: .bTranskTranslate)
+    }
+    
     @IBOutlet weak var m_tv_main: NSTableView!
     @IBOutlet weak var m_ttv_input: NSTextView!
     @IBOutlet weak var m_btn_send: NSButton!
