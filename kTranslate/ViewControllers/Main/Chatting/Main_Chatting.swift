@@ -64,13 +64,12 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
     fileprivate var m_sel_target:String = "en"
     fileprivate var m_source_presenter:Presenter!
     fileprivate var m_target_presenter:Presenter!
+    
+    fileprivate var m_arr_cell_identifiers = ["ChattingSendCell", "ChattingReciveCell", "ChattingSendImageCell"]
     fileprivate var m_arr_datas:[ChattingData] = [] {
         didSet {
             m_tv_main.reloadData()
-            let numberOfRows = m_tv_main.numberOfRows
-            if numberOfRows > 0 {
-                m_tv_main.scrollRowToVisible(numberOfRows-1)
-            }
+            m_tv_main.scrollToEndOfDocument(self)
         }
     }
     
@@ -78,6 +77,11 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
         m_tv_main.delegate = self
         m_tv_main.dataSource = self
         m_tv_main.registerForDraggedTypes([.URL])
+        for identifier in m_arr_cell_identifiers {
+            let cellNib = NSNib(nibNamed: identifier, bundle: nil)
+            m_tv_main.register(cellNib, forIdentifier: NSUserInterfaceItemIdentifier(rawValue: identifier))
+        }
+        
         m_ttv_input.delegate = self
         m_ttv_input.insertionPointColor = .black
         m_ttv_input.font = NSFont.systemFont(ofSize: 13)
@@ -209,7 +213,7 @@ extension Main_Chatting: NSTableViewDataSource, NSTableViewDelegate {
         case .Image: identifier = "ChattingSendImageCell"
         }
         
-        guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier.init(identifier), owner: nil) as? ChattingCell else {
+        guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier.init(identifier), owner: self) as? ChattingCell else {
             return nil
         }
         
@@ -236,62 +240,26 @@ extension Main_Chatting: NSTableViewDataSource, NSTableViewDelegate {
 }
 
 extension Main_Chatting: ADragDropViewDelegate {
+    func dragDropView(_ draggingEntered: ADragDropView, draggingInfo: NSDraggingInfo) {
+        PopoverController.shared.isDragging = true
+    }
+    
     func dragDropView(_ draggingExited: ADragDropView) {
         m_vw_drag_drop.isHidden = true
+        PopoverController.shared.isDragging = false
     }
     func dragDropView(_ dragDropView: ADragDropView, droppedFileWithURL URL: URL) {
         m_vw_drag_drop.isHidden = true
+        PopoverController.shared.isDragging = false
         guard let v_img = NSImage(contentsOf: URL) else { return }
         let data = ChattingData(message: URL.absoluteString, type: .Image)
         self.m_arr_datas.append(data)
         m_translator.run(image: v_img, target: m_sel_target)
     }
-}
-
-class ChattingCell:NSTableCellView {
-    @IBOutlet weak var imgProfile:NSImageView?
-    @IBOutlet weak var lbName:NSTextField?
-    @IBOutlet weak var lbMessage:NSTextField?
-    @IBOutlet weak var boxType: NSBox!
-    @IBOutlet weak var btnCopy: NSButton?
-    @IBOutlet weak var btnSpeaker: NSButton?
-    @IBOutlet weak var lbNumberOfChar: NSTextField?
-    @IBOutlet weak var btnSendImage: NSButton?
     
-    fileprivate var m_dispose_bag:DisposeBag = DisposeBag()
-    fileprivate var m_synthesizer:NSSpeechSynthesizer = NSSpeechSynthesizer()
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        btnCopy?.rx.tap
-            .subscribe(onNext: { [unowned self] _ in
-                guard let message = self.lbMessage?.stringValue else { return }
-                let pasteBoard = NSPasteboard.general
-                pasteBoard.declareTypes([], owner: nil)
-                pasteBoard.setString(message, forType: .string)
-                self.findViewController()?.toast(message: "It's been copied.")
-            })
-            .disposed(by: m_dispose_bag)
-        
-        btnSpeaker?.rx.tap
-            .subscribe(onNext: { [unowned self] in
-                if self.m_synthesizer.isSpeaking {
-                   self.m_synthesizer.stopSpeaking()
-                } else {
-                    guard let message = self.lbMessage?.stringValue else { return }
-                    self.m_synthesizer.startSpeaking(message)
-                }
-            })
-            .disposed(by: m_dispose_bag)
-        
-        btnSendImage?.rx.tap
-            .subscribe(onNext: { [unowned self] in
-                let img = self.btnSendImage?.image
-                Popup_Viewer.shared()
-                    .setupImage(img)
-                    .show(self.findViewController())
-            })
-            .disposed(by: m_dispose_bag)
+    func dragDropView(_ dragDropView: ADragDropView, droppedFilesWithURLs URLs: [URL]) {
+        m_vw_drag_drop.isHidden = true
+        PopoverController.shared.isDragging = false
+        self.toast(message: "Please pass only one image")
     }
 }
-

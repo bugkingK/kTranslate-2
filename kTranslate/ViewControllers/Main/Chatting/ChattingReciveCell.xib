@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ChattingCell" customModule="kTranslate" customModuleProvider="target"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <tableCellView identifier="ChattingReciveCell" id="a95-IV-FZ3" customClass="ChattingCell" customModule="kTranslate" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="384" height="94"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <box boxType="custom" borderWidth="0.0" cornerRadius="10" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="EiU-y7-c1Y" userLabel="icon View">
+                    <rect key="frame" x="10" y="39" width="45" height="45"/>
+                    <view key="contentView" id="HdS-WX-RDg">
+                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yOf-9T-5H1">
+                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon-google" id="Apx-sc-wkg"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="yOf-9T-5H1" firstAttribute="top" secondItem="HdS-WX-RDg" secondAttribute="top" id="GJn-EZ-aNR"/>
+                            <constraint firstAttribute="bottom" secondItem="yOf-9T-5H1" secondAttribute="bottom" id="Kv7-VJ-zyy"/>
+                            <constraint firstAttribute="trailing" secondItem="yOf-9T-5H1" secondAttribute="trailing" id="Lo2-a8-N69"/>
+                            <constraint firstItem="yOf-9T-5H1" firstAttribute="leading" secondItem="HdS-WX-RDg" secondAttribute="leading" id="zXr-3f-Vlq"/>
+                        </constraints>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="Kbw-GH-mOV"/>
+                        <constraint firstAttribute="width" constant="45" id="Pbx-8o-BAx"/>
+                    </constraints>
+                    <color key="borderColor" red="0.58823529409999997" green="0.58431372550000005" blue="0.58823529409999997" alpha="0.70303819440000004" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="fillColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                </box>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XH6-Hp-IfE">
+                    <rect key="frame" x="63" y="67" width="48" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Google" id="Nej-Qp-UFS">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <box boxType="custom" borderType="none" borderWidth="0.0" cornerRadius="5" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="8e1-Jf-8kZ" customClass="MessageBox" customModule="kTranslate" customModuleProvider="target">
+                    <rect key="frame" x="65" y="20" width="200" height="37"/>
+                    <view key="contentView" id="vwq-Pa-PLZ">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="37"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="zaq-cf-tra">
+                                <rect key="frame" x="13" y="10" width="179" height="17"/>
+                                <textFieldCell key="cell" selectable="YES" alignment="left" title="Multiline LabelMultiline Label" id="zQu-pO-OWD">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="zaq-cf-tra" firstAttribute="top" secondItem="vwq-Pa-PLZ" secondAttribute="top" constant="10" id="1K6-fG-Tsg"/>
+                            <constraint firstAttribute="trailing" secondItem="zaq-cf-tra" secondAttribute="trailing" constant="10" id="83E-kb-Y77"/>
+                            <constraint firstAttribute="bottom" secondItem="zaq-cf-tra" secondAttribute="bottom" constant="10" id="Xfq-cZ-b2W"/>
+                            <constraint firstItem="zaq-cf-tra" firstAttribute="leading" secondItem="vwq-Pa-PLZ" secondAttribute="leading" constant="15" id="ogo-AM-Jjo"/>
+                        </constraints>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="Sej-0J-sQy"/>
+                    </constraints>
+                    <color key="borderColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isIncoming" value="YES"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="outgoingColor">
+                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="incomingColor">
+                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </box>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GRH-xw-0FL">
+                    <rect key="frame" x="270" y="20" width="13" height="13"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="13" id="PHk-b7-PeM"/>
+                        <constraint firstAttribute="width" constant="13" id="wEi-JY-McN"/>
+                    </constraints>
+                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="icon-copy" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="zRE-Rn-3vx">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4lE-Ih-AX3">
+                    <rect key="frame" x="270" y="38" width="13" height="13"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="13" id="prE-r7-blH"/>
+                        <constraint firstAttribute="width" constant="13" id="vtS-bc-qbr"/>
+                    </constraints>
+                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="icon-speaker-right" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="4bE-vq-vNU">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <color key="contentTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9uY-bI-yFc">
+                    <rect key="frame" x="68" y="3" width="11" height="14"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="0" id="GfH-eo-CKW">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="0.80118257709999996" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="9uY-bI-yFc" firstAttribute="leading" secondItem="vwq-Pa-PLZ" secondAttribute="leading" constant="5" id="0zU-kQ-Gxc"/>
+                <constraint firstItem="GRH-xw-0FL" firstAttribute="top" secondItem="4lE-Ih-AX3" secondAttribute="bottom" constant="5" id="5Ic-oN-UQE"/>
+                <constraint firstItem="EiU-y7-c1Y" firstAttribute="top" secondItem="a95-IV-FZ3" secondAttribute="top" constant="10" id="8gc-i2-qkc"/>
+                <constraint firstAttribute="bottom" secondItem="8e1-Jf-8kZ" secondAttribute="bottom" constant="20" id="BeU-Gs-Lcg"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GRH-xw-0FL" secondAttribute="trailing" constant="20" id="HdG-m1-ttV"/>
+                <constraint firstItem="9uY-bI-yFc" firstAttribute="top" secondItem="8e1-Jf-8kZ" secondAttribute="bottom" constant="3" id="U0w-2M-VJ1"/>
+                <constraint firstItem="8e1-Jf-8kZ" firstAttribute="leading" secondItem="EiU-y7-c1Y" secondAttribute="trailing" constant="10" id="WOR-cL-Neo"/>
+                <constraint firstItem="GRH-xw-0FL" firstAttribute="bottom" secondItem="vwq-Pa-PLZ" secondAttribute="bottom" id="bsv-sh-5RY"/>
+                <constraint firstItem="XH6-Hp-IfE" firstAttribute="leading" secondItem="EiU-y7-c1Y" secondAttribute="trailing" constant="10" id="d7V-Oa-5M9"/>
+                <constraint firstItem="8e1-Jf-8kZ" firstAttribute="top" secondItem="XH6-Hp-IfE" secondAttribute="bottom" constant="10" id="j3d-Y4-Awy"/>
+                <constraint firstItem="EiU-y7-c1Y" firstAttribute="leading" secondItem="a95-IV-FZ3" secondAttribute="leading" constant="10" id="k7J-Kg-q3K"/>
+                <constraint firstItem="GRH-xw-0FL" firstAttribute="leading" secondItem="8e1-Jf-8kZ" secondAttribute="trailing" constant="5" id="o5r-qi-kRc"/>
+                <constraint firstItem="4lE-Ih-AX3" firstAttribute="centerX" secondItem="GRH-xw-0FL" secondAttribute="centerX" id="t3P-6Z-ZcM"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9uY-bI-yFc" secondAttribute="trailing" constant="20" id="xSn-56-eXP"/>
+                <constraint firstItem="XH6-Hp-IfE" firstAttribute="top" secondItem="EiU-y7-c1Y" secondAttribute="top" id="y2Z-xE-zZ3"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XH6-Hp-IfE" secondAttribute="trailing" constant="10" id="zbe-Oe-QQd"/>
+            </constraints>
+            <connections>
+                <outlet property="btnCopy" destination="GRH-xw-0FL" id="DP7-pS-urd"/>
+                <outlet property="btnSpeaker" destination="4lE-Ih-AX3" id="4oK-w1-DlE"/>
+                <outlet property="imgProfile" destination="yOf-9T-5H1" id="8KO-6i-Gg8"/>
+                <outlet property="lbMessage" destination="zaq-cf-tra" id="id2-pa-E9E"/>
+                <outlet property="lbName" destination="XH6-Hp-IfE" id="bTi-JY-k0y"/>
+                <outlet property="lbNumberOfChar" destination="9uY-bI-yFc" id="aVZ-nS-s5a"/>
+            </connections>
+        </tableCellView>
+    </objects>
+    <resources>
+        <image name="icon-copy" width="512" height="512"/>
+        <image name="icon-google" width="28" height="29"/>
+        <image name="icon-speaker-right" width="686" height="720"/>
+    </resources>
+</document>

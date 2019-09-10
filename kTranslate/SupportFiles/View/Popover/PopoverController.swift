@@ -17,6 +17,7 @@ open class PopoverController: NSObject {
     fileprivate var eventMonitor: EventMonitor?
     fileprivate var m_event_handler:((NSEvent?)->())?
     fileprivate var m_event_show:((PopoverController)->())?
+    public var isDragging:Bool = false
     
     fileprivate override init() {
         super.init()
@@ -32,7 +33,7 @@ open class PopoverController: NSObject {
     public func setLayout(_ image:String, vc:NSViewController?, event:@escaping ((PopoverController)->())) {
         statusItem.button?.image = NSImage(named: .init(image))
         popover.contentViewController = vc
-        eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { (_) in
+        eventMonitor = EventMonitor(mask: [.leftMouseUp, .rightMouseUp]) { (d) in
             event(self)
         }
     }

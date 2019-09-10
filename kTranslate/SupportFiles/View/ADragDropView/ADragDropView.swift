@@ -87,6 +87,7 @@ public final class ADragDropView: NSView {
         fileTypeIsOk = isExtensionAcceptable(draggingInfo: sender)
         
         self.setNeedsDisplay(self.bounds)
+        delegate?.dragDropView(self, draggingInfo: sender)
         return []
     }
     
@@ -151,11 +152,13 @@ public final class ADragDropView: NSView {
 public protocol ADragDropViewDelegate: class {
     func dragDropView(_ dragDropView: ADragDropView, droppedFileWithURL  URL: URL)
     func dragDropView(_ dragDropView: ADragDropView, droppedFilesWithURLs URLs: [URL])
+    func dragDropView(_ draggingEntered: ADragDropView, draggingInfo:NSDraggingInfo)
     func dragDropView(_ draggingExited: ADragDropView)
 }
 
 extension ADragDropViewDelegate {
     func dragDropView(_ dragDropView: ADragDropView, droppedFileWithURL  URL: URL) { }
     func dragDropView(_ dragDropView: ADragDropView, droppedFilesWithURLs URLs: [URL]) { }
+    func dragDropView(_ draggingEntered: ADragDropView, draggingInfo:NSDraggingInfo) { }
     func dragDropView(_ draggingExited: ADragDropView) { }
 }

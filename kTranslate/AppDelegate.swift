@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             .setLayout("icon-status", vc: contentVC) { (shared) in
             Analyst.shared.track(event: .using)
             if shared.popover.isShown {
-                if !UserDefault.bool(forKey: .bAlways) {
+                if !UserDefault.bool(forKey: .bAlways) && !shared.isDragging {
                     shared.closePopover(sender: nil)
                 }
             }
