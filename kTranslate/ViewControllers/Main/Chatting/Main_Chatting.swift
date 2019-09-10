@@ -76,7 +76,7 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
     fileprivate func setupLayout() {
         m_tv_main.delegate = self
         m_tv_main.dataSource = self
-        m_tv_main.registerForDraggedTypes([.URL])
+        m_tv_main.registerForDraggedTypes([.png, .fileURL, .URL])
         for identifier in m_arr_cell_identifiers {
             let cellNib = NSNib(nibNamed: identifier, bundle: nil)
             m_tv_main.register(cellNib, forIdentifier: NSUserInterfaceItemIdentifier(rawValue: identifier))
