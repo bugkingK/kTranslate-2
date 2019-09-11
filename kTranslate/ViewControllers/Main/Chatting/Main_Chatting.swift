@@ -77,6 +77,7 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
     fileprivate var m_sel_target:String = "en"
     fileprivate var m_source_presenter:Presenter!
     fileprivate var m_target_presenter:Presenter!
+    fileprivate let m_limiter:Limiter = Limiter(interval: 3)
     
     fileprivate var m_arr_cell_identifiers = ["ChattingSendCell", "ChattingReciveCell", "ChattingSendImageCell"]
     fileprivate var m_arr_datas:[ChattingData] = [] {
@@ -153,20 +154,29 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
                     return new
                 }
             }
-            .subscribe(m_ttv_input.rx.string)
+            .subscribe(onNext: { str in
+                let prevPoint = self.m_ttv_input.selectedRange()
+                self.m_ttv_input.string = str
+                self.m_ttv_input.selectedRanges = [prevPoint] as [NSValue]
+            })
             .disposed(by: m_dispose_bag)
     }
     
     fileprivate func onClickBtnSend() {
-        let text = self.m_ttv_input.string
-        if text != "" {
-            let data = ChattingData(message: text, type: .Me)
-            self.m_arr_datas.append(data)
-            self.m_ttv_input.string = ""
-            self.m_translator.run(text: text, source: m_sel_source, target: m_sel_target)
+        if m_limiter.allow() {
+            let text = self.m_ttv_input.string
+            if text != "" {
+                let data = ChattingData(message: text, type: .Me)
+                self.m_arr_datas.append(data)
+                self.m_ttv_input.string = ""
+                self.m_translator.run(text: text, source: m_sel_source, target: m_sel_target)
+            }
+            DBUseHistory.add(content: text)
+            Analyst.shared.track(event: .translate)
+            m_limiter.start()
+        } else {
+            self.toast(message: "Request more slowly, please. 😭")
         }
-        DBUseHistory.add(content: text)
-        Analyst.shared.track(event: .translate)
     }
     
     func textView(_ textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {

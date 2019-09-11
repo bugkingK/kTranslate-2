@@ -64,6 +64,7 @@ class Translator:NSObject {
                     self.meText.accept(TranslatorError.notFoundChar)
                     return
                 }
+                self.meText.accept(v_text)
                 self.run(text: v_text, source: nil, target: target)
             }, onError: { (err) in
                 self.meText.accept(TranslatorError.reconnect)

@@ -51,15 +51,15 @@ public final class ADragDropView: NSView {
         let bounds = self.bounds
         let size = min(bounds.size.width - 8.0, bounds.size.height - 8.0);
         let width =  max(2.0, size / 32.0)
-        let frame = NSMakeRect((bounds.size.width-size)/2.0, (bounds.size.height-size)/2.0, size, size)
+//        let frame = NSMakeRect((bounds.size.width-size)/2.0, (bounds.size.height-size)/2.0, size, size)
         
         NSBezierPath.defaultLineWidth = width
         
         // draw rounded corner square with dotted borders
-        let squarePath = NSBezierPath(roundedRect: frame, xRadius: size/14.0, yRadius: size/14.0)
-        let dash : [CGFloat] = [size / 10.0, size / 16.0]
-        squarePath.setLineDash(dash, count: 2, phase: 2)
-        squarePath.stroke()
+//        let squarePath = NSBezierPath(roundedRect: frame, xRadius: size/14.0, yRadius: size/14.0)
+//        let dash : [CGFloat] = [size / 10.0, size / 16.0]
+//        squarePath.setLineDash(dash, count: 2, phase: 2)
+//        squarePath.stroke()
         
         // draw arrow
         let arrowPath = NSBezierPath()

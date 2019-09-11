@@ -20,7 +20,6 @@
 		85E68B2F2321590500AEBB26 /* Setting_About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E68B2E2321590500AEBB26 /* Setting_About.swift */; };
 		85E68B31232161A500AEBB26 /* Setting_Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E68B30232161A500AEBB26 /* Setting_Preference.swift */; };
 		D204813122B885C200369A6D /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D204813022B885C200369A6D /* DBManager.swift */; };
-		D204813322B885E300369A6D /* DBSticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D204813222B885E300369A6D /* DBSticker.swift */; };
 		D204813522B8861B00369A6D /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D204813422B8861B00369A6D /* libsqlite3.0.tbd */; };
 		D21C86382325E32600A55DF4 /* Popup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D21C86372325E32600A55DF4 /* Popup.storyboard */; };
 		D21C863A2325E3F900A55DF4 /* Popup_UseHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21C86392325E3F900A55DF4 /* Popup_UseHistory.swift */; };
@@ -58,6 +57,7 @@
 		D2D3B87022AF6F900086909D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D3B86E22AF6F900086909D /* Main.storyboard */; };
 		D2D3B87822AF70750086909D /* LauncherApplication.app in Copy Launcher Application */ = {isa = PBXBuildFile; fileRef = D2D3B86622AF6F8F0086909D /* LauncherApplication.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D2F7D3BB2321F5B400A9C3C4 /* Analyst.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7D3BA2321F5B400A9C3C4 /* Analyst.swift */; };
+		D2F874492328D1DB00E448F6 /* Limiterswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F874482328D1DB00E448F6 /* Limiterswift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -90,7 +90,6 @@
 		85E68B30232161A500AEBB26 /* Setting_Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting_Preference.swift; sourceTree = "<group>"; };
 		BA9BD323899B5D0C3C6DF1F2 /* Pods_kTranslate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kTranslate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D204813022B885C200369A6D /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
-		D204813222B885E300369A6D /* DBSticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBSticker.swift; sourceTree = "<group>"; };
 		D204813422B8861B00369A6D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		D21C86372325E32600A55DF4 /* Popup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Popup.storyboard; sourceTree = "<group>"; };
 		D21C86392325E3F900A55DF4 /* Popup_UseHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup_UseHistory.swift; sourceTree = "<group>"; };
@@ -133,6 +132,7 @@
 		D2D3B87122AF6F900086909D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2D3B87222AF6F900086909D /* LauncherApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LauncherApplication.entitlements; sourceTree = "<group>"; };
 		D2F7D3BA2321F5B400A9C3C4 /* Analyst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyst.swift; sourceTree = "<group>"; };
+		D2F874482328D1DB00E448F6 /* Limiterswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Limiterswift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +182,6 @@
 			children = (
 				D204813022B885C200369A6D /* DBManager.swift */,
 				854DBB552323ED13008BE86A /* DBUseHistory.swift */,
-				D204813222B885E300369A6D /* DBSticker.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -324,6 +323,7 @@
 				D2C0358F2320E48000E3BEEF /* Ex */,
 				D204811B22B8858300369A6D /* Database */,
 				D2D3B85022AF5E260086909D /* CommonUtil.swift */,
+				D2F874482328D1DB00E448F6 /* Limiterswift.swift */,
 				D2D3B86022AF6F3E0086909D /* AutoLogin.swift */,
 			);
 			path = Common;
@@ -595,7 +595,6 @@
 				D2D3B85B22AF5E260086909D /* HotKeyManager.swift in Sources */,
 				D2F7D3BB2321F5B400A9C3C4 /* Analyst.swift in Sources */,
 				D2C035952320E9BA00E3BEEF /* ExControl.swift in Sources */,
-				D204813322B885E300369A6D /* DBSticker.swift in Sources */,
 				D2C035AC23210E0A00E3BEEF /* DefaultTranslate.swift in Sources */,
 				D2C035AB23210E0A00E3BEEF /* Translator.swift in Sources */,
 				85E202512327ED8000C04562 /* ChattingCell.swift in Sources */,
@@ -609,6 +608,7 @@
 				D21C86582325FC3C00A55DF4 /* Popup_Alert.swift in Sources */,
 				D2C035932320E8F200E3BEEF /* ExNSStoryboard.swift in Sources */,
 				85DE7D5422AFD3FD00568C80 /* CTWindowController.swift in Sources */,
+				D2F874492328D1DB00E448F6 /* Limiterswift.swift in Sources */,
 				D2C035B123210E1900E3BEEF /* Presenter.swift in Sources */,
 				D2C035A523210DF700E3BEEF /* Main_Chatting.swift in Sources */,
 				85E68B31232161A500AEBB26 /* Setting_Preference.swift in Sources */,
