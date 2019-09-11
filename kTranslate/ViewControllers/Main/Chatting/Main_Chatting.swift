@@ -197,15 +197,15 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
         
         let sourceVC = NSStoryboard.make(sbName: "Main", vcName: "Main_ChooseLanguage") as! Main_ChooseLanguage
         sourceVC.setup(select:nil, isSource: true, selBlock: { [unowned self] sel in
-            self.m_btn_source.title = sel.0
-            self.m_sel_source = sel.1
+            self.m_btn_source.title = sel.name
+            self.m_sel_source = sel.key
             self.m_source_presenter.popup_dismiss()
         })
         
         let targetVC = NSStoryboard.make(sbName: "Main", vcName: "Main_ChooseLanguage") as! Main_ChooseLanguage
         targetVC.setup(select:"en", isSource: false, selBlock: { [unowned self] sel in
-            self.m_btn_target.title = sel.0
-            self.m_sel_target = sel.1!
+            self.m_btn_target.title = sel.name
+            self.m_sel_target = sel.key!
             self.m_target_presenter.popup_dismiss()
         })
         

@@ -18,6 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         HotKeyManager.shared.registerHotKey()
 //        UserDefault.clear()
         LaunchInit()
+        DBLanguages.setup()
         
         let windowVC = NSStoryboard.make(sbName: "Main", vcName: "windowController") as! NSWindowController
         let contentVC = windowVC.contentViewController
