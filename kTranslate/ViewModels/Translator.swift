@@ -44,7 +44,7 @@ class Translator:NSObject {
                     trans.translate(text: text, source: detect.source, target: target)
                 }
             }, onError: { [unowned self] (err) in
-                self.meText.accept(err.localizedDescription)
+                self.meText.accept(TranslatorError.reconnect)
             })
         }
     }
@@ -61,12 +61,12 @@ class Translator:NSObject {
         
         _ = obsDetect.subscribe(onNext: { [unowned self ](detect) in
                 guard let v_text = detect.text else {
-                    self.meText.accept("문자를 찾지 못했습니다.")
+                    self.meText.accept(TranslatorError.notFoundChar)
                     return
                 }
                 self.run(text: v_text, source: nil, target: target)
             }, onError: { (err) in
-                self.meText.accept(err.localizedDescription)
+                self.meText.accept(TranslatorError.reconnect)
             }, onDisposed: {
                 // 다이얼 로그 ...
             })

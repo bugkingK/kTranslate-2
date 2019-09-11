@@ -21,57 +21,61 @@ enum TranslatorType:String {
 struct TranslatorError {
     static let notSupport = "not Support"
     static let offToday = "I'm off today ~ See you tomorrow"
-    static let reconnect = "An error occurred. please try again."
-    static let chooseTranslator = "preferences에서 번역기를 선택해주세요."
+    static let reconnect = "An error occurred. Please try again in 1 minute."
+    static let chooseTranslator = "Please select a translator in your preferences."
+    static let notFoundChar = "No character found"
 }
 
 class DefaultTranslation:NSObject {
     struct TranslationData {
         var translatedText:String = ""
         
+        fileprivate func convertJSON(data:Data) -> JSON? {
+            do { return try JSON(data:data) }
+            catch _ { return nil }
+        }
+        
         init(googleData:Data) {
-            do {
-                let json = try JSON(data: googleData)
-                var text = json["data"]["translations"][0]["translatedText"]
-                translatedText = text.stringValue
-                if translatedText == "" {
-                    translatedText = TranslatorError.notSupport
-                }
-            } catch _ {
+            guard let json = self.convertJSON(data: googleData) else {
                 translatedText = TranslatorError.reconnect
+                return
+            }
+            
+            var text = json["data"]["translations"][0]["translatedText"]
+            translatedText = text.stringValue
+            if translatedText == "" {
+                translatedText = TranslatorError.notSupport
             }
         }
         
         init(kakaoData:Data) {
-            do {
-                let json = try JSON(data: kakaoData)
-                let arr_text = json["translated_text"].arrayValue
-            
-                for arr_element in arr_text {
-                    for element in arr_element.arrayValue {
-                        translatedText.append(element.stringValue)
-                    }
-                    if arr_text.last != arr_element {
-                        translatedText.append("\n")
-                    }
-                }
-                if translatedText == "" {
-                    translatedText = TranslatorError.notSupport
-                }
-            } catch _ {
+            guard let json = self.convertJSON(data: kakaoData) else {
                 translatedText = TranslatorError.reconnect
+                return
+            }
+            
+            let arr_text = json["translated_text"].arrayValue
+            for arr_element in arr_text {
+                for element in arr_element.arrayValue {
+                    translatedText.append(element.stringValue)
+                }
+                if arr_text.last != arr_element {
+                    translatedText.append("\n")
+                }
+            }
+            if translatedText == "" {
+                translatedText = TranslatorError.notSupport
             }
         }
         
         init(papagoData:Data) {
-            do {
-                let json = try JSON(data: papagoData)
-                translatedText = json["message"]["result"]["translatedText"].stringValue
-                if translatedText == "" {
-                    translatedText = TranslatorError.notSupport
-                }
-            } catch _ {
+            guard let json = self.convertJSON(data: papagoData) else {
                 translatedText = TranslatorError.reconnect
+                return
+            }
+            translatedText = json["message"]["result"]["translatedText"].stringValue
+            if translatedText == "" {
+                translatedText = TranslatorError.notSupport
             }
         }
     }
