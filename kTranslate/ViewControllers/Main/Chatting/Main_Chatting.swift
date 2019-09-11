@@ -55,6 +55,14 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
         m_translator.kTranslate.isActive = UserDefault.bool(forKey: .bTranskTranslate)
     }
     
+    override func viewWillDisappear() {
+        super.viewWillDisappear()
+        m_arr_datas = []
+        m_source_presenter.clean()
+        m_target_presenter.clean()
+        m_dispose_bag = DisposeBag()
+    }
+    
     @IBOutlet weak var m_tv_main: NSTableView!
     @IBOutlet weak var m_ttv_input: NSTextView!
     @IBOutlet weak var m_btn_send: NSButton!

@@ -93,5 +93,13 @@ class Presenter: NSObject {
         vcCurrent?.view.removeFromSuperview()
         vcCurrent?.removeFromParent()
     }
+    
+    public func clean() {
+        m_vw_container = nil
+        targetViewController = nil
+        contentViewController = nil
+        frameView = nil
+        self.removeViewController()
+    }
 
 }

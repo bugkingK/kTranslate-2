@@ -18,11 +18,17 @@ class Popup_UseHistory: NSViewController {
         bindLayout()
     }
     
+    override func viewWillDisappear() {
+        super.viewWillDisappear()
+        m_arr_datas = []
+        m_disposed_bag = DisposeBag()
+    }
+    
     @IBOutlet weak var m_tv_main: NSTableView!
     @IBOutlet weak var m_btn_close: NSButton!
     
     fileprivate var m_arr_datas:[UseHistoryData] = []
-    fileprivate let m_disposed_bag:DisposeBag = DisposeBag()
+    fileprivate var m_disposed_bag:DisposeBag = DisposeBag()
     
     fileprivate func setupLayout() {
         m_tv_main.delegate = self
@@ -54,17 +60,18 @@ extension Popup_UseHistory: NSTableViewDelegate, NSTableViewDataSource {
         
         cell.lbMessage?.stringValue = item.sContent
         cell.lbNumberOfChar?.stringValue = "\(item.sCreatedDate)"
+        let click = NSClickGestureRecognizer(target: self, action: #selector(onClickMessage(_:)))
+        cell.lbMessage?.addGestureRecognizer(click)
         return cell
     }
     
-    func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
-        guard let containerVC = self.presentingViewController as? Main_Container else { return true }
-        let item = m_arr_datas[row]
-        containerVC.m_vc_chatting.m_ttv_input.string = item.sContent
-        containerVC.m_vc_chatting.m_btn_send.performClick(self)
-        self.dismiss(self)
-        return true
+    @objc fileprivate func onClickMessage(_ sender:NSClickGestureRecognizer) {
+        guard let containerVC = self.presentingViewController as? Main_Container else { return }
+        if let tf = sender.view as? NSTextField {
+            containerVC.m_vc_chatting.m_ttv_input.string = tf.stringValue
+            containerVC.m_vc_chatting.m_btn_send.performClick(self)
+            self.dismiss(self)
+        }
     }
-    
     
 }

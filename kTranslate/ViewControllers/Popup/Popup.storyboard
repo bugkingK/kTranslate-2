@@ -127,7 +127,6 @@
                                                                 <constraint firstItem="vtm-Nt-Xt6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hj6-gY-vAI" secondAttribute="leading" constant="20" id="w42-zP-jmC"/>
                                                             </constraints>
                                                             <connections>
-                                                                <outlet property="boxType" destination="dvz-Sl-fRn" id="8gf-9k-aVE"/>
                                                                 <outlet property="btnCopy" destination="vtm-Nt-Xt6" id="Hfj-2a-1Rv"/>
                                                                 <outlet property="btnSpeaker" destination="zMS-yV-UHu" id="YKN-cw-Qm4"/>
                                                                 <outlet property="lbMessage" destination="x6F-uV-HZc" id="8OI-Hl-NHE"/>
