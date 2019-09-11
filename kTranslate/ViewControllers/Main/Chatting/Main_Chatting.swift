@@ -55,8 +55,7 @@ class Main_Chatting: NSViewController, NSTextViewDelegate {
         m_translator.kTranslate.isActive = UserDefault.bool(forKey: .bTranskTranslate)
     }
     
-    override func viewWillDisappear() {
-        super.viewWillDisappear()
+    public func clean() {
         m_arr_datas = []
         m_source_presenter.clean()
         m_target_presenter.clean()

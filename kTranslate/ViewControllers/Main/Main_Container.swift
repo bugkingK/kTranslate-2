@@ -73,6 +73,7 @@ class Main_Container: CTContainerViewController {
         
         m_btn_translator.rx.tap
             .subscribe(onNext: { _ in
+                self.m_vc_chatting.clean()
                 self.m_vc_chatting = NSStoryboard.make(sbName: "Main", vcName: "Main_Chatting") as? Main_Chatting
                 self.bindToViewController(targetVC: self.m_vc_chatting)
             })
