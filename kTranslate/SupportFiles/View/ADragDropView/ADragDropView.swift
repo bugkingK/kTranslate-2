@@ -25,7 +25,7 @@ public final class ADragDropView: NSView {
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        registerForDraggedTypes([NSPasteboard.PasteboardType.fileURL])
+        registerForDraggedTypes([.png, .fileURL, .URL])
     }
     
     public override init(frame frameRect: NSRect) {
@@ -110,12 +110,14 @@ public final class ADragDropView: NSView {
     }
     
     public override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
-        if sender.filePathURLs.count == 0 {
+        if sender.filePathURLs.count == 0 && sender.imageFile == nil {
             return false
         }
         
         if(fileTypeIsOk) {
-            if sender.filePathURLs.count == 1 {
+            if let tiffImage = sender.imageFile {
+                delegate?.dragDropView(self, droppedFileImage: tiffImage)
+            } else if sender.filePathURLs.count == 1 {
                 delegate?.dragDropView(self, droppedFileWithURL: sender.filePathURLs.first!)
             } else {
                 delegate?.dragDropView(self, droppedFilesWithURLs: sender.filePathURLs)
@@ -128,6 +130,10 @@ public final class ADragDropView: NSView {
     }
     
     fileprivate func isExtensionAcceptable(draggingInfo: NSDraggingInfo) -> Bool {
+        if draggingInfo.imageFile != nil {
+            return true
+        }
+        
         if draggingInfo.filePathURLs.count == 0 {
             return false
         }
@@ -154,6 +160,7 @@ public protocol ADragDropViewDelegate: class {
     func dragDropView(_ dragDropView: ADragDropView, droppedFilesWithURLs URLs: [URL])
     func dragDropView(_ draggingEntered: ADragDropView, draggingInfo:NSDraggingInfo)
     func dragDropView(_ draggingExited: ADragDropView)
+    func dragDropView(_ dragDropView: ADragDropView, droppedFileImage image: NSImage)
 }
 
 extension ADragDropViewDelegate {
@@ -161,4 +168,5 @@ extension ADragDropViewDelegate {
     func dragDropView(_ dragDropView: ADragDropView, droppedFilesWithURLs URLs: [URL]) { }
     func dragDropView(_ draggingEntered: ADragDropView, draggingInfo:NSDraggingInfo) { }
     func dragDropView(_ draggingExited: ADragDropView) { }
+    func dragDropView(_ dragDropView: ADragDropView, droppedFileImage image: NSImage) { }
 }

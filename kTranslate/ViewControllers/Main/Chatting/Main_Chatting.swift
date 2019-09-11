@@ -16,7 +16,8 @@ struct ChattingData {
     
     var strProfile:String?
     var strName:String?
-    var strMessage:String
+    var strMessage:String = ""
+    var imgMessage:NSImage?
     var type:TYPE
     
     init(profile:String?, name:String?, message:String, type:TYPE) {
@@ -28,6 +29,11 @@ struct ChattingData {
     
     init(message:String, type:TYPE) {
         self.strMessage = message
+        self.type = type
+    }
+    
+    init(imgMessage:NSImage, type:TYPE) {
+        self.imgMessage = imgMessage
         self.type = type
     }
 }
@@ -226,8 +232,7 @@ extension Main_Chatting: NSTableViewDataSource, NSTableViewDelegate {
             cell.lbMessage?.stringValue = item.strMessage
             cell.lbNumberOfChar?.stringValue = "\(item.strMessage.count)"
         } else {
-            guard let v_url = URL(string: item.strMessage) else { return nil }
-            cell.btnSendImage?.image = NSImage(contentsOf: v_url)
+            cell.btnSendImage?.image = item.imgMessage
         }
         
         return cell
@@ -252,7 +257,7 @@ extension Main_Chatting: ADragDropViewDelegate {
         m_vw_drag_drop.isHidden = true
         PopoverController.shared.isDragging = false
         guard let v_img = NSImage(contentsOf: URL) else { return }
-        let data = ChattingData(message: URL.absoluteString, type: .Image)
+        let data = ChattingData(imgMessage: v_img, type: .Image)
         self.m_arr_datas.append(data)
         m_translator.run(image: v_img, target: m_sel_target)
     }
@@ -261,5 +266,13 @@ extension Main_Chatting: ADragDropViewDelegate {
         m_vw_drag_drop.isHidden = true
         PopoverController.shared.isDragging = false
         self.toast(message: "Please pass only one image")
+    }
+    
+    func dragDropView(_ dragDropView: ADragDropView, droppedFileImage image: NSImage) {
+        m_vw_drag_drop.isHidden = true
+        PopoverController.shared.isDragging = false
+        let data = ChattingData(imgMessage: image, type: .Image)
+        self.m_arr_datas.append(data)
+        m_translator.run(image: image, target: m_sel_target)
     }
 }

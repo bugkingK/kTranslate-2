@@ -25,4 +25,12 @@ extension NSDraggingInfo {
         
         return []
     }
+    
+    var imageFile: NSImage? {
+        if let png = draggingPasteboard.data(forType: .tiff) {
+            return NSImage(data: png)
+        } else {
+            return nil
+        }
+    }
 }
