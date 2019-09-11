@@ -58,6 +58,7 @@
 		D2D3B87822AF70750086909D /* LauncherApplication.app in Copy Launcher Application */ = {isa = PBXBuildFile; fileRef = D2D3B86622AF6F8F0086909D /* LauncherApplication.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D2F7D3BB2321F5B400A9C3C4 /* Analyst.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7D3BA2321F5B400A9C3C4 /* Analyst.swift */; };
 		D2F874492328D1DB00E448F6 /* Limiterswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F874482328D1DB00E448F6 /* Limiterswift.swift */; };
+		D2F958912328E6F700BCB9E3 /* DBLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F958902328E6F700BCB9E3 /* DBLanguages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -133,6 +134,7 @@
 		D2D3B87222AF6F900086909D /* LauncherApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LauncherApplication.entitlements; sourceTree = "<group>"; };
 		D2F7D3BA2321F5B400A9C3C4 /* Analyst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyst.swift; sourceTree = "<group>"; };
 		D2F874482328D1DB00E448F6 /* Limiterswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Limiterswift.swift; sourceTree = "<group>"; };
+		D2F958902328E6F700BCB9E3 /* DBLanguages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBLanguages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			children = (
 				D204813022B885C200369A6D /* DBManager.swift */,
 				854DBB552323ED13008BE86A /* DBUseHistory.swift */,
+				D2F958902328E6F700BCB9E3 /* DBLanguages.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				D2C035952320E9BA00E3BEEF /* ExControl.swift in Sources */,
 				D2C035AC23210E0A00E3BEEF /* DefaultTranslate.swift in Sources */,
 				D2C035AB23210E0A00E3BEEF /* Translator.swift in Sources */,
+				D2F958912328E6F700BCB9E3 /* DBLanguages.swift in Sources */,
 				85E202512327ED8000C04562 /* ChattingCell.swift in Sources */,
 				D2D3B85C22AF5E260086909D /* CommonUtil.swift in Sources */,
 				D204813122B885C200369A6D /* DBManager.swift in Sources */,

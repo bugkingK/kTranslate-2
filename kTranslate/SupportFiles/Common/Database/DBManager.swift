@@ -14,6 +14,7 @@ class DBManager: NSObject {
     
     public enum DB_NAME {
         static let UseHistory = "UseHistory"
+        static let Languages = "Languages"
     }
     
     internal static var db:FMDatabase = {
@@ -42,12 +43,14 @@ class DBManager: NSObject {
             return db
         }
         
-        if !db.executeStatements(DBUseHistory.sql_create) {
-            print("Error \(db.lastErrorMessage())")
+        let createDB = [DBUseHistory.sql_create, DBLanguages.sql_create]
+        for sql in createDB {
+            if !db.executeStatements(sql) {
+                print("Error \(db.lastErrorMessage())")
+            }
         }
         
         db.close()
-
         return db
     }()
 }
